@@ -1,0 +1,1491 @@
+{
+  "timestamp": "2026-01-18T11:47:20.185Z",
+  "recommendations": {
+    "thrash": [
+      {
+        "id": "band_metallica_1",
+        "name": "Metallica",
+        "genre": [
+          "thrash",
+          "heavy"
+        ],
+        "era": "1980s",
+        "albums": [
+          "Master of Puppets",
+          "Ride the Lightning",
+          "...And Justice for All"
+        ],
+        "description": "One of the most influential thrash metal bands, known for their complex song structures and aggressive sound.",
+        "styleNotes": "Evolved from pure thrash to more progressive and alternative styles in the 1990s and 2000s.",
+        "embedding": null
+      },
+      {
+        "id": "band_anthrax_1",
+        "name": "Anthrax",
+        "genre": [
+          "thrash",
+          "groove"
+        ],
+        "era": "1980s",
+        "albums": [
+          "Among the Living",
+          "Spreading the Disease",
+          "Persistence of Time"
+        ],
+        "description": "One of the \"Big Four\" thrash bands, known for incorporating rap and punk elements.",
+        "styleNotes": "Experimented with different styles including rap-metal crossover.",
+        "embedding": null
+      },
+      {
+        "id": "band_kreator_1",
+        "name": "Kreator",
+        "genre": [
+          "thrash"
+        ],
+        "era": "1980s",
+        "albums": [
+          "Pleasure to Kill",
+          "Coma of Souls",
+          "Violent Revolution"
+        ],
+        "description": "German thrash metal pioneers known for extreme aggression.",
+        "styleNotes": "Influenced death metal development with their extreme sound.",
+        "embedding": null
+      },
+      {
+        "id": "band_sodom_1",
+        "name": "Sodom",
+        "genre": [
+          "thrash"
+        ],
+        "era": "1980s",
+        "albums": [
+          "Persecution Mania",
+          "Agent Orange",
+          "M-16"
+        ],
+        "description": "German thrash metal band known for raw, aggressive sound.",
+        "styleNotes": "Maintained consistent extreme thrash style.",
+        "embedding": null
+      },
+      {
+        "id": "band_destruction_1",
+        "name": "Destruction",
+        "genre": [
+          "thrash"
+        ],
+        "era": "1980s",
+        "albums": [
+          "Infernal Overkill",
+          "Release from Agony",
+          "Eternal Devastation"
+        ],
+        "description": "German thrash metal band part of the \"Teutonic Thrash\" scene.",
+        "styleNotes": "Known for aggressive vocals and fast riffing.",
+        "embedding": null
+      },
+      {
+        "id": "band_dark_angel_1",
+        "name": "Dark Angel",
+        "genre": [
+          "thrash"
+        ],
+        "era": "1980s",
+        "albums": [
+          "Darkness Descends",
+          "Leave Scars",
+          "Time Does Not Heal"
+        ],
+        "description": "American thrash metal band known for extreme speed and complexity.",
+        "styleNotes": "Pioneered technical thrash metal.",
+        "embedding": null
+      },
+      {
+        "id": "band_vio-lence_1",
+        "name": "Vio-lence",
+        "genre": [
+          "thrash"
+        ],
+        "era": "1980s",
+        "albums": [
+          "Eternal Nightmare",
+          "Oppressing the Masses",
+          "Nothing to Gain"
+        ],
+        "description": "Bay Area thrash band known for technical riffs.",
+        "styleNotes": "Part of the second wave of Bay Area thrash.",
+        "embedding": null
+      },
+      {
+        "id": "band_death_angel_1",
+        "name": "Death Angel",
+        "genre": [
+          "thrash"
+        ],
+        "era": "1980s",
+        "albums": [
+          "The Ultra-Violence",
+          "Frolic Through the Park",
+          "Act III"
+        ],
+        "description": "Bay Area thrash band with diverse influences.",
+        "styleNotes": "Incorporated funk and experimental elements.",
+        "embedding": null
+      },
+      {
+        "id": "band_flotsam_and_jetsam_1",
+        "name": "Flotsam and Jetsam",
+        "genre": [
+          "thrash"
+        ],
+        "era": "1980s",
+        "albums": [
+          "Doomsday for the Deceiver",
+          "No Place for Disgrace"
+        ],
+        "description": "American thrash band with progressive tendencies.",
+        "styleNotes": "Known for complex song structures.",
+        "embedding": null
+      },
+      {
+        "id": "band_rage_1",
+        "name": "Rage",
+        "genre": [
+          "thrash",
+          "power"
+        ],
+        "era": "1980s",
+        "albums": [
+          "Reign of Fear",
+          "Execution Guaranteed",
+          "Perfect Man"
+        ],
+        "description": "German metal band blending thrash and power metal.",
+        "styleNotes": "Evolved to incorporate symphonic elements.",
+        "embedding": null
+      }
+    ],
+    "death": [
+      {
+        "id": "band_revocation_1",
+        "name": "Revocation",
+        "genre": [
+          "thrash",
+          "technical death"
+        ],
+        "era": "2000s",
+        "albums": [
+          "Empire of the Obscene",
+          "Existence Is Futile",
+          "The Outer Ones"
+        ],
+        "description": "American technical death/thrash band.",
+        "styleNotes": "Blends technical death metal with thrash.",
+        "embedding": null
+      },
+      {
+        "id": "band_death_1",
+        "name": "Death",
+        "genre": [
+          "death",
+          "progressive"
+        ],
+        "era": "1980s",
+        "albums": [
+          "Scream Bloody Gore",
+          "Human",
+          "Symbolic"
+        ],
+        "description": "Pioneering death metal band founded by Chuck Schuldiner, evolved to incorporate progressive elements.",
+        "styleNotes": "Started as raw death metal, evolved to highly technical and progressive death metal.",
+        "embedding": null
+      },
+      {
+        "id": "band_cannibal_corpse_1",
+        "name": "Cannibal Corpse",
+        "genre": [
+          "death"
+        ],
+        "era": "1990s",
+        "albums": [
+          "Tomb of the Mutilated",
+          "The Bleeding",
+          "Kill"
+        ],
+        "description": "Known for extreme brutality and controversial lyrics.",
+        "styleNotes": "Consistent brutal death metal style throughout their career.",
+        "embedding": null
+      },
+      {
+        "id": "band_morbid_angel_1",
+        "name": "Morbid Angel",
+        "genre": [
+          "death"
+        ],
+        "era": "1980s",
+        "albums": [
+          "Altars of Madness",
+          "Blessed Are the Sick",
+          "Covenant"
+        ],
+        "description": "Pioneering death metal band known for technical complexity and dark themes.",
+        "styleNotes": "Incorporated industrial and electronic elements in later albums.",
+        "embedding": null
+      },
+      {
+        "id": "band_obituary_1",
+        "name": "Obituary",
+        "genre": [
+          "death"
+        ],
+        "era": "1990s",
+        "albums": [
+          "Slowly We Rot",
+          "Cause of Death",
+          "The End Complete"
+        ],
+        "description": "Known for their slow, heavy sound and growling vocals.",
+        "styleNotes": "Consistent death/doom style with signature growling vocals.",
+        "embedding": null
+      },
+      {
+        "id": "band_deicide_1",
+        "name": "Deicide",
+        "genre": [
+          "death"
+        ],
+        "era": "1990s",
+        "albums": [
+          "Deicide",
+          "Legion",
+          "Once Upon the Cross"
+        ],
+        "description": "Known for satanic themes and aggressive sound.",
+        "styleNotes": "Consistent brutal death metal with anti-religious themes.",
+        "embedding": null
+      },
+      {
+        "id": "band_suffocation_1",
+        "name": "Suffocation",
+        "genre": [
+          "death",
+          "technical death"
+        ],
+        "era": "1990s",
+        "albums": [
+          "Effigy of the Forgotten",
+          "Pierced from Within",
+          "Souls to Deny"
+        ],
+        "description": "Pioneers of brutal death metal with slam elements.",
+        "styleNotes": "Created the slam death metal subgenre.",
+        "embedding": null
+      },
+      {
+        "id": "band_nile_1",
+        "name": "Nile",
+        "genre": [
+          "death",
+          "technical death"
+        ],
+        "era": "1990s",
+        "albums": [
+          "Amongst the Catacombs of Nephren-Ka",
+          "Black Seeds of Vengeance",
+          "Annihilation of the Wicked"
+        ],
+        "description": "American technical death band known for Egyptian themes.",
+        "styleNotes": "Combines technical death metal with Egyptian mythology.",
+        "embedding": null
+      },
+      {
+        "id": "band_carcass_1",
+        "name": "Carcass",
+        "genre": [
+          "death",
+          "grindcore"
+        ],
+        "era": "1980s",
+        "albums": [
+          "Reek of Putrefaction",
+          "Symphonies of Sickness",
+          "Necroticism"
+        ],
+        "description": "British death/grind band known for medical lyrics.",
+        "styleNotes": "Evolved from grindcore to melodic death metal.",
+        "embedding": null
+      },
+      {
+        "id": "band_entombed_1",
+        "name": "Entombed",
+        "genre": [
+          "death"
+        ],
+        "era": "1990s",
+        "albums": [
+          "Left Hand Path",
+          "Clandestine",
+          "Wolverine Blues"
+        ],
+        "description": "Swedish death metal pioneers.",
+        "styleNotes": "Created the \"Sunlight sound\" Swedish death metal production.",
+        "embedding": null
+      }
+    ],
+    "black": [
+      {
+        "id": "band_behemoth_1",
+        "name": "Behemoth",
+        "genre": [
+          "death",
+          "black"
+        ],
+        "era": "1990s",
+        "albums": [
+          "Satanica",
+          "Thelema.6",
+          "Demigod"
+        ],
+        "description": "Polish death/black metal band.",
+        "styleNotes": "Evolved from black metal to death metal with occult themes.",
+        "embedding": null
+      },
+      {
+        "id": "band_mayhem_1",
+        "name": "Mayhem",
+        "genre": [
+          "black"
+        ],
+        "era": "1990s",
+        "albums": [
+          "De Mysteriis Dom Sathanas",
+          "Deathcrush",
+          "Grand Declaration of War"
+        ],
+        "description": "One of the most influential black metal bands, known for their controversial history.",
+        "styleNotes": "Evolved from raw black metal to more experimental and avant-garde styles.",
+        "embedding": null
+      },
+      {
+        "id": "band_darkthrone_1",
+        "name": "Darkthrone",
+        "genre": [
+          "black"
+        ],
+        "era": "1990s",
+        "albums": [
+          "A Blaze in the Northern Sky",
+          "Under a Funeral Moon",
+          "Transilvanian Hunger"
+        ],
+        "description": "Pioneering Norwegian black metal band known for raw, lo-fi production.",
+        "styleNotes": "Started as death metal, evolved to raw black metal, later incorporated punk/crust elements.",
+        "embedding": null
+      },
+      {
+        "id": "band_emperor_1",
+        "name": "Emperor",
+        "genre": [
+          "black",
+          "symphonic"
+        ],
+        "era": "1990s",
+        "albums": [
+          "In the Nightside Eclipse",
+          "Anthems to the Welkin at Dusk",
+          "IX Equilibrium"
+        ],
+        "description": "Known for incorporating symphonic elements into black metal.",
+        "styleNotes": "Pioneered symphonic black metal with complex song structures.",
+        "embedding": null
+      },
+      {
+        "id": "band_cradle_of_filth_1",
+        "name": "Cradle of Filth",
+        "genre": [
+          "black",
+          "symphonic",
+          "gothic"
+        ],
+        "era": "1990s",
+        "albums": [
+          "The Principle of Evil Made Flesh",
+          "Dusk and Her Embrace",
+          "Cruelty and the Beast"
+        ],
+        "description": "Known for theatrical style and incorporation of gothic elements.",
+        "styleNotes": "Evolved from raw black metal to more symphonic and gothic styles.",
+        "embedding": null
+      },
+      {
+        "id": "band_dimmu_borgir_1",
+        "name": "Dimmu Borgir",
+        "genre": [
+          "black",
+          "symphonic"
+        ],
+        "era": "1990s",
+        "albums": [
+          "Enthrone Darkness Triumphant",
+          "Spiritual Black Dimensions",
+          "Puritanical Euphoric Misanthropia"
+        ],
+        "description": "Norwegian black metal band known for symphonic elements and commercial success.",
+        "styleNotes": "Evolved to more polished symphonic black metal with orchestral arrangements.",
+        "embedding": null
+      },
+      {
+        "id": "band_burzum_1",
+        "name": "Burzum",
+        "genre": [
+          "black",
+          "ambient"
+        ],
+        "era": "1990s",
+        "albums": [
+          "Burzum",
+          "Det Som Engang Var",
+          "Hvis Lyset Tar Oss"
+        ],
+        "description": "One-man black metal project known for atmospheric sound.",
+        "styleNotes": "Evolved from raw black metal to ambient and electronic music.",
+        "embedding": null
+      },
+      {
+        "id": "band_immortal_1",
+        "name": "Immortal",
+        "genre": [
+          "black"
+        ],
+        "era": "1990s",
+        "albums": [
+          "Diabolical Fullmoon Mysticism",
+          "Pure Holocaust",
+          "Battles in the North"
+        ],
+        "description": "Norwegian black metal band known for Blashyrkh mythology.",
+        "styleNotes": "Cold, frosty black metal with unique riffing style.",
+        "embedding": null
+      },
+      {
+        "id": "band_satyricon_1",
+        "name": "Satyricon",
+        "genre": [
+          "black"
+        ],
+        "era": "1990s",
+        "albums": [
+          "Dark Medieval Times",
+          "The Shadowthrone",
+          "Nemesis Divina"
+        ],
+        "description": "Norwegian black metal band.",
+        "styleNotes": "Evolved to incorporate rock and industrial elements.",
+        "embedding": null
+      },
+      {
+        "id": "band_enslaved_1",
+        "name": "Enslaved",
+        "genre": [
+          "black",
+          "progressive"
+        ],
+        "era": "1990s",
+        "albums": [
+          "Vikingligr Veldi",
+          "Frost",
+          "Eld"
+        ],
+        "description": "Norwegian black metal band with Viking themes.",
+        "styleNotes": "Evolved to progressive black metal with Viking themes.",
+        "embedding": null
+      }
+    ],
+    "power": [
+      {
+        "id": "band_rage_1",
+        "name": "Rage",
+        "genre": [
+          "thrash",
+          "power"
+        ],
+        "era": "1980s",
+        "albums": [
+          "Reign of Fear",
+          "Execution Guaranteed",
+          "Perfect Man"
+        ],
+        "description": "German metal band blending thrash and power metal.",
+        "styleNotes": "Evolved to incorporate symphonic elements.",
+        "embedding": null
+      },
+      {
+        "id": "band_running_wild_1",
+        "name": "Running Wild",
+        "genre": [
+          "thrash",
+          "power"
+        ],
+        "era": "1980s",
+        "albums": [
+          "Under Jolly Roger",
+          "Port Royal",
+          "Black Hand Inn"
+        ],
+        "description": "German metal band known for pirate themes.",
+        "styleNotes": "Combined thrash and power metal with pirate imagery.",
+        "embedding": null
+      },
+      {
+        "id": "band_grave_digger_1",
+        "name": "Grave Digger",
+        "genre": [
+          "thrash",
+          "power"
+        ],
+        "era": "1980s",
+        "albums": [
+          "Heavy Metal Breakdown",
+          "Heart of Darkness",
+          "The Reaper"
+        ],
+        "description": "German metal band with dark themes.",
+        "styleNotes": "Evolved from speed metal to power metal.",
+        "embedding": null
+      },
+      {
+        "id": "band_wintersun_1",
+        "name": "Wintersun",
+        "genre": [
+          "black",
+          "folk",
+          "power"
+        ],
+        "era": "2000s",
+        "albums": [
+          "Wintersun",
+          "Time I"
+        ],
+        "description": "Finnish black metal band with folk and power elements.",
+        "styleNotes": "Melodic black metal with folk and power metal influences.",
+        "embedding": null
+      },
+      {
+        "id": "band_blind_guardian_1",
+        "name": "Blind Guardian",
+        "genre": [
+          "power",
+          "speed"
+        ],
+        "era": "1990s",
+        "albums": [
+          "Somewhere Far Beyond",
+          "Imaginations from the Other Side",
+          "Nightfall in Middle-Earth"
+        ],
+        "description": "German power metal band known for fantasy themes and complex vocal harmonies.",
+        "styleNotes": "Evolved from speed metal to more symphonic power metal with orchestral elements.",
+        "embedding": null
+      },
+      {
+        "id": "band_helloween_1",
+        "name": "Helloween",
+        "genre": [
+          "power",
+          "speed"
+        ],
+        "era": "1980s",
+        "albums": [
+          "Keeper of the Seven Keys Part I",
+          "Keeper of the Seven Keys Part II",
+          "Master of the Rings"
+        ],
+        "description": "Pioneering German power metal band.",
+        "styleNotes": "Started as speed metal, evolved to power metal, experimented with different styles.",
+        "embedding": null
+      },
+      {
+        "id": "band_stratovarius_1",
+        "name": "Stratovarius",
+        "genre": [
+          "power",
+          "progressive"
+        ],
+        "era": "1990s",
+        "albums": [
+          "Visions",
+          "Destiny",
+          "Infinite"
+        ],
+        "description": "Finnish power metal band known for neoclassical influences.",
+        "styleNotes": "Incorporated progressive and neoclassical elements into power metal.",
+        "embedding": null
+      },
+      {
+        "id": "band_sonata_arctica_1",
+        "name": "Sonata Arctica",
+        "genre": [
+          "power"
+        ],
+        "era": "2000s",
+        "albums": [
+          "Ecliptica",
+          "Silence",
+          "Winterheart's Guild"
+        ],
+        "description": "Finnish power metal band known for melodic songs and fantasy themes.",
+        "styleNotes": "Consistent melodic power metal style with progressive elements.",
+        "embedding": null
+      },
+      {
+        "id": "band_kamelot_1",
+        "name": "Kamelot",
+        "genre": [
+          "power",
+          "progressive"
+        ],
+        "era": "1990s",
+        "albums": [
+          "The Fourth Legacy",
+          "The Black Halo",
+          "Ghost Opera"
+        ],
+        "description": "American power metal band known for concept albums and theatrical elements.",
+        "styleNotes": "Evolved from traditional power metal to more progressive and symphonic styles.",
+        "embedding": null
+      },
+      {
+        "id": "band_edguy_1",
+        "name": "Edguy",
+        "genre": [
+          "power"
+        ],
+        "era": "1990s",
+        "albums": [
+          "Theater of Salvation",
+          "Mandrake",
+          "Hellfire Club"
+        ],
+        "description": "German power metal band with humorous elements.",
+        "styleNotes": "Power metal with theatrical and humorous elements.",
+        "embedding": null
+      }
+    ],
+    "doom": [
+      {
+        "id": "band_asphyx_1",
+        "name": "Asphyx",
+        "genre": [
+          "death",
+          "doom"
+        ],
+        "era": "1990s",
+        "albums": [
+          "The Rack",
+          "Last One on Earth",
+          "God Cries"
+        ],
+        "description": "Dutch death/doom metal band.",
+        "styleNotes": "Death metal with doom and sludge influences.",
+        "embedding": null
+      },
+      {
+        "id": "band_paradise_lost_1",
+        "name": "Paradise Lost",
+        "genre": [
+          "death",
+          "doom",
+          "gothic"
+        ],
+        "era": "1990s",
+        "albums": [
+          "Lost Paradise",
+          "Gothic",
+          "Shades of God"
+        ],
+        "description": "British death/doom metal band.",
+        "styleNotes": "Pioneers of gothic doom metal.",
+        "embedding": null
+      },
+      {
+        "id": "band_my_dying_bride_1",
+        "name": "My Dying Bride",
+        "genre": [
+          "death",
+          "doom",
+          "gothic"
+        ],
+        "era": "1990s",
+        "albums": [
+          "As the Flower Withers",
+          "Turn Loose the Swans",
+          "The Angel and the Dark River"
+        ],
+        "description": "British death/doom metal band.",
+        "styleNotes": "Death/doom with gothic and romantic elements.",
+        "embedding": null
+      },
+      {
+        "id": "band_type_o_negative_1",
+        "name": "Type O Negative",
+        "genre": [
+          "death",
+          "doom",
+          "gothic"
+        ],
+        "era": "1990s",
+        "albums": [
+          "Slow, Deep and Hard",
+          "Bloody Kisses",
+          "October Rust"
+        ],
+        "description": "American gothic doom metal band.",
+        "styleNotes": "Gothic doom with dark humor and romantic themes.",
+        "embedding": null
+      },
+      {
+        "id": "band_agalloch_1",
+        "name": "Agalloch",
+        "genre": [
+          "black",
+          "folk",
+          "doom"
+        ],
+        "era": "2000s",
+        "albums": [
+          "Pale Folklore",
+          "The Mantle",
+          "Ashes Against the Grain"
+        ],
+        "description": "American black metal band with folk influences.",
+        "styleNotes": "Black metal with folk, doom, and post-rock elements.",
+        "embedding": null
+      }
+    ],
+    "progressive": [
+      {
+        "id": "band_vektor_1",
+        "name": "Vektor",
+        "genre": [
+          "thrash",
+          "progressive"
+        ],
+        "era": "2000s",
+        "albums": [
+          "Black Future",
+          "Outer Isolation",
+          "Terminal Redux"
+        ],
+        "description": "American progressive thrash band.",
+        "styleNotes": "Highly technical thrash with progressive and sci-fi themes.",
+        "embedding": null
+      },
+      {
+        "id": "band_death_1",
+        "name": "Death",
+        "genre": [
+          "death",
+          "progressive"
+        ],
+        "era": "1980s",
+        "albums": [
+          "Scream Bloody Gore",
+          "Human",
+          "Symbolic"
+        ],
+        "description": "Pioneering death metal band founded by Chuck Schuldiner, evolved to incorporate progressive elements.",
+        "styleNotes": "Started as raw death metal, evolved to highly technical and progressive death metal.",
+        "embedding": null
+      },
+      {
+        "id": "band_cynic_1",
+        "name": "Cynic",
+        "genre": [
+          "death",
+          "progressive"
+        ],
+        "era": "1990s",
+        "albums": [
+          "Focus",
+          "Traced in Air"
+        ],
+        "description": "American progressive death metal band.",
+        "styleNotes": "Combined death metal with fusion and progressive rock.",
+        "embedding": null
+      },
+      {
+        "id": "band_enslaved_1",
+        "name": "Enslaved",
+        "genre": [
+          "black",
+          "progressive"
+        ],
+        "era": "1990s",
+        "albums": [
+          "Vikingligr Veldi",
+          "Frost",
+          "Eld"
+        ],
+        "description": "Norwegian black metal band with Viking themes.",
+        "styleNotes": "Evolved to progressive black metal with Viking themes.",
+        "embedding": null
+      },
+      {
+        "id": "band_borknagar_1",
+        "name": "Borknagar",
+        "genre": [
+          "black",
+          "progressive"
+        ],
+        "era": "1990s",
+        "albums": [
+          "Borknagar",
+          "The Olden Domain",
+          "The Archaic Course"
+        ],
+        "description": "Norwegian black metal band with progressive elements.",
+        "styleNotes": "Progressive black metal with folk influences.",
+        "embedding": null
+      },
+      {
+        "id": "band_arcturus_1",
+        "name": "Arcturus",
+        "genre": [
+          "black",
+          "progressive",
+          "avant-garde"
+        ],
+        "era": "1990s",
+        "albums": [
+          "Aspera Hiems Symfonia",
+          "La Masquerade Infernale",
+          "The Sham Mirrors"
+        ],
+        "description": "Norwegian avant-garde black metal band.",
+        "styleNotes": "Avant-garde black metal with symphonic elements.",
+        "embedding": null
+      },
+      {
+        "id": "band_stratovarius_1",
+        "name": "Stratovarius",
+        "genre": [
+          "power",
+          "progressive"
+        ],
+        "era": "1990s",
+        "albums": [
+          "Visions",
+          "Destiny",
+          "Infinite"
+        ],
+        "description": "Finnish power metal band known for neoclassical influences.",
+        "styleNotes": "Incorporated progressive and neoclassical elements into power metal.",
+        "embedding": null
+      },
+      {
+        "id": "band_kamelot_1",
+        "name": "Kamelot",
+        "genre": [
+          "power",
+          "progressive"
+        ],
+        "era": "1990s",
+        "albums": [
+          "The Fourth Legacy",
+          "The Black Halo",
+          "Ghost Opera"
+        ],
+        "description": "American power metal band known for concept albums and theatrical elements.",
+        "styleNotes": "Evolved from traditional power metal to more progressive and symphonic styles.",
+        "embedding": null
+      },
+      {
+        "id": "band_manticora_1",
+        "name": "Manticora",
+        "genre": [
+          "power",
+          "progressive"
+        ],
+        "era": "1990s",
+        "albums": [
+          "Roots of Eternity",
+          "Deadlock",
+          "8 Deadly Sins"
+        ],
+        "description": "Danish power metal band.",
+        "styleNotes": "Progressive power metal with concept albums.",
+        "embedding": null
+      },
+      {
+        "id": "band_pyramaze_1",
+        "name": "Pyramaze",
+        "genre": [
+          "power",
+          "progressive"
+        ],
+        "era": "2000s",
+        "albums": [
+          "Melancholy Beast",
+          "Legend of the Bone Carver",
+          "Immortal"
+        ],
+        "description": "Danish power metal band.",
+        "styleNotes": "Progressive power metal.",
+        "embedding": null
+      }
+    ],
+    "heavy": [
+      {
+        "id": "band_metallica_1",
+        "name": "Metallica",
+        "genre": [
+          "thrash",
+          "heavy"
+        ],
+        "era": "1980s",
+        "albums": [
+          "Master of Puppets",
+          "Ride the Lightning",
+          "...And Justice for All"
+        ],
+        "description": "One of the most influential thrash metal bands, known for their complex song structures and aggressive sound.",
+        "styleNotes": "Evolved from pure thrash to more progressive and alternative styles in the 1990s and 2000s.",
+        "embedding": null
+      },
+      {
+        "id": "band_mercyful_fate_1",
+        "name": "Mercyful Fate",
+        "genre": [
+          "thrash",
+          "heavy"
+        ],
+        "era": "1980s",
+        "albums": [
+          "Melissa",
+          "Don't Break the Oath",
+          "In the Shadows"
+        ],
+        "description": "Danish heavy/thrash band with occult themes.",
+        "styleNotes": "Influenced black metal with their occult imagery.",
+        "embedding": null
+      },
+      {
+        "id": "band_iced_earth_1",
+        "name": "Iced Earth",
+        "genre": [
+          "power",
+          "heavy"
+        ],
+        "era": "1990s",
+        "albums": [
+          "Iced Earth",
+          "Night of the Stormrider",
+          "The Dark Saga"
+        ],
+        "description": "American power metal band.",
+        "styleNotes": "Power metal with heavy and thrash influences.",
+        "embedding": null
+      },
+      {
+        "id": "band_pharaoh_1",
+        "name": "Pharaoh",
+        "genre": [
+          "power",
+          "heavy"
+        ],
+        "era": "2000s",
+        "albums": [
+          "After the Fire",
+          "The Longest Night",
+          "Bury the Light"
+        ],
+        "description": "American power metal band.",
+        "styleNotes": "Traditional heavy/power metal.",
+        "embedding": null
+      }
+    ],
+    "speed": [
+      {
+        "id": "band_razor_1",
+        "name": "Razor",
+        "genre": [
+          "thrash",
+          "speed"
+        ],
+        "era": "1980s",
+        "albums": [
+          "Executioner's Song",
+          "Evil Invaders",
+          "Malicious Intent"
+        ],
+        "description": "Canadian speed/thrash metal band.",
+        "styleNotes": "Fast, aggressive speed/thrash metal.",
+        "embedding": null
+      },
+      {
+        "id": "band_exciter_1",
+        "name": "Exciter",
+        "genre": [
+          "thrash",
+          "speed"
+        ],
+        "era": "1980s",
+        "albums": [
+          "Heavy Metal Maniac",
+          "Violence & Force",
+          "Long Live the Loud"
+        ],
+        "description": "Canadian speed metal pioneers.",
+        "styleNotes": "Influenced thrash metal development with fast, aggressive songs.",
+        "embedding": null
+      },
+      {
+        "id": "band_blind_guardian_1",
+        "name": "Blind Guardian",
+        "genre": [
+          "power",
+          "speed"
+        ],
+        "era": "1990s",
+        "albums": [
+          "Somewhere Far Beyond",
+          "Imaginations from the Other Side",
+          "Nightfall in Middle-Earth"
+        ],
+        "description": "German power metal band known for fantasy themes and complex vocal harmonies.",
+        "styleNotes": "Evolved from speed metal to more symphonic power metal with orchestral elements.",
+        "embedding": null
+      },
+      {
+        "id": "band_helloween_1",
+        "name": "Helloween",
+        "genre": [
+          "power",
+          "speed"
+        ],
+        "era": "1980s",
+        "albums": [
+          "Keeper of the Seven Keys Part I",
+          "Keeper of the Seven Keys Part II",
+          "Master of the Rings"
+        ],
+        "description": "Pioneering German power metal band.",
+        "styleNotes": "Started as speed metal, evolved to power metal, experimented with different styles.",
+        "embedding": null
+      },
+      {
+        "id": "band_gamma_ray_1",
+        "name": "Gamma Ray",
+        "genre": [
+          "power",
+          "speed"
+        ],
+        "era": "1990s",
+        "albums": [
+          "Heading for Tomorrow",
+          "Land of the Free",
+          "Majestic"
+        ],
+        "description": "German power metal band.",
+        "styleNotes": "Power metal with space and science fiction themes.",
+        "embedding": null
+      },
+      {
+        "id": "band_primal_fear_1",
+        "name": "Primal Fear",
+        "genre": [
+          "power",
+          "speed"
+        ],
+        "era": "1990s",
+        "albums": [
+          "Primal Fear",
+          "Jaws of Death",
+          "Black Sun"
+        ],
+        "description": "German power metal band.",
+        "styleNotes": "Power metal with heavy and speed metal influences.",
+        "embedding": null
+      },
+      {
+        "id": "band_dragonforce_1",
+        "name": "DragonForce",
+        "genre": [
+          "power",
+          "speed"
+        ],
+        "era": "2000s",
+        "albums": [
+          "Valley of the Damned",
+          "Sonic Firestorm",
+          "Inhuman Rampage"
+        ],
+        "description": "British power metal band known for extreme speed.",
+        "styleNotes": "Fast-paced power metal with video game influences.",
+        "embedding": null
+      },
+      {
+        "id": "band_cellador_1",
+        "name": "Cellador",
+        "genre": [
+          "power",
+          "speed"
+        ],
+        "era": "2000s",
+        "albums": [
+          "Enter Deception",
+          "Out of the Ashes"
+        ],
+        "description": "American power metal band.",
+        "styleNotes": "Fast-paced power metal.",
+        "embedding": null
+      }
+    ],
+    "groove": [
+      {
+        "id": "band_anthrax_1",
+        "name": "Anthrax",
+        "genre": [
+          "thrash",
+          "groove"
+        ],
+        "era": "1980s",
+        "albums": [
+          "Among the Living",
+          "Spreading the Disease",
+          "Persistence of Time"
+        ],
+        "description": "One of the \"Big Four\" thrash bands, known for incorporating rap and punk elements.",
+        "styleNotes": "Experimented with different styles including rap-metal crossover.",
+        "embedding": null
+      },
+      {
+        "id": "band_pantera_1",
+        "name": "Pantera",
+        "genre": [
+          "groove",
+          "thrash"
+        ],
+        "era": "1990s",
+        "albums": [
+          "Cowboys from Hell",
+          "Vulgar Display of Power",
+          "Far Beyond Driven"
+        ],
+        "description": "American groove metal pioneers.",
+        "styleNotes": "Evolved from glam metal to groove/thrash metal.",
+        "embedding": null
+      },
+      {
+        "id": "band_lamb_of_god_1",
+        "name": "Lamb of God",
+        "genre": [
+          "groove",
+          "metalcore"
+        ],
+        "era": "2000s",
+        "albums": [
+          "Ashes of the Wake",
+          "Sacrament",
+          "Wrath"
+        ],
+        "description": "American groove metal band.",
+        "styleNotes": "Groove metal with metalcore and thrash influences.",
+        "embedding": null
+      },
+      {
+        "id": "band_machine_head_1",
+        "name": "Machine Head",
+        "genre": [
+          "groove",
+          "thrash"
+        ],
+        "era": "1990s",
+        "albums": [
+          "Burn My Eyes",
+          "The More Things Change",
+          "The Blackening"
+        ],
+        "description": "American groove/thrash metal band.",
+        "styleNotes": "Evolved from groove metal to incorporate thrash and progressive elements.",
+        "embedding": null
+      },
+      {
+        "id": "band_sepultura_1",
+        "name": "Sepultura",
+        "genre": [
+          "groove",
+          "thrash",
+          "death"
+        ],
+        "era": "1990s",
+        "albums": [
+          "Beneath the Remains",
+          "Arise",
+          "Chaos A.D."
+        ],
+        "description": "Brazilian metal band known for incorporating tribal elements.",
+        "styleNotes": "Evolved from death/thrash to groove metal with tribal influences.",
+        "embedding": null
+      },
+      {
+        "id": "band_devil_driver_1",
+        "name": "DevilDriver",
+        "genre": [
+          "groove",
+          "melodic death"
+        ],
+        "era": "2000s",
+        "albums": [
+          "DevilDriver",
+          "The Fury of Our Makers' Hand",
+          "The Last Kind Words"
+        ],
+        "description": "American groove metal band.",
+        "styleNotes": "Groove metal with melodic death metal influences.",
+        "embedding": null
+      },
+      {
+        "id": "band_exodus_1",
+        "name": "Exodus",
+        "genre": [
+          "groove",
+          "thrash"
+        ],
+        "era": "1980s",
+        "albums": [
+          "Bonded by Blood",
+          "Fabulous Disaster",
+          "Impact Is Imminent"
+        ],
+        "description": "Pioneering Bay Area thrash band with aggressive, fast-paced songs.",
+        "styleNotes": "Consistent thrash style with occasional groove elements.",
+        "embedding": null
+      },
+      {
+        "id": "band_slayer_1",
+        "name": "Slayer",
+        "genre": [
+          "groove",
+          "thrash"
+        ],
+        "era": "1980s",
+        "albums": [
+          "Reign in Blood",
+          "South of Heaven",
+          "Seasons in the Abyss"
+        ],
+        "description": "Known for their fast, aggressive style and dark lyrical themes.",
+        "styleNotes": "Maintained consistent thrash/death style throughout their career.",
+        "embedding": null
+      },
+      {
+        "id": "band_megadeth_1",
+        "name": "Megadeth",
+        "genre": [
+          "groove",
+          "thrash"
+        ],
+        "era": "1980s",
+        "albums": [
+          "Rust in Peace",
+          "Peace Sells... but Who's Buying?",
+          "Countdown to Extinction"
+        ],
+        "description": "Founded by former Metallica guitarist Dave Mustaine, known for technical proficiency and political lyrics.",
+        "styleNotes": "Evolved from thrash to more mainstream metal while maintaining technical complexity.",
+        "embedding": null
+      },
+      {
+        "id": "band_testament_1",
+        "name": "Testament",
+        "genre": [
+          "groove",
+          "thrash"
+        ],
+        "era": "1980s",
+        "albums": [
+          "The Legacy",
+          "Practice What You Preach",
+          "Souls of Black"
+        ],
+        "description": "Bay Area thrash band known for technical proficiency and dark themes.",
+        "styleNotes": "Maintained consistent thrash style with progressive elements.",
+        "embedding": null
+      }
+    ],
+    "folk": [
+      {
+        "id": "band_agalloch_1",
+        "name": "Agalloch",
+        "genre": [
+          "black",
+          "folk",
+          "doom"
+        ],
+        "era": "2000s",
+        "albums": [
+          "Pale Folklore",
+          "The Mantle",
+          "Ashes Against the Grain"
+        ],
+        "description": "American black metal band with folk influences.",
+        "styleNotes": "Black metal with folk, doom, and post-rock elements.",
+        "embedding": null
+      },
+      {
+        "id": "band_primordial_1",
+        "name": "Primordial",
+        "genre": [
+          "black",
+          "folk"
+        ],
+        "era": "1990s",
+        "albums": [
+          "Imrama",
+          "A Journey's End",
+          "The Gathering Wilderness"
+        ],
+        "description": "Irish black metal band with folk influences.",
+        "styleNotes": "Black metal with Celtic and folk elements.",
+        "embedding": null
+      },
+      {
+        "id": "band_moonsorrow_1",
+        "name": "Moonsorrow",
+        "genre": [
+          "black",
+          "folk"
+        ],
+        "era": "2000s",
+        "albums": [
+          "Suden Uni",
+          "Voimasta ja Kunniasta",
+          "Kivenkantaja"
+        ],
+        "description": "Finnish black metal band with folk influences.",
+        "styleNotes": "Epic black metal with Finnish folk elements.",
+        "embedding": null
+      },
+      {
+        "id": "band_wintersun_1",
+        "name": "Wintersun",
+        "genre": [
+          "black",
+          "folk",
+          "power"
+        ],
+        "era": "2000s",
+        "albums": [
+          "Wintersun",
+          "Time I"
+        ],
+        "description": "Finnish black metal band with folk and power elements.",
+        "styleNotes": "Melodic black metal with folk and power metal influences.",
+        "embedding": null
+      },
+      {
+        "id": "band_drudkh_1",
+        "name": "Drudkh",
+        "genre": [
+          "black",
+          "folk"
+        ],
+        "era": "2000s",
+        "albums": [
+          "Forgotten Legends",
+          "Autumn Aurora",
+          "The Swan Road"
+        ],
+        "description": "Ukrainian black metal band with folk influences.",
+        "styleNotes": "Atmospheric black metal with Slavic folk influences.",
+        "embedding": null
+      },
+      {
+        "id": "band_kroda_1",
+        "name": "Kroda",
+        "genre": [
+          "black",
+          "folk"
+        ],
+        "era": "2000s",
+        "albums": [
+          "Cry to Me, River...",
+          "Towards the Firmaments Verge of Life",
+          "Fimbulvinter"
+        ],
+        "description": "Ukrainian black metal band with folk influences.",
+        "styleNotes": "Black metal with Slavic folk elements.",
+        "embedding": null
+      },
+      {
+        "id": "band_dub Buk_1",
+        "name": "Dub Buk",
+        "genre": [
+          "black",
+          "folk"
+        ],
+        "era": "2000s",
+        "albums": [
+          "Idols of the Dark Side",
+          "Moonless Night",
+          "Russian Voodoo"
+        ],
+        "description": "Ukrainian black metal band with folk influences.",
+        "styleNotes": "Black metal with Slavic folk elements.",
+        "embedding": null
+      },
+      {
+        "id": "band_negura Bunget_1",
+        "name": "Negură Bunget",
+        "genre": [
+          "black",
+          "folk"
+        ],
+        "era": "2000s",
+        "albums": [
+          "Zîrnindu-să",
+          "Măiastru Sfetnic",
+          "n Crugu Bradului"
+        ],
+        "description": "Romanian black metal band with folk influences.",
+        "styleNotes": "Atmospheric black metal with Romanian folk elements.",
+        "embedding": null
+      },
+      {
+        "id": "band_falconer_1",
+        "name": "Falconer",
+        "genre": [
+          "power",
+          "folk"
+        ],
+        "era": "2000s",
+        "albums": [
+          "Falconer",
+          "Chapters from a Vale Forlorn",
+          "The Sceptre of Deception"
+        ],
+        "description": "Swedish power metal band with folk influences.",
+        "styleNotes": "Power metal with medieval and folk elements.",
+        "embedding": null
+      },
+      {
+        "id": "band_kiuas_1",
+        "name": "Kiuas",
+        "genre": [
+          "power",
+          "folk"
+        ],
+        "era": "2000s",
+        "albums": [
+          "The Spirit of Ukko",
+          "Reformation",
+          "The New Dark Age"
+        ],
+        "description": "Finnish power metal band with folk influences.",
+        "styleNotes": "Power metal with folk and heavy elements.",
+        "embedding": null
+      }
+    ]
+  }
+}

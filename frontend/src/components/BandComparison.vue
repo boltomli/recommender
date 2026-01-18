@@ -175,6 +175,10 @@ const handleRestart = () => {
   emit('restart');
 };
 
+const handleViewRecommendations = () => {
+  emit('recommendations-ready');
+};
+
 defineExpose({
   loadComparison
 });

@@ -7,7 +7,10 @@
     "dev": "ts-node src/server.ts",
     "build": "tsc",
     "start": "node dist/server.js",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "export-data": "ts-node src/cli.ts export-data",
+    "import-data": "ts-node src/cli.ts import-data",
+    "generate-recommendations": "ts-node src/cli.ts generate-recommendations"
   },
   "keywords": [],
   "author": "",

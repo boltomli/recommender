@@ -4,6 +4,9 @@ import { loadConfig } from './config';
 import { LLMClient } from './llmClient';
 import { DatabaseManager } from './database';
 import { RecommendationEngine } from './recommendationEngine';
+import { DataExporter } from './exportData';
+import { DataImporter } from './importData';
+import { BatchRecommendationGenerator } from './batchRecommendations';
 
 const fastify = Fastify({
   logger: true
@@ -26,6 +29,9 @@ const engine = new RecommendationEngine(
   config.app.maxComparisons,
   config.app.maxRecommendations
 );
+const exporter = new DataExporter(db);
+const importer = new DataImporter(llmClient, db);
+const batchGenerator = new BatchRecommendationGenerator(db);
 
 // Health check
 fastify.get('/health', async (request, reply) => {
@@ -201,6 +207,92 @@ fastify.get('/api/recommendations', async (request, reply) => {
     };
   } catch (error) {
     reply.code(500).send({ error: 'Failed to get recommendations' });
+  }
+});
+
+// Export all data
+fastify.get('/api/export', async (request, reply) => {
+  try {
+    const { includeRecommendations } = request.query as { includeRecommendations?: string };
+    const data = await exporter.exportAll({
+      includeRecommendations: includeRecommendations === 'true'
+    });
+    return data;
+  } catch (error) {
+    reply.code(500).send({ error: 'Failed to export data' });
+  }
+});
+
+// Export genres only
+fastify.get('/api/export/genres', async (request, reply) => {
+  try {
+    const genres = await exporter.exportGenres();
+    return { genres };
+  } catch (error) {
+    reply.code(500).send({ error: 'Failed to export genres' });
+  }
+});
+
+// Export bands only
+fastify.get('/api/export/bands', async (request, reply) => {
+  try {
+    const bands = await exporter.exportBands();
+    return { bands };
+  } catch (error) {
+    reply.code(500).send({ error: 'Failed to export bands' });
+  }
+});
+
+// Export recommendations only
+fastify.get('/api/export/recommendations', async (request, reply) => {
+  try {
+    const recommendations = await exporter.exportRecommendations();
+    return { recommendations };
+  } catch (error) {
+    reply.code(500).send({ error: 'Failed to export recommendations' });
+  }
+});
+
+// Import bands from LLM
+fastify.post('/api/import/llm', async (request, reply) => {
+  try {
+    const { genre, count } = request.body as { genre?: string; count?: number };
+
+    const result = await importer.importFromLLM({
+      genre,
+      count
+    });
+
+    if (result.success) {
+      return result;
+    } else {
+      reply.code(500).send(result);
+    }
+  } catch (error) {
+    reply.code(500).send({
+      success: false,
+      imported: 0,
+      skipped: 0,
+      errors: [error instanceof Error ? error.message : String(error)]
+    });
+  }
+});
+
+// Generate batch recommendations
+fastify.post('/api/recommendations/generate', async (request, reply) => {
+  try {
+    const { genre } = request.body as { genre?: string };
+
+    let recommendations;
+    if (genre) {
+      recommendations = await batchGenerator.generateForGenre(genre);
+      return { genre, recommendations };
+    } else {
+      recommendations = await batchGenerator.generateForAllGenres();
+      return { recommendations };
+    }
+  } catch (error) {
+    reply.code(500).send({ error: 'Failed to generate recommendations' });
   }
 });
 
