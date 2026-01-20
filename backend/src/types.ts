@@ -1,3 +1,5 @@
+export type BandTier = 'well-known' | 'popular' | 'niche';
+
 export interface Band {
   id: string;
   name: string;
@@ -6,6 +8,7 @@ export interface Band {
   albums: string[];
   description: string;
   styleNotes?: string;
+  tier?: BandTier;
   embedding?: Buffer;
 }
 

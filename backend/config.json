@@ -1,18 +1,1 @@
-{
-  "llm": {
-    "endpoint": "http://192.168.3.103:1234",
-    "model": "zai-org/glm-4.6v-flash",
-    "timeout": 30000
-  },
-  "embedding": {
-    "enabled": false,
-    "model": null
-  },
-  "database": {
-    "path": "./data/bands.db"
-  },
-  "app": {
-    "maxComparisons": 10,
-    "maxRecommendations": 3
-  }
-}
+{"llm": {"endpoint": "http://localhost:1234", "model": "zai-org/glm-4.6v-flash", "timeout": 60000}, "embedding": {"enabled": false, "model": null}, "database": {"path": "./data/bands.db"}, "app": {"maxRecommendations": 5}}

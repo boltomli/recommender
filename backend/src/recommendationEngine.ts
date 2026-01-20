@@ -66,11 +66,11 @@ export class RecommendationEngine {
       if (updatedBands.length < 2) {
         throw new Error('Not enough bands available for comparison');
       }
-      return this.selectRandomPair(updatedBands, session.comparisonHistory);
+      return this.selectTieredPair(session.genre, session.comparisonHistory);
     }
 
-    // Use random selection that avoids previous pairs
-    return this.selectRandomPair(bands, session.comparisonHistory);
+    // Use tiered selection that prioritizes well-known bands
+    return this.selectTieredPair(session.genre, session.comparisonHistory);
   }
 
   async recordPreference(sessionId: string, bandId1: string, bandId2: string, selectedBandId: string): Promise<void> {
@@ -146,21 +146,49 @@ export class RecommendationEngine {
       comparedBandIds.add(comp.bandId2);
     });
 
-    // Sort bands by preference weights (higher weight first), excluding compared bands
-    const sortedBands = allBands
+    // Calculate preference scores for all bands
+    const bandScores = allBands
       .filter(b => !comparedBandIds.has(b.id))
-      .sort((a, b) => {
-        const scoreA = a.genre.reduce((sum, g) => sum + (session.preferenceWeights[g] || 0), 0);
-        const scoreB = b.genre.reduce((sum, g) => sum + (session.preferenceWeights[g] || 0), 0);
-        return scoreB - scoreA;
-      });
+      .map(band => ({
+        band,
+        score: band.genre.reduce((sum, g) => sum + (session.preferenceWeights[g] || 0), 0)
+      }))
+      .sort((a, b) => b.score - a.score);
 
-    // Get top suggestions
-    const topBands = sortedBands.slice(0, numSuggestions);
+    // Separate bands by tier
+    const tier1Bands = bandScores.filter(bs => bs.band.tier === 'well-known');
+    const tier2Bands = bandScores.filter(bs => bs.band.tier === 'popular');
+    const tier3Bands = bandScores.filter(bs => bs.band.tier === 'niche');
 
-    topBands.forEach(band => {
-      const score = band.genre.reduce((sum, g) => sum + (session.preferenceWeights[g] || 0), 0);
-      const confidence = Math.min(0.9, 0.5 + (score * 0.1));
+    // Ensure at least one Tier 1 band if available
+    const selectedBands: Array<{ band: Band; score: number }> = [];
+    if (tier1Bands.length > 0) {
+      selectedBands.push(tier1Bands[0]);
+    }
+
+    // Fill remaining spots with highest-scoring bands from any tier
+    const allRemainingBands = bandScores.filter(bs =>
+      !selectedBands.some(sb => sb.band.id === bs.band.id)
+    );
+
+    for (let i = 0; i < numSuggestions - selectedBands.length && i < allRemainingBands.length; i++) {
+      selectedBands.push(allRemainingBands[i]);
+    }
+
+    // Generate suggestions with tier-based confidence scores
+    selectedBands.forEach(({ band, score }) => {
+      // Base confidence from preference score
+      let confidence = 0.5 + (score * 0.1);
+
+      // Add tier bonus
+      if (band.tier === 'well-known') {
+        confidence += 0.05;
+      } else if (band.tier === 'popular') {
+        confidence += 0.02;
+      }
+
+      // Cap confidence at 0.9
+      confidence = Math.min(0.9, confidence);
 
       suggestions.push({
         band,
@@ -188,21 +216,61 @@ export class RecommendationEngine {
       comparedBandIds.add(comp.bandId2);
     });
 
-    // Sort bands by preference weights (higher weight first), excluding compared bands
-    const sortedBands = allBands
+    // Calculate preference scores for all bands
+    const bandScores = allBands
       .filter(b => !comparedBandIds.has(b.id))
-      .sort((a, b) => {
-        const scoreA = a.genre.reduce((sum, g) => sum + (session.preferenceWeights[g] || 0), 0);
-        const scoreB = b.genre.reduce((sum, g) => sum + (session.preferenceWeights[g] || 0), 0);
-        return scoreB - scoreA;
-      });
+      .map(band => ({
+        band,
+        score: band.genre.reduce((sum, g) => sum + (session.preferenceWeights[g] || 0), 0)
+      }))
+      .sort((a, b) => b.score - a.score);
 
-    // Get top recommendations
-    const topBands = sortedBands.slice(0, this.maxRecommendations);
+    // Separate bands by tier
+    const tier1Bands = bandScores.filter(bs => bs.band.tier === 'well-known');
+    const tier2Bands = bandScores.filter(bs => bs.band.tier === 'popular');
+    const tier3Bands = bandScores.filter(bs => bs.band.tier === 'niche');
 
-    topBands.forEach(band => {
-      const score = band.genre.reduce((sum, g) => sum + (session.preferenceWeights[g] || 0), 0);
-      const confidence = Math.min(0.95, 0.6 + (score * 0.15));
+    // Ensure tier diversity in recommendations
+    const selectedBands: Array<{ band: Band; score: number }> = [];
+    const minTier1 = Math.min(2, tier1Bands.length);
+    const minTier2 = Math.min(3, tier2Bands.length);
+
+    // Add top Tier 1 bands
+    for (let i = 0; i < minTier1 && i < tier1Bands.length; i++) {
+      selectedBands.push(tier1Bands[i]);
+    }
+
+    // Add top Tier 2 bands
+    for (let i = 0; i < minTier2 && i < tier2Bands.length; i++) {
+      selectedBands.push(tier2Bands[i]);
+    }
+
+    // Fill remaining spots with highest-scoring bands from any tier
+    const remainingNeeded = this.maxRecommendations - selectedBands.length;
+    if (remainingNeeded > 0) {
+      const allRemainingBands = bandScores.filter(bs =>
+        !selectedBands.some(sb => sb.band.id === bs.band.id)
+      );
+
+      for (let i = 0; i < remainingNeeded && i < allRemainingBands.length; i++) {
+        selectedBands.push(allRemainingBands[i]);
+      }
+    }
+
+    // Generate recommendations with tier-based confidence scores
+    selectedBands.forEach(({ band, score }) => {
+      // Base confidence from preference score
+      let confidence = 0.6 + (score * 0.15);
+
+      // Add tier bonus
+      if (band.tier === 'well-known') {
+        confidence += 0.05;
+      } else if (band.tier === 'popular') {
+        confidence += 0.02;
+      }
+
+      // Cap confidence at 0.95
+      confidence = Math.min(0.95, confidence);
 
       recommendations.push({
         band,
@@ -279,6 +347,106 @@ export class RecommendationEngine {
       band1: shuffled[0],
       band2: shuffled[1]
     };
+  }
+
+  private selectTieredPair(genre: string, comparisonHistory: Comparison[] = []): ComparisonPair | null {
+    const allBands = this.db.getBandsByGenre(genre);
+
+    // Separate bands by tier
+    const tier1Bands = allBands.filter(b => b.tier === 'well-known');
+    const tier2Bands = allBands.filter(b => b.tier === 'popular');
+    const tier3Bands = allBands.filter(b => b.tier === 'niche');
+
+    // Log band counts
+    console.log(`Tiered selection - Tier 1: ${tier1Bands.length}, Tier 2: ${tier2Bands.length}, Tier 3: ${tier3Bands.length}`);
+
+    // Get all previous pairs
+    const previousPairs = new Set(
+      comparisonHistory.map((c: Comparison) => {
+        const pair = [c.bandId1, c.bandId2].sort();
+        return pair.join('|');
+      })
+    );
+
+    // Phase 1: Try Tier 1 × Tier 1 comparisons
+    const tier1Pair = this.findNewPair(tier1Bands, previousPairs);
+    if (tier1Pair) {
+      console.log('Selected Tier 1 × Tier 1 pair');
+      return tier1Pair;
+    }
+
+    // Phase 2: Try Tier 1 × Tier 2 comparisons
+    const tier1Tier2Pair = this.findMixedPair(tier1Bands, tier2Bands, previousPairs);
+    if (tier1Tier2Pair) {
+      console.log('Selected Tier 1 × Tier 2 pair');
+      return tier1Tier2Pair;
+    }
+
+    // Phase 3: Try Tier 2 × Tier 2 comparisons
+    const tier2Pair = this.findNewPair(tier2Bands, previousPairs);
+    if (tier2Pair) {
+      console.log('Selected Tier 2 × Tier 2 pair');
+      return tier2Pair;
+    }
+
+    // No more comparisons available (Tier 3 bands are never used for comparisons)
+    console.log('No more comparison pairs available');
+    return null;
+  }
+
+  private findNewPair(bands: Band[], previousPairs: Set<string>): ComparisonPair | null {
+    if (bands.length < 2) {
+      return null;
+    }
+
+    let attempts = 0;
+    const maxAttempts = 100;
+
+    while (attempts < maxAttempts) {
+      const shuffled = [...bands].sort(() => Math.random() - 0.5);
+      const band1 = shuffled[0];
+      const band2 = shuffled[1];
+
+      if (band1.id !== band2.id) {
+        const pairKey = [band1.id, band2.id].sort().join('|');
+
+        if (!previousPairs.has(pairKey)) {
+          return { band1, band2 };
+        }
+      }
+
+      attempts++;
+    }
+
+    return null;
+  }
+
+  private findMixedPair(bands1: Band[], bands2: Band[], previousPairs: Set<string>): ComparisonPair | null {
+    if (bands1.length === 0 || bands2.length === 0) {
+      return null;
+    }
+
+    let attempts = 0;
+    const maxAttempts = 100;
+
+    while (attempts < maxAttempts) {
+      const shuffled1 = [...bands1].sort(() => Math.random() - 0.5);
+      const shuffled2 = [...bands2].sort(() => Math.random() - 0.5);
+      const band1 = shuffled1[0];
+      const band2 = shuffled2[0];
+
+      if (band1.id !== band2.id) {
+        const pairKey = [band1.id, band2.id].sort().join('|');
+
+        if (!previousPairs.has(pairKey)) {
+          return { band1, band2 };
+        }
+      }
+
+      attempts++;
+    }
+
+    return null;
   }
 
   private generateSessionId(): string {

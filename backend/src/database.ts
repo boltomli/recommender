@@ -27,6 +27,7 @@ export class DatabaseManager {
         albums TEXT NOT NULL,
         description TEXT NOT NULL,
         style_notes TEXT,
+        tier TEXT NOT NULL DEFAULT 'niche',
         embedding BLOB,
         created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
       )
@@ -47,6 +48,7 @@ export class DatabaseManager {
     // Create indexes
     this.db.exec(`
       CREATE INDEX IF NOT EXISTS idx_bands_genre ON bands(genre);
+      CREATE INDEX IF NOT EXISTS idx_bands_tier ON bands(tier);
       CREATE INDEX IF NOT EXISTS idx_sessions_genre ON sessions(genre);
     `);
   }
@@ -54,8 +56,8 @@ export class DatabaseManager {
   // Band operations
   createBand(band: Band): void {
     const stmt = this.db.prepare(`
-      INSERT OR REPLACE INTO bands (id, name, genre, era, albums, description, style_notes, embedding)
-      VALUES (?, ?, ?, ?, ?, ?, ?, ?)
+      INSERT OR REPLACE INTO bands (id, name, genre, era, albums, description, style_notes, tier, embedding)
+      VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)
     `);
     stmt.run(
       band.id,
@@ -65,6 +67,7 @@ export class DatabaseManager {
       JSON.stringify(band.albums),
       band.description,
       band.styleNotes || null,
+      band.tier || 'niche',
       band.embedding || null
     );
   }
@@ -82,6 +85,7 @@ export class DatabaseManager {
       albums: JSON.parse(row.albums),
       description: row.description,
       styleNotes: row.style_notes,
+      tier: row.tier || undefined,
       embedding: row.embedding
     };
   }
@@ -97,6 +101,7 @@ export class DatabaseManager {
       albums: JSON.parse(row.albums),
       description: row.description,
       styleNotes: row.style_notes,
+      tier: row.tier || undefined,
       embedding: row.embedding
     }));
   }
@@ -112,6 +117,23 @@ export class DatabaseManager {
       albums: JSON.parse(row.albums),
       description: row.description,
       styleNotes: row.style_notes,
+      tier: row.tier || undefined,
+      embedding: row.embedding
+    }));
+  }
+
+  getBandsByTier(genre: string, tier: string): Band[] {
+    const stmt = this.db.prepare('SELECT * FROM bands WHERE genre LIKE ? AND tier = ?');
+    const rows = stmt.all(`%${genre}%`, tier) as any[];
+    return rows.map(row => ({
+      id: row.id,
+      name: row.name,
+      genre: JSON.parse(row.genre),
+      era: row.era,
+      albums: JSON.parse(row.albums),
+      description: row.description,
+      styleNotes: row.style_notes,
+      tier: row.tier || undefined,
       embedding: row.embedding
     }));
   }

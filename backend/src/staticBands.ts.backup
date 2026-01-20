@@ -9,8 +9,7 @@ export const STATIC_BANDS: Record<string, Band[]> = {
       era: '1980s',
       albums: ['Master of Puppets', 'Ride the Lightning', '...And Justice for All'],
       description: 'One of the most influential thrash metal bands, known for their complex song structures and aggressive sound.',
-      styleNotes: 'Evolved from pure thrash to more progressive and alternative styles in the 1990s and 2000s.',
-      tier: 'well-known'
+      styleNotes: 'Evolved from pure thrash to more progressive and alternative styles in the 1990s and 2000s.'
     },
     {
       id: 'band_slayer_1',
@@ -19,8 +18,7 @@ export const STATIC_BANDS: Record<string, Band[]> = {
       era: '1980s',
       albums: ['Reign in Blood', 'South of Heaven', 'Seasons in the Abyss'],
       description: 'Known for their fast, aggressive style and dark lyrical themes.',
-      styleNotes: 'Maintained consistent thrash/death style throughout their career.',
-      tier: 'well-known'
+      styleNotes: 'Maintained consistent thrash/death style throughout their career.'
     },
     {
       id: 'band_megadeth_1',
@@ -29,8 +27,7 @@ export const STATIC_BANDS: Record<string, Band[]> = {
       era: '1980s',
       albums: ['Rust in Peace', 'Peace Sells... but Who\'s Buying?', 'Countdown to Extinction'],
       description: 'Founded by former Metallica guitarist Dave Mustaine, known for technical proficiency and political lyrics.',
-      styleNotes: 'Evolved from thrash to more mainstream metal while maintaining technical complexity.',
-      tier: 'well-known'
+      styleNotes: 'Evolved from thrash to more mainstream metal while maintaining technical complexity.'
     },
     {
       id: 'band_anthrax_1',
@@ -39,8 +36,7 @@ export const STATIC_BANDS: Record<string, Band[]> = {
       era: '1980s',
       albums: ['Among the Living', 'Spreading the Disease', 'Persistence of Time'],
       description: 'One of the "Big Four" thrash bands, known for incorporating rap and punk elements.',
-      styleNotes: 'Experimented with different styles including rap-metal crossover.',
-      tier: 'well-known'
+      styleNotes: 'Experimented with different styles including rap-metal crossover.'
     },
     {
       id: 'band_exodus_1',

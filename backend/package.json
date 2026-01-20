@@ -10,7 +10,10 @@
     "test": "echo \"Error: no test specified\" && exit 1",
     "export-data": "ts-node src/cli.ts export-data",
     "import-data": "ts-node src/cli.ts import-data",
-    "generate-recommendations": "ts-node src/cli.ts generate-recommendations"
+    "generate-recommendations": "ts-node src/cli.ts generate-recommendations",
+    "generate-bands": "ts-node src/generateBandData.ts",
+    "fill-bands": "ts-node src/fillBandsByCategory.ts",
+    "migrate-db": "ts-node src/migrateDatabase.ts"
   },
   "keywords": [],
   "author": "",

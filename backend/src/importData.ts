@@ -77,7 +77,8 @@ export class DataImporter {
         era: b.era,
         albums: Array.isArray(b.albums) ? b.albums : [b.albums],
         description: b.description,
-        styleNotes: b.styleNotes
+        styleNotes: b.styleNotes,
+        tier: b.tier || 'niche'
       }));
     } catch (error) {
       throw new Error(`Failed to parse LLM response: ${error instanceof Error ? error.message : String(error)}`);
