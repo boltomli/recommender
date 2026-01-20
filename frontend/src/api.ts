@@ -179,7 +179,8 @@ async function loadStaticData(): Promise<StaticData> {
 
     // Calculate counts from bands data
     const counts: Record<string, number> = {};
-    bandsData.bands.forEach((band: Band) => {
+    const bandsArray = Array.isArray(bandsData) ? bandsData : bandsData.bands || [];
+    bandsArray.forEach((band: Band) => {
       band.genre.forEach((g: string) => {
         counts[g] = (counts[g] || 0) + 1;
       });
@@ -194,8 +195,8 @@ async function loadStaticData(): Promise<StaticData> {
     staticDataCache = {
       genres: filteredGenres,
       counts: counts,
-      bands: bandsData.bands,
-      recommendations: recommendationsData.recommendations
+      bands: bandsArray,
+      recommendations: recommendationsData.recommendations || {}
     };
 
     return staticDataCache;

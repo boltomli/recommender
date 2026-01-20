@@ -66,6 +66,11 @@ export interface ExpandGenresConfig {
   cachePath: string;
 }
 
+export interface CleanupConfig {
+  enabled: boolean;
+  minBandsThreshold: number;
+}
+
 export interface AppConfig {
   llm: LLMConfig;
   embedding: EmbeddingConfig;
@@ -76,6 +81,7 @@ export interface AppConfig {
   };
   tierUpdate: TierUpdateConfig;
   expandGenres: ExpandGenresConfig;
+  cleanup: CleanupConfig;
 }
 
 export interface LLMMessage {

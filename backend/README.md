@@ -193,6 +193,40 @@ npm run sync-data -- --backup --verify
 npm run sync-data -- --dry-run
 ```
 
+### 流派清理
+
+清理乐队数量不足的流派，移除小流派标签或删除仅属于小流派的乐队：
+
+```bash
+npm run cleanup-genres
+```
+
+选项：
+- `--dry-run` - 模拟运行，预览清理操作
+- `--backup` - 清理前备份所有数据文件
+- `--min-bands <n>` - 最小乐队数量阈值（默认：10）
+- `--help` - 显示帮助信息
+
+示例：
+```bash
+# 预览清理操作
+npm run cleanup-genres -- --dry-run
+
+# 执行清理并备份
+npm run cleanup-genres -- --backup
+
+# 设置最小数量为 15
+npm run cleanup-genres -- --min-bands 15
+```
+
+清理逻辑：
+1. 统计每个流派的乐队数量
+2. 识别所有少于阈值的流派（小流派）
+3. 对于每个乐队：
+   - 如果乐队有其他流派标签，则移除小流派标签，保留其他标签
+   - 如果乐队只有小流派标签，则从数据库中删除该乐队
+4. 同步清理后的数据到所有数据源（staticBands.ts、bands.json、genres.json）
+
 ### 完整更新流程
 
 执行完整的更新流程，包括 tier 更新、流派扩展、重名处理和数据同步：
@@ -334,6 +368,10 @@ backend/
 - `expandGenres.enabled` - 是否启用流派扩展功能（默认：false）
 - `expandGenres.minBandsForGenre` - 每个流派的最少乐队数量（默认：50）
 - `expandGenres.cachePath` - 流派扩展缓存路径
+
+### 流派清理配置
+- `cleanup.enabled` - 是否启用流派清理功能（默认：true）
+- `cleanup.minBandsThreshold` - 每个流派的最小乐队数量阈值（默认：10）
 
 ### 启用功能
 

@@ -72,36 +72,33 @@ const selectGenre = (genre: string) => {
 
 .btn-genre {
   padding: 1.5rem 2rem;
-  font-size: 1.25rem;
-  font-weight: 600;
-  text-transform: uppercase;
-  letter-spacing: 1px;
-  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-  border: none;
-  color: white;
-  border-radius: 8px;
-  transition: all 0.3s ease;
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
+  font-size: 1.1rem;
+  font-weight: 500;
+  text-transform: capitalize;
+  letter-spacing: 0.5px;
+  background: #3a3a3a;
+  border: 1px solid #555;
+  color: #e0e0e0;
+  border-radius: 6px;
+  transition: background-color 0.2s ease, border-color 0.2s ease;
 }
 
 .btn-genre:hover {
-  transform: translateY(-3px);
-  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.4);
-  background: linear-gradient(135deg, #764ba2 0%, #667eea 100%);
+  background: #4a4a4a;
+  border-color: #666;
 }
 
 .btn-genre:active {
-  transform: translateY(-1px);
+  background: #505050;
 }
 
 h1 {
-  font-weight: 700;
-  color: #fff;
-  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+  font-weight: 600;
+  color: #f0f0f0;
 }
 
 p {
-  color: #ccc;
+  color: #b0b0b0;
   font-size: 1.1rem;
 }
 </style>

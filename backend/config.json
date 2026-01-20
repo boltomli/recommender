@@ -12,6 +12,7 @@
     "path": "./data/bands.db"
   },
   "app": {
+    "maxComparisons": 10,
     "maxRecommendations": 5
   },
   "tierUpdate": {
@@ -22,5 +23,9 @@
     "enabled": true,
     "minBandsForGenre": 30,
     "cachePath": "./cache/genre-expansion"
+  },
+  "cleanup": {
+    "enabled": true,
+    "minBandsThreshold": 10
   }
 }

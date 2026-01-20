@@ -138,6 +138,16 @@ export class DatabaseManager {
     }));
   }
 
+  deleteBand(id: string): void {
+    const stmt = this.db.prepare('DELETE FROM bands WHERE id = ?');
+    stmt.run(id);
+  }
+
+  updateBandGenres(id: string, genres: string[]): void {
+    const stmt = this.db.prepare('UPDATE bands SET genre = ? WHERE id = ?');
+    stmt.run(JSON.stringify(genres), id);
+  }
+
   // Session operations
   createSession(session: Session): void {
     const stmt = this.db.prepare(`

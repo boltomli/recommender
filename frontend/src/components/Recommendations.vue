@@ -104,14 +104,13 @@ const restart = () => {
 }
 
 .recommendations h1 {
-  color: #fff;
-  font-weight: 700;
-  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+  color: #f0f0f0;
+  font-weight: 600;
   margin-bottom: 0.5rem;
 }
 
 .recommendations p {
-  color: #ccc;
+  color: #b0b0b0;
   font-size: 1.1rem;
   margin-bottom: 1.5rem;
 }
@@ -126,46 +125,44 @@ const restart = () => {
 
 .recommendation-card {
   position: relative;
-  background: linear-gradient(145deg, #2a2a2a 0%, #1a1a1a 100%);
-  border: 2px solid #444;
-  border-radius: 12px;
+  background: #2d2d2d;
+  border: 1px solid #444;
+  border-radius: 8px;
   padding: 1.25rem 1.25rem 1.25rem 1.25rem;
-  transition: all 0.3s ease;
+  transition: border-color 0.2s ease;
   overflow: visible;
 }
 
 .recommendation-card:hover {
-  transform: translateY(-5px);
-  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.4);
+  border-color: #555;
 }
 
 .recommendation-card.confidence-high {
-  border-color: #10b981;
+  border-color: #5a8a5a;
 }
 
 .recommendation-card.confidence-medium {
-  border-color: #f59e0b;
+  border-color: #8a7a4a;
 }
 
 .recommendation-card.confidence-low {
-  border-color: #6b7280;
+  border-color: #6a6a6a;
 }
 
 .rank-badge {
   position: absolute;
-  top: -10px;
+  top: -8px;
   left: 15px;
-  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-  color: white;
-  width: 40px;
-  height: 40px;
-  border-radius: 50%;
+  background: #4a4a4a;
+  color: #e0e0e0;
+  width: 36px;
+  height: 36px;
+  border-radius: 4px;
   display: flex;
   align-items: center;
   justify-content: center;
-  font-weight: 700;
-  font-size: 1rem;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+  font-weight: 600;
+  font-size: 0.95rem;
   z-index: 10;
 }
 
@@ -176,14 +173,14 @@ const restart = () => {
 }
 
 .recommendation-reason strong {
-  color: #fff;
+  color: #d0d0d0;
   display: block;
   margin-bottom: 0.35rem;
   font-size: 0.95rem;
 }
 
 .recommendation-reason p {
-  color: #ccc;
+  color: #a0a0a0;
   margin-bottom: 0.75rem;
   line-height: 1.5;
   font-size: 0.95rem;
@@ -197,7 +194,7 @@ const restart = () => {
 }
 
 .confidence-label {
-  color: #999;
+  color: #888;
   font-size: 0.8rem;
   white-space: nowrap;
 }
@@ -205,20 +202,20 @@ const restart = () => {
 .confidence-bar {
   flex: 1;
   height: 6px;
-  background: #333;
-  border-radius: 4px;
+  background: #3a3a3a;
+  border-radius: 3px;
   overflow: hidden;
 }
 
 .confidence-fill {
   height: 100%;
-  background: linear-gradient(90deg, #10b981 0%, #059669 100%);
-  transition: width 0.5s ease;
+  background: #5a8a5a;
+  transition: width 0.3s ease;
 }
 
 .confidence-value {
-  color: #fff;
-  font-weight: 600;
+  color: #d0d0d0;
+  font-weight: 500;
   min-width: 45px;
   text-align: right;
   font-size: 0.9rem;
@@ -231,26 +228,25 @@ const restart = () => {
   right: 0;
   text-align: center;
   padding: 1.5rem;
-  background: linear-gradient(to top, rgba(15, 15, 35, 0.95) 0%, rgba(15, 15, 35, 0.8) 70%, transparent 100%);
+  background: #1a1a1a;
+  border-top: 1px solid #333;
   z-index: 100;
 }
 
 .btn-restart {
   padding: 0.875rem 2rem;
   font-size: 1rem;
-  font-weight: 600;
-  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-  border: none;
-  color: white;
-  border-radius: 8px;
-  transition: all 0.3s ease;
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
+  font-weight: 500;
+  background: #3a3a3a;
+  border: 1px solid #555;
+  color: #e0e0e0;
+  border-radius: 6px;
+  transition: background-color 0.2s ease, border-color 0.2s ease;
 }
 
 .btn-restart:hover {
-  transform: translateY(-2px);
-  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.4);
-  background: linear-gradient(135deg, #764ba2 0%, #667eea 100%);
+  background: #4a4a4a;
+  border-color: #666;
 }
 
 @media (max-width: 768px) {

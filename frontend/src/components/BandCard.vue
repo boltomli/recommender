@@ -51,12 +51,12 @@ const onLeave = () => {
 
 <style scoped>
 .band-card {
-  background: linear-gradient(145deg, #2a2a2a 0%, #1a1a1a 100%);
-  border: 2px solid #444;
-  border-radius: 12px;
+  background: #2d2d2d;
+  border: 1px solid #444;
+  border-radius: 8px;
   padding: 1.25rem;
   cursor: pointer;
-  transition: all 0.3s ease;
+  transition: border-color 0.2s ease;
   height: 100%;
   display: flex;
   flex-direction: column;
@@ -64,14 +64,12 @@ const onLeave = () => {
 }
 
 .band-card:hover {
-  border-color: #667eea;
-  transform: translateY(-3px);
-  box-shadow: 0 6px 12px rgba(102, 126, 234, 0.3);
+  border-color: #5a5a5a;
 }
 
 .band-card.selected {
-  border-color: #667eea;
-  box-shadow: 0 0 20px rgba(102, 126, 234, 0.5);
+  border-color: #666;
+  background: #333;
 }
 
 .band-card.compact {
@@ -79,8 +77,8 @@ const onLeave = () => {
 }
 
 .band-card h3 {
-  color: #fff;
-  font-weight: 700;
+  color: #f0f0f0;
+  font-weight: 600;
   margin-bottom: 0.5rem;
   font-size: 1.35rem;
 }
@@ -101,10 +99,10 @@ const onLeave = () => {
 }
 
 .badge {
-  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-  color: white;
+  background: #4a4a4a;
+  color: #e0e0e0;
   padding: 0.2rem 0.6rem;
-  border-radius: 20px;
+  border-radius: 4px;
   font-size: 0.8rem;
   font-weight: 500;
 }
@@ -117,13 +115,13 @@ const onLeave = () => {
 }
 
 .band-info p {
-  color: #ccc;
+  color: #b0b0b0;
   margin: 0;
   line-height: 1.5;
 }
 
 .band-info strong {
-  color: #fff;
+  color: #d0d0d0;
 }
 
 .era {
@@ -158,7 +156,7 @@ const onLeave = () => {
 .albums ul {
   margin: 0.35rem 0 0 1.1rem;
   padding: 0;
-  color: #bbb;
+  color: #a0a0a0;
 }
 
 .albums li {
@@ -167,12 +165,12 @@ const onLeave = () => {
 }
 
 .style-notes {
-  background: rgba(102, 126, 234, 0.1);
+  background: #3a3a3a;
   padding: 0.6rem;
-  border-radius: 8px;
-  border-left: 3px solid #667eea;
+  border-radius: 4px;
+  border-left: 2px solid #555;
   font-size: 0.85rem;
-  color: #ddd;
+  color: #c0c0c0;
   line-height: 1.4;
   margin-top: 0.5rem;
 }
