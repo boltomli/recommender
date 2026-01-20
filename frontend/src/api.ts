@@ -2,6 +2,7 @@ import axios from 'axios';
 
 const API_BASE_URL = import.meta.env.VITE_API_URL || 'http://localhost:3001';
 const API_MODE = import.meta.env.VITE_API_MODE === 'true';
+const MIN_BANDS_PER_GENRE = Number(import.meta.env.VITE_MIN_BANDS_PER_GENRE) || 30;
 
 const api = axios.create({
   baseURL: API_BASE_URL,
@@ -36,6 +37,7 @@ export interface Recommendation {
 
 interface StaticData {
   genres: string[];
+  counts: Record<string, number>;
   bands: Band[];
   recommendations: Record<string, Band[]>;
 }
@@ -175,8 +177,23 @@ async function loadStaticData(): Promise<StaticData> {
     const bandsData = await bandsResponse.json();
     const recommendationsData = await recommendationsResponse.json();
 
+    // Calculate counts from bands data
+    const counts: Record<string, number> = {};
+    bandsData.bands.forEach((band: Band) => {
+      band.genre.forEach((g: string) => {
+        counts[g] = (counts[g] || 0) + 1;
+      });
+    });
+
+    // Filter genres with insufficient bands
+    const filteredGenres = genresData.genres.filter((genre: string) => {
+      const count = counts[genre] || 0;
+      return count >= MIN_BANDS_PER_GENRE;
+    });
+
     staticDataCache = {
-      genres: genresData.genres,
+      genres: filteredGenres,
+      counts: counts,
       bands: bandsData.bands,
       recommendations: recommendationsData.recommendations
     };
@@ -192,7 +209,15 @@ export const apiService = {
   async getGenres(): Promise<string[]> {
     if (API_MODE) {
       const response = await api.get('/api/genres');
-      return response.data.genres;
+      const genresData = response.data;
+      const genres = genresData.genres || [];
+      const counts = genresData.counts || {};
+      
+      // Filter genres with insufficient bands
+      return genres.filter((genre: string) => {
+        const count = counts[genre] || 0;
+        return count >= MIN_BANDS_PER_GENRE;
+      });
     } else {
       const data = await loadStaticData();
       return data.genres;
@@ -236,7 +261,8 @@ export const apiService = {
       // Filter out selected bands
       const availableBands = bands.filter(band => !session.selectedBands.has(band.id));
 
-      if (availableBands.length < 2) {
+      // If 5 or fewer bands remain, go directly to recommendations
+      if (availableBands.length <= 5) {
         return { done: true };
       }
 

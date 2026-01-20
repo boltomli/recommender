@@ -7,6 +7,23 @@ export class LLMClient {
     this.config = config;
   }
 
+  private cleanLLMResponse(content: string): string {
+    // Remove thinking tags and their content
+    let cleaned = content.replace(/[\s\S]*?<\/think>/gi, '');
+    
+    // Remove any other XML-like tags that might be present
+    cleaned = cleaned.replace(/<[^>]+>/g, '');
+    
+    // Remove markdown code block markers (```json, ```JSON, ```)
+    cleaned = cleaned.replace(/```(?:json|JSON)?\s*/g, '');
+    cleaned = cleaned.replace(/```\s*$/g, '');
+    
+    // Trim whitespace
+    cleaned = cleaned.trim();
+    
+    return cleaned;
+  }
+
   async generateBandInfo(genre: string, knownBands: string[] = [], bandName?: string): Promise<any> {
     const prompt = bandName
       ? `Generate detailed information about the metal band "${bandName}" in the ${genre} subgenre.`
@@ -32,7 +49,7 @@ export class LLMClient {
 
     try {
       const response = await this.callLLM(messages);
-      const content = response.choices[0]?.message?.content || '{}';
+      const content = this.cleanLLMResponse(response.choices[0]?.message?.content || '{}');
       return JSON.parse(content);
     } catch (error) {
       console.error('Error generating band info:', error);
@@ -66,7 +83,7 @@ export class LLMClient {
 
     try {
       const response = await this.callLLM(messages);
-      const content = response.choices[0]?.message?.content || '{}';
+      const content = this.cleanLLMResponse(response.choices[0]?.message?.content || '{}');
       const result = JSON.parse(content);
       return [result.band1, result.band2];
     } catch (error) {
@@ -127,7 +144,7 @@ export class LLMClient {
 
     try {
       const response = await this.callLLM(messages);
-      const content = response.choices[0]?.message?.content || '{}';
+      const content = this.cleanLLMResponse(response.choices[0]?.message?.content || '{}');
       const result = JSON.parse(content);
       return result.recommendations || [];
     } catch (error) {
@@ -166,11 +183,114 @@ export class LLMClient {
 
     try {
       const response = await this.callLLM(messages);
-      const content = response.choices[0]?.message?.content || '{}';
+      const content = this.cleanLLMResponse(response.choices[0]?.message?.content || '{}');
       const result = JSON.parse(content);
       return result.suggestions || [];
     } catch (error) {
       console.error('Error generating real-time suggestions:', error);
+      return [];
+    }
+  }
+
+  async updateBandTier(bandName: string, genre: string, currentDescription: string): Promise<{ tier: string; reasoning: string }> {
+    const messages: LLMMessage[] = [
+      {
+        role: 'system',
+        content: 'You are a metal music expert specializing in band classification. Evaluate the popularity and influence of metal bands and assign them to one of three tiers: "well-known" (globally famous, mainstream recognition), "popular" (well-known within metal community, significant following), or "niche" (underground, limited recognition). Your response must be valid JSON ONLY, no other text or formatting. Format: {"tier": "well-known|popular|niche", "reasoning": "Brief explanation for the tier assignment"}'
+      },
+      {
+        role: 'user',
+        content: `Evaluate the tier for the metal band "${bandName}" in the ${genre} subgenre. Description: ${currentDescription}. Consider their mainstream recognition, influence on the genre, and fanbase size. Return ONLY valid JSON, no explanations or additional text.`
+      }
+    ];
+
+    try {
+      const response = await this.callLLM(messages);
+      const content = this.cleanLLMResponse(response.choices[0]?.message?.content || '{}');
+      
+      try {
+        const result = JSON.parse(content);
+        return {
+          tier: result.tier || 'niche',
+          reasoning: result.reasoning || 'No reasoning provided'
+        };
+      } catch (parseError) {
+        console.error(`Failed to parse tier evaluation for ${bandName} as JSON`);
+        console.error('Response preview:', content.substring(0, 200));
+        return {
+          tier: 'niche',
+          reasoning: 'Failed to parse LLM response, using default tier'
+        };
+      }
+    } catch (error) {
+      console.error(`Error updating band tier for ${bandName}:`, error);
+      return {
+        tier: 'niche',
+        reasoning: `Error occurred: ${error instanceof Error ? error.message : String(error)}`
+      };
+    }
+  }
+
+  async generateBandsForExpansion(
+    genre: string,
+    excludeBands: string[]
+  ): Promise<{ name: string; genre: string[]; era: string; albums: string[]; description: string; tier: string } | null> {
+    const messages: LLMMessage[] = [
+      {
+        role: 'system',
+        content: 'You are a metal music expert. Generate detailed information about ONE metal band. Your response must be valid JSON ONLY, no other text or formatting. Format: {"name": "Band Name", "genre": ["genre1", "genre2"], "era": "1980s", "albums": ["Album1", "Album2"], "description": "Detailed description", "tier": "well-known|popular|niche"}'
+      },
+      {
+        role: 'user',
+        content: `Generate ONE prominent metal band in the ${genre} subgenre. IMPORTANT: Do NOT generate any of these bands: ${excludeBands.join(', ')}. Generate a NEW band that is not in this list. Return ONLY valid JSON, no explanations or additional text.`
+      }
+    ];
+
+    try {
+      const response = await this.callLLM(messages);
+      const content = this.cleanLLMResponse(response.choices[0]?.message?.content || '{}');
+      
+      try {
+        const result = JSON.parse(content);
+        return result || null;
+      } catch (parseError) {
+        console.error('Failed to parse LLM response as JSON');
+        console.error('Response preview:', content.substring(0, 200));
+        return null;
+      }
+    } catch (error) {
+      console.error('Error generating band for expansion:', error);
+      return null;
+    }
+  }
+
+  async generateDistinguishingInfo(bandNames: string[], genre: string): Promise<Array<{ name: string; distinguishingInfo: string }>> {
+    const bandList = bandNames.map(name => `"${name}"`).join(', ');
+    const messages: LLMMessage[] = [
+      {
+        role: 'system',
+        content: 'You are a metal music expert. Generate distinguishing information for bands with the same name. Your response must be valid JSON ONLY, no other text or formatting. Format: {"bands": [{"name": "Band Name", "distinguishingInfo": "Country of origin, active era, or other unique identifier"}]}'
+      },
+      {
+        role: 'user',
+        content: `Generate distinguishing information for these metal bands in the ${genre} subgenre that have the same name: ${bandList}. For each band, provide their country of origin, active era, or other unique information to help distinguish them. Return ONLY valid JSON, no explanations or additional text.`
+      }
+    ];
+
+    try {
+      const response = await this.callLLM(messages);
+      const content = this.cleanLLMResponse(response.choices[0]?.message?.content || '{}');
+      
+      try {
+        const result = JSON.parse(content);
+        return result.bands || [];
+      } catch (parseError) {
+        console.error('Failed to parse distinguishing info as JSON');
+        console.error('Response preview:', content.substring(0, 200));
+        return [];
+      }
+    } catch (error) {
+      console.error('Error generating distinguishing info:', error);
       return [];
     }
   }

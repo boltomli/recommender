@@ -100,7 +100,7 @@ const restart = () => {
 .recommendations {
   min-height: 100vh;
   padding: 2rem 1rem;
-  padding-bottom: 6rem;
+  padding-bottom: 8rem;
 }
 
 .recommendations h1 {

@@ -82,6 +82,131 @@ GENRE=death COUNT=10 npm run import-data
 npm run generate-recommendations
 ```
 
+### Tier 更新
+
+使用 LLM 更新所有乐队的 tier 信息（well-known/popular/niche）：
+
+```bash
+npm run update-tiers
+```
+
+选项：
+- `--genre <name>` - 仅更新指定流派
+- `--dry-run` - 模拟运行，不实际更新
+- `--force` - 强制更新，忽略缓存
+- `--batch-size <n>` - 批处理大小（默认：10）
+- `--backup` - 更新前备份数据库
+- `--help` - 显示帮助信息
+
+示例：
+```bash
+# 更新所有乐队
+npm run update-tiers
+
+# 仅更新 thrash 流派
+npm run update-tiers -- --genre thrash
+
+# 模拟运行
+npm run update-tiers -- --dry-run
+
+# 强制更新并备份
+npm run update-tiers -- --force --backup
+```
+
+### 流派扩展
+
+为乐队数量不足的流派生成更多乐队：
+
+```bash
+npm run expand-genres
+```
+
+选项：
+- `--genre <name>` - 仅扩展指定流派
+- `--target-count <n>` - 目标乐队数量（覆盖配置）
+- `--dry-run` - 模拟运行
+- `--force` - 强制重新生成，忽略缓存
+- `--help` - 显示帮助信息
+
+示例：
+```bash
+# 扩展所有不足的流派
+npm run expand-genres
+
+# 仅扩展 folk 流派
+npm run expand-genres -- --genre folk
+
+# 设置目标数量为 100
+npm run expand-genres -- --target-count 100
+```
+
+### 重名处理
+
+检测并处理重名乐队，添加区分信息：
+
+```bash
+npm run handle-duplicates
+```
+
+选项：
+- `--genre <name>` - 仅处理指定流派
+- `--dry-run` - 模拟运行
+- `--auto-fix` - 自动修复，无需确认
+- `--help` - 显示帮助信息
+
+示例：
+```bash
+# 交互式处理所有重名
+npm run handle-duplicates
+
+# 自动修复所有重名
+npm run handle-duplicates -- --auto-fix
+
+# 仅处理 thrash 流派
+npm run handle-duplicates -- --genre thrash
+```
+
+### 数据同步
+
+将数据库数据同步到所有存储位置：
+
+```bash
+npm run sync-data
+```
+
+选项：
+- `--source <db|static>` - 数据源（默认：db）
+- `--dry-run` - 模拟运行
+- `--backup` - 同步前备份文件
+- `--verify` - 同步后验证数据一致性
+- `--help` - 显示帮助信息
+
+示例：
+```bash
+# 从数据库同步到所有位置
+npm run sync-data
+
+# 同步并验证
+npm run sync-data -- --backup --verify
+
+# 模拟运行
+npm run sync-data -- --dry-run
+```
+
+### 完整更新流程
+
+执行完整的更新流程，包括 tier 更新、流派扩展、重名处理和数据同步：
+
+```bash
+npm run full-update
+```
+
+此命令会依次执行：
+1. 更新所有乐队的 tier 信息
+2. 扩展不足的流派
+3. 自动处理重名乐队
+4. 同步数据到所有存储位置（带备份和验证）
+
 ## API 端点
 
 ### 健康检查
@@ -176,19 +301,57 @@ backend/
 │   ├── exportData.ts           # 数据导出工具
 │   ├── importData.ts           # 数据导入工具
 │   ├── batchRecommendations.ts # 批量推荐生成器
-│   └── cli.ts                  # CLI 命令入口
+│   ├── cli.ts                  # CLI 命令入口
+│   ├── cacheManager.ts         # 缓存管理工具
+│   ├── updateBandTiers.ts      # Tier 更新脚本
+│   ├── expandGenreBands.ts     # 流派扩展脚本
+│   ├── handleDuplicateNames.ts # 重名处理脚本
+│   └── syncBandData.ts         # 数据同步脚本
 ├── data/                       # 数据库文件目录
+│   └── bands.db
+├── cache/                      # 缓存目录
+│   ├── tier-updates/           # Tier 更新缓存
+│   └── genre-expansion/        # 流派扩展缓存
 └── dist/                       # 编译输出目录
 ```
 
 ## 配置
 
 编辑 `config.json` 文件可以修改服务器配置：
-- 端口号
-- 数据库路径
-- LLM API 配置
-- 最大比较次数
-- 最大推荐数量
+
+### 基础配置
+- `llm.endpoint` - LLM API 端点
+- `llm.model` - LLM 模型名称
+- `llm.timeout` - LLM 请求超时时间（毫秒）
+- `database.path` - 数据库文件路径
+- `app.maxRecommendations` - 最大推荐数量
+
+### Tier 更新配置
+- `tierUpdate.enabled` - 是否启用 tier 更新功能（默认：false）
+- `tierUpdate.cachePath` - Tier 更新缓存路径
+
+### 流派扩展配置
+- `expandGenres.enabled` - 是否启用流派扩展功能（默认：false）
+- `expandGenres.minBandsForGenre` - 每个流派的最少乐队数量（默认：50）
+- `expandGenres.cachePath` - 流派扩展缓存路径
+
+### 启用功能
+
+要启用 tier 更新和流派扩展功能，需要修改 `config.json`：
+
+```json
+{
+  "tierUpdate": {
+    "enabled": true,
+    "cachePath": "./cache/tier-updates"
+  },
+  "expandGenres": {
+    "enabled": true,
+    "minBandsForGenre": 30,
+    "cachePath": "./cache/genre-expansion"
+  }
+}
+```
 
 ## 架构
 

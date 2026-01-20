@@ -1,1 +1,26 @@
-{"llm": {"endpoint": "http://localhost:1234", "model": "zai-org/glm-4.6v-flash", "timeout": 60000}, "embedding": {"enabled": false, "model": null}, "database": {"path": "./data/bands.db"}, "app": {"maxRecommendations": 5}}
+{
+  "llm": {
+    "endpoint": "http://localhost:1234",
+    "model": "zai-org/glm-4.6v-flash",
+    "timeout": 600000
+  },
+  "embedding": {
+    "enabled": false,
+    "model": null
+  },
+  "database": {
+    "path": "./data/bands.db"
+  },
+  "app": {
+    "maxRecommendations": 5
+  },
+  "tierUpdate": {
+    "enabled": true,
+    "cachePath": "./cache/tier-updates"
+  },
+  "expandGenres": {
+    "enabled": true,
+    "minBandsForGenre": 30,
+    "cachePath": "./cache/genre-expansion"
+  }
+}

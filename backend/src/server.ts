@@ -41,8 +41,8 @@ fastify.get('/health', async (request, reply) => {
 // Get available genres
 fastify.get('/api/genres', async (request, reply) => {
   try {
-    const genres = await engine.getGenres();
-    return { genres };
+    const result = await engine.getGenres();
+    return result;
   } catch (error) {
     reply.code(500).send({ error: 'Failed to get genres' });
   }

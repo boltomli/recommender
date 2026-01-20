@@ -55,6 +55,17 @@ export interface DatabaseConfig {
   path: string;
 }
 
+export interface TierUpdateConfig {
+  enabled: boolean;
+  cachePath: string;
+}
+
+export interface ExpandGenresConfig {
+  enabled: boolean;
+  minBandsForGenre: number;
+  cachePath: string;
+}
+
 export interface AppConfig {
   llm: LLMConfig;
   embedding: EmbeddingConfig;
@@ -63,6 +74,8 @@ export interface AppConfig {
     maxComparisons: number;
     maxRecommendations: number;
   };
+  tierUpdate: TierUpdateConfig;
+  expandGenres: ExpandGenresConfig;
 }
 
 export interface LLMMessage {

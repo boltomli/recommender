@@ -2,6 +2,7 @@ import { LLMClient } from './llmClient';
 import { DatabaseManager } from './database';
 import { Band, Session, Comparison, Recommendation, ComparisonPair } from './types';
 import { STATIC_BANDS } from './staticBands';
+import { getConfig } from './config';
 
 export class RecommendationEngine {
   private llmClient: LLMClient;
@@ -16,19 +17,28 @@ export class RecommendationEngine {
     this.maxRecommendations = maxRecommendations;
   }
 
-  async getGenres(): Promise<string[]> {
-    return [
-      'thrash',
-      'death',
-      'black',
-      'power',
-      'doom',
-      'progressive',
-      'heavy',
-      'speed',
-      'groove',
-      'folk'
-    ];
+  async getGenres(): Promise<{ genres: string[]; counts: Record<string, number> }> {
+    const config = getConfig();
+    const minBandsPerGenre = config.expandGenres.minBandsForGenre || 30;
+
+    const allBands = this.db.getAllBands();
+    const genreCounts: Record<string, number> = {};
+
+    allBands.forEach(band => {
+      const genres = Array.isArray(band.genre) ? band.genre : [band.genre];
+      genres.forEach((g: string) => {
+        genreCounts[g] = (genreCounts[g] || 0) + 1;
+      });
+    });
+
+    const filteredGenres = Object.keys(genreCounts)
+      .filter(genre => genreCounts[genre] >= minBandsPerGenre)
+      .sort();
+
+    return {
+      genres: filteredGenres,
+      counts: genreCounts
+    };
   }
 
   async startSession(genre: string): Promise<Session> {
