@@ -9,12 +9,6 @@
       :session-id="sessionId"
       :comparison-count="comparisonCount"
       @preference-recorded="onPreferenceRecorded"
-      @recommendations-ready="onRecommendationsReady"
-      @restart="restart"
-    />
-    <Recommendations
-      v-else-if="currentView === 'recommendations'"
-      :session-id="sessionId"
       @restart="restart"
     />
   </div>
@@ -24,10 +18,9 @@
 import { ref } from 'vue';
 import GenreSelection from './components/GenreSelection.vue';
 import BandComparison from './components/BandComparison.vue';
-import Recommendations from './components/Recommendations.vue';
 import { apiService } from './api';
 
-type View = 'genre' | 'comparison' | 'recommendations';
+type View = 'genre' | 'comparison';
 
 const currentView = ref<View>('genre');
 const sessionId = ref('');
@@ -46,10 +39,6 @@ const onGenreSelected = async (genre: string) => {
 
 const onPreferenceRecorded = () => {
   comparisonCount.value++;
-};
-
-const onRecommendationsReady = () => {
-  currentView.value = 'recommendations';
 };
 
 const restart = () => {

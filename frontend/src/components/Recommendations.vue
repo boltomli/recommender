@@ -129,8 +129,9 @@ const restart = () => {
   background: linear-gradient(145deg, #2a2a2a 0%, #1a1a1a 100%);
   border: 2px solid #444;
   border-radius: 12px;
-  padding: 1.25rem;
+  padding: 1.25rem 1.25rem 1.25rem 1.25rem;
   transition: all 0.3s ease;
+  overflow: visible;
 }
 
 .recommendation-card:hover {
@@ -152,19 +153,20 @@ const restart = () => {
 
 .rank-badge {
   position: absolute;
-  top: -12px;
-  left: 20px;
+  top: -10px;
+  left: 15px;
   background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
   color: white;
-  width: 45px;
-  height: 45px;
+  width: 40px;
+  height: 40px;
   border-radius: 50%;
   display: flex;
   align-items: center;
   justify-content: center;
   font-weight: 700;
-  font-size: 1.1rem;
+  font-size: 1rem;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+  z-index: 10;
 }
 
 .recommendation-reason {

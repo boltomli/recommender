@@ -155,25 +155,8 @@ export class RecommendationEngine {
       }))
       .sort((a, b) => b.score - a.score);
 
-    // Separate bands by tier
-    const tier1Bands = bandScores.filter(bs => bs.band.tier === 'well-known');
-    const tier2Bands = bandScores.filter(bs => bs.band.tier === 'popular');
-    const tier3Bands = bandScores.filter(bs => bs.band.tier === 'niche');
-
-    // Ensure at least one Tier 1 band if available
-    const selectedBands: Array<{ band: Band; score: number }> = [];
-    if (tier1Bands.length > 0) {
-      selectedBands.push(tier1Bands[0]);
-    }
-
-    // Fill remaining spots with highest-scoring bands from any tier
-    const allRemainingBands = bandScores.filter(bs =>
-      !selectedBands.some(sb => sb.band.id === bs.band.id)
-    );
-
-    for (let i = 0; i < numSuggestions - selectedBands.length && i < allRemainingBands.length; i++) {
-      selectedBands.push(allRemainingBands[i]);
-    }
+    // Take top numSuggestions bands
+    const selectedBands = bandScores.slice(0, numSuggestions);
 
     // Generate suggestions with tier-based confidence scores
     selectedBands.forEach(({ band, score }) => {

@@ -1,3 +1,5 @@
+export type BandTier = 'well-known' | 'popular' | 'niche';
+
 export interface Band {
   id: string;
   name: string;
@@ -6,6 +8,7 @@ export interface Band {
   albums: string[];
   description: string;
   styleNotes?: string;
+  tier?: BandTier;
 }
 
 export interface Comparison {
@@ -56,7 +59,19 @@ export class RecommendationCalculator {
 
     topBands.forEach(band => {
       const score = this.calculateBandScore(band);
-      const confidence = Math.min(0.95, 0.6 + (score * 0.15));
+
+      // Base confidence from preference score
+      let confidence = 0.6 + (score * 0.15);
+
+      // Add tier bonus
+      if (band.tier === 'well-known') {
+        confidence += 0.05;
+      } else if (band.tier === 'popular') {
+        confidence += 0.02;
+      }
+
+      // Cap confidence at 0.95
+      confidence = Math.min(0.95, confidence);
 
       recommendations.push({
         band,

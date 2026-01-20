@@ -10,6 +10,8 @@ const api = axios.create({
   },
 });
 
+export type BandTier = 'well-known' | 'popular' | 'niche';
+
 export interface Band {
   id: string;
   name: string;
@@ -18,6 +20,7 @@ export interface Band {
   albums: string[];
   description: string;
   styleNotes?: string;
+  tier?: BandTier;
 }
 
 export interface ComparisonPair {
@@ -42,10 +45,119 @@ interface SessionInfo {
   createdAt: number;
   selectedBands: Set<string>;
   preferenceWeights: Record<string, number>;
+  comparisonHistory: string[][];
 }
 
 let staticDataCache: StaticData | null = null;
 let sessions: Record<string, SessionInfo> = {};
+
+function findNewPair(bands: Band[], previousPairs: Set<string>): ComparisonPair | null {
+  if (bands.length < 2) {
+    return null;
+  }
+
+  let attempts = 0;
+  const maxAttempts = 100;
+
+  while (attempts < maxAttempts) {
+    const shuffled = [...bands].sort(() => Math.random() - 0.5);
+    const band1 = shuffled[0];
+    const band2 = shuffled[1];
+
+    if (band1 && band2 && band1.id !== band2.id) {
+      const pairKey = [band1.id, band2.id].sort().join('|');
+
+      if (!previousPairs.has(pairKey)) {
+        return { band1, band2 };
+      }
+    }
+
+    attempts++;
+  }
+
+  return null;
+}
+
+function findMixedPair(bands1: Band[], bands2: Band[], previousPairs: Set<string>): ComparisonPair | null {
+  if (bands1.length === 0 || bands2.length === 0) {
+    return null;
+  }
+
+  let attempts = 0;
+  const maxAttempts = 100;
+
+  while (attempts < maxAttempts) {
+    const shuffled1 = [...bands1].sort(() => Math.random() - 0.5);
+    const shuffled2 = [...bands2].sort(() => Math.random() - 0.5);
+    const band1 = shuffled1[0];
+    const band2 = shuffled2[0];
+
+    if (band1 && band2 && band1.id !== band2.id) {
+      const pairKey = [band1.id, band2.id].sort().join('|');
+
+      if (!previousPairs.has(pairKey)) {
+        return { band1, band2 };
+      }
+    }
+
+    attempts++;
+  }
+
+  return null;
+}
+
+function selectTieredPair(bands: Band[], comparisonHistory: string[][]): ComparisonPair | null {
+  // Separate bands by tier
+  const tier1Bands = bands.filter(b => b.tier === 'well-known');
+  const tier2Bands = bands.filter(b => b.tier === 'popular');
+  const tier3Bands = bands.filter(b => b.tier === 'niche');
+
+  // Get all previous pairs
+  const previousPairs = new Set(
+    comparisonHistory.map((pair: string[]) => {
+      return pair.sort().join('|');
+    })
+  );
+
+  // Phase 1: Try Tier 1 × Tier 1 comparisons
+  const tier1Pair = findNewPair(tier1Bands, previousPairs);
+  if (tier1Pair) {
+    return tier1Pair;
+  }
+
+  // Phase 2: Try Tier 1 × Tier 2 comparisons
+  const tier1Tier2Pair = findMixedPair(tier1Bands, tier2Bands, previousPairs);
+  if (tier1Tier2Pair) {
+    return tier1Tier2Pair;
+  }
+
+  // Phase 3: Try Tier 2 × Tier 2 comparisons
+  const tier2Pair = findNewPair(tier2Bands, previousPairs);
+  if (tier2Pair) {
+    return tier2Pair;
+  }
+
+  // Phase 4: Try Tier 1 × Tier 3 comparisons
+  const tier1Tier3Pair = findMixedPair(tier1Bands, tier3Bands, previousPairs);
+  if (tier1Tier3Pair) {
+    return tier1Tier3Pair;
+  }
+
+  // Phase 5: Try Tier 2 × Tier 3 comparisons
+  const tier2Tier3Pair = findMixedPair(tier2Bands, tier3Bands, previousPairs);
+  if (tier2Tier3Pair) {
+    return tier2Tier3Pair;
+  }
+
+  // Phase 6: Try Tier 3 × Tier 3 comparisons
+  const tier3Pair = findNewPair(tier3Bands, previousPairs);
+  if (tier3Pair) {
+    return tier3Pair;
+  }
+
+  // No more comparisons available
+  return null;
+}
 
 async function loadStaticData(): Promise<StaticData> {
   if (staticDataCache) {
@@ -97,7 +209,8 @@ export const apiService = {
         genre,
         createdAt: Date.now(),
         selectedBands: new Set<string>(),
-        preferenceWeights: {}
+        preferenceWeights: {},
+        comparisonHistory: []
       };
       return sessionId;
     }
@@ -120,25 +233,21 @@ export const apiService = {
         band.genre.some(g => g.toLowerCase().includes(session.genre.toLowerCase()))
       );
 
-      // 只过滤掉被选择过的乐队，跳过的可以保留
+      // Filter out selected bands
       const availableBands = bands.filter(band => !session.selectedBands.has(band.id));
 
       if (availableBands.length < 2) {
         return { done: true };
       }
 
-      const shuffled = [...availableBands].sort(() => Math.random() - 0.5);
-      const band1 = shuffled[0];
-      const band2 = shuffled[1];
+      // Use tiered selection
+      const pair = selectTieredPair(availableBands, session.comparisonHistory);
 
-      if (!band1 || !band2) {
+      if (!pair) {
         return { done: true };
       }
 
-      return {
-        band1,
-        band2
-      };
+      return pair;
     }
   },
 
@@ -161,15 +270,17 @@ export const apiService = {
         throw new Error('Session not found');
       }
 
-      // 只标记被选中的乐队
+      // Track comparison history
+      session.comparisonHistory.push([bandId1, bandId2]);
+
+      // Mark selected band
       session.selectedBands.add(selectedBandId);
 
-      // 获取被选中的乐队信息以更新偏好权重
+      // Update preference weights based on selected band's genres
       const data = await loadStaticData();
       const selectedBand = data.bands.find(b => b.id === selectedBandId);
 
       if (selectedBand) {
-        // 根据乐队的流派更新偏好权重
         selectedBand.genre.forEach(g => {
           session.preferenceWeights[g] = (session.preferenceWeights[g] || 0) + 1;
         });
@@ -188,8 +299,15 @@ export const apiService = {
         bandId1,
         bandId2,
       });
+    } else {
+      const session = sessions[sessionId];
+      if (!session) {
+        throw new Error('Session not found');
+      }
+
+      // Track comparison history even when skipping
+      session.comparisonHistory.push([bandId1, bandId2]);
     }
-    // 静态模式下不记录跳过的乐队，它们可以再次出现
   },
 
   async getSuggestions(sessionId: string, count: number = 3): Promise<Recommendation[]> {
@@ -206,26 +324,39 @@ export const apiService = {
 
       const data = await loadStaticData();
 
-      // 筛选匹配流派的乐队，只排除被选择过的乐队
+      // Filter bands by genre and exclude selected bands
       const bands = data.bands.filter(band =>
         band.genre.some(g => g.toLowerCase().includes(session.genre.toLowerCase())) &&
         !session.selectedBands.has(band.id)
       );
 
-      // 根据偏好权重对乐队进行评分和排序
+      // Calculate preference scores for all bands
       const scoredBands = bands.map(band => {
         const score = band.genre.reduce((sum, g) => sum + (session.preferenceWeights[g] || 0), 0);
         return { band, score };
       });
 
-      // 按分数降序排序
+      // Sort by score descending
       scoredBands.sort((a, b) => b.score - a.score);
 
-      // 取前N个建议
-      const topBands = scoredBands.slice(0, count);
+      // Take top count bands
+      const selectedBands = scoredBands.slice(0, count);
 
-      return topBands.map(({ band, score }) => {
-        const confidence = Math.min(0.9, 0.5 + (score * 0.1));
+      // Generate suggestions with tier-based confidence scores
+      return selectedBands.map(({ band, score }) => {
+        // Base confidence from preference score
+        let confidence = 0.5 + (score * 0.1);
+
+        // Add tier bonus
+        if (band.tier === 'well-known') {
+          confidence += 0.05;
+        } else if (band.tier === 'popular') {
+          confidence += 0.02;
+        }
+
+        // Cap confidence at 0.9
+        confidence = Math.min(0.9, confidence);
+
         const reason = score > 0
           ? `Matches your taste in ${band.genre.join(' and ')}`
           : 'Popular choice';
@@ -253,26 +384,77 @@ export const apiService = {
 
       const data = await loadStaticData();
 
-      // 筛选匹配流派的乐队，只排除被选择过的乐队
+      // Filter bands by genre and exclude selected bands
       const bands = data.bands.filter(band =>
         band.genre.some(g => g.toLowerCase().includes(session.genre.toLowerCase())) &&
         !session.selectedBands.has(band.id)
       );
 
-      // 根据偏好权重对乐队进行评分和排序
+      // Calculate preference scores for all bands
       const scoredBands = bands.map(band => {
         const score = band.genre.reduce((sum, g) => sum + (session.preferenceWeights[g] || 0), 0);
         return { band, score };
       });
 
-      // 按分数降序排序
+      // Sort by score descending
       scoredBands.sort((a, b) => b.score - a.score);
 
-      // 取前10个推荐
-      const topBands = scoredBands.slice(0, 10);
+      // Separate bands by tier
+      const tier1Bands = scoredBands.filter(bs => bs.band.tier === 'well-known');
+      const tier2Bands = scoredBands.filter(bs => bs.band.tier === 'popular');
 
-      return topBands.map(({ band, score }) => {
-        const confidence = Math.min(0.95, 0.6 + (score * 0.15));
+      // Ensure tier diversity in recommendations
+      const selectedBands: Array<{ band: Band; score: number }> = [];
+      const minTier1 = Math.min(2, tier1Bands.length);
+      const minTier2 = Math.min(3, tier2Bands.length);
+      const maxRecommendations = 10;
+
+      // Add top Tier 1 bands
+      for (let i = 0; i < minTier1 && i < tier1Bands.length; i++) {
+        const band = tier1Bands[i];
+        if (band) {
+          selectedBands.push(band);
+        }
+      }
+
+      // Add top Tier 2 bands
+      for (let i = 0; i < minTier2 && i < tier2Bands.length; i++) {
+        const band = tier2Bands[i];
+        if (band) {
+          selectedBands.push(band);
+        }
+      }
+
+      // Fill remaining spots with highest-scoring bands from any tier
+      const remainingNeeded = maxRecommendations - selectedBands.length;
+      if (remainingNeeded > 0) {
+        const allRemainingBands = scoredBands.filter(bs =>
+          !selectedBands.some(sb => sb.band.id === bs.band.id)
+        );
+
+        for (let i = 0; i < remainingNeeded && i < allRemainingBands.length; i++) {
+          const band = allRemainingBands[i];
+          if (band) {
+            selectedBands.push(band);
+          }
+        }
+      }
+
+      // Generate recommendations with tier-based confidence scores
+      return selectedBands.map(({ band, score }) => {
+        // Base confidence from preference score
+        let confidence = 0.6 + (score * 0.15);
+
+        // Add tier bonus
+        if (band.tier === 'well-known') {
+          confidence += 0.05;
+        } else if (band.tier === 'popular') {
+          confidence += 0.02;
+        }
+
+        // Cap confidence at 0.95
+        confidence = Math.min(0.95, confidence);
+
         const reason = score > 0
           ? `Based on your preference for ${band.genre.join(' and ')}`
           : 'Popular band in this genre';
