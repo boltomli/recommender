@@ -295,6 +295,92 @@ export class LLMClient {
     }
   }
 
+  async standardizeBandInfo(
+    bandName: string,
+    genres: string,
+    era: string,
+    currentDescription: string,
+    currentStyleNotes: string,
+    exampleBands: any[]
+  ): Promise<{ description: string; styleNotes: string }> {
+    // Format example bands for the prompt
+    const examplesText = exampleBands.map((band, index) => 
+      `Example ${index + 1}:\n` +
+      `  Name: ${band.name}\n` +
+      `  Genre: ${band.genre}\n` +
+      `  Era: ${band.era}\n` +
+      `  Description: ${band.description}\n` +
+      `  Style Notes: ${band.styleNotes}`
+    ).join('\n\n');
+
+    const messages: LLMMessage[] = [
+      {
+        role: 'system',
+        content: `You are a metal music expert. Standardize band descriptions and style notes to follow a consistent format.
+
+DESCRIPTION GUIDELINES:
+- Keep descriptions concise (1-2 sentences)
+- Focus on the band's defining characteristics
+- Mention their primary genre and key influences
+- Include their country of origin if notable
+- Avoid overly flowery language
+- Use present tense
+
+STYLE NOTES GUIDELINES:
+- Focus on musical evolution and stylistic changes
+- Mention key albums or eras that marked style changes
+- Note any unique techniques or approaches
+- Keep it brief and informative
+- If the band has maintained a consistent style, note that
+
+EXAMPLES OF DESIRED FORMAT:
+${examplesText}
+
+Your response must be valid JSON ONLY, no other text or formatting.
+Format: {"description": "Standardized description", "styleNotes": "Standardized style notes"}`
+      },
+      {
+        role: 'user',
+        content: `Standardize the description and style notes for the metal band "${bandName}".
+
+Current information:
+- Name: ${bandName}
+- Genre: ${genres}
+- Era: ${era}
+- Current description: ${currentDescription}
+- Current style notes: ${currentStyleNotes || '(none)'}
+
+Follow the guidelines shown in the examples above. Return ONLY valid JSON, no explanations or additional text.`
+      }
+    ];
+
+    try {
+      const response = await this.callLLM(messages);
+      const content = this.cleanLLMResponse(response.choices[0]?.message?.content || '{}');
+      
+      try {
+        const result = JSON.parse(content);
+        return {
+          description: result.description || currentDescription,
+          styleNotes: result.styleNotes || currentStyleNotes
+        };
+      } catch (parseError) {
+        console.error(`Failed to parse standardized info for ${bandName} as JSON`);
+        console.error('Response preview:', content.substring(0, 200));
+        return {
+          description: currentDescription,
+          styleNotes: currentStyleNotes
+        };
+      }
+    } catch (error) {
+      console.error(`Error standardizing band info for ${bandName}:`, error);
+      return {
+        description: currentDescription,
+        styleNotes: currentStyleNotes
+      };
+    }
+  }
+
   private async callLLM(messages: LLMMessage[]): Promise<LLMResponse> {
     const controller = new AbortController();
     const timeoutId = setTimeout(() => controller.abort(), this.config.timeout);

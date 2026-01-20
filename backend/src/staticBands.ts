@@ -2463,7 +2463,7 @@ export const STATIC_BANDS: Record<string, Band[]> = {
       tier: 'niche'
     },
   ],
-  hard rock: [
+  "hard rock": [
     {
       id: 'band_rush_1',
       name: 'Rush',

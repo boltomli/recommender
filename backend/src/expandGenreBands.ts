@@ -115,7 +115,44 @@ class ExpandGenreBands {
       const cachedBands = this.cache.get<any[]>('expand', cacheKey);
       if (cachedBands) {
         console.log(`  Using cached expansion: ${cachedBands.length} bands`);
-        await this.importBands(genre, cachedBands, existingNames, dryRun, stats);
+        // Import bands one by one from cache
+        for (const bandData of cachedBands) {
+          if (!this.validateBandData(bandData)) {
+            console.log(`    [INVALID] ${bandData.name} - missing required fields`);
+            stats.validationFailures++;
+            continue;
+          }
+
+          const normalizedName = bandData.name.toLowerCase().trim();
+          if (existingNames.has(normalizedName)) {
+            console.log(`    [DUPLICATE] ${bandData.name} - already exists`);
+            stats.duplicatesFiltered++;
+            continue;
+          }
+
+          if (dryRun) {
+            console.log(`    [DRY-RUN] Would import: ${bandData.name} (${bandData.tier})`);
+          } else {
+            const band = {
+              id: `band_${bandData.name.toLowerCase().replace(/\s+/g, '_')}_${Date.now()}`,
+              name: bandData.name,
+              genre: Array.isArray(bandData.genre) ? bandData.genre : [bandData.genre],
+              era: bandData.era || 'Unknown',
+              albums: bandData.albums || [],
+              description: bandData.description || '',
+              styleNotes: '',
+              tier: bandData.tier || 'niche'
+            };
+
+            this.db.createBand(band);
+            console.log(`    [IMPORTED] ${band.name} (${band.tier})`);
+          }
+
+          stats.bandsImported++;
+          stats.bandsGenerated++;
+          existingNames.add(normalizedName);
+        }
+        stats.genresProcessed++;
         return;
       }
     }
@@ -171,63 +208,53 @@ class ExpandGenreBands {
       }
 
       console.log(`  Generated ${generatedBands.length}/${needed} bands from LLM (${attempts} attempts)`);
-      stats.bandsGenerated += generatedBands.length;
 
       this.cache.set('expand', cacheKey, generatedBands);
 
-      await this.importBands(genre, generatedBands, existingNames, dryRun, stats);
+      // Import bands one by one as they are generated
+      for (const bandData of generatedBands) {
+        if (!this.validateBandData(bandData)) {
+          console.log(`    [INVALID] ${bandData.name} - missing required fields`);
+          stats.validationFailures++;
+          continue;
+        }
+
+        const normalizedName = bandData.name.toLowerCase().trim();
+        if (existingNames.has(normalizedName)) {
+          console.log(`    [DUPLICATE] ${bandData.name} - already exists`);
+          stats.duplicatesFiltered++;
+          continue;
+        }
+
+        if (dryRun) {
+          console.log(`    [DRY-RUN] Would import: ${bandData.name} (${bandData.tier})`);
+        } else {
+          const band = {
+            id: `band_${bandData.name.toLowerCase().replace(/\s+/g, '_')}_${Date.now()}`,
+            name: bandData.name,
+            genre: Array.isArray(bandData.genre) ? bandData.genre : [bandData.genre],
+            era: bandData.era || 'Unknown',
+            albums: bandData.albums || [],
+            description: bandData.description || '',
+            styleNotes: '',
+            tier: bandData.tier || 'niche'
+          };
+
+          this.db.createBand(band);
+          console.log(`    [IMPORTED] ${band.name} (${band.tier})`);
+        }
+
+        stats.bandsImported++;
+        stats.bandsGenerated++;
+        existingNames.add(normalizedName);
+      }
+
       stats.genresProcessed++;
     } catch (error) {
       const errorMessage = error instanceof Error ? error.message : String(error);
       console.error(`  Error expanding genre ${genre}: ${errorMessage}`);
       stats.errors.push({ genre, error: errorMessage });
     }
-  }
-
-  private async importBands(genre: string, bands: any[], existingNames: Set<string>, dryRun: boolean, stats: ExpansionStats): Promise<void> {
-    let imported = 0;
-    let duplicates = 0;
-    let validationFailures = 0;
-
-    for (const bandData of bands) {
-      if (!this.validateBandData(bandData)) {
-        console.log(`    [INVALID] ${bandData.name} - missing required fields`);
-        validationFailures++;
-        continue;
-      }
-
-      const normalizedName = bandData.name.toLowerCase().trim();
-      if (existingNames.has(normalizedName)) {
-        console.log(`    [DUPLICATE] ${bandData.name} - already exists`);
-        duplicates++;
-        continue;
-      }
-
-      if (dryRun) {
-        console.log(`    [DRY-RUN] Would import: ${bandData.name} (${bandData.tier})`);
-      } else {
-        const band = {
-          id: `band_${bandData.name.toLowerCase().replace(/\s+/g, '_')}_${Date.now()}`,
-          name: bandData.name,
-          genre: Array.isArray(bandData.genre) ? bandData.genre : [bandData.genre],
-          era: bandData.era || 'Unknown',
-          albums: bandData.albums || [],
-          description: bandData.description || '',
-          styleNotes: '',
-          tier: bandData.tier || 'niche'
-        };
-
-        this.db.createBand(band);
-        console.log(`    [IMPORTED] ${band.name} (${band.tier})`);
-      }
-
-      imported++;
-      existingNames.add(normalizedName);
-    }
-
-    stats.bandsImported += imported;
-    stats.duplicatesFiltered += duplicates;
-    stats.validationFailures += validationFailures;
   }
 
   private validateBandData(band: any): boolean {

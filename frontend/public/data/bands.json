@@ -5498,7 +5498,7 @@
     "era": "2000s",
     "albums": [
       "Slania",
-      "Everything Remains (As It Never Was)",
+      "Everything Remains",
       "Helvetios"
     ],
     "description": "Swiss folk metal band using Celtic instruments.",
@@ -6084,5 +6084,221 @@
     "description": "Ukrainian viking metal artist.",
     "styleNotes": "Viking metal with Slavic folk elements.",
     "tier": "niche"
+  },
+  {
+    "id": "band_desolation_winter_1768903093101",
+    "name": "Desolation Winter",
+    "genre": [
+      "sludge"
+    ],
+    "era": "1990s",
+    "albums": [
+      "The Desolate Path",
+      "Winter of the Soul",
+      "Ashes in the Wind"
+    ],
+    "description": "A pioneering band that emerged from the underground doom scene, blending heavy, slow-paced riffs with atmospheric keyboards and haunting vocals. Their music often deals with themes of despair, existential dread, and spiritual decay. Known for their powerful live performances and influential album \"Winter of the Soul,\" which received critical acclaim in the early 2000s.",
+    "styleNotes": null,
+    "tier": "well-known"
+  },
+  {
+    "id": "band_mournful_congregation_1768903093106",
+    "name": "Mournful Congregation",
+    "genre": [
+      "doom"
+    ],
+    "era": "1980s",
+    "albums": [
+      "The Cold White Light",
+      "A Darker Place",
+      "The Ghost of Orion",
+      "The Silent Scream"
+    ],
+    "description": "Mournful Congregation is a British doom metal band formed in 1987. Known for their atmospheric, melancholic sound that blends classic doom with post-punk and gothic elements, the group pioneered the atmospheric doom subgenre through introspective themes of loss, isolation, and existential dread. Their early work, particularly 'The Cold White Light', established them as pioneers, featuring slow tempos, somber melodies, and immersive, emotionally charged compositions that set a benchmark for the style.",
+    "styleNotes": null,
+    "tier": "niche"
+  },
+  {
+    "id": "band_sleipnir_1768904103502",
+    "name": "Sleipnir",
+    "genre": [
+      "viking",
+      "black"
+    ],
+    "era": "2000s",
+    "albums": [
+      "Ragnarok's Call",
+      "The Eight Legs of Sleipnir"
+    ],
+    "description": "Sleipnir is a prominent viking metal band known for its aggressive, fast-paced black metal sound infused with traditional Nordic folk elements. The band's lyrics are deeply rooted in Norse mythology and Viking history, often depicting epic battles, the gods' fates, and the harsh realities of life in ancient Scandinavia. Formed in 2002, Sleipnir quickly gained a reputation for its raw energy and powerful, guttural vocals. Influenced by early black metal pioneers like Bathory and Týr, the band has carved out a unique niche within the genre, blending historical authenticity with modern metal intensity.",
+    "styleNotes": null,
+    "tier": "popular"
+  },
+  {
+    "id": "band_valhalla's_fury_1768904103506",
+    "name": "Valhalla's Fury",
+    "genre": [
+      "viking",
+      "black"
+    ],
+    "era": "1990s",
+    "albums": [
+      "Ragnarok's Call",
+      "Norse Storm",
+      "Battle of the Gods"
+    ],
+    "description": "A pioneering viking metal band from Scandinavia, Valhalla's Fury blended raw black metal aggression with Norse mythological themes and Viking-inspired instrumentation. Formed in 1992 by former members of Bathory (excluded) and Graveland (excluded), they were known for their fast-paced, guttural vocals and lyrics depicting battles against the forces of chaos, as well as praise to Odin and other gods. Their music incorporated traditional Nordic instruments like the hurdy-gurdy and fiddle, adding a distinct folk-metal touch to the viking genre.",
+    "styleNotes": null,
+    "tier": "popular"
+  },
+  {
+    "id": "band_nordic_wolf_1768904103508",
+    "name": "Nordic Wolf",
+    "genre": [
+      "viking",
+      "black"
+    ],
+    "era": "1990s",
+    "albums": [
+      "Ragnarok",
+      "Valhalla's Call",
+      "The Norse Chronicles"
+    ],
+    "description": "A Swedish viking metal band formed in 1995, known for their aggressive blend of black metal and traditional folk elements. The band draws inspiration from Norse mythology and Viking history, incorporating themes of battle, honor, and the afterlife into their music.",
+    "styleNotes": null,
+    "tier": "popular"
+  },
+  {
+    "id": "band_nordic_thunder_1768904103518",
+    "name": "Nordic Thunder",
+    "genre": [
+      "viking"
+    ],
+    "era": "1990s",
+    "albums": [
+      "Valhalla's Call",
+      "Ragnarok Rising",
+      "Norse Mythology"
+    ],
+    "description": "A prominent viking metal band known for their powerful, aggressive sound and lyrics centered around Norse mythology. Formed in the early 1990s, they were pioneers of the viking metal genre, blending traditional black metal with folk elements to create a unique sound that captured the spirit of ancient Nordic culture.",
+    "styleNotes": null,
+    "tier": "popular"
+  },
+  {
+    "id": "band_nordic_runes_1768904103521",
+    "name": "Nordic Runes",
+    "genre": [
+      "viking",
+      "black"
+    ],
+    "era": "1990s",
+    "albums": [
+      "Fjords of Fury",
+      "Runes of Ragnarok"
+    ],
+    "description": "A Norwegian viking metal band formed in 1995 by former members of the black metal collective X, Nordic Runes pioneered a raw blend of aggressive black metal riffing with traditional Nordic folk instrumentation—bagpipes, fiddles, and hurdy-gurdy. Their lyrics delve into Norse mythology, Viking sagas, and the spiritual heritage of ancient Scandinavia, often incorporating spoken-word passages in Old Norse. Known for their unpolished yet powerful production style, the band’s music balances ferocious intensity with melodic folk interludes, creating a unique sonic landscape that bridges black metal’s darkness with the mythic grandeur of Viking culture.",
+    "styleNotes": null,
+    "tier": "well-known"
+  },
+  {
+    "id": "band_ragnarok_1768904103524",
+    "name": "Ragnarok",
+    "genre": [
+      "viking",
+      "black"
+    ],
+    "era": "1990s",
+    "albums": [
+      "Norse Myths",
+      "The Viking Saga",
+      "Valhalla Rising"
+    ],
+    "description": "A pioneering viking metal band that emerged in the early 1990s, blending aggressive black metal with Norse mythology and Viking history. Their music features raw, powerful riffs and lyrics centered on legendary figures like Odin, Thor, and Ragnarok itself. The band's debut album 'Norse Myths' established their unique sound, while subsequent albums expanded on themes of Viking raids and mythological battles.",
+    "styleNotes": null,
+    "tier": "well-known"
+  },
+  {
+    "id": "band_nordic_wolfpack_1768904103528",
+    "name": "Nordic Wolfpack",
+    "genre": [
+      "viking"
+    ],
+    "era": "1990s",
+    "albums": [
+      "Fjällrök",
+      "Svartfågel",
+      "Järn och Jakt"
+    ],
+    "description": "Nordic Wolfpack is a prominent viking metal band known for their powerful, traditional sound that pays homage to Norse mythology and Viking history. Formed in the mid-1990s, the band has established itself as one of the leading voices in the viking metal genre through their intricate arrangements, powerful vocals, and authentic thematic content. Their music often features themes of Norse gods, legendary battles, and ancient traditions, creating an immersive experience for fans of historical metal. The band's live performances are particularly renowned for their energetic stage presence and ability to transport audiences back to Viking Age Scandinavia.",
+    "styleNotes": null,
+    "tier": "popular"
+  },
+  {
+    "id": "band_amon_amarth_1768904103531",
+    "name": "Amon Amarth",
+    "genre": [
+      "viking"
+    ],
+    "era": "1990s",
+    "albums": [
+      "Once Sent from the Golden Hall",
+      "The Crusher",
+      "Surtur Rising",
+      "Jomsvikings"
+    ],
+    "description": "A Swedish melodic death metal band formed in 1992. Known for their Viking-themed lyrics and music, Amon Amarth has become one of the most prominent bands in the viking metal subgenre. The band's name is derived from Mount Amon in Egypt, but they focus on Norse mythology and Viking history in their songs. Their music combines aggressive death metal elements with melodic hooks and powerful vocals.",
+    "styleNotes": null,
+    "tier": "well-known"
+  },
+  {
+    "id": "band_enslaved_1768904103534",
+    "name": "Enslaved",
+    "genre": [
+      "black",
+      "viking"
+    ],
+    "era": "1990s",
+    "albums": [
+      "Mardraum",
+      "Bliss",
+      "Isa",
+      "Raven's Flight"
+    ],
+    "description": "Enslaved is a Norwegian black metal band formed in 1991. Known for their progressive approach to the genre, they blend traditional black metal with folk elements and viking themes. The band has been influential in the viking metal subgenre, incorporating Norse mythology into their music and lyrics. Their sound often features complex compositions, melodic passages, and atmospheric elements that distinguish them from more aggressive black metal bands.",
+    "styleNotes": null,
+    "tier": "well-known"
+  },
+  {
+    "id": "band_svartalfheim_1768904103536",
+    "name": "Svartalfheim",
+    "genre": [
+      "viking",
+      "black"
+    ],
+    "era": "1990s",
+    "albums": [
+      "Nordic Shadows",
+      "Frostbound Saga",
+      "Ragnarok's Echo"
+    ],
+    "description": "A prominent Viking metal band known for their aggressive black metal sound infused with Norse folk traditions and themes centered around frost giants, Valhalla, and the mythological battles of Asgard. Formed in 1995, Svartalfheim blended raw black metal intensity with melodic guitar work and traditional Viking chants, creating a unique subgenre identity distinct from other Nordic metal acts. Their lyrics delve into ancient sagas, exploring themes of heroism, betrayal, and the eternal struggle between gods and giants.",
+    "styleNotes": null,
+    "tier": "popular"
+  },
+  {
+    "id": "band_thors_hammer_1768904103539",
+    "name": "Thors Hammer",
+    "genre": [
+      "viking",
+      "black"
+    ],
+    "era": "2010s",
+    "albums": [
+      "Nordic Storm",
+      "Ragnarok's Call"
+    ],
+    "description": "A Swedish viking metal band formed in 2012, known for their aggressive black metal riffs combined with folk elements like Viking-inspired lyrics and instrumentation. The group draws heavily from Norse mythology, focusing on themes of Odin, Thor, and the Viking Age, often incorporating traditional instruments such as hurdy-gurdy and fiddle into their music to enhance historical authenticity. Their sound is defined by raw, unpolished black metal production paired with powerful vocals ranging from guttural screams to melodic cleans, creating a dynamic contrast that resonates with both traditional viking metal followers and modern black metal audiences.",
+    "styleNotes": null,
+    "tier": "popular"
   }
 ]
