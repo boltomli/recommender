@@ -1,36 +1,15 @@
 {
+  "timestamp": "2026-01-21T09:18:00.783Z",
   "genres": [
-    "black",
-    "death",
-    "doom",
-    "folk",
-    "glam",
-    "groove",
-    "hard rock",
-    "heavy",
-    "power",
-    "progressive",
-    "sludge",
-    "speed",
     "thrash",
-    "viking"
-  ],
-  "counts": {
-    "thrash": 39,
-    "heavy": 76,
-    "progressive": 63,
-    "death": 60,
-    "doom": 29,
-    "black": 57,
-    "viking": 30,
-    "folk": 45,
-    "power": 53,
-    "speed": 60,
-    "hard rock": 36,
-    "glam": 13,
-    "groove": 50,
-    "sludge": 35
-  },
-  "total": 382,
-  "updatedAt": "2026-01-20T22:25:03.706Z"
+    "death",
+    "black",
+    "power",
+    "doom",
+    "progressive",
+    "heavy",
+    "speed",
+    "groove",
+    "folk"
+  ]
 }
