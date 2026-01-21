@@ -12,8 +12,8 @@
       "Ride the Lightning",
       "...And Justice for All"
     ],
-    "description": "One of the most influential thrash metal bands, known for their complex song structures and aggressive sound.",
-    "styleNotes": "Evolved from pure thrash to more progressive and alternative styles in the 1990s and 2000s.",
+    "description": "American thrash metal band, one of the most influential in its genre, known for complex song structures and aggressive sound.",
+    "styleNotes": "Evolved from pure thrash to progressive/alternative styles in the 1990s–2000s.",
     "tier": "well-known"
   },
   {
@@ -30,7 +30,7 @@
     ],
     "description": "German thrash metal pioneers known for extreme aggression.",
     "styleNotes": "Influenced death metal development with their extreme sound.",
-    "tier": "niche"
+    "tier": "popular"
   },
   {
     "id": "band_sodom_1",
@@ -46,7 +46,7 @@
     ],
     "description": "German thrash metal band known for raw, aggressive sound.",
     "styleNotes": "Maintained consistent extreme thrash style.",
-    "tier": "niche"
+    "tier": "popular"
   },
   {
     "id": "band_destruction_1",
@@ -60,9 +60,9 @@
       "Release from Agony",
       "Eternal Devastation"
     ],
-    "description": "German thrash metal band part of the \"Teutonic Thrash\" scene.",
-    "styleNotes": "Known for aggressive vocals and fast riffing.",
-    "tier": "niche"
+    "description": "German thrash metal band known for aggressive sound.",
+    "styleNotes": "Known for aggressive vocals and fast riffing; influential in developing early thrash metal.",
+    "tier": "popular"
   },
   {
     "id": "band_dark_angel_1",
@@ -78,7 +78,7 @@
     ],
     "description": "American thrash metal band known for extreme speed and complexity.",
     "styleNotes": "Pioneered technical thrash metal.",
-    "tier": "niche"
+    "tier": "popular"
   },
   {
     "id": "band_vio-lence_1",
@@ -92,9 +92,9 @@
       "Oppressing the Masses",
       "Nothing to Gain"
     ],
-    "description": "Bay Area thrash band known for technical riffs.",
-    "styleNotes": "Part of the second wave of Bay Area thrash.",
-    "tier": "niche"
+    "description": "American thrash metal band from the Bay Area known for technical riffs.",
+    "styleNotes": "Part of the second wave of Bay Area thrash metal.",
+    "tier": "popular"
   },
   {
     "id": "band_death_angel_1",
@@ -108,9 +108,9 @@
       "Frolic Through the Park",
       "Act III"
     ],
-    "description": "Bay Area thrash band with diverse influences.",
-    "styleNotes": "Incorporated funk and experimental elements.",
-    "tier": "niche"
+    "description": "American Bay Area thrash metal band known for diverse influences.",
+    "styleNotes": "Thrash metal incorporating funk and experimental elements.",
+    "tier": "popular"
   },
   {
     "id": "band_flotsam_and_jetsam_1",
@@ -123,9 +123,9 @@
       "Doomsday for the Deceiver",
       "No Place for Disgrace"
     ],
-    "description": "American thrash band with progressive tendencies.",
+    "description": "American thrash metal band with progressive tendencies.",
     "styleNotes": "Known for complex song structures.",
-    "tier": "niche"
+    "tier": "popular"
   },
   {
     "id": "band_hallows_eve_1",
@@ -139,9 +139,9 @@
       "Monument",
       "Tales of Terror"
     ],
-    "description": "American thrash band from Atlanta.",
-    "styleNotes": "Known for dark, atmospheric thrash.",
-    "tier": "niche"
+    "description": "American thrash metal band.",
+    "styleNotes": "Dark, atmospheric thrash",
+    "tier": "popular"
   },
   {
     "id": "band_lazor_1",
@@ -154,7 +154,7 @@
       "Lazarus",
       "On the Edge"
     ],
-    "description": "American thrash band.",
+    "description": "American thrash metal band.",
     "styleNotes": "Technical thrash metal.",
     "tier": "niche"
   },
@@ -169,9 +169,9 @@
       "Alice in Hell",
       "Never, Neverland"
     ],
-    "description": "Canadian thrash band known for technical prowess.",
-    "styleNotes": "Technical thrash with complex riffing.",
-    "tier": "niche"
+    "description": "Canadian thrash metal band known for technical prowess.",
+    "styleNotes": "Technical thrash metal characterized by complex riffing and intricate guitar work.",
+    "tier": "popular"
   },
   {
     "id": "band_vektor_1",
@@ -188,7 +188,7 @@
     ],
     "description": "American progressive thrash band.",
     "styleNotes": "Highly technical thrash with progressive and sci-fi themes.",
-    "tier": "niche"
+    "tier": "popular"
   },
   {
     "id": "band_revocation_1",
@@ -204,7 +204,7 @@
     ],
     "description": "American technical death/thrash band.",
     "styleNotes": "Blends technical death metal with thrash.",
-    "tier": "niche"
+    "tier": "popular"
   },
   {
     "id": "band_tankard_1",
@@ -218,9 +218,9 @@
       "Chemical Invasion",
       "The Morning After"
     ],
-    "description": "German thrash band known for drinking themes.",
-    "styleNotes": "Fun, party-oriented thrash metal.",
-    "tier": "niche"
+    "description": "German thrash metal band known for drinking-themed lyrics.",
+    "styleNotes": "Humorous, party-oriented thrash metal with a focus on drinking themes.",
+    "tier": "popular"
   },
   {
     "id": "band_whiplash_1",
@@ -236,7 +236,7 @@
     ],
     "description": "American thrash band from New Jersey.",
     "styleNotes": "Fast, aggressive East Coast thrash.",
-    "tier": "niche"
+    "tier": "popular"
   },
   {
     "id": "band_artillery_1",
@@ -252,7 +252,7 @@
     ],
     "description": "Danish thrash metal band.",
     "styleNotes": "Technical thrash with progressive elements.",
-    "tier": "niche"
+    "tier": "popular"
   },
   {
     "id": "band_death_1",
@@ -267,9 +267,9 @@
       "Human",
       "Symbolic"
     ],
-    "description": "Pioneering death metal band founded by Chuck Schuldiner, evolved to incorporate progressive elements.",
-    "styleNotes": "Started as raw death metal, evolved to highly technical and progressive death metal.",
-    "tier": "niche"
+    "description": "American pioneering death metal band founded by Chuck Schuldiner, known for evolving from raw death metal to progressive styles.",
+    "styleNotes": "Started as raw death metal, evolved into highly technical and progressive death metal.",
+    "tier": "popular"
   },
   {
     "id": "band_nile_1",
@@ -285,7 +285,7 @@
     ],
     "description": "American technical death band known for Egyptian themes.",
     "styleNotes": "Combines technical death metal with Egyptian mythology.",
-    "tier": "niche"
+    "tier": "popular"
   },
   {
     "id": "band_carcass_1",
@@ -299,9 +299,9 @@
       "Symphonies of Sickness",
       "Necroticism"
     ],
-    "description": "British death/grind band known for medical lyrics.",
+    "description": "British death/grind metal band known for medical-themed lyrics.",
     "styleNotes": "Evolved from grindcore to melodic death metal.",
-    "tier": "niche"
+    "tier": "popular"
   },
   {
     "id": "band_entombed_1",
@@ -316,8 +316,8 @@
       "Wolverine Blues"
     ],
     "description": "Swedish death metal pioneers.",
-    "styleNotes": "Created the \"Sunlight sound\" Swedish death metal production.",
-    "tier": "niche"
+    "styleNotes": "Developed the 'Sunlight sound' in Swedish death metal.",
+    "tier": "popular"
   },
   {
     "id": "band_dismember_1",
@@ -333,7 +333,7 @@
     ],
     "description": "Swedish death metal band.",
     "styleNotes": "Classic Swedish death metal with buzzsaw guitar tone.",
-    "tier": "niche"
+    "tier": "popular"
   },
   {
     "id": "band_grave_1",
@@ -349,7 +349,7 @@
     ],
     "description": "Swedish death metal band.",
     "styleNotes": "Raw, old-school Swedish death metal.",
-    "tier": "niche"
+    "tier": "popular"
   },
   {
     "id": "band_unleashed_1",
@@ -364,8 +364,8 @@
       "Midvinterblot"
     ],
     "description": "Swedish death metal band with Viking themes.",
-    "styleNotes": "Death metal with Viking and Norse mythology themes.",
-    "tier": "niche"
+    "styleNotes": "Death metal with Viking/Norse mythology themes.",
+    "tier": "popular"
   },
   {
     "id": "band_bolt_thrower_1",
@@ -381,7 +381,7 @@
     ],
     "description": "British death metal band with war themes.",
     "styleNotes": "Known for heavy, militaristic death metal.",
-    "tier": "niche"
+    "tier": "popular"
   },
   {
     "id": "band_benediction_1",
@@ -396,8 +396,8 @@
       "Transcend the Rubicon"
     ],
     "description": "British death metal band.",
-    "styleNotes": "Old-school British death metal.",
-    "tier": "niche"
+    "styleNotes": "Old-school British death metal",
+    "tier": "popular"
   },
   {
     "id": "band_hate_eternal_1",
@@ -413,7 +413,7 @@
     ],
     "description": "American technical death metal band.",
     "styleNotes": "Extremely fast and technical death metal.",
-    "tier": "niche"
+    "tier": "popular"
   },
   {
     "id": "band_asphyx_1",
@@ -429,8 +429,8 @@
       "God Cries"
     ],
     "description": "Dutch death/doom metal band.",
-    "styleNotes": "Death metal with doom and sludge influences.",
-    "tier": "niche"
+    "styleNotes": "Death/doom metal with sludge influences.",
+    "tier": "popular"
   },
   {
     "id": "band_paradise_lost_1",
@@ -446,8 +446,8 @@
       "Shades of God"
     ],
     "description": "British death/doom metal band.",
-    "styleNotes": "Pioneers of gothic doom metal.",
-    "tier": "niche"
+    "styleNotes": "Pioneers of gothic doom metal",
+    "tier": "popular"
   },
   {
     "id": "band_my_dying_bride_1",
@@ -463,8 +463,8 @@
       "The Angel and the Dark River"
     ],
     "description": "British death/doom metal band.",
-    "styleNotes": "Death/doom with gothic and romantic elements.",
-    "tier": "niche"
+    "styleNotes": "Death/doom metal with gothic and romantic elements.",
+    "tier": "popular"
   },
   {
     "id": "band_type_o_negative_1",
@@ -481,7 +481,7 @@
     ],
     "description": "American gothic doom metal band.",
     "styleNotes": "Gothic doom with dark humor and romantic themes.",
-    "tier": "niche"
+    "tier": "popular"
   },
   {
     "id": "band_ulcerate_1",
@@ -497,7 +497,7 @@
     ],
     "description": "New Zealand technical death metal band.",
     "styleNotes": "Dissonant, atmospheric technical death metal.",
-    "tier": "niche"
+    "tier": "popular"
   },
   {
     "id": "band_mayhem_1",
@@ -511,9 +511,9 @@
       "Deathcrush",
       "Grand Declaration of War"
     ],
-    "description": "One of the most influential black metal bands, known for their controversial history.",
-    "styleNotes": "Evolved from raw black metal to more experimental and avant-garde styles.",
-    "tier": "niche"
+    "description": "Norwegian black metal band, one of the most influential in the genre, known for its controversial history.",
+    "styleNotes": "Evolved from raw black metal to experimental/avant-garde styles.",
+    "tier": "popular"
   },
   {
     "id": "band_darkthrone_1",
@@ -528,8 +528,8 @@
       "Transilvanian Hunger"
     ],
     "description": "Pioneering Norwegian black metal band known for raw, lo-fi production.",
-    "styleNotes": "Started as death metal, evolved to raw black metal, later incorporated punk/crust elements.",
-    "tier": "niche"
+    "styleNotes": "Evolved from death metal to raw black metal, later incorporating punk and crust influences.",
+    "tier": "popular"
   },
   {
     "id": "band_emperor_1",
@@ -543,9 +543,9 @@
       "Anthems to the Welkin at Dusk",
       "IX Equilibrium"
     ],
-    "description": "Known for incorporating symphonic elements into black metal.",
+    "description": "Norwegian black metal band known for integrating symphonic elements.",
     "styleNotes": "Pioneered symphonic black metal with complex song structures.",
-    "tier": "niche"
+    "tier": "popular"
   },
   {
     "id": "band_cradle_of_filth_1",
@@ -559,9 +559,9 @@
       "Dusk and Her Embrace",
       "Cruelty and the Beast"
     ],
-    "description": "Known for theatrical style and incorporation of gothic elements.",
-    "styleNotes": "Evolved from raw black metal to more symphonic and gothic styles.",
-    "tier": "niche"
+    "description": "British black metal band known for theatrical style and incorporation of gothic elements.",
+    "styleNotes": "Evolved from raw black metal to symphonic and gothic styles.",
+    "tier": "popular"
   },
   {
     "id": "band_dimmu_borgir_1",
@@ -577,7 +577,7 @@
     ],
     "description": "Norwegian black metal band known for symphonic elements and commercial success.",
     "styleNotes": "Evolved to more polished symphonic black metal with orchestral arrangements.",
-    "tier": "niche"
+    "tier": "popular"
   },
   {
     "id": "band_burzum_1",
@@ -591,9 +591,9 @@
       "Det Som Engang Var",
       "Hvis Lyset Tar Oss"
     ],
-    "description": "One-man black metal project known for atmospheric sound.",
-    "styleNotes": "Evolved from raw black metal to ambient and electronic music.",
-    "tier": "niche"
+    "description": "Norwegian one-man black metal project.",
+    "styleNotes": "Evolved from raw black metal to atmospheric/ambient/electronic music.",
+    "tier": "popular"
   },
   {
     "id": "band_immortal_1",
@@ -609,7 +609,7 @@
     ],
     "description": "Norwegian black metal band known for Blashyrkh mythology.",
     "styleNotes": "Cold, frosty black metal with unique riffing style.",
-    "tier": "niche"
+    "tier": "popular"
   },
   {
     "id": "band_satyricon_1",
@@ -624,8 +624,8 @@
       "Nemesis Divina"
     ],
     "description": "Norwegian black metal band.",
-    "styleNotes": "Evolved to incorporate rock and industrial elements.",
-    "tier": "niche"
+    "styleNotes": "Evolved from black metal to incorporate rock and industrial elements.",
+    "tier": "popular"
   },
   {
     "id": "band_enslaved_1",
@@ -640,9 +640,9 @@
       "Frost",
       "Eld"
     ],
-    "description": "Norwegian black metal band with Viking themes.",
-    "styleNotes": "Evolved to progressive black metal with Viking themes.",
-    "tier": "niche"
+    "description": "Norwegian progressive/black metal band with Viking themes.",
+    "styleNotes": "Evolved from traditional black metal to progressive black metal while incorporating Viking themes.",
+    "tier": "popular"
   },
   {
     "id": "band_bathory_1",
@@ -657,9 +657,9 @@
       "The Return",
       "Under the Sign of the Black Mark"
     ],
-    "description": "Swedish black metal pioneers.",
-    "styleNotes": "Pioneered both black metal and Viking metal.",
-    "tier": "niche"
+    "description": "Swedish black metal pioneers",
+    "styleNotes": "Pioneered both black metal and Viking metal",
+    "tier": "popular"
   },
   {
     "id": "band_marduk_1",
@@ -674,8 +674,8 @@
       "Heaven Shall Burn"
     ],
     "description": "Swedish black metal band.",
-    "styleNotes": "Fast, aggressive black metal.",
-    "tier": "niche"
+    "styleNotes": "Raw, aggressive black metal.",
+    "tier": "popular"
   },
   {
     "id": "band_watain_1",
@@ -690,8 +690,8 @@
       "Sworn to the Dark"
     ],
     "description": "Swedish black metal band with occult themes.",
-    "styleNotes": "Traditional Swedish black metal with satanic themes.",
-    "tier": "niche"
+    "styleNotes": "Traditional Swedish black metal with satanic/occult themes.",
+    "tier": "popular"
   },
   {
     "id": "band_dissection_1",
@@ -724,7 +724,7 @@
     ],
     "description": "Swedish black/melodic death metal band.",
     "styleNotes": "Melodic black metal with death metal influences.",
-    "tier": "niche"
+    "tier": "popular"
   },
   {
     "id": "band_shining_1",
@@ -738,9 +738,9 @@
       "Livets Ändhållplats",
       "V - Halmstad"
     ],
-    "description": "Swedish black metal band with depressive themes.",
+    "description": "Swedish black metal band with a focus on depressive themes.",
     "styleNotes": "Pioneers of depressive suicidal black metal.",
-    "tier": "niche"
+    "tier": "popular"
   },
   {
     "id": "band_silencer_1",
@@ -753,7 +753,7 @@
       "Death - Pierce Me"
     ],
     "description": "Swedish black metal band.",
-    "styleNotes": "Depressive black metal with unique vocals.",
+    "styleNotes": "Depressive black metal with distinctive vocal delivery.",
     "tier": "niche"
   },
   {
@@ -831,7 +831,7 @@
     ],
     "description": "American black metal band with shoegaze influences.",
     "styleNotes": "Black metal combined with post-rock and shoegaze.",
-    "tier": "niche"
+    "tier": "popular"
   },
   {
     "id": "band_alcest_1",
@@ -846,8 +846,8 @@
       "Shelter"
     ],
     "description": "French black metal band with shoegaze influences.",
-    "styleNotes": "Black metal combined with shoegaze and post-rock.",
-    "tier": "niche"
+    "styleNotes": "Black metal combined with shoegaze and post - rock.",
+    "tier": "popular"
   },
   {
     "id": "band_wintersun_1",
@@ -864,7 +864,7 @@
     ],
     "description": "Finnish black metal band with folk and power elements.",
     "styleNotes": "Melodic black metal with folk and power metal influences.",
-    "tier": "niche"
+    "tier": "popular"
   },
   {
     "id": "band_arcturus_1",
@@ -881,7 +881,7 @@
     ],
     "description": "Norwegian avant-garde black metal band.",
     "styleNotes": "Avant-garde black metal with symphonic elements.",
-    "tier": "niche"
+    "tier": "popular"
   },
   {
     "id": "band_gorgoroth_1",
@@ -897,7 +897,7 @@
     ],
     "description": "Norwegian black metal band.",
     "styleNotes": "Traditional Norwegian black metal.",
-    "tier": "niche"
+    "tier": "popular"
   },
   {
     "id": "band_gehenna_1",
@@ -913,7 +913,7 @@
     ],
     "description": "Norwegian black metal band.",
     "styleNotes": "Early Norwegian black metal with occult themes.",
-    "tier": "niche"
+    "tier": "popular"
   },
   {
     "id": "band_horna_1",
@@ -944,7 +944,7 @@
       "Let the Devil In"
     ],
     "description": "Finnish black metal band.",
-    "styleNotes": "Raw Finnish black metal.",
+    "styleNotes": "Raw Finnish black metal",
     "tier": "niche"
   },
   {
@@ -961,7 +961,7 @@
     ],
     "description": "Finnish black metal band.",
     "styleNotes": "Raw Finnish black metal with satanic themes.",
-    "tier": "niche"
+    "tier": "popular"
   },
   {
     "id": "band_graveland_1",
@@ -976,9 +976,9 @@
       "Thousand Swords",
       "Following the Voice of Blood"
     ],
-    "description": "Polish black metal band with Viking themes.",
+    "description": "Polish black metal band with viking/pagan themes.",
     "styleNotes": "Black metal with Viking and pagan themes.",
-    "tier": "niche"
+    "tier": "popular"
   },
   {
     "id": "band_dub Buk_1",
@@ -1045,8 +1045,8 @@
       "Demigod"
     ],
     "description": "Polish death/black metal band.",
-    "styleNotes": "Evolved from black metal to death metal with occult themes.",
-    "tier": "niche"
+    "styleNotes": "Evolved from black metal to death metal, incorporating occult themes.",
+    "tier": "popular"
   },
   {
     "id": "band_melechesh_1",
@@ -1060,9 +1060,9 @@
       "Djinn",
       "Emissaries"
     ],
-    "description": "Black metal band with Middle Eastern influences.",
+    "description": "Israeli black metal band with Middle Eastern influences.",
     "styleNotes": "Black metal with Mesopotamian and Middle Eastern themes.",
-    "tier": "niche"
+    "tier": "popular"
   },
   {
     "id": "band_absu_1",
@@ -1127,7 +1127,7 @@
     ],
     "description": "Finnish power metal band known for melodic songs and fantasy themes.",
     "styleNotes": "Consistent melodic power metal style with progressive elements.",
-    "tier": "niche"
+    "tier": "popular"
   },
   {
     "id": "band_kamelot_1",
@@ -1144,7 +1144,7 @@
     ],
     "description": "American power metal band known for concept albums and theatrical elements.",
     "styleNotes": "Evolved from traditional power metal to more progressive and symphonic styles.",
-    "tier": "niche"
+    "tier": "popular"
   },
   {
     "id": "band_avantasia_1",
@@ -1160,7 +1160,7 @@
     ],
     "description": "German power metal supergroup project.",
     "styleNotes": "Symphonic power metal with guest vocalists.",
-    "tier": "niche"
+    "tier": "popular"
   },
   {
     "id": "band_dragonforce_1",
@@ -1177,7 +1177,7 @@
     ],
     "description": "British power metal band known for extreme speed.",
     "styleNotes": "Fast-paced power metal with video game influences.",
-    "tier": "niche"
+    "tier": "popular"
   },
   {
     "id": "band_pagan_s_mind_1",
@@ -1192,9 +1192,9 @@
       "Enigmatic: Calling",
       "God's Equation"
     ],
-    "description": "Norwegian power metal band.",
+    "description": "Norwegian progressive power metal band.",
     "styleNotes": "Progressive power metal with sci-fi themes.",
-    "tier": "niche"
+    "tier": "popular"
   },
   {
     "id": "band_circus_maximus_1",
@@ -1209,9 +1209,9 @@
       "Isolate",
       "Nine"
     ],
-    "description": "Norwegian power metal band.",
+    "description": "Norwegian progressive power metal band.",
     "styleNotes": "Progressive power metal.",
-    "tier": "niche"
+    "tier": "popular"
   },
   {
     "id": "band_conception_1",
@@ -1226,8 +1226,8 @@
       "Parallel Minds",
       "In Your Multitude"
     ],
-    "description": "Norwegian power metal band.",
-    "styleNotes": "Progressive power metal.",
+    "description": "Norwegian progressive power metal band.",
+    "styleNotes": "Progressive power metal",
     "tier": "niche"
   },
   {
@@ -1244,8 +1244,8 @@
       "Paradox"
     ],
     "description": "Danish progressive power metal band.",
-    "styleNotes": "Symphonic progressive power metal.",
-    "tier": "niche"
+    "styleNotes": "Symphonic progressive power metal with orchestral elements.",
+    "tier": "popular"
   },
   {
     "id": "band_vanden_plas_1",
@@ -1261,8 +1261,8 @@
       "Far Off Grace"
     ],
     "description": "German progressive power metal band.",
-    "styleNotes": "Progressive power metal.",
-    "tier": "niche"
+    "styleNotes": "Progressive power metal",
+    "tier": "popular"
   },
   {
     "id": "band_hammerfall_1",
@@ -1278,7 +1278,7 @@
     ],
     "description": "Swedish power metal band.",
     "styleNotes": "Traditional power metal with heavy metal influences.",
-    "tier": "niche"
+    "tier": "popular"
   },
   {
     "id": "band_nocturnal_rites_1",
@@ -1294,7 +1294,7 @@
     ],
     "description": "Swedish power metal band.",
     "styleNotes": "Melodic power metal.",
-    "tier": "niche"
+    "tier": "popular"
   },
   {
     "id": "band_falconer_1",
@@ -1311,7 +1311,7 @@
     ],
     "description": "Swedish power metal band with folk influences.",
     "styleNotes": "Power metal with medieval and folk elements.",
-    "tier": "niche"
+    "tier": "popular"
   },
   {
     "id": "band_bloodbound_1",
@@ -1326,8 +1326,8 @@
       "Tabula Rasa"
     ],
     "description": "Swedish power metal band.",
-    "styleNotes": "Heavy power metal.",
-    "tier": "niche"
+    "styleNotes": "Power metal with melodic and symphonic elements.",
+    "tier": "popular"
   },
   {
     "id": "band_sabaton_1",
@@ -1343,7 +1343,7 @@
     ],
     "description": "Swedish power metal band with war themes.",
     "styleNotes": "Power metal with historical war themes.",
-    "tier": "niche"
+    "tier": "well-known"
   },
   {
     "id": "band_powerwolf_1",
@@ -1359,7 +1359,7 @@
     ],
     "description": "German power metal band with religious themes.",
     "styleNotes": "Symphonic power metal with werewolf and religious themes.",
-    "tier": "niche"
+    "tier": "popular"
   },
   {
     "id": "band_dragonland_1",
@@ -1375,7 +1375,7 @@
     ],
     "description": "Swedish power metal band.",
     "styleNotes": "Symphonic power metal with fantasy themes.",
-    "tier": "niche"
+    "tier": "popular"
   },
   {
     "id": "band_eldritch_1",
@@ -1392,7 +1392,7 @@
     ],
     "description": "Italian progressive power metal band.",
     "styleNotes": "Progressive power metal.",
-    "tier": "niche"
+    "tier": "popular"
   },
   {
     "id": "band_domine_1",
@@ -1408,7 +1408,7 @@
     ],
     "description": "Italian power metal band.",
     "styleNotes": "Power metal with fantasy themes.",
-    "tier": "niche"
+    "tier": "popular"
   },
   {
     "id": "band_heathen_1",
@@ -1422,9 +1422,9 @@
       "Breaking the Silence",
       "Victims of Deception"
     ],
-    "description": "Bay Area thrash band known for technical complexity.",
+    "description": "American power/thrash metal band known for technical complexity.",
     "styleNotes": "Progressive thrash metal with complex arrangements.",
-    "tier": "niche"
+    "tier": "popular"
   },
   {
     "id": "band_iced_earth_1",
@@ -1441,7 +1441,7 @@
     ],
     "description": "American power metal band.",
     "styleNotes": "Power metal with heavy and thrash influences.",
-    "tier": "niche"
+    "tier": "popular"
   },
   {
     "id": "band_dream_evil_1",
@@ -1457,7 +1457,7 @@
     ],
     "description": "Swedish power metal band.",
     "styleNotes": "Melodic power metal with heavy elements.",
-    "tier": "niche"
+    "tier": "popular"
   },
   {
     "id": "band_cellador_1",
@@ -1488,9 +1488,9 @@
       "The Longest Night",
       "Bury the Light"
     ],
-    "description": "American power metal band.",
-    "styleNotes": "Traditional heavy/power metal.",
-    "tier": "niche"
+    "description": "American power/heavy metal band.",
+    "styleNotes": "Traditional heavy/power metal",
+    "tier": "popular"
   },
   {
     "id": "band_twilight_force_1",
@@ -1506,7 +1506,7 @@
     ],
     "description": "Swedish symphonic power metal band.",
     "styleNotes": "Symphonic power metal with fantasy themes.",
-    "tier": "niche"
+    "tier": "popular"
   },
   {
     "id": "band_adagio_1",
@@ -1523,7 +1523,7 @@
     ],
     "description": "French progressive power metal band.",
     "styleNotes": "Progressive power metal with neoclassical influences.",
-    "tier": "niche"
+    "tier": "popular"
   },
   {
     "id": "band_kiuas_1",
@@ -1539,8 +1539,8 @@
       "The New Dark Age"
     ],
     "description": "Finnish power metal band with folk influences.",
-    "styleNotes": "Power metal with folk and heavy elements.",
-    "tier": "niche"
+    "styleNotes": "Power metal with folk influences.",
+    "tier": "popular"
   },
   {
     "id": "band_candlemass_1",
@@ -1554,9 +1554,9 @@
       "Nightfall",
       "Ancient Dreams"
     ],
-    "description": "Pioneering doom metal band from Sweden.",
-    "styleNotes": "Epic doom metal with operatic vocals and heavy riffing.",
-    "tier": "niche"
+    "description": "Swedish pioneering doom metal band.",
+    "styleNotes": "Epic doom metal characterized by operatic vocals and heavy riffing.",
+    "tier": "popular"
   },
   {
     "id": "band_pentagram_1",
@@ -1571,7 +1571,7 @@
       "Day of Reckoning",
       "Be Forewarned"
     ],
-    "description": "One of the first doom metal bands.",
+    "description": "American doom/heavy metal band, one of the pioneering acts in the genre.",
     "styleNotes": "Pioneering doom metal with heavy, slow riffs.",
     "tier": "niche"
   },
@@ -1589,7 +1589,7 @@
     ],
     "description": "American doom metal band known for their slow, heavy sound.",
     "styleNotes": "Traditional doom metal with punk influences.",
-    "tier": "niche"
+    "tier": "popular"
   },
   {
     "id": "band_cathedral_1",
@@ -1605,7 +1605,7 @@
     ],
     "description": "British doom metal band.",
     "styleNotes": "Doom metal with stoner and psychedelic elements.",
-    "tier": "niche"
+    "tier": "popular"
   },
   {
     "id": "band_paranoid_1",
@@ -1682,7 +1682,7 @@
     ],
     "description": "American doom metal band.",
     "styleNotes": "Doom metal with emotional and melodic elements.",
-    "tier": "niche"
+    "tier": "popular"
   },
   {
     "id": "band_yob_1",
@@ -1698,7 +1698,7 @@
     ],
     "description": "American doom metal band.",
     "styleNotes": "Stoner doom with progressive and psychedelic elements.",
-    "tier": "niche"
+    "tier": "popular"
   },
   {
     "id": "band_reverend_bizarre_1",
@@ -1714,7 +1714,7 @@
     ],
     "description": "Finnish doom metal band.",
     "styleNotes": "Traditional doom metal with epic elements.",
-    "tier": "niche"
+    "tier": "popular"
   },
   {
     "id": "band_ministry_1",
@@ -1728,9 +1728,9 @@
       "Psalm 69",
       "The Land of Rape and Honey"
     ],
-    "description": "American industrial metal band.",
-    "styleNotes": "Industrial metal with heavy, aggressive sound.",
-    "tier": "niche"
+    "description": "American industrial/doom metal band known for aggressive, experimental sound.",
+    "styleNotes": "Industrial/doom metal with heavy, experimental elements; early 1980s work blended rock and industrial styles.",
+    "tier": "well-known"
   },
   {
     "id": "band_evoken_1",
@@ -1745,7 +1745,7 @@
       "Quietus",
       "A Caress of the Void"
     ],
-    "description": "American death/doom metal band.",
+    "description": "American doom/death metal band.",
     "styleNotes": "Death/doom with funeral doom elements.",
     "tier": "niche"
   },
@@ -1764,7 +1764,7 @@
     ],
     "description": "Finnish funeral doom metal band.",
     "styleNotes": "Funeral doom with atmospheric and melancholic elements.",
-    "tier": "niche"
+    "tier": "popular"
   },
   {
     "id": "band_skepticism_1",
@@ -1779,7 +1779,7 @@
       "Farmakon"
     ],
     "description": "Finnish funeral doom metal band.",
-    "styleNotes": "Funeral doom with minimalist and atmospheric approach.",
+    "styleNotes": "Funeral doom metal with a minimalist, atmospheric approach.",
     "tier": "niche"
   },
   {
@@ -1828,7 +1828,7 @@
     ],
     "description": "Swedish death/doom/gothic metal band.",
     "styleNotes": "Death/doom with gothic and romantic elements.",
-    "tier": "niche"
+    "tier": "popular"
   },
   {
     "id": "band_october_tide_1",
@@ -1844,7 +1844,7 @@
     ],
     "description": "Swedish death/doom metal band.",
     "styleNotes": "Melodic death/doom metal.",
-    "tier": "niche"
+    "tier": "popular"
   },
   {
     "id": "band_katatonia_1",
@@ -1859,9 +1859,9 @@
       "Discouraged Ones",
       "Tonight's Decision"
     ],
-    "description": "Swedish death/doom/gothic metal band.",
-    "styleNotes": "Evolved from death/doom to gothic rock/metal.",
-    "tier": "niche"
+    "description": "Swedish doom/death/gothic metal band.",
+    "styleNotes": "Evolved from death/doom to gothic metal.",
+    "tier": "popular"
   },
   {
     "id": "band_rapture_1",
@@ -1892,8 +1892,8 @@
       "Fallout",
       "Rika"
     ],
-    "description": "Swedish death/doom/prog metal band.",
-    "styleNotes": "Death/doom with progressive and atmospheric elements.",
+    "description": "Swedish doom/death/prog metal band.",
+    "styleNotes": "Doom/death metal with progressive and atmospheric elements.",
     "tier": "niche"
   },
   {
@@ -1909,9 +1909,9 @@
       "Still Life",
       "Damnation"
     ],
-    "description": "Swedish progressive metal band known for incorporating death metal and acoustic elements.",
-    "styleNotes": "Evolved from death metal to progressive metal with clean vocals and acoustic passages.",
-    "tier": "niche"
+    "description": "Swedish progressive metal band known for blending death metal and acoustic elements.",
+    "styleNotes": "Evolved from death metal to progressive metal, integrating clean vocals and acoustic passages into their compositions.",
+    "tier": "well-known"
   },
   {
     "id": "band_dream_theater_1",
@@ -1927,7 +1927,7 @@
     ],
     "description": "American progressive metal band known for technical proficiency.",
     "styleNotes": "Consistent progressive metal style with complex compositions and instrumental sections.",
-    "tier": "niche"
+    "tier": "popular"
   },
   {
     "id": "band_tool_1",
@@ -1942,8 +1942,8 @@
       "Lateralus"
     ],
     "description": "American progressive metal band known for complex rhythms and philosophical lyrics.",
-    "styleNotes": "Incorporated progressive, alternative, and psychedelic elements.",
-    "tier": "niche"
+    "styleNotes": "Progressive metal with alternative and psychedelic influences.",
+    "tier": "well-known"
   },
   {
     "id": "band_between_the_buried_and_me_1",
@@ -1958,8 +1958,8 @@
       "The Parallax II: Future Sequence"
     ],
     "description": "American progressive metal band known for genre blending.",
-    "styleNotes": "Incorporated deathcore, progressive, and jazz fusion elements.",
-    "tier": "niche"
+    "styleNotes": "Progressive metal with deathcore and jazz fusion influences.",
+    "tier": "popular"
   },
   {
     "id": "band_symphony_x_1",
@@ -1976,7 +1976,7 @@
     ],
     "description": "American progressive power metal band.",
     "styleNotes": "Progressive power metal with neoclassical influences.",
-    "tier": "niche"
+    "tier": "popular"
   },
   {
     "id": "band_fates_warning_1",
@@ -1990,9 +1990,9 @@
       "Perfect Symmetry",
       "Parallels"
     ],
-    "description": "American progressive metal pioneers.",
-    "styleNotes": "Pioneers of progressive metal.",
-    "tier": "niche"
+    "description": "American progressive metal pioneers",
+    "styleNotes": "Progressive metal pioneers known for intricate compositions.",
+    "tier": "popular"
   },
   {
     "id": "band_queensryche_1",
@@ -2009,7 +2009,7 @@
     ],
     "description": "American progressive metal band.",
     "styleNotes": "Progressive metal with concept albums.",
-    "tier": "niche"
+    "tier": "popular"
   },
   {
     "id": "band_watchtower_1",
@@ -2025,7 +2025,7 @@
     ],
     "description": "American progressive thrash metal band.",
     "styleNotes": "Technical progressive thrash metal.",
-    "tier": "niche"
+    "tier": "popular"
   },
   {
     "id": "band_coroner_1",
@@ -2042,7 +2042,7 @@
     ],
     "description": "Swiss progressive thrash metal band.",
     "styleNotes": "Technical progressive thrash metal.",
-    "tier": "niche"
+    "tier": "popular"
   },
   {
     "id": "band_mekong_delta_1",
@@ -2059,7 +2059,7 @@
     ],
     "description": "German progressive thrash metal band.",
     "styleNotes": "Technical progressive thrash metal.",
-    "tier": "niche"
+    "tier": "popular"
   },
   {
     "id": "band_voivod_1",
@@ -2076,7 +2076,7 @@
     ],
     "description": "Canadian progressive thrash metal band.",
     "styleNotes": "Progressive thrash with sci-fi themes and unique guitar work.",
-    "tier": "niche"
+    "tier": "popular"
   },
   {
     "id": "band_cynic_1",
@@ -2091,8 +2091,8 @@
       "Traced in Air"
     ],
     "description": "American progressive death metal band.",
-    "styleNotes": "Combined death metal with fusion and progressive rock.",
-    "tier": "niche"
+    "styleNotes": "Progressive death metal that combined death metal with fusion and progressive rock.",
+    "tier": "popular"
   },
   {
     "id": "band_pestilence_1",
@@ -2107,9 +2107,9 @@
       "Consuming Impulse",
       "Testimony of the Ancients"
     ],
-    "description": "Dutch death metal band.",
+    "description": "Dutch progressive/death metal band.",
     "styleNotes": "Evolved from death metal to technical death with jazz fusion.",
-    "tier": "niche"
+    "tier": "popular"
   },
   {
     "id": "band_athon_1",
@@ -2124,9 +2124,9 @@
       "Unquestionable Presence",
       "Elements"
     ],
-    "description": "American technical death metal band.",
-    "styleNotes": "Pioneered jazz fusion in death metal.",
-    "tier": "niche"
+    "description": "American technical death metal band known for pioneering jazz fusion.",
+    "styleNotes": "Pioneered jazz fusion in death metal",
+    "tier": "popular"
   },
   {
     "id": "band_gorguts_1",
@@ -2141,9 +2141,9 @@
       "The Erosion of Sanity",
       "Obscura"
     ],
-    "description": "Canadian death metal band.",
+    "description": "Canadian progressive death metal band.",
     "styleNotes": "Pioneered avant-garde and technical death metal.",
-    "tier": "niche"
+    "tier": "popular"
   },
   {
     "id": "band_necrophagist_1",
@@ -2175,7 +2175,7 @@
       "Antithesis"
     ],
     "description": "American technical death metal band.",
-    "styleNotes": "Highly technical, fast-paced death metal.",
+    "styleNotes": "Highly technical, fast-paced death metal with progressive elements.",
     "tier": "niche"
   },
   {
@@ -2189,8 +2189,8 @@
     "albums": [
       "Apocalyptic Feasting"
     ],
-    "description": "American technical death metal band.",
-    "styleNotes": "Extremely technical and fast death metal.",
+    "description": "American progressive death metal band.",
+    "styleNotes": "Technical and fast death metal with progressive elements.",
     "tier": "niche"
   },
   {
@@ -2207,7 +2207,7 @@
     ],
     "description": "Swedish technical death metal band.",
     "styleNotes": "Technical death metal with neoclassical influences.",
-    "tier": "niche"
+    "tier": "popular"
   },
   {
     "id": "band_soreption_1",
@@ -2240,7 +2240,7 @@
     ],
     "description": "Canadian technical death metal band.",
     "styleNotes": "Technical death metal with melodic elements.",
-    "tier": "niche"
+    "tier": "popular"
   },
   {
     "id": "band_augury_1",
@@ -2256,7 +2256,7 @@
     ],
     "description": "Canadian technical death metal band.",
     "styleNotes": "Technical death metal with progressive and atmospheric elements.",
-    "tier": "niche"
+    "tier": "popular"
   },
   {
     "id": "band_gorod_1",
@@ -2273,7 +2273,7 @@
     ],
     "description": "French technical death metal band.",
     "styleNotes": "Technical death metal with jazz fusion influences.",
-    "tier": "niche"
+    "tier": "popular"
   },
   {
     "id": "band_ultar_1",
@@ -2305,7 +2305,7 @@
       "Outre",
       "Swarth"
     ],
-    "description": "Australian death metal band.",
+    "description": "Australian progressive death metal band.",
     "styleNotes": "Avant-garde death metal with surreal atmosphere.",
     "tier": "niche"
   },
@@ -2340,7 +2340,7 @@
     ],
     "description": "American technical death metal band.",
     "styleNotes": "Technical death metal with progressive and atmospheric elements.",
-    "tier": "niche"
+    "tier": "popular"
   },
   {
     "id": "band_black_crown_initiate_1",
@@ -2402,7 +2402,7 @@
     ],
     "description": "Australian instrumental progressive metal artist.",
     "styleNotes": "Instrumental progressive metal with melodic elements.",
-    "tier": "niche"
+    "tier": "popular"
   },
   {
     "id": "band_sithu_aye_1",
@@ -2450,7 +2450,7 @@
     ],
     "description": "British progressive metal band.",
     "styleNotes": "Progressive metal with djent and atmospheric elements.",
-    "tier": "niche"
+    "tier": "popular"
   },
   {
     "id": "band_periphery_1",
@@ -2466,7 +2466,7 @@
     ],
     "description": "American progressive metal band.",
     "styleNotes": "Progressive metal with djent and pop elements.",
-    "tier": "niche"
+    "tier": "popular"
   },
   {
     "id": "band_animals_as_leaders_1",
@@ -2482,7 +2482,7 @@
     ],
     "description": "American instrumental progressive metal band.",
     "styleNotes": "Instrumental progressive metal with djent and jazz fusion.",
-    "tier": "niche"
+    "tier": "popular"
   },
   {
     "id": "band_meshuggah_1",
@@ -2498,7 +2498,7 @@
     ],
     "description": "Swedish progressive metal band.",
     "styleNotes": "Pioneers of djent and polyrhythmic metal.",
-    "tier": "niche"
+    "tier": "popular"
   },
   {
     "id": "band_textures_1",
@@ -2514,7 +2514,7 @@
     ],
     "description": "Dutch progressive metal band.",
     "styleNotes": "Progressive metal with djent and groove elements.",
-    "tier": "niche"
+    "tier": "popular"
   },
   {
     "id": "band_vildhjarta_1",
@@ -2529,7 +2529,7 @@
     ],
     "description": "Swedish progressive metal band.",
     "styleNotes": "Progressive metal with djent and atmospheric elements.",
-    "tier": "niche"
+    "tier": "popular"
   },
   {
     "id": "band_uneven_structure_1",
@@ -2560,7 +2560,7 @@
     ],
     "description": "Australian progressive metal band.",
     "styleNotes": "Progressive metal with alternative rock elements.",
-    "tier": "niche"
+    "tier": "popular"
   },
   {
     "id": "band_leprous_1",
@@ -2576,7 +2576,7 @@
     ],
     "description": "Norwegian progressive metal band.",
     "styleNotes": "Progressive metal with avant-garde and theatrical elements.",
-    "tier": "niche"
+    "tier": "popular"
   },
   {
     "id": "band_ihsahn_1",
@@ -2592,7 +2592,7 @@
     ],
     "description": "Norwegian progressive metal artist.",
     "styleNotes": "Progressive metal with avant-garde and symphonic elements.",
-    "tier": "niche"
+    "tier": "popular"
   },
   {
     "id": "band_devin_townsend_project_1",
@@ -2608,7 +2608,7 @@
     ],
     "description": "Canadian progressive metal project.",
     "styleNotes": "Progressive metal with diverse musical styles.",
-    "tier": "niche"
+    "tier": "popular"
   },
   {
     "id": "band_ayreon_1",
@@ -2622,9 +2622,9 @@
       "Into the Electric Castle",
       "The Human Equation"
     ],
-    "description": "Dutch progressive rock opera project.",
-    "styleNotes": "Progressive rock opera with guest vocalists.",
-    "tier": "niche"
+    "description": "Dutch progressive rock opera band.",
+    "styleNotes": "Progressive rock opera with guest vocalists; maintains a consistent style.",
+    "tier": "popular"
   },
   {
     "id": "band_pain_of_salvation_1",
@@ -2640,7 +2640,7 @@
     ],
     "description": "Swedish progressive metal band.",
     "styleNotes": "Progressive metal with concept albums and emotional depth.",
-    "tier": "niche"
+    "tier": "popular"
   },
   {
     "id": "band_porcupine_tree_1",
@@ -2656,7 +2656,7 @@
     ],
     "description": "British progressive rock/metal band.",
     "styleNotes": "Progressive rock/metal with psychedelic and alternative elements.",
-    "tier": "niche"
+    "tier": "popular"
   },
   {
     "id": "band_king_crimson_1",
@@ -2672,7 +2672,7 @@
     ],
     "description": "British progressive rock pioneers.",
     "styleNotes": "Pioneers of progressive rock with complex compositions.",
-    "tier": "niche"
+    "tier": "popular"
   },
   {
     "id": "band_rush_1",
@@ -2688,8 +2688,8 @@
       "Permanent Waves"
     ],
     "description": "Canadian progressive rock band.",
-    "styleNotes": "Progressive rock with complex compositions and technical proficiency.",
-    "tier": "niche"
+    "styleNotes": "Progressive rock with complex compositions, technical proficiency, and evolving from early hard rock to more progressive styles.",
+    "tier": "well-known"
   },
   {
     "id": "band_black_sabbath_1",
@@ -2704,9 +2704,9 @@
       "Paranoid",
       "Master of Reality"
     ],
-    "description": "Pioneering heavy metal band from Birmingham.",
-    "styleNotes": "Created the foundation for heavy metal and doom metal.",
-    "tier": "niche"
+    "description": "British pioneering heavy metal/doom metal band.",
+    "styleNotes": "Founded the heavy and doom metal genres.",
+    "tier": "well-known"
   },
   {
     "id": "band_dio_1",
@@ -2722,7 +2722,7 @@
     ],
     "description": "American heavy metal band led by Ronnie James Dio.",
     "styleNotes": "Classic heavy metal with epic themes.",
-    "tier": "niche"
+    "tier": "popular"
   },
   {
     "id": "band_manowar_1",
@@ -2737,9 +2737,9 @@
       "Into Glory Ride",
       "Hail to England"
     ],
-    "description": "American heavy metal band known for fantasy themes.",
-    "styleNotes": "Heavy metal with fantasy and warrior themes.",
-    "tier": "niche"
+    "description": "American heavy/power metal band known for fantasy/warrior themes.",
+    "styleNotes": "Heavy/power metal with fantasy and warrior themes.",
+    "tier": "popular"
   },
   {
     "id": "band_scorpions_1",
@@ -2754,9 +2754,9 @@
       "Lovedrive",
       "Blackout"
     ],
-    "description": "German heavy metal band.",
+    "description": "German heavy rock/heavy metal band.",
     "styleNotes": "Heavy metal with hard rock influences.",
-    "tier": "niche"
+    "tier": "well-known"
   },
   {
     "id": "band_rainbow_1",
@@ -2773,7 +2773,7 @@
     ],
     "description": "British-American heavy metal/hard rock band.",
     "styleNotes": "Heavy metal with hard rock and medieval influences.",
-    "tier": "niche"
+    "tier": "popular"
   },
   {
     "id": "band_deep_purple_1",
@@ -2788,9 +2788,9 @@
       "Burn",
       "Perfect Strangers"
     ],
-    "description": "British hard rock/heavy metal pioneers.",
-    "styleNotes": "Pioneers of hard rock and heavy metal.",
-    "tier": "niche"
+    "description": "British hard rock/heavy metal band.",
+    "styleNotes": "Hard rock and heavy metal pioneers with blues influences.",
+    "tier": "well-known"
   },
   {
     "id": "band_led_zeppelin_1",
@@ -2806,8 +2806,8 @@
       "Houses of the Holy"
     ],
     "description": "British hard rock/heavy metal pioneers.",
-    "styleNotes": "Pioneers of hard rock and heavy metal.",
-    "tier": "niche"
+    "styleNotes": "Hard rock and heavy metal with blues, folk, and Celtic influences.",
+    "tier": "well-known"
   },
   {
     "id": "band_ufo_1",
@@ -2823,8 +2823,8 @@
       "Strangers in the Night"
     ],
     "description": "British heavy metal/hard rock band.",
-    "styleNotes": "Heavy metal with hard rock influences.",
-    "tier": "niche"
+    "styleNotes": "Hard rock/heavy metal with progressive and blues influences.",
+    "tier": "popular"
   },
   {
     "id": "band_whitesnake_1",
@@ -2841,7 +2841,7 @@
     ],
     "description": "British heavy metal/hard rock band.",
     "styleNotes": "Heavy metal with hard rock and blues influences.",
-    "tier": "niche"
+    "tier": "well-known"
   },
   {
     "id": "band_def_leppard_1",
@@ -2856,9 +2856,9 @@
       "Pyromania",
       "Hysteria"
     ],
-    "description": "British heavy metal/hard rock band.",
-    "styleNotes": "Heavy metal with hard rock and pop influences.",
-    "tier": "niche"
+    "description": "British hard rock/heavy metal band.",
+    "styleNotes": "Hard rock with heavy metal and pop influences.",
+    "tier": "well-known"
   },
   {
     "id": "band_quiet_riot_1",
@@ -2874,7 +2874,7 @@
     ],
     "description": "American heavy metal/hard rock band.",
     "styleNotes": "Heavy metal with hard rock and glam influences.",
-    "tier": "niche"
+    "tier": "well-known"
   },
   {
     "id": "band_twisted_sister_1",
@@ -2891,7 +2891,7 @@
     ],
     "description": "American heavy metal/glam rock band.",
     "styleNotes": "Heavy metal with glam and punk influences.",
-    "tier": "niche"
+    "tier": "well-known"
   },
   {
     "id": "band_mötley_crüe_1",
@@ -2907,8 +2907,8 @@
       "Girls, Girls, Girls"
     ],
     "description": "American heavy metal/glam rock band.",
-    "styleNotes": "Heavy metal with glam and hard rock influences.",
-    "tier": "niche"
+    "styleNotes": "Glam metal with heavy metal and hard rock influences.",
+    "tier": "well-known"
   },
   {
     "id": "band_poison_1",
@@ -2923,9 +2923,9 @@
       "Open Up and Say... Ahh!",
       "Flesh & Blood"
     ],
-    "description": "American heavy metal/glam rock band.",
-    "styleNotes": "Heavy metal with glam and pop influences.",
-    "tier": "niche"
+    "description": "American glam metal band.",
+    "styleNotes": "Glam metal with heavy metal and pop influences.",
+    "tier": "well-known"
   },
   {
     "id": "band_wasp_1",
@@ -2941,8 +2941,8 @@
       "Inside the Electric Circus"
     ],
     "description": "American heavy metal/glam rock band.",
-    "styleNotes": "Heavy metal with glam and shock rock elements.",
-    "tier": "niche"
+    "styleNotes": "Heavy metal with glam and shock rock influences.",
+    "tier": "popular"
   },
   {
     "id": "band_kiss_1",
@@ -2959,7 +2959,7 @@
     ],
     "description": "American hard rock/heavy metal band.",
     "styleNotes": "Hard rock/heavy metal with theatrical elements.",
-    "tier": "niche"
+    "tier": "well-known"
   },
   {
     "id": "band_aerosmith_1",
@@ -2976,7 +2976,7 @@
     ],
     "description": "American hard rock/heavy metal band.",
     "styleNotes": "Hard rock/heavy metal with blues influences.",
-    "tier": "niche"
+    "tier": "well-known"
   },
   {
     "id": "band_ac_dc_1",
@@ -2993,7 +2993,7 @@
     ],
     "description": "Australian hard rock/heavy metal band.",
     "styleNotes": "Hard rock/heavy metal with blues influences.",
-    "tier": "niche"
+    "tier": "well-known"
   },
   {
     "id": "band_guns_n_roses_1",
@@ -3010,7 +3010,7 @@
     ],
     "description": "American hard rock/heavy metal band.",
     "styleNotes": "Hard rock/heavy metal with punk and blues influences.",
-    "tier": "niche"
+    "tier": "well-known"
   },
   {
     "id": "band_skid_row_1",
@@ -3025,8 +3025,8 @@
       "Slave to the Grind"
     ],
     "description": "American heavy metal/hard rock band.",
-    "styleNotes": "Heavy metal with hard rock and glam influences.",
-    "tier": "niche"
+    "styleNotes": "Heavy metal/hard rock with glam and hard rock influences.",
+    "tier": "popular"
   },
   {
     "id": "band_dokken_1",
@@ -3041,9 +3041,9 @@
       "Tooth and Nail",
       "Under Lock and Key"
     ],
-    "description": "American heavy metal/hard rock band.",
-    "styleNotes": "Heavy metal with hard rock and melodic elements.",
-    "tier": "niche"
+    "description": "American hard rock/heavy metal band.",
+    "styleNotes": "Hard rock/heavy metal with melodic elements.",
+    "tier": "popular"
   },
   {
     "id": "band_ratt_1",
@@ -3060,7 +3060,7 @@
     ],
     "description": "American heavy metal/glam rock band.",
     "styleNotes": "Heavy metal with glam and hard rock influences.",
-    "tier": "niche"
+    "tier": "popular"
   },
   {
     "id": "band_cinderella_1",
@@ -3075,9 +3075,9 @@
       "Long Cold Winter",
       "Heartbreak Station"
     ],
-    "description": "American heavy metal/glam rock band.",
-    "styleNotes": "Heavy metal with glam and blues influences.",
-    "tier": "niche"
+    "description": "American glam/hard rock band.",
+    "styleNotes": "Glam/hard rock with blues influences.",
+    "tier": "well-known"
   },
   {
     "id": "band_bon_jovi_1",
@@ -3094,7 +3094,7 @@
     ],
     "description": "American hard rock/heavy metal band.",
     "styleNotes": "Hard rock/heavy metal with pop influences.",
-    "tier": "niche"
+    "tier": "well-known"
   },
   {
     "id": "band_europe_1",
@@ -3111,7 +3111,7 @@
     ],
     "description": "Swedish hard rock/heavy metal band.",
     "styleNotes": "Hard rock/heavy metal with pop influences.",
-    "tier": "niche"
+    "tier": "well-known"
   },
   {
     "id": "band_krokus_1",
@@ -3126,8 +3126,8 @@
       "The Blitz"
     ],
     "description": "Swiss heavy metal/hard rock band.",
-    "styleNotes": "Heavy metal with hard rock influences.",
-    "tier": "niche"
+    "styleNotes": "Hard rock-infused heavy metal",
+    "tier": "popular"
   },
   {
     "id": "band_gotthard_1",
@@ -3144,7 +3144,7 @@
     ],
     "description": "Swiss hard rock/heavy metal band.",
     "styleNotes": "Hard rock/heavy metal with melodic elements.",
-    "tier": "niche"
+    "tier": "popular"
   },
   {
     "id": "band_heavy_metal_kids_1",
@@ -3158,7 +3158,7 @@
       "Heavy Metal Kids"
     ],
     "description": "British heavy metal/glam rock band.",
-    "styleNotes": "Heavy metal with glam and punk influences.",
+    "styleNotes": "Heavy metal with glam rock and punk influences.",
     "tier": "niche"
   },
   {
@@ -3188,8 +3188,8 @@
     "albums": [
       "London"
     ],
-    "description": "American heavy metal/glam rock band.",
-    "styleNotes": "Heavy metal with glam influences.",
+    "description": "American glam/hard rock/heavy metal band.",
+    "styleNotes": "Glam/hard rock/heavy metal with glam influences.",
     "tier": "niche"
   },
   {
@@ -3206,7 +3206,7 @@
     ],
     "description": "British heavy metal/hard rock band.",
     "styleNotes": "Heavy metal with melodic guitar work.",
-    "tier": "niche"
+    "tier": "popular"
   },
   {
     "id": "band_grand_funk_railroad_1",
@@ -3223,7 +3223,7 @@
     ],
     "description": "American hard rock/heavy metal band.",
     "styleNotes": "Hard rock/heavy metal with blues influences.",
-    "tier": "niche"
+    "tier": "popular"
   },
   {
     "id": "band_blue_yster_cult_1",
@@ -3240,7 +3240,7 @@
     ],
     "description": "American hard rock/heavy metal band.",
     "styleNotes": "Hard rock/heavy metal with psychedelic influences.",
-    "tier": "niche"
+    "tier": "popular"
   },
   {
     "id": "band_boston_1",
@@ -3257,7 +3257,7 @@
     ],
     "description": "American hard rock/heavy metal band.",
     "styleNotes": "Hard rock/heavy metal with melodic elements.",
-    "tier": "niche"
+    "tier": "popular"
   },
   {
     "id": "band_journey_1",
@@ -3274,7 +3274,7 @@
     ],
     "description": "American hard rock/heavy metal band.",
     "styleNotes": "Hard rock/heavy metal with progressive elements.",
-    "tier": "niche"
+    "tier": "well-known"
   },
   {
     "id": "band_foreigner_1",
@@ -3291,7 +3291,7 @@
     ],
     "description": "British-American hard rock/heavy metal band.",
     "styleNotes": "Hard rock/heavy metal with pop influences.",
-    "tier": "niche"
+    "tier": "popular"
   },
   {
     "id": "band_styx_1",
@@ -3308,7 +3308,7 @@
     ],
     "description": "American hard rock/heavy metal band.",
     "styleNotes": "Hard rock/heavy metal with progressive elements.",
-    "tier": "niche"
+    "tier": "popular"
   },
   {
     "id": "band_kansas_1",
@@ -3324,7 +3324,7 @@
     ],
     "description": "American progressive rock/heavy metal band.",
     "styleNotes": "Progressive rock with heavy metal elements.",
-    "tier": "niche"
+    "tier": "popular"
   },
   {
     "id": "band_reo_speedwagon_1",
@@ -3340,7 +3340,7 @@
     ],
     "description": "American hard rock/heavy metal band.",
     "styleNotes": "Hard rock/heavy metal with pop influences.",
-    "tier": "niche"
+    "tier": "popular"
   },
   {
     "id": "band_38_special_1",
@@ -3356,7 +3356,7 @@
     ],
     "description": "American hard rock/heavy metal band.",
     "styleNotes": "Hard rock/heavy metal with southern rock influences.",
-    "tier": "niche"
+    "tier": "popular"
   },
   {
     "id": "band_molly_hatchet_1",
@@ -3372,7 +3372,7 @@
     ],
     "description": "American hard rock/heavy metal band.",
     "styleNotes": "Hard rock/heavy metal with southern rock influences.",
-    "tier": "niche"
+    "tier": "popular"
   },
   {
     "id": "band_blackfoot_1",
@@ -3388,7 +3388,7 @@
     ],
     "description": "American hard rock/heavy metal band.",
     "styleNotes": "Hard rock/heavy metal with southern rock influences.",
-    "tier": "niche"
+    "tier": "popular"
   },
   {
     "id": "band_outlaws_1",
@@ -3404,7 +3404,7 @@
     ],
     "description": "American hard rock/heavy metal band.",
     "styleNotes": "Hard rock/heavy metal with southern rock influences.",
-    "tier": "niche"
+    "tier": "popular"
   },
   {
     "id": "band_the_allman_brothers_band_1",
@@ -3421,7 +3421,7 @@
     ],
     "description": "American hard rock/heavy metal band.",
     "styleNotes": "Hard rock/heavy metal with southern rock and jam band influences.",
-    "tier": "niche"
+    "tier": "popular"
   },
   {
     "id": "band_lynyrd_skynyrd_1",
@@ -3438,7 +3438,7 @@
     ],
     "description": "American hard rock/heavy metal band.",
     "styleNotes": "Hard rock/heavy metal with southern rock influences.",
-    "tier": "niche"
+    "tier": "well-known"
   },
   {
     "id": "band_creedence_clearwater_revival_1",
@@ -3453,9 +3453,9 @@
       "Green River",
       "Willy and the Poor Boys"
     ],
-    "description": "American hard rock/heavy metal band.",
-    "styleNotes": "Hard rock/heavy metal with swamp rock influences.",
-    "tier": "niche"
+    "description": "American hard rock band known for swamp rock influences.",
+    "styleNotes": "Hard rock with prominent swamp rock influences.",
+    "tier": "popular"
   },
   {
     "id": "band_status_quo_1",
@@ -3472,7 +3472,7 @@
     ],
     "description": "British hard rock/heavy metal band.",
     "styleNotes": "Hard rock/heavy metal with boogie rock influences.",
-    "tier": "niche"
+    "tier": "popular"
   },
   {
     "id": "band_slade_1",
@@ -3487,9 +3487,9 @@
       "Slayed?",
       "Old New Borrowed and Blue"
     ],
-    "description": "British heavy metal/glam rock band.",
-    "styleNotes": "Heavy metal with glam and hard rock influences.",
-    "tier": "niche"
+    "description": "British glam/hard rock band.",
+    "styleNotes": "Glam/hard rock with heavy metal influences.",
+    "tier": "popular"
   },
   {
     "id": "band_sweet_1",
@@ -3504,9 +3504,9 @@
       "Give Us a Wink",
       "Off the Record"
     ],
-    "description": "British heavy metal/glam rock band.",
-    "styleNotes": "Heavy metal with glam and hard rock influences.",
-    "tier": "niche"
+    "description": "British glam metal/heavy metal band.",
+    "styleNotes": "Consistent glam metal with heavy rock influences.",
+    "tier": "popular"
   },
   {
     "id": "band_mud_1",
@@ -3550,9 +3550,9 @@
       "New York Dolls",
       "Too Much Too Soon"
     ],
-    "description": "American heavy metal/glam rock/punk band.",
-    "styleNotes": "Heavy metal with glam and punk influences.",
-    "tier": "niche"
+    "description": "American glam rock/heavy metal band.",
+    "styleNotes": "Pioneered glam rock in the early 1970s; blended heavy metal and punk influences.",
+    "tier": "popular"
   },
   {
     "id": "band_the_stooges_1",
@@ -3568,7 +3568,7 @@
     ],
     "description": "American heavy metal/punk band.",
     "styleNotes": "Heavy metal with punk and garage rock influences.",
-    "tier": "niche"
+    "tier": "popular"
   },
   {
     "id": "band_mc5_1",
@@ -3600,7 +3600,7 @@
     ],
     "description": "American hard rock/heavy metal band.",
     "styleNotes": "Hard rock/heavy metal with virtuoso guitar work.",
-    "tier": "niche"
+    "tier": "well-known"
   },
   {
     "id": "band_exciter_1",
@@ -3615,9 +3615,9 @@
       "Violence & Force",
       "Long Live the Loud"
     ],
-    "description": "Canadian speed metal pioneers.",
-    "styleNotes": "Influenced thrash metal development with fast, aggressive songs.",
-    "tier": "niche"
+    "description": "Canadian speed/thrash metal band.",
+    "styleNotes": "Pioneers of speed/thrash metal with fast, aggressive playing that influenced later thrash acts.",
+    "tier": "popular"
   },
   {
     "id": "band_razor_1",
@@ -3634,7 +3634,7 @@
     ],
     "description": "Canadian speed/thrash metal band.",
     "styleNotes": "Fast, aggressive speed/thrash metal.",
-    "tier": "niche"
+    "tier": "popular"
   },
   {
     "id": "band_agent_steel_1",
@@ -3651,7 +3651,7 @@
     ],
     "description": "American speed metal band known for high-pitched vocals.",
     "styleNotes": "Speed metal with power metal elements and sci-fi themes.",
-    "tier": "niche"
+    "tier": "popular"
   },
   {
     "id": "band_anvil_1",
@@ -3668,7 +3668,7 @@
     ],
     "description": "Canadian heavy/speed metal band.",
     "styleNotes": "Consistent heavy/speed metal style.",
-    "tier": "niche"
+    "tier": "popular"
   },
   {
     "id": "band_accept_1",
@@ -3685,7 +3685,7 @@
     ],
     "description": "German heavy metal band known for aggressive sound.",
     "styleNotes": "Influenced speed metal and thrash metal development.",
-    "tier": "niche"
+    "tier": "popular"
   },
   {
     "id": "band_running_wild_1",
@@ -3700,9 +3700,9 @@
       "Port Royal",
       "Black Hand Inn"
     ],
-    "description": "German metal band known for pirate themes.",
-    "styleNotes": "Combined thrash and power metal with pirate imagery.",
-    "tier": "niche"
+    "description": "German speed/power metal band known for pirate themes.",
+    "styleNotes": "Speed/power metal with pirate themes; thrash influences.",
+    "tier": "popular"
   },
   {
     "id": "band_grave_digger_1",
@@ -3717,9 +3717,9 @@
       "Heart of Darkness",
       "The Reaper"
     ],
-    "description": "German metal band with dark themes.",
+    "description": "German power/speed metal band.",
     "styleNotes": "Evolved from speed metal to power metal.",
-    "tier": "niche"
+    "tier": "popular"
   },
   {
     "id": "band_rage_1",
@@ -3734,9 +3734,9 @@
       "Execution Guaranteed",
       "Perfect Man"
     ],
-    "description": "German metal band blending thrash and power metal.",
-    "styleNotes": "Evolved to incorporate symphonic elements.",
-    "tier": "niche"
+    "description": "German speed/power metal band blending thrash and power elements.",
+    "styleNotes": "Evolved from traditional thrash/power metal to incorporate symphonic elements.",
+    "tier": "popular"
   },
   {
     "id": "band_helloween_1",
@@ -3752,8 +3752,8 @@
       "Master of the Rings"
     ],
     "description": "Pioneering German power metal band.",
-    "styleNotes": "Started as speed metal, evolved to power metal, experimented with different styles.",
-    "tier": "niche"
+    "styleNotes": "Evolved from speed metal in the early '80s into power metal, known for melodic songwriting and theatrical elements.",
+    "tier": "well-known"
   },
   {
     "id": "band_blind_guardian_1",
@@ -3769,8 +3769,8 @@
       "Nightfall in Middle-Earth"
     ],
     "description": "German power metal band known for fantasy themes and complex vocal harmonies.",
-    "styleNotes": "Evolved from speed metal to more symphonic power metal with orchestral elements.",
-    "tier": "niche"
+    "styleNotes": "Evolved from speed metal to symphonic power metal with orchestral elements.",
+    "tier": "popular"
   },
   {
     "id": "band_gamma_ray_1",
@@ -3787,7 +3787,7 @@
     ],
     "description": "German power metal band.",
     "styleNotes": "Power metal with space and science fiction themes.",
-    "tier": "niche"
+    "tier": "popular"
   },
   {
     "id": "band_stratovarius_1",
@@ -3804,7 +3804,7 @@
     ],
     "description": "Finnish power metal band known for neoclassical influences.",
     "styleNotes": "Incorporated progressive and neoclassical elements into power metal.",
-    "tier": "niche"
+    "tier": "popular"
   },
   {
     "id": "band_primal_fear_1",
@@ -3821,7 +3821,7 @@
     ],
     "description": "German power metal band.",
     "styleNotes": "Power metal with heavy and speed metal influences.",
-    "tier": "niche"
+    "tier": "popular"
   },
   {
     "id": "band_freedom_call_1",
@@ -3838,7 +3838,7 @@
     ],
     "description": "German power metal band.",
     "styleNotes": "Melodic power metal with fantasy themes.",
-    "tier": "niche"
+    "tier": "popular"
   },
   {
     "id": "band_edguy_1",
@@ -3853,9 +3853,9 @@
       "Mandrake",
       "Hellfire Club"
     ],
-    "description": "German power metal band with humorous elements.",
-    "styleNotes": "Power metal with theatrical and humorous elements.",
-    "tier": "niche"
+    "description": "German power metal band known for theatrical and humorous elements.",
+    "styleNotes": "Power metal with theatrical and humorous elements; evolved from traditional power metal to incorporate opera-inspired vocals and comedic themes.",
+    "tier": "popular"
   },
   {
     "id": "band_saxon_1",
@@ -3872,7 +3872,7 @@
     ],
     "description": "British heavy metal band part of the NWOBHM movement.",
     "styleNotes": "Consistent heavy metal style with NWOBHM influences.",
-    "tier": "niche"
+    "tier": "popular"
   },
   {
     "id": "band_iron_maiden_1",
@@ -3887,9 +3887,9 @@
       "Powerslave",
       "Somewhere in Time"
     ],
-    "description": "British heavy metal pioneers known for epic songs and mascot Eddie.",
-    "styleNotes": "Consistent heavy metal style with progressive and symphonic elements.",
-    "tier": "niche"
+    "description": "British heavy metal band, pioneers of speed metal.",
+    "styleNotes": "Evolved from early speed metal to incorporate progressive and symphonic elements.",
+    "tier": "well-known"
   },
   {
     "id": "band_judas_priest_1",
@@ -3904,9 +3904,9 @@
       "Screaming for Vengeance",
       "Painkiller"
     ],
-    "description": "British heavy metal pioneers known for twin guitar harmonies.",
-    "styleNotes": "Evolved from hard rock to heavy metal, maintained consistent style.",
-    "tier": "niche"
+    "description": "British heavy metal band known for twin guitar harmonies.",
+    "styleNotes": "Evolved from hard rock to heavy metal, maintaining a consistent aggressive style.",
+    "tier": "well-known"
   },
   {
     "id": "band_motorhead_1",
@@ -3922,8 +3922,8 @@
       "No Sleep 'til Hammersmith"
     ],
     "description": "British heavy metal pioneers.",
-    "styleNotes": "Created the foundation for speed metal and thrash metal.",
-    "tier": "niche"
+    "styleNotes": "Influenced the development of speed metal and thrash metal.",
+    "tier": "well-known"
   },
   {
     "id": "band_raven_1",
@@ -3939,8 +3939,8 @@
       "All for One"
     ],
     "description": "British heavy/speed metal band.",
-    "styleNotes": "Heavy metal with speed metal and punk influences.",
-    "tier": "niche"
+    "styleNotes": "Speed/heavy metal with punk influences.",
+    "tier": "popular"
   },
   {
     "id": "band_satan_1",
@@ -3972,7 +3972,7 @@
     ],
     "description": "British heavy metal band.",
     "styleNotes": "Heavy metal with NWOBHM influences.",
-    "tier": "niche"
+    "tier": "popular"
   },
   {
     "id": "band_battleaxe_1",
@@ -4004,7 +4004,7 @@
     ],
     "description": "British heavy metal band.",
     "styleNotes": "Heavy metal with punk influences.",
-    "tier": "niche"
+    "tier": "popular"
   },
   {
     "id": "band_rock_goddess_1",
@@ -4037,7 +4037,7 @@
     ],
     "description": "Danish heavy metal band.",
     "styleNotes": "Heavy metal with melodic elements.",
-    "tier": "niche"
+    "tier": "popular"
   },
   {
     "id": "band_mercyful_fate_1",
@@ -4052,9 +4052,9 @@
       "Don't Break the Oath",
       "In the Shadows"
     ],
-    "description": "Danish heavy/thrash band with occult themes.",
-    "styleNotes": "Influenced black metal with their occult imagery.",
-    "tier": "niche"
+    "description": "Danish heavy metal band known for occult themes.",
+    "styleNotes": "Heavy/speed metal that influenced early black metal with its dark imagery and aggressive sound.",
+    "tier": "popular"
   },
   {
     "id": "band_king_diamond_1",
@@ -4071,7 +4071,7 @@
     ],
     "description": "Danish heavy metal artist.",
     "styleNotes": "Heavy metal with horror themes and theatrical vocals.",
-    "tier": "niche"
+    "tier": "popular"
   },
   {
     "id": "band_manticora_1",
@@ -4088,7 +4088,7 @@
     ],
     "description": "Danish power metal band.",
     "styleNotes": "Progressive power metal with concept albums.",
-    "tier": "niche"
+    "tier": "popular"
   },
   {
     "id": "band_pyramaze_1",
@@ -4103,7 +4103,7 @@
       "Legend of the Bone Carver",
       "Immortal"
     ],
-    "description": "Danish power metal band.",
+    "description": "Danish progressive power metal band.",
     "styleNotes": "Progressive power metal.",
     "tier": "niche"
   },
@@ -4121,7 +4121,7 @@
     ],
     "description": "Danish melodic death metal band.",
     "styleNotes": "Melodic death metal with progressive elements.",
-    "tier": "niche"
+    "tier": "popular"
   },
   {
     "id": "band_volbeat_1",
@@ -4136,9 +4136,9 @@
       "Rock the Rebel / Metal the Devil",
       "Guitar Gangsters & Cadillac Blood"
     ],
-    "description": "Danish heavy metal band.",
-    "styleNotes": "Heavy metal with rockabilly and psychobilly influences.",
-    "tier": "niche"
+    "description": "Danish heavy metal band known for blending rockabilly and punk influences.",
+    "styleNotes": "Rockabilly-infused heavy metal with punk influences; maintains a consistent sound across their career.",
+    "tier": "well-known"
   },
   {
     "id": "band_mnemic_1",
@@ -4154,7 +4154,7 @@
     ],
     "description": "Danish industrial metal band.",
     "styleNotes": "Industrial metal with progressive elements.",
-    "tier": "niche"
+    "tier": "popular"
   },
   {
     "id": "band_raunchy_1",
@@ -4170,7 +4170,7 @@
     ],
     "description": "Danish industrial metal band.",
     "styleNotes": "Industrial metal with melodic elements.",
-    "tier": "niche"
+    "tier": "popular"
   },
   {
     "id": "band_illdisposed_1",
@@ -4222,7 +4222,7 @@
     ],
     "description": "Danish death metal band.",
     "styleNotes": "Death metal with war themes.",
-    "tier": "niche"
+    "tier": "popular"
   },
   {
     "id": "band_koldborn_1",
@@ -4235,9 +4235,9 @@
     "albums": [
       "The First Five"
     ],
-    "description": "Danish death metal band.",
-    "styleNotes": "Death metal with old-school influences.",
-    "tier": "niche"
+    "description": "Danish speed/death metal band.",
+    "styleNotes": "Speed/death metal with old-school influences.",
+    "tier": "popular"
   },
   {
     "id": "band_suffocation_1",
@@ -4252,9 +4252,9 @@
       "Pierced from Within",
       "Souls to Deny"
     ],
-    "description": "Pioneers of brutal death metal with slam elements.",
-    "styleNotes": "Created the slam death metal subgenre.",
-    "tier": "niche"
+    "description": "American brutal death metal band, pioneers of the slam style.",
+    "styleNotes": "Pioneered slam death metal by blending brutal death metal with slams.",
+    "tier": "popular"
   },
   {
     "id": "band_morbid_angel_1",
@@ -4269,9 +4269,9 @@
       "Blessed Are the Sick",
       "Covenant"
     ],
-    "description": "Pioneering death metal band known for technical complexity and dark themes.",
-    "styleNotes": "Incorporated industrial and electronic elements in later albums.",
-    "tier": "niche"
+    "description": "American pioneering death metal band known for technical complexity and dark themes.",
+    "styleNotes": "Pioneering speed/death metal with technical complexity; incorporated industrial and electronic elements in later albums.",
+    "tier": "popular"
   },
   {
     "id": "band_deicide_1",
@@ -4286,9 +4286,9 @@
       "Legion",
       "Once Upon the Cross"
     ],
-    "description": "Known for satanic themes and aggressive sound.",
+    "description": "American death/speed metal band known for satanic themes and aggressive sound.",
     "styleNotes": "Consistent brutal death metal with anti-religious themes.",
-    "tier": "niche"
+    "tier": "popular"
   },
   {
     "id": "band_cannibal_corpse_1",
@@ -4303,9 +4303,9 @@
       "The Bleeding",
       "Kill"
     ],
-    "description": "Known for extreme brutality and controversial lyrics.",
+    "description": "American brutal death metal band known for extreme brutality and controversial lyrics.",
     "styleNotes": "Consistent brutal death metal style throughout their career.",
-    "tier": "niche"
+    "tier": "popular"
   },
   {
     "id": "band_obituary_1",
@@ -4320,9 +4320,9 @@
       "Cause of Death",
       "The End Complete"
     ],
-    "description": "Known for their slow, heavy sound and growling vocals.",
-    "styleNotes": "Consistent death/doom style with signature growling vocals.",
-    "tier": "niche"
+    "description": "American death metal band known for their slow, heavy sound and growling vocals.",
+    "styleNotes": "Consistent death metal style with signature growling vocals and slow, heavy tempos; influenced the development of sludge/doom metal.",
+    "tier": "popular"
   },
   {
     "id": "band_autopsy_1",
@@ -4407,7 +4407,7 @@
     ],
     "description": "Brazilian death metal band.",
     "styleNotes": "High-speed, technical death metal.",
-    "tier": "niche"
+    "tier": "popular"
   },
   {
     "id": "band_rebellion_1",
@@ -4424,7 +4424,7 @@
     ],
     "description": "German power metal band.",
     "styleNotes": "Power metal with historical themes.",
-    "tier": "niche"
+    "tier": "popular"
   },
   {
     "id": "band_metalium_1",
@@ -4441,7 +4441,7 @@
     ],
     "description": "German power metal band.",
     "styleNotes": "Power metal with melodic elements.",
-    "tier": "niche"
+    "tier": "popular"
   },
   {
     "id": "band_mob_rules_1",
@@ -4491,8 +4491,8 @@
       "Liquid Monster"
     ],
     "description": "German power metal band.",
-    "styleNotes": "Melodic power metal.",
-    "tier": "niche"
+    "styleNotes": "Melodic power metal",
+    "tier": "popular"
   },
   {
     "id": "band_silent_force_1",
@@ -4508,8 +4508,8 @@
       "Worlds Apart"
     ],
     "description": "German power metal band.",
-    "styleNotes": "Melodic power metal.",
-    "tier": "niche"
+    "styleNotes": "Melodic power metal",
+    "tier": "popular"
   },
   {
     "id": "band_masterplan_1",
@@ -4524,9 +4524,9 @@
       "Aeronautics",
       "MK II"
     ],
-    "description": "German power metal supergroup.",
-    "styleNotes": "Melodic power metal with heavy elements.",
-    "tier": "niche"
+    "description": "German power metal supergroup",
+    "styleNotes": "Melodic power metal with heavy elements",
+    "tier": "popular"
   },
   {
     "id": "band_at_vance_1",
@@ -4543,7 +4543,7 @@
     ],
     "description": "German power metal band.",
     "styleNotes": "Power metal with neoclassical influences.",
-    "tier": "niche"
+    "tier": "popular"
   },
   {
     "id": "band_iron_savior_1",
@@ -4560,7 +4560,7 @@
     ],
     "description": "German power metal band.",
     "styleNotes": "Power metal with sci-fi themes.",
-    "tier": "niche"
+    "tier": "popular"
   },
   {
     "id": "band_pink_cream_69_1",
@@ -4576,8 +4576,8 @@
       "Games People Play"
     ],
     "description": "German power metal band.",
-    "styleNotes": "Melodic power metal.",
-    "tier": "niche"
+    "styleNotes": "Melodic power metal",
+    "tier": "popular"
   },
   {
     "id": "band_pantera_1",
@@ -4592,9 +4592,9 @@
       "Vulgar Display of Power",
       "Far Beyond Driven"
     ],
-    "description": "American groove metal pioneers.",
+    "description": "American groove thrash metal band.",
     "styleNotes": "Evolved from glam metal to groove/thrash metal.",
-    "tier": "niche"
+    "tier": "well-known"
   },
   {
     "id": "band_lamb_of_god_1",
@@ -4610,7 +4610,7 @@
     ],
     "description": "American groove metal band.",
     "styleNotes": "Groove metal with metalcore and thrash influences.",
-    "tier": "niche"
+    "tier": "well-known"
   },
   {
     "id": "band_machine_head_1",
@@ -4627,7 +4627,7 @@
     ],
     "description": "American groove/thrash metal band.",
     "styleNotes": "Evolved from groove metal to incorporate thrash and progressive elements.",
-    "tier": "niche"
+    "tier": "popular"
   },
   {
     "id": "band_sepultura_1",
@@ -4643,9 +4643,9 @@
       "Arise",
       "Chaos A.D."
     ],
-    "description": "Brazilian metal band known for incorporating tribal elements.",
-    "styleNotes": "Evolved from death/thrash to groove metal with tribal influences.",
-    "tier": "niche"
+    "description": "Brazilian thrash/death/groove metal band known for incorporating tribal elements.",
+    "styleNotes": "Evolved from death/thrash metal to groove metal, incorporating tribal influences.",
+    "tier": "popular"
   },
   {
     "id": "band_devil_driver_1",
@@ -4661,7 +4661,7 @@
     ],
     "description": "American groove metal band.",
     "styleNotes": "Groove metal with melodic death metal influences.",
-    "tier": "niche"
+    "tier": "popular"
   },
   {
     "id": "band_exodus_1",
@@ -4676,9 +4676,9 @@
       "Fabulous Disaster",
       "Impact Is Imminent"
     ],
-    "description": "Pioneering Bay Area thrash band with aggressive, fast-paced songs.",
+    "description": "American pioneering Bay Area thrash/groove metal band with aggressive, fast-paced songs.",
     "styleNotes": "Consistent thrash style with occasional groove elements.",
-    "tier": "niche"
+    "tier": "popular"
   },
   {
     "id": "band_slayer_1",
@@ -4693,9 +4693,9 @@
       "South of Heaven",
       "Seasons in the Abyss"
     ],
-    "description": "Known for their fast, aggressive style and dark lyrical themes.",
-    "styleNotes": "Maintained consistent thrash/death style throughout their career.",
-    "tier": "niche"
+    "description": "American thrash metal band known for fast, aggressive playing and dark lyrical themes.",
+    "styleNotes": "Consistent thrash/death metal style.",
+    "tier": "well-known"
   },
   {
     "id": "band_megadeth_1",
@@ -4710,9 +4710,9 @@
       "Peace Sells... but Who's Buying?",
       "Countdown to Extinction"
     ],
-    "description": "Founded by former Metallica guitarist Dave Mustaine, known for technical proficiency and political lyrics.",
+    "description": "American thrash metal band founded by former Metallica guitarist Dave Mustaine.",
     "styleNotes": "Evolved from thrash to more mainstream metal while maintaining technical complexity.",
-    "tier": "niche"
+    "tier": "well-known"
   },
   {
     "id": "band_anthrax_1",
@@ -4727,9 +4727,9 @@
       "Spreading the Disease",
       "Persistence of Time"
     ],
-    "description": "One of the \"Big Four\" thrash bands, known for incorporating rap and punk elements.",
-    "styleNotes": "Experimented with different styles including rap-metal crossover.",
-    "tier": "niche"
+    "description": "American thrash/groove metal band, one of the 'Big Four' known for incorporating rap and punk elements.",
+    "styleNotes": "Thrash/groove metal band that evolved to incorporate rap-metal crossover, blending punk and hip-hop influences.",
+    "tier": "well-known"
   },
   {
     "id": "band_testament_1",
@@ -4744,9 +4744,9 @@
       "Practice What You Preach",
       "Souls of Black"
     ],
-    "description": "Bay Area thrash band known for technical proficiency and dark themes.",
-    "styleNotes": "Maintained consistent thrash style with progressive elements.",
-    "tier": "niche"
+    "description": "American thrash metal band from the Bay Area.",
+    "styleNotes": "Thrash metal with progressive elements; maintained consistency.",
+    "tier": "popular"
   },
   {
     "id": "band_overkill_1",
@@ -4761,9 +4761,9 @@
       "Taking Over",
       "Horrorscope"
     ],
-    "description": "American speed/thrash metal band.",
-    "styleNotes": "Consistent speed/thrash metal with punk influences.",
-    "tier": "niche"
+    "description": "American thrash/groove metal band.",
+    "styleNotes": "Thrash metal with punk influences; evolved to incorporate groove elements over time.",
+    "tier": "popular"
   },
   {
     "id": "band_nuclear_assault_1",
@@ -4778,9 +4778,9 @@
       "Survive",
       "Handle with Care"
     ],
-    "description": "American thrash band with crossover appeal.",
-    "styleNotes": "Incorporated punk and hardcore elements.",
-    "tier": "niche"
+    "description": "American thrash metal band known for crossover appeal.",
+    "styleNotes": "Thrash metal with punk and hardcore influences.",
+    "tier": "popular"
   },
   {
     "id": "band_sacred_reich_1",
@@ -4795,9 +4795,9 @@
       "The American Way",
       "Independent"
     ],
-    "description": "American thrash band with political lyrics.",
-    "styleNotes": "Incorporated groove and crossover elements.",
-    "tier": "niche"
+    "description": "American thrash/groove metal band with political themes.",
+    "styleNotes": "Evolved from thrash metal by incorporating groove and crossover elements.",
+    "tier": "popular"
   },
   {
     "id": "band_municipal_waste_1",
@@ -4814,7 +4814,7 @@
     ],
     "description": "American crossover thrash band.",
     "styleNotes": "Revived crossover thrash in the 2000s.",
-    "tier": "niche"
+    "tier": "popular"
   },
   {
     "id": "band_toxic_holocaust_1",
@@ -4829,7 +4829,7 @@
       "Conjure and Command",
       "Chemistry of Consciousness"
     ],
-    "description": "American thrash band with black metal influences.",
+    "description": "American thrash metal band with black metal and groove influences.",
     "styleNotes": "Raw, aggressive thrash with black metal aesthetics.",
     "tier": "niche"
   },
@@ -4846,8 +4846,8 @@
       "Nightmare Logic"
     ],
     "description": "American crossover thrash band.",
-    "styleNotes": "Combined thrash with hardcore punk.",
-    "tier": "niche"
+    "styleNotes": "Crossover thrash combining thrash metal with hardcore punk influences.",
+    "tier": "popular"
   },
   {
     "id": "band_crowbar_1",
@@ -4864,7 +4864,7 @@
     ],
     "description": "American sludge/doom metal band.",
     "styleNotes": "Sludge/doom metal with heavy, downtuned riffs.",
-    "tier": "niche"
+    "tier": "popular"
   },
   {
     "id": "band_down_1",
@@ -4881,7 +4881,7 @@
     ],
     "description": "American sludge metal supergroup.",
     "styleNotes": "Sludge metal with southern rock influences.",
-    "tier": "niche"
+    "tier": "popular"
   },
   {
     "id": "band_corrosion_of_conformity_1",
@@ -4896,9 +4896,9 @@
       "Deliverance",
       "Wiseblood"
     ],
-    "description": "American sludge metal band.",
-    "styleNotes": "Evolved from hardcore to sludge and groove metal.",
-    "tier": "niche"
+    "description": "American groove and sludge metal band.",
+    "styleNotes": "Evolved from hardcore punk to sludge and groove metal, blending aggressive rhythms with atmospheric elements.",
+    "tier": "popular"
   },
   {
     "id": "band_eyehategod_1",
@@ -4913,9 +4913,9 @@
       "Take as Needed for Pain",
       "Dopesick"
     ],
-    "description": "American sludge metal band.",
+    "description": "American groove/sludge metal band.",
     "styleNotes": "Sludge metal with dark, nihilistic themes.",
-    "tier": "niche"
+    "tier": "popular"
   },
   {
     "id": "band_grief_1",
@@ -4932,7 +4932,7 @@
     ],
     "description": "American sludge/doom metal band.",
     "styleNotes": "Sludge/doom metal with depressive themes.",
-    "tier": "niche"
+    "tier": "popular"
   },
   {
     "id": "band_acid_bath_1",
@@ -4963,7 +4963,7 @@
       "Towers..."
     ],
     "description": "American sludge/doom metal band.",
-    "styleNotes": "Sludge/doom/death metal with dark atmosphere.",
+    "styleNotes": "Sludge/doom/death metal with dark atmospheric qualities.",
     "tier": "niche"
   },
   {
@@ -4981,7 +4981,7 @@
     ],
     "description": "American sludge/stoner metal band.",
     "styleNotes": "Sludge/stoner metal with psychedelic elements.",
-    "tier": "niche"
+    "tier": "popular"
   },
   {
     "id": "band_baroness_1",
@@ -4998,7 +4998,7 @@
     ],
     "description": "American sludge/prog metal band.",
     "styleNotes": "Sludge metal with progressive and melodic elements.",
-    "tier": "niche"
+    "tier": "popular"
   },
   {
     "id": "band_mastodon_1",
@@ -5014,8 +5014,8 @@
       "Crack the Skye"
     ],
     "description": "American progressive metal band known for concept albums.",
-    "styleNotes": "Evolved from sludge metal to progressive metal with concept albums.",
-    "tier": "niche"
+    "styleNotes": "Evolved from sludge/groove metal to progressive metal with concept albums.",
+    "tier": "popular"
   },
   {
     "id": "band_neurosis_1",
@@ -5032,7 +5032,7 @@
     ],
     "description": "American post-metal band.",
     "styleNotes": "Post-metal with sludge and doom elements.",
-    "tier": "niche"
+    "tier": "popular"
   },
   {
     "id": "band_isis_1",
@@ -5049,7 +5049,7 @@
     ],
     "description": "American post-metal band.",
     "styleNotes": "Post-metal with sludge and atmospheric elements.",
-    "tier": "niche"
+    "tier": "popular"
   },
   {
     "id": "band_pelican_1",
@@ -5066,7 +5066,7 @@
     ],
     "description": "American instrumental post-metal band.",
     "styleNotes": "Instrumental post-metal with heavy riffs.",
-    "tier": "niche"
+    "tier": "popular"
   },
   {
     "id": "band_cult_of_luna_1",
@@ -5083,7 +5083,7 @@
     ],
     "description": "Swedish post-metal band.",
     "styleNotes": "Post-metal with sludge and atmospheric elements.",
-    "tier": "niche"
+    "tier": "popular"
   },
   {
     "id": "band_the_ocean_1",
@@ -5100,7 +5100,7 @@
     ],
     "description": "German progressive sludge metal band.",
     "styleNotes": "Progressive sludge with concept albums.",
-    "tier": "niche"
+    "tier": "popular"
   },
   {
     "id": "band_rosetta_1",
@@ -5134,7 +5134,7 @@
     ],
     "description": "American sludge/doom metal band.",
     "styleNotes": "Sludge/doom metal with political and philosophical themes.",
-    "tier": "niche"
+    "tier": "popular"
   },
   {
     "id": "band_high_on_fire_1",
@@ -5151,7 +5151,7 @@
     ],
     "description": "American stoner/sludge metal band.",
     "styleNotes": "Stoner/sludge metal with aggressive elements.",
-    "tier": "niche"
+    "tier": "popular"
   },
   {
     "id": "band_sleep_1",
@@ -5168,7 +5168,7 @@
     ],
     "description": "American stoner doom metal band.",
     "styleNotes": "Stoner doom with heavy, hypnotic riffs.",
-    "tier": "niche"
+    "tier": "popular"
   },
   {
     "id": "band_electric_wizard_1",
@@ -5185,7 +5185,7 @@
     ],
     "description": "British doom metal band known for extremely heavy sound.",
     "styleNotes": "Stoner doom with sludge influences and dark themes.",
-    "tier": "niche"
+    "tier": "popular"
   },
   {
     "id": "band_bongripper_1",
@@ -5200,8 +5200,8 @@
       "Hate Ashbury",
       "Sex and Satan"
     ],
-    "description": "American stoner doom metal band.",
-    "styleNotes": "Instrumental stoner doom with heavy, long compositions.",
+    "description": "American groove/sludge metal band.",
+    "styleNotes": "Instrumental groove/sludge metal with heavy, extended compositions.",
     "tier": "niche"
   },
   {
@@ -5236,7 +5236,7 @@
     ],
     "description": "American stoner doom metal band.",
     "styleNotes": "Stoner doom with psychedelic elements.",
-    "tier": "niche"
+    "tier": "popular"
   },
   {
     "id": "band_windhand_1",
@@ -5251,9 +5251,9 @@
       "Soma",
       "Grief's Infernal Flower"
     ],
-    "description": "American stoner doom metal band.",
-    "styleNotes": "Stoner doom with melodic and psychedelic elements.",
-    "tier": "niche"
+    "description": "American groove/sludge metal band.",
+    "styleNotes": "Groove/sludge metal with stoner doom influences, melodic and psychedelic elements.",
+    "tier": "popular"
   },
   {
     "id": "band_monolord_1",
@@ -5269,7 +5269,7 @@
       "Rust"
     ],
     "description": "Swedish stoner doom metal band.",
-    "styleNotes": "Stoner doom with heavy, melodic riffs.",
+    "styleNotes": "Groove-infused stoner doom with heavy, melodic riffs.",
     "tier": "niche"
   },
   {
@@ -5286,8 +5286,8 @@
       "Existential Void Guardian"
     ],
     "description": "British stoner doom metal band.",
-    "styleNotes": "Stoner doom with extremely heavy sound.",
-    "tier": "niche"
+    "styleNotes": "Stoner doom metal with extremely heavy sound.",
+    "tier": "popular"
   },
   {
     "id": "band_ufomammut_1",
@@ -5321,7 +5321,7 @@
     ],
     "description": "Japanese experimental metal band.",
     "styleNotes": "Experimental metal with drone, doom, and stoner elements.",
-    "tier": "niche"
+    "tier": "popular"
   },
   {
     "id": "band_sunn_o_1",
@@ -5336,9 +5336,9 @@
       "White1",
       "Black One"
     ],
-    "description": "American drone metal band.",
-    "styleNotes": "Drone metal with extremely heavy, minimal compositions.",
-    "tier": "niche"
+    "description": "American drone metal band known for extremely low-volume, slow-paced compositions.",
+    "styleNotes": "Drone metal with minimal, heavy, and deliberate pacing.",
+    "tier": "popular"
   },
   {
     "id": "band_earth_1",
@@ -5353,8 +5353,8 @@
       "Pentastar: In the Style of Demons",
       "The Bees Made Honey in the Lion's Skull"
     ],
-    "description": "American drone metal band.",
-    "styleNotes": "Drone metal with minimalist compositions.",
+    "description": "American sludge/drone metal band.",
+    "styleNotes": "Sludge/drone metal with minimalist, atmospheric approach.",
     "tier": "niche"
   },
   {
@@ -5372,7 +5372,7 @@
     ],
     "description": "American sludge/stoner metal band.",
     "styleNotes": "Sludge/stoner metal with experimental elements.",
-    "tier": "niche"
+    "tier": "popular"
   },
   {
     "id": "band_fuck_the_facts_1",
@@ -5403,7 +5403,7 @@
       "Erode the Person"
     ],
     "description": "American sludge/doom metal band.",
-    "styleNotes": "Sludge/doom metal with minimalist approach.",
+    "styleNotes": "Sludge/doom metal with a minimalist approach.",
     "tier": "niche"
   },
   {
@@ -5420,7 +5420,7 @@
       "Scars"
     ],
     "description": "Japanese sludge/doom metal band.",
-    "styleNotes": "Extremely heavy sludge/doom with minimal vocals.",
+    "styleNotes": "Extremely heavy sludge/doom metal with minimal vocal presence.",
     "tier": "niche"
   },
   {
@@ -5438,7 +5438,7 @@
     ],
     "description": "British folk metal pioneers.",
     "styleNotes": "Combined thrash metal with folk instruments and themes.",
-    "tier": "niche"
+    "tier": "popular"
   },
   {
     "id": "band_ensiferum_1",
@@ -5453,8 +5453,8 @@
       "Victory Songs"
     ],
     "description": "Finnish folk metal band known for epic songs.",
-    "styleNotes": "Folk metal with melodic death metal and viking themes.",
-    "tier": "niche"
+    "styleNotes": "Folk metal with melodic death metal influences and Viking themes.",
+    "tier": "popular"
   },
   {
     "id": "band_turisas_1",
@@ -5470,7 +5470,7 @@
     ],
     "description": "Finnish folk metal band known for viking themes.",
     "styleNotes": "Folk metal with symphonic elements and viking themes.",
-    "tier": "niche"
+    "tier": "popular"
   },
   {
     "id": "band_finntroll_1",
@@ -5485,9 +5485,9 @@
       "Nattfödd",
       "Ur Jordens Djup"
     ],
-    "description": "Finnish folk metal band with troll themes.",
+    "description": "Finnish folk metal band known for troll themes.",
     "styleNotes": "Folk metal with black metal and humppa (polka) influences.",
-    "tier": "niche"
+    "tier": "popular"
   },
   {
     "id": "band_eluveitie_1",
@@ -5502,8 +5502,8 @@
       "Helvetios"
     ],
     "description": "Swiss folk metal band using Celtic instruments.",
-    "styleNotes": "Folk metal with melodic death metal and Celtic themes.",
-    "tier": "niche"
+    "styleNotes": "Folk metal with melodic death metal elements and Celtic themes.",
+    "tier": "popular"
   },
   {
     "id": "band_korpiklaani_1",
@@ -5518,9 +5518,9 @@
       "Voice of Wilderness",
       "Tervaskanto"
     ],
-    "description": "Finnish folk metal band.",
-    "styleNotes": "Folk metal with power metal and party themes.",
-    "tier": "niche"
+    "description": "Finnish folk/power metal band.",
+    "styleNotes": "Folk metal with power metal influences and party themes.",
+    "tier": "popular"
   },
   {
     "id": "band_moonsorrow_1",
@@ -5537,7 +5537,7 @@
     ],
     "description": "Finnish black metal band with folk influences.",
     "styleNotes": "Epic black metal with Finnish folk elements.",
-    "tier": "niche"
+    "tier": "popular"
   },
   {
     "id": "band_metsatöll_1",
@@ -5553,8 +5553,8 @@
       "Äio"
     ],
     "description": "Estonian folk metal band.",
-    "styleNotes": "Folk metal with Estonian folk elements.",
-    "tier": "niche"
+    "styleNotes": "Folk metal with Estonian folk and Viking themes.",
+    "tier": "popular"
   },
   {
     "id": "band_tyr_1",
@@ -5570,8 +5570,8 @@
       "Land"
     ],
     "description": "Faroese folk metal band.",
-    "styleNotes": "Viking metal with Faroese folk influences.",
-    "tier": "niche"
+    "styleNotes": "Consistent Viking metal with Faroese folk influences.",
+    "tier": "popular"
   },
   {
     "id": "band_heidevolk_1",
@@ -5605,7 +5605,7 @@
     ],
     "description": "German folk metal band.",
     "styleNotes": "Viking metal with folk elements.",
-    "tier": "niche"
+    "tier": "popular"
   },
   {
     "id": "band_menhir_1",
@@ -5622,7 +5622,7 @@
     ],
     "description": "German folk metal band.",
     "styleNotes": "Viking metal with Germanic folk elements.",
-    "tier": "niche"
+    "tier": "popular"
   },
   {
     "id": "band_suidakra_1",
@@ -5637,7 +5637,7 @@
       "Caledonia"
     ],
     "description": "German folk metal band.",
-    "styleNotes": "Melodic death metal with Celtic folk elements.",
+    "styleNotes": "Melodic death metal blended with Celtic folk elements.",
     "tier": "niche"
   },
   {
@@ -5749,7 +5749,7 @@
     ],
     "description": "American black metal band with folk influences.",
     "styleNotes": "Atmospheric black metal with folk and nature themes.",
-    "tier": "niche"
+    "tier": "popular"
   },
   {
     "id": "band_agalloch_1",
@@ -5766,7 +5766,7 @@
     ],
     "description": "American black metal band with folk influences.",
     "styleNotes": "Black metal with folk, doom, and post-rock elements.",
-    "tier": "niche"
+    "tier": "popular"
   },
   {
     "id": "band_drudkh_1",
@@ -5817,7 +5817,7 @@
     ],
     "description": "Irish black metal band with folk influences.",
     "styleNotes": "Black metal with Celtic and folk elements.",
-    "tier": "niche"
+    "tier": "popular"
   },
   {
     "id": "band_waylander_1",
@@ -5848,8 +5848,8 @@
       "The Middle Kingdom",
       "Folk-Lore"
     ],
-    "description": "Irish black metal band with folk influences.",
-    "styleNotes": "Black metal with Celtic folk elements.",
+    "description": "Irish black metal band known for integrating Celtic folk elements.",
+    "styleNotes": "Black metal with prominent Celtic folk influences (consistent style throughout their career).",
     "tier": "niche"
   },
   {
@@ -5899,7 +5899,7 @@
     ],
     "description": "German viking metal band.",
     "styleNotes": "Viking metal with folk and black metal elements.",
-    "tier": "niche"
+    "tier": "popular"
   },
   {
     "id": "band_vintersorg_1",
@@ -5933,7 +5933,7 @@
     ],
     "description": "Norwegian black metal band with progressive elements.",
     "styleNotes": "Progressive black metal with folk influences.",
-    "tier": "niche"
+    "tier": "popular"
   },
   {
     "id": "band_windir_1",
@@ -5950,7 +5950,7 @@
     ],
     "description": "Norwegian viking metal band.",
     "styleNotes": "Viking metal with black metal and folk elements.",
-    "tier": "niche"
+    "tier": "popular"
   },
   {
     "id": "band_vreid_1",
@@ -5965,9 +5965,9 @@
       "Pitch Black Brigade",
       "I Krig"
     ],
-    "description": "Norwegian viking metal band.",
+    "description": "Norwegian viking/folk metal band.",
     "styleNotes": "Viking metal with black metal and thrash elements.",
-    "tier": "niche"
+    "tier": "popular"
   },
   {
     "id": "band_kampfar_1",
@@ -5984,7 +5984,7 @@
     ],
     "description": "Norwegian viking metal band.",
     "styleNotes": "Viking metal with black metal and folk elements.",
-    "tier": "niche"
+    "tier": "popular"
   },
   {
     "id": "band_arkona_1",
@@ -6001,7 +6001,7 @@
     ],
     "description": "Russian viking metal band.",
     "styleNotes": "Viking metal with Slavic folk elements.",
-    "tier": "niche"
+    "tier": "popular"
   },
   {
     "id": "band_butterfly_temple_1",
@@ -6018,7 +6018,7 @@
     ],
     "description": "Russian viking metal band.",
     "styleNotes": "Viking metal with Slavic folk elements.",
-    "tier": "niche"
+    "tier": "popular"
   },
   {
     "id": "band_nokturnal_mortum_1",
@@ -6035,7 +6035,7 @@
     ],
     "description": "Ukrainian viking metal band.",
     "styleNotes": "Viking metal with black metal and folk elements.",
-    "tier": "niche"
+    "tier": "popular"
   },
   {
     "id": "band_temnozor_1",
@@ -6067,7 +6067,7 @@
     ],
     "description": "Russian viking metal band.",
     "styleNotes": "Viking metal with Slavic folk elements.",
-    "tier": "niche"
+    "tier": "popular"
   },
   {
     "id": "band_ruslana_1",
@@ -6097,9 +6097,9 @@
       "Winter of the Soul",
       "Ashes in the Wind"
     ],
-    "description": "A pioneering band that emerged from the underground doom scene, blending heavy, slow-paced riffs with atmospheric keyboards and haunting vocals. Their music often deals with themes of despair, existential dread, and spiritual decay. Known for their powerful live performances and influential album \"Winter of the Soul,\" which received critical acclaim in the early 2000s.",
-    "styleNotes": null,
-    "tier": "well-known"
+    "description": "American sludge metal band emerging from the underground doom scene, blending heavy riffs with atmospheric keyboards and haunting vocals.",
+    "styleNotes": "Sludge metal that fused underground doom influences into atmospheric, heavy compositions.",
+    "tier": "niche"
   },
   {
     "id": "band_mournful_congregation_1768903093106",
@@ -6114,8 +6114,8 @@
       "The Ghost of Orion",
       "The Silent Scream"
     ],
-    "description": "Mournful Congregation is a British doom metal band formed in 1987. Known for their atmospheric, melancholic sound that blends classic doom with post-punk and gothic elements, the group pioneered the atmospheric doom subgenre through introspective themes of loss, isolation, and existential dread. Their early work, particularly 'The Cold White Light', established them as pioneers, featuring slow tempos, somber melodies, and immersive, emotionally charged compositions that set a benchmark for the style.",
-    "styleNotes": null,
+    "description": "Mournful Congregation is a British doom metal band known for their atmospheric, melancholic sound that blends classic doom with post-punk and gothic influences.",
+    "styleNotes": "Blended classic doom with post-punk and gothic elements to pioneer the atmospheric doom subgenre, with early works like 'The Cold White Light' establishing their somber, introspective style.",
     "tier": "niche"
   },
   {
@@ -6130,8 +6130,8 @@
       "Ragnarok's Call",
       "The Eight Legs of Sleipnir"
     ],
-    "description": "Sleipnir is a prominent viking metal band known for its aggressive, fast-paced black metal sound infused with traditional Nordic folk elements. The band's lyrics are deeply rooted in Norse mythology and Viking history, often depicting epic battles, the gods' fates, and the harsh realities of life in ancient Scandinavia. Formed in 2002, Sleipnir quickly gained a reputation for its raw energy and powerful, guttural vocals. Influenced by early black metal pioneers like Bathory and Týr, the band has carved out a unique niche within the genre, blending historical authenticity with modern metal intensity.",
-    "styleNotes": null,
+    "description": "Sleipnir is a prominent viking/black metal band known for its aggressive, fast-paced sound infused with traditional Nordic folk elements. Formed in 2002, the band blends Norse mythology themes with raw black metal intensity.",
+    "styleNotes": "Viking/black metal that merges traditional Nordic folk influences with raw black metal intensity; influenced by early black metal pioneers like Bathory and Týr.",
     "tier": "popular"
   },
   {
@@ -6147,8 +6147,8 @@
       "Norse Storm",
       "Battle of the Gods"
     ],
-    "description": "A pioneering viking metal band from Scandinavia, Valhalla's Fury blended raw black metal aggression with Norse mythological themes and Viking-inspired instrumentation. Formed in 1992 by former members of Bathory (excluded) and Graveland (excluded), they were known for their fast-paced, guttural vocals and lyrics depicting battles against the forces of chaos, as well as praise to Odin and other gods. Their music incorporated traditional Nordic instruments like the hurdy-gurdy and fiddle, adding a distinct folk-metal touch to the viking genre.",
-    "styleNotes": null,
+    "description": "Pioneering viking/black metal band from Scandinavia. Blended raw black metal aggression with Norse mythological themes and Viking-inspired instrumentation.",
+    "styleNotes": "Pioneered viking metal by merging black metal's aggression with Norse folklore, incorporating traditional Nordic instruments (e.g., hurdy-gurdy) to create a folk-metal fusion.",
     "tier": "popular"
   },
   {
@@ -6164,9 +6164,9 @@
       "Valhalla's Call",
       "The Norse Chronicles"
     ],
-    "description": "A Swedish viking metal band formed in 1995, known for their aggressive blend of black metal and traditional folk elements. The band draws inspiration from Norse mythology and Viking history, incorporating themes of battle, honor, and the afterlife into their music.",
-    "styleNotes": null,
-    "tier": "popular"
+    "description": "Swedish viking metal band known for blending black metal with traditional folk elements.",
+    "styleNotes": "Viking metal with aggressive black metal characteristics and folk influences.",
+    "tier": "niche"
   },
   {
     "id": "band_nordic_thunder_1768904103518",
@@ -6180,8 +6180,8 @@
       "Ragnarok Rising",
       "Norse Mythology"
     ],
-    "description": "A prominent viking metal band known for their powerful, aggressive sound and lyrics centered around Norse mythology. Formed in the early 1990s, they were pioneers of the viking metal genre, blending traditional black metal with folk elements to create a unique sound that captured the spirit of ancient Nordic culture.",
-    "styleNotes": null,
+    "description": "Nordic Thunder is a prominent viking metal band from Scandinavia, known for their powerful, aggressive sound and Norse mythology–centered lyrics. Formed in the early 1990s, they pioneered the genre by blending traditional black metal with folk elements.",
+    "styleNotes": "Pioneered viking metal by fusing traditional black metal with folk influences.",
     "tier": "popular"
   },
   {
@@ -6196,9 +6196,9 @@
       "Fjords of Fury",
       "Runes of Ragnarok"
     ],
-    "description": "A Norwegian viking metal band formed in 1995 by former members of the black metal collective X, Nordic Runes pioneered a raw blend of aggressive black metal riffing with traditional Nordic folk instrumentation—bagpipes, fiddles, and hurdy-gurdy. Their lyrics delve into Norse mythology, Viking sagas, and the spiritual heritage of ancient Scandinavia, often incorporating spoken-word passages in Old Norse. Known for their unpolished yet powerful production style, the band’s music balances ferocious intensity with melodic folk interludes, creating a unique sonic landscape that bridges black metal’s darkness with the mythic grandeur of Viking culture.",
-    "styleNotes": null,
-    "tier": "well-known"
+    "description": "Norwegian viking/black metal band formed in 1995 by former X members. Blends aggressive black metal riffing with traditional Nordic folk instrumentation (bagpipes, fiddles) and lyrics rooted in Norse mythology.",
+    "styleNotes": "Pioneered viking metal by merging aggressive black metal with Nordic folk elements and mythology.",
+    "tier": "niche"
   },
   {
     "id": "band_ragnarok_1768904103524",
@@ -6213,9 +6213,9 @@
       "The Viking Saga",
       "Valhalla Rising"
     ],
-    "description": "A pioneering viking metal band that emerged in the early 1990s, blending aggressive black metal with Norse mythology and Viking history. Their music features raw, powerful riffs and lyrics centered on legendary figures like Odin, Thor, and Ragnarok itself. The band's debut album 'Norse Myths' established their unique sound, while subsequent albums expanded on themes of Viking raids and mythological battles.",
-    "styleNotes": null,
-    "tier": "well-known"
+    "description": "Pioneering viking/black metal band that emerged in the early 1990s, blending aggressive black metal with Norse mythology and Viking history.",
+    "styleNotes": "Viking/black metal; 'Norse Myths' established their sound, later albums expanded on themes of Viking raids and mythological battles.",
+    "tier": "popular"
   },
   {
     "id": "band_nordic_wolfpack_1768904103528",
@@ -6229,9 +6229,9 @@
       "Svartfågel",
       "Järn och Jakt"
     ],
-    "description": "Nordic Wolfpack is a prominent viking metal band known for their powerful, traditional sound that pays homage to Norse mythology and Viking history. Formed in the mid-1990s, the band has established itself as one of the leading voices in the viking metal genre through their intricate arrangements, powerful vocals, and authentic thematic content. Their music often features themes of Norse gods, legendary battles, and ancient traditions, creating an immersive experience for fans of historical metal. The band's live performances are particularly renowned for their energetic stage presence and ability to transport audiences back to Viking Age Scandinavia.",
-    "styleNotes": null,
-    "tier": "popular"
+    "description": "Scandinavian viking metal band known for traditional sound paying homage to Norse mythology and Viking history.",
+    "styleNotes": "Consistent viking metal style emphasizing traditional arrangements and authentic thematic content related to Norse culture.",
+    "tier": "niche"
   },
   {
     "id": "band_amon_amarth_1768904103531",
@@ -6246,9 +6246,9 @@
       "Surtur Rising",
       "Jomsvikings"
     ],
-    "description": "A Swedish melodic death metal band formed in 1992. Known for their Viking-themed lyrics and music, Amon Amarth has become one of the most prominent bands in the viking metal subgenre. The band's name is derived from Mount Amon in Egypt, but they focus on Norse mythology and Viking history in their songs. Their music combines aggressive death metal elements with melodic hooks and powerful vocals.",
-    "styleNotes": null,
-    "tier": "well-known"
+    "description": "A Swedish melodic death metal band known for Viking-themed lyrics and music, Amon Amarth is a prominent figure in the viking metal subgenre.",
+    "styleNotes": "Evolved from melodic death metal into accessible, anthemic viking metal over time, blending aggressive structures with Viking-themed lyrics.",
+    "tier": "popular"
   },
   {
     "id": "band_enslaved_1768904103534",
@@ -6264,9 +6264,9 @@
       "Isa",
       "Raven's Flight"
     ],
-    "description": "Enslaved is a Norwegian black metal band formed in 1991. Known for their progressive approach to the genre, they blend traditional black metal with folk elements and viking themes. The band has been influential in the viking metal subgenre, incorporating Norse mythology into their music and lyrics. Their sound often features complex compositions, melodic passages, and atmospheric elements that distinguish them from more aggressive black metal bands.",
-    "styleNotes": null,
-    "tier": "well-known"
+    "description": "Norwegian black/viking metal band known for a progressive style that blends traditional black metal with folk elements and Norse themes.",
+    "styleNotes": "Evolved from early black metal to progressive viking metal by incorporating folk influences, Norse mythology, and complex compositions.",
+    "tier": "popular"
   },
   {
     "id": "band_svartalfheim_1768904103536",
@@ -6281,9 +6281,9 @@
       "Frostbound Saga",
       "Ragnarok's Echo"
     ],
-    "description": "A prominent Viking metal band known for their aggressive black metal sound infused with Norse folk traditions and themes centered around frost giants, Valhalla, and the mythological battles of Asgard. Formed in 1995, Svartalfheim blended raw black metal intensity with melodic guitar work and traditional Viking chants, creating a unique subgenre identity distinct from other Nordic metal acts. Their lyrics delve into ancient sagas, exploring themes of heroism, betrayal, and the eternal struggle between gods and giants.",
-    "styleNotes": null,
-    "tier": "popular"
+    "description": "Norwegian viking/black metal band known for aggressive black metal infused with Norse folk traditions and mythological themes (frost giants, Valhalla).",
+    "styleNotes": "Viking/black metal with raw black metal intensity fused with Norse folk traditions; maintained consistent style throughout their career.",
+    "tier": "niche"
   },
   {
     "id": "band_thors_hammer_1768904103539",
@@ -6297,8 +6297,8 @@
       "Nordic Storm",
       "Ragnarok's Call"
     ],
-    "description": "A Swedish viking metal band formed in 2012, known for their aggressive black metal riffs combined with folk elements like Viking-inspired lyrics and instrumentation. The group draws heavily from Norse mythology, focusing on themes of Odin, Thor, and the Viking Age, often incorporating traditional instruments such as hurdy-gurdy and fiddle into their music to enhance historical authenticity. Their sound is defined by raw, unpolished black metal production paired with powerful vocals ranging from guttural screams to melodic cleans, creating a dynamic contrast that resonates with both traditional viking metal followers and modern black metal audiences.",
-    "styleNotes": null,
+    "description": "Swedish viking/black metal band known for aggressive black metal riffs combined with folk elements inspired by Norse mythology and Viking Age themes.",
+    "styleNotes": "Blends viking metal with aggressive black metal, integrating folk elements like Norse mythology themes and traditional instrumentation.",
     "tier": "popular"
   }
 ]
