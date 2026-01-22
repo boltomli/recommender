@@ -38,7 +38,10 @@ export class DataImporter {
       const existingBands = this.db.getBandsByGenre(genre);
       const knownBandNames = existingBands.map(b => b.name);
 
-      const response = await this.llmClient.generateBandInfo(genre, knownBandNames);
+      // Prepare reference examples (max 3 bands)
+      const referenceBands = existingBands.slice(0, 3);
+
+      const response = await this.llmClient.generateBandInfo(genre, knownBandNames, undefined, referenceBands);
       const bands = this.parseLLMResponse(response);
 
       for (const band of bands) {

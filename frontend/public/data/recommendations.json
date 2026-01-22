@@ -1,5 +1,5 @@
 {
-  "timestamp": "2026-01-21T09:18:00.789Z",
+  "timestamp": "2026-01-22T01:42:18.762Z",
   "recommendations": {
     "thrash": [
       {
@@ -40,6 +40,7 @@
         "id": "band_sodom_1",
         "name": "Sodom",
         "genre": [
+          "speed",
           "thrash"
         ],
         "era": "1980s",
@@ -49,7 +50,7 @@
           "M-16"
         ],
         "description": "German thrash metal band known for raw, aggressive sound.",
-        "styleNotes": "Maintained consistent extreme thrash style.",
+        "styleNotes": "Evolved from black metal to thrash with increased speed and aggression.",
         "tier": "popular",
         "embedding": null
       },
@@ -433,6 +434,7 @@
         "id": "band_burzum_1",
         "name": "Burzum",
         "genre": [
+          "viking",
           "black"
         ],
         "era": "1990s",
@@ -441,8 +443,8 @@
           "Det Som Engang Var",
           "Hvis Lyset Tar Oss"
         ],
-        "description": "Norwegian one-man black metal project.",
-        "styleNotes": "Evolved from raw black metal to atmospheric/ambient/electronic music.",
+        "description": "Norwegian black metal band founded by Varg Vikernes, celebrated for its dark atmospheric sound and profound Norse/Viking thematic content. The group’s music frequently delves into themes of death, nature, and ancient Nordic mythology.",
+        "styleNotes": "Evolved from raw aggressive black metal to a more melodic folk-influenced style over time.",
         "tier": "popular",
         "embedding": null
       },
@@ -485,7 +487,8 @@
         "name": "Enslaved",
         "genre": [
           "black",
-          "progressive"
+          "progressive",
+          "viking"
         ],
         "era": "1990s",
         "albums": [
@@ -888,11 +891,30 @@
         "embedding": null
       },
       {
+        "id": "band_ulcerate_1",
+        "name": "Ulcerate",
+        "genre": [
+          "progressive",
+          "death"
+        ],
+        "era": "2000s",
+        "albums": [
+          "Everything Is Fire",
+          "The Destroyers of All",
+          "Shrines of Paralysis"
+        ],
+        "description": "New Zealand technical death metal band.",
+        "styleNotes": "Dissonant, atmospheric technical death metal.",
+        "tier": "popular",
+        "embedding": null
+      },
+      {
         "id": "band_enslaved_1",
         "name": "Enslaved",
         "genre": [
           "black",
-          "progressive"
+          "progressive",
+          "viking"
         ],
         "era": "1990s",
         "albums": [
@@ -1030,24 +1052,6 @@
         "styleNotes": "Progressive power metal.",
         "tier": "popular",
         "embedding": null
-      },
-      {
-        "id": "band_adagio_1",
-        "name": "Adagio",
-        "genre": [
-          "power",
-          "progressive"
-        ],
-        "era": "2000s",
-        "albums": [
-          "Sanctus Ignis",
-          "Underworld",
-          "Dominate"
-        ],
-        "description": "French progressive power metal band.",
-        "styleNotes": "Progressive power metal with neoclassical influences.",
-        "tier": "popular",
-        "embedding": null
       }
     ],
     "heavy": [
@@ -1123,6 +1127,24 @@
         "embedding": null
       },
       {
+        "id": "band_rainbow_1",
+        "name": "Rainbow",
+        "genre": [
+          "hard rock",
+          "heavy"
+        ],
+        "era": "1970s",
+        "albums": [
+          "Ritchie Blackmore's Rainbow",
+          "Rising",
+          "Long Live Rock 'n' Roll"
+        ],
+        "description": "British-American heavy metal/hard rock band.",
+        "styleNotes": "Heavy metal with hard rock and medieval influences.",
+        "tier": "popular",
+        "embedding": null
+      },
+      {
         "id": "band_led_zeppelin_1",
         "name": "Led Zeppelin",
         "genre": [
@@ -1159,6 +1181,24 @@
         "embedding": null
       },
       {
+        "id": "band_def_leppard_1",
+        "name": "Def Leppard",
+        "genre": [
+          "hard rock",
+          "heavy"
+        ],
+        "era": "1980s",
+        "albums": [
+          "High 'n' Dry",
+          "Pyromania",
+          "Hysteria"
+        ],
+        "description": "British hard rock/heavy metal band.",
+        "styleNotes": "Hard rock with heavy metal and pop influences.",
+        "tier": "well-known",
+        "embedding": null
+      },
+      {
         "id": "band_quiet_riot_1",
         "name": "Quiet Riot",
         "genre": [
@@ -1192,42 +1232,27 @@
         "styleNotes": "Heavy metal with glam and punk influences.",
         "tier": "well-known",
         "embedding": null
-      },
-      {
-        "id": "band_heavy_metal_kids_1",
-        "name": "Heavy Metal Kids",
-        "genre": [
-          "heavy",
-          "glam"
-        ],
-        "era": "1970s",
-        "albums": [
-          "Heavy Metal Kids"
-        ],
-        "description": "British heavy metal/glam rock band.",
-        "styleNotes": "Heavy metal with glam rock and punk influences.",
-        "tier": "niche",
-        "embedding": null
-      },
-      {
-        "id": "band_girls_1",
-        "name": "Girl",
-        "genre": [
-          "heavy",
-          "glam"
-        ],
-        "era": "1980s",
-        "albums": [
-          "Sheer Greed",
-          "Wasted Youth"
-        ],
-        "description": "British heavy metal/glam rock band.",
-        "styleNotes": "Heavy metal with glam influences.",
-        "tier": "niche",
-        "embedding": null
       }
     ],
     "speed": [
+      {
+        "id": "band_sodom_1",
+        "name": "Sodom",
+        "genre": [
+          "speed",
+          "thrash"
+        ],
+        "era": "1980s",
+        "albums": [
+          "Persecution Mania",
+          "Agent Orange",
+          "M-16"
+        ],
+        "description": "German thrash metal band known for raw, aggressive sound.",
+        "styleNotes": "Evolved from black metal to thrash with increased speed and aggression.",
+        "tier": "popular",
+        "embedding": null
+      },
       {
         "id": "band_dragonforce_1",
         "name": "DragonForce",
@@ -1387,24 +1412,6 @@
         "description": "British heavy metal band part of the NWOBHM movement.",
         "styleNotes": "Consistent heavy metal style with NWOBHM influences.",
         "tier": "popular",
-        "embedding": null
-      },
-      {
-        "id": "band_iron_maiden_1",
-        "name": "Iron Maiden",
-        "genre": [
-          "speed",
-          "heavy"
-        ],
-        "era": "1980s",
-        "albums": [
-          "The Number of the Beast",
-          "Powerslave",
-          "Somewhere in Time"
-        ],
-        "description": "British heavy metal band, pioneers of speed metal.",
-        "styleNotes": "Evolved from early speed metal to incorporate progressive and symphonic elements.",
-        "tier": "well-known",
         "embedding": null
       }
     ],

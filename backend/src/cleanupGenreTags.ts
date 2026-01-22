@@ -36,7 +36,8 @@ const ALLOWED_GENRES = [
 async function cleanupBandGenres(
   bandName: string,
   currentGenres: string[],
-  description: string
+  description: string,
+  referenceBands?: any[]
 ): Promise<string[]> {
   const llmClient = new LLMClient({
     endpoint: loadConfig().llm.endpoint,
@@ -46,6 +47,17 @@ async function cleanupBandGenres(
 
   const genresText = currentGenres.join(', ');
   const allowedGenresText = ALLOWED_GENRES.join(', ');
+
+  // Add reference examples if available
+  let referenceText = '';
+  if (referenceBands && referenceBands.length > 0) {
+    const examples = referenceBands.slice(0, 3).map(band => 
+      `Example ${band.name}:\n` +
+      `  Genres: ${Array.isArray(band.genre) ? band.genre.join(', ') : band.genre}\n` +
+      `  Description: ${band.description}`
+    ).join('\n\n');
+    referenceText = `\n\nREFERENCE EXAMPLES (bands with similar genre patterns):\n${examples}\n\nUse these as a reference for how genres should be classified.`;
+  }
 
   const messages = [
     {
@@ -58,7 +70,7 @@ async function cleanupBandGenres(
 
 Current genres: ${genresText}
 Description: ${description}
-
+${referenceText}
 Allowed genres (MUST use only these, or genres containing these): ${allowedGenresText}
 
 Review these genre tags and:
@@ -120,6 +132,9 @@ async function main() {
   const allBands = dbManager.getAllBands();
   console.log(`共找到 ${allBands.length} 支乐队\n`);
 
+  // Prepare reference bands (max 3, sorted by ID to get earliest)
+  const referenceBands = allBands.sort((a, b) => a.id.localeCompare(b.id)).slice(0, 3);
+
   const results: GenreCleanupResult[] = [];
   let processedCount = 0;
   let modifiedCount = 0;
@@ -139,7 +154,8 @@ async function main() {
     const cleanedGenres = await cleanupBandGenres(
       band.name,
       band.genre,
-      band.description
+      band.description,
+      referenceBands
     );
 
     const originalGenres = [...band.genre];

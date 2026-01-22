@@ -152,7 +152,8 @@ class StandardizeBandInfo {
       const tierEvaluation = await this.llm.updateBandTier(
         band.name,
         band.genre.join(', '),
-        standardizedInfo.description
+        standardizedInfo.description,
+        this.exampleBands
       );
       
       if (tierEvaluation.tier !== band.tier) {

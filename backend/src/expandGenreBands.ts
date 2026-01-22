@@ -110,6 +110,9 @@ class ExpandGenreBands {
     console.log(`  Target: ${targetCount}`);
     console.log(`  Need to generate: ${needed}`);
 
+    // Prepare reference examples (max 3 bands)
+    const referenceBands = existingBands.slice(0, 3);
+
     const cacheKey = { genre, targetCount, existingCount: existingBands.length };
     if (!force) {
       const cachedBands = this.cache.get<any[]>('expand', cacheKey);
@@ -140,7 +143,7 @@ class ExpandGenreBands {
               era: bandData.era || 'Unknown',
               albums: bandData.albums || [],
               description: bandData.description || '',
-              styleNotes: '',
+              styleNotes: bandData.styleNotes || '',
               tier: bandData.tier || 'niche'
             };
 
@@ -171,7 +174,7 @@ class ExpandGenreBands {
         attempts++;
         console.log(`  Generating band ${generatedBands.length + 1}/${needed} (attempt ${attempts}/${maxAttempts})...`);
 
-        const band = await this.llm.generateBandsForExpansion(genre, excludeList);
+        const band = await this.llm.generateBandsForExpansion(genre, excludeList, referenceBands);
 
         if (!band) {
           consecutiveFailures++;
@@ -236,7 +239,7 @@ class ExpandGenreBands {
             era: bandData.era || 'Unknown',
             albums: bandData.albums || [],
             description: bandData.description || '',
-            styleNotes: '',
+            styleNotes: bandData.styleNotes || '',
             tier: bandData.tier || 'niche'
           };
 

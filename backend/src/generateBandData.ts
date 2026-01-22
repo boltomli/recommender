@@ -1,5 +1,6 @@
 import { LLMClient } from './llmClient';
 import { Band, BandTier } from './types';
+import { DatabaseManager } from './database';
 import fs from 'fs';
 import path from 'path';
 
@@ -22,12 +23,14 @@ interface GeneratedBandData {
 
 export class BandDataGenerator {
   private llmClient: LLMClient;
+  private db: DatabaseManager;
   private cachePath: string;
   private maxRetries: number = 3;
   private retryDelay: number = 1000;
 
-  constructor(llmClient: LLMClient, cachePath: string = './cache') {
+  constructor(llmClient: LLMClient, db: DatabaseManager, cachePath: string = './cache') {
     this.llmClient = llmClient;
+    this.db = db;
     this.cachePath = cachePath;
     this.ensureCacheDirectory();
   }
@@ -137,15 +140,44 @@ export class BandDataGenerator {
     const tierCriteria = this.getTierCriteria(tier);
     const excludeList = existingBands.length > 0 ? existingBands.join(', ') : 'none';
 
+    // Get existing bands as reference examples
+    let referenceExamples = '';
+    const allBands = this.db.getAllBands();
+    const genreBands = allBands.filter(b => 
+      b.genre.some(g => g.toLowerCase().includes(genre.toLowerCase())) && 
+      b.tier === tier
+    );
+    
+    if (genreBands.length > 0) {
+      const exampleCount = Math.min(3, genreBands.length);
+      const examples = genreBands.slice(0, exampleCount).map(band => 
+        `Example ${band.name}:\n` +
+        `  Genre: ${band.genre.join(', ')}\n` +
+        `  Era: ${band.era}\n` +
+        `  Albums: ${band.albums.slice(0, 3).join(', ')}\n` +
+        `  Description: ${band.description}\n` +
+        `  Style Notes: ${band.styleNotes || 'N/A'}\n` +
+        `  Tier: ${band.tier}`
+      ).join('\n\n');
+      
+      referenceExamples = `\n\nREFERENCE EXAMPLES (existing ${tier} bands in ${genre}):\n${examples}\n\nUse these examples as a reference for the quality and format expected.`;
+    }
+
+    const standardGenres = ['thrash', 'death', 'black', 'power', 'doom', 'progressive', 'heavy', 'speed', 'groove', 'folk'];
+
     const prompt = `Generate ${count} metal bands in the ${genre} subgenre.
 
 Tier criteria: ${tierCriteria}
+${referenceExamples}
 
 IMPORTANT:
 - Do NOT include any of these bands: ${excludeList}
 - Generate NEW bands that are not in this list
 - Each band must be unique
 - Provide accurate information about real bands
+- Follow the format and quality shown in the reference examples above
+
+GENRE STANDARDIZATION: You MUST use only these standard genre names: ${standardGenres.join(', ')}. The primary genre for each band MUST be "${genre}". Additional genres (if any) must also be from this standard list.
 
 Return valid JSON with this structure:
 {
@@ -350,7 +382,8 @@ async function main() {
   const configData = JSON.parse(fs.readFileSync(configPath, 'utf-8'));
 
   const llmClient = new LLMClient(configData.llm);
-  const generator = new BandDataGenerator(llmClient, path.join(__dirname, '../cache/band-generation'));
+  const db = new DatabaseManager(configData.database.path);
+  const generator = new BandDataGenerator(llmClient, db, path.join(__dirname, '../cache/band-generation'));
 
   if (clearCache) {
     generator.clearCache();
@@ -364,6 +397,8 @@ async function main() {
     fs.writeFileSync(outputPath, JSON.stringify(bands, null, 2));
 
     console.log(`\nBands saved to: ${outputPath}`);
+    
+    db.close();
   } catch (error) {
     console.error('Error generating bands:', error);
     process.exit(1);

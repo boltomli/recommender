@@ -114,9 +114,18 @@ class HandleDuplicateNames {
 
     try {
       const genres = group.bands.map(b => b.genre).join(', ');
+      
+      // Prepare reference examples (max 3 bands from the same genre)
+      const allBands = this.db.getAllBands();
+      const genreBands = allBands.filter(b => 
+        b.genre.some(g => genres.toLowerCase().includes(g.toLowerCase()))
+      );
+      const referenceBands = genreBands.slice(0, 3);
+      
       const distinguishingInfo = await this.llm.generateDistinguishingInfo(
         group.bands.map(b => b.name),
-        genres
+        genres,
+        referenceBands
       );
 
       if (!distinguishingInfo || distinguishingInfo.length === 0) {

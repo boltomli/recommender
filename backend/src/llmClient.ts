@@ -24,7 +24,9 @@ export class LLMClient {
     return cleaned;
   }
 
-  async generateBandInfo(genre: string, knownBands: string[] = [], bandName?: string): Promise<any> {
+  async generateBandInfo(genre: string, knownBands: string[] = [], bandName?: string, referenceBands?: any[]): Promise<any> {
+    const standardGenres = ['thrash', 'death', 'black', 'power', 'doom', 'progressive', 'heavy', 'speed', 'groove', 'folk'];
+    
     const prompt = bandName
       ? `Generate detailed information about the metal band "${bandName}" in the ${genre} subgenre.`
       : `Generate a list of 5 prominent metal bands in the ${genre} subgenre.`;
@@ -35,6 +37,23 @@ export class LLMClient {
     if (knownBands.length > 0 && !bandName) {
       userPrompt = `Generate a list of 5 prominent metal bands in the ${genre} subgenre. IMPORTANT: Do NOT include any of these bands: ${knownBands.join(', ')}. Generate NEW bands that are not in this list.`;
     }
+
+    // Add reference examples if available
+    let referenceText = '';
+    if (referenceBands && referenceBands.length > 0 && !bandName) {
+      const examples = referenceBands.slice(0, 3).map(band => 
+        `Example ${band.name}:\n` +
+        `  Genre: ${Array.isArray(band.genre) ? band.genre.join(', ') : band.genre}\n` +
+        `  Era: ${band.era}\n` +
+        `  Albums: ${Array.isArray(band.albums) ? band.albums.slice(0, 3).join(', ') : band.albums}\n` +
+        `  Description: ${band.description}`
+      ).join('\n\n');
+      referenceText = `\n\nREFERENCE EXAMPLES (existing bands in ${genre}):\n${examples}\n\nUse these as a reference for quality and format.`;
+      userPrompt += referenceText;
+    }
+
+    // Add genre standardization
+    userPrompt += `\n\nGENRE STANDARDIZATION: You MUST use only these standard genre names: ${standardGenres.join(', ')}. The primary genre MUST be "${genre}". Additional genres (if any) must also be from this standard list.`;
 
     const messages: LLMMessage[] = [
       {
@@ -192,7 +211,18 @@ export class LLMClient {
     }
   }
 
-  async updateBandTier(bandName: string, genre: string, currentDescription: string): Promise<{ tier: string; reasoning: string }> {
+  async updateBandTier(bandName: string, genre: string, currentDescription: string, referenceBands?: any[]): Promise<{ tier: string; reasoning: string }> {
+    // Add reference examples if available
+    let referenceText = '';
+    if (referenceBands && referenceBands.length > 0) {
+      const examples = referenceBands.slice(0, 3).map(band => 
+        `Example ${band.name} (${band.tier}):\n` +
+        `  Genre: ${Array.isArray(band.genre) ? band.genre.join(', ') : band.genre}\n` +
+        `  Description: ${band.description}`
+      ).join('\n\n');
+      referenceText = `\n\nREFERENCE EXAMPLES (bands with known tiers):\n${examples}\n\nUse these as a reference for tier classification.`;
+    }
+
     const messages: LLMMessage[] = [
       {
         role: 'system',
@@ -200,7 +230,7 @@ export class LLMClient {
       },
       {
         role: 'user',
-        content: `Evaluate the tier for the metal band "${bandName}" in the ${genre} subgenre. Description: ${currentDescription}. Consider their mainstream recognition, influence on the genre, and fanbase size. Return ONLY valid JSON, no explanations or additional text.`
+        content: `Evaluate the tier for the metal band "${bandName}" in the ${genre} subgenre. Description: ${currentDescription}.${referenceText} Consider their mainstream recognition, influence on the genre, and fanbase size. Return ONLY valid JSON, no explanations or additional text.`
       }
     ];
 
@@ -233,16 +263,36 @@ export class LLMClient {
 
   async generateBandsForExpansion(
     genre: string,
-    excludeBands: string[]
-  ): Promise<{ name: string; genre: string[]; era: string; albums: string[]; description: string; tier: string } | null> {
+    excludeBands: string[],
+    referenceBands?: any[]
+  ): Promise<{ name: string; genre: string[]; era: string; albums: string[]; description: string; tier: string; styleNotes: string } | null> {
+    let referenceText = '';
+    if (referenceBands && referenceBands.length > 0) {
+      const examples = referenceBands.slice(0, 3).map(band => 
+        `Example ${band.name}:\n` +
+        `  Genre: ${Array.isArray(band.genre) ? band.genre.join(', ') : band.genre}\n` +
+        `  Era: ${band.era}\n` +
+        `  Albums: ${Array.isArray(band.albums) ? band.albums.slice(0, 3).join(', ') : band.albums}\n` +
+        `  Description: ${band.description}\n` +
+        `  Tier: ${band.tier}`
+      ).join('\n\n');
+      referenceText = `\n\nREFERENCE EXAMPLES (existing bands in ${genre}):\n${examples}\n\nUse these as a reference for quality and format.`;
+    }
+
+    const standardGenres = ['thrash', 'death', 'black', 'power', 'doom', 'progressive', 'heavy', 'speed', 'groove', 'folk'];
+
     const messages: LLMMessage[] = [
       {
         role: 'system',
-        content: 'You are a metal music expert. Generate detailed information about ONE metal band. Your response must be valid JSON ONLY, no other text or formatting. Format: {"name": "Band Name", "genre": ["genre1", "genre2"], "era": "1980s", "albums": ["Album1", "Album2"], "description": "Detailed description", "tier": "well-known|popular|niche"}'
+        content: 'You are a metal music expert. Generate detailed information about ONE metal band. Your response must be valid JSON ONLY, no other text or formatting. Format: {"name": "Band Name", "genre": ["genre1", "genre2"], "era": "1980s", "albums": ["Album1", "Album2"], "description": "Detailed description", "styleNotes": "Brief style evolution notes (30-150 characters)", "tier": "well-known|popular|niche"}'
       },
       {
         role: 'user',
-        content: `Generate ONE prominent metal band in the ${genre} subgenre. IMPORTANT: Do NOT generate any of these bands: ${excludeBands.join(', ')}. Generate a NEW band that is not in this list. Return ONLY valid JSON, no explanations or additional text.`
+        content: `Generate ONE prominent metal band in the ${genre} subgenre.${referenceText} IMPORTANT: Do NOT generate any of these bands: ${excludeBands.join(', ')}. Generate a NEW band that is not in this list.
+
+GENRE STANDARDIZATION: You MUST use only these standard genre names: ${standardGenres.join(', ')}. The primary genre MUST be "${genre}". Additional genres (if any) must also be from this standard list.
+
+Return ONLY valid JSON, no explanations or additional text.`
       }
     ];
 
@@ -264,8 +314,20 @@ export class LLMClient {
     }
   }
 
-  async generateDistinguishingInfo(bandNames: string[], genre: string): Promise<Array<{ name: string; distinguishingInfo: string }>> {
+  async generateDistinguishingInfo(bandNames: string[], genre: string, referenceBands?: any[]): Promise<Array<{ name: string; distinguishingInfo: string }>> {
     const bandList = bandNames.map(name => `"${name}"`).join(', ');
+    
+    // Add reference examples if available
+    let referenceText = '';
+    if (referenceBands && referenceBands.length > 0) {
+      const examples = referenceBands.slice(0, 3).map(band => 
+        `Example ${band.name}:\n` +
+        `  Genre: ${Array.isArray(band.genre) ? band.genre.join(', ') : band.genre}\n` +
+        `  Description: ${band.description}`
+      ).join('\n\n');
+      referenceText = `\n\nREFERENCE EXAMPLES (bands in ${genre}):\n${examples}\n\nUse these as a reference for the type of distinguishing information to provide.`;
+    }
+    
     const messages: LLMMessage[] = [
       {
         role: 'system',
@@ -273,7 +335,7 @@ export class LLMClient {
       },
       {
         role: 'user',
-        content: `Generate distinguishing information for these metal bands in the ${genre} subgenre that have the same name: ${bandList}. For each band, provide their country of origin, active era, or other unique information to help distinguish them. Return ONLY valid JSON, no explanations or additional text.`
+        content: `Generate distinguishing information for these metal bands in the ${genre} subgenre that have the same name: ${bandList}.${referenceText} For each band, provide their country of origin, active era, or other unique information to help distinguish them. Return ONLY valid JSON, no explanations or additional text.`
       }
     ];
 

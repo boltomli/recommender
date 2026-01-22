@@ -1,5 +1,5 @@
 {
-  "timestamp": "2026-01-21T09:18:00.785Z",
+  "timestamp": "2026-01-22T01:42:18.759Z",
   "bands": [
     {
       "id": "band_metallica_1",
@@ -39,6 +39,7 @@
       "id": "band_sodom_1",
       "name": "Sodom",
       "genre": [
+        "speed",
         "thrash"
       ],
       "era": "1980s",
@@ -48,7 +49,7 @@
         "M-16"
       ],
       "description": "German thrash metal band known for raw, aggressive sound.",
-      "styleNotes": "Maintained consistent extreme thrash style.",
+      "styleNotes": "Evolved from black metal to thrash with increased speed and aggression.",
       "tier": "popular",
       "embedding": null
     },
@@ -516,6 +517,7 @@
       "id": "band_ulcerate_1",
       "name": "Ulcerate",
       "genre": [
+        "progressive",
         "death"
       ],
       "era": "2000s",
@@ -618,6 +620,7 @@
       "id": "band_burzum_1",
       "name": "Burzum",
       "genre": [
+        "viking",
         "black"
       ],
       "era": "1990s",
@@ -626,8 +629,8 @@
         "Det Som Engang Var",
         "Hvis Lyset Tar Oss"
       ],
-      "description": "Norwegian one-man black metal project.",
-      "styleNotes": "Evolved from raw black metal to atmospheric/ambient/electronic music.",
+      "description": "Norwegian black metal band founded by Varg Vikernes, celebrated for its dark atmospheric sound and profound Norse/Viking thematic content. The group’s music frequently delves into themes of death, nature, and ancient Nordic mythology.",
+      "styleNotes": "Evolved from raw aggressive black metal to a more melodic folk-influenced style over time.",
       "tier": "popular",
       "embedding": null
     },
@@ -670,7 +673,8 @@
       "name": "Enslaved",
       "genre": [
         "black",
-        "progressive"
+        "progressive",
+        "viking"
       ],
       "era": "1990s",
       "albums": [
@@ -2400,24 +2404,6 @@
       "embedding": null
     },
     {
-      "id": "band_ultar_1",
-      "name": "Ulcerate",
-      "genre": [
-        "progressive",
-        "death"
-      ],
-      "era": "2000s",
-      "albums": [
-        "Everything Is Fire",
-        "The Destroyers of All",
-        "Shrines of Paralysis"
-      ],
-      "description": "New Zealand technical death metal band.",
-      "styleNotes": "Dissonant, atmospheric technical death metal.",
-      "tier": "niche",
-      "embedding": null
-    },
-    {
       "id": "band_portal_1",
       "name": "Portal",
       "genre": [
@@ -2914,7 +2900,8 @@
       "id": "band_rainbow_1",
       "name": "Rainbow",
       "genre": [
-        "hard rock"
+        "hard rock",
+        "heavy"
       ],
       "era": "1970s",
       "albums": [
@@ -3001,7 +2988,8 @@
       "id": "band_def_leppard_1",
       "name": "Def Leppard",
       "genre": [
-        "hard rock"
+        "hard rock",
+        "heavy"
       ],
       "era": "1980s",
       "albums": [
@@ -3172,7 +3160,9 @@
       "id": "band_skid_row_1",
       "name": "Skid Row",
       "genre": [
-        "hard rock"
+        "hard rock",
+        "glam",
+        "heavy"
       ],
       "era": "1980s",
       "albums": [
@@ -3188,7 +3178,8 @@
       "id": "band_dokken_1",
       "name": "Dokken",
       "genre": [
-        "hard rock"
+        "hard rock",
+        "heavy"
       ],
       "era": "1980s",
       "albums": [
@@ -4484,7 +4475,6 @@
       "id": "band_cannibal_corpse_1",
       "name": "Cannibal Corpse",
       "genre": [
-        "speed",
         "death"
       ],
       "era": "1990s",
@@ -6510,25 +6500,6 @@
       "embedding": null
     },
     {
-      "id": "band_enslaved_1768904103534",
-      "name": "Enslaved",
-      "genre": [
-        "black",
-        "viking"
-      ],
-      "era": "1990s",
-      "albums": [
-        "Mardraum",
-        "Bliss",
-        "Isa",
-        "Raven's Flight"
-      ],
-      "description": "Norwegian black/viking metal band known for a progressive style that blends traditional black metal with folk elements and Norse themes.",
-      "styleNotes": "Evolved from early black metal to progressive viking metal by incorporating folk influences, Norse mythology, and complex compositions.",
-      "tier": "popular",
-      "embedding": null
-    },
-    {
       "id": "band_svartalfheim_1768904103536",
       "name": "Svartalfheim",
       "genre": [
@@ -6560,6 +6531,473 @@
       ],
       "description": "Swedish viking/black metal band known for aggressive black metal riffs combined with folk elements inspired by Norse mythology and Viking Age themes.",
       "styleNotes": "Blends viking metal with aggressive black metal, integrating folk elements like Norse mythology themes and traditional instrumentation.",
+      "tier": "popular",
+      "embedding": null
+    },
+    {
+      "id": "band_månegarm_1768991444050",
+      "name": "Månegarm",
+      "genre": [
+        "folk",
+        "black"
+      ],
+      "era": "2000s",
+      "albums": [
+        "Krig",
+        "Vredens Röd"
+      ],
+      "description": "Swedish folk/black metal band formed in 1997. Known for blending traditional Swedish folk music with aggressive black metal, often incorporating instruments like the fiddle and accordion into their sound to create a unique fusion of dark, atmospheric metal and folk traditions.",
+      "styleNotes": "Evolved from raw black metal to incorporate more polished folk elements while maintaining an intense, melodic approach.",
+      "tier": "popular",
+      "embedding": null
+    },
+    {
+      "id": "band_vicious_rumors_1768994586462",
+      "name": "Vicious Rumors",
+      "genre": [
+        "speed",
+        "thrash"
+      ],
+      "era": "1980s",
+      "albums": [
+        "Vicious Rumors",
+        "Ripper"
+      ],
+      "description": "American speed metal and thrash band formed in 1981, recognized for their aggressive, high-tempo style that blended early speed metal with thrash elements. The group was influential in the Los Angeles metal scene of the 1980s.",
+      "styleNotes": "Evolved from raw speed metal to more polished, technical thrash over their career.",
+      "tier": "popular",
+      "embedding": null
+    },
+    {
+      "id": "band_venom_1768994586465",
+      "name": "Venom",
+      "genre": [
+        "speed",
+        "black"
+      ],
+      "era": "1980s",
+      "albums": [
+        "Black Metal",
+        "Welcome to Hell"
+      ],
+      "description": "Early British black metal band renowned for extreme speed, aggressive riffing, and satanic themes that helped establish the foundational sound of early black/speed metal.",
+      "styleNotes": "Fast-paced, aggressive style with black metal influences; pivotal in shaping the genre's development.",
+      "tier": "popular",
+      "embedding": null
+    },
+    {
+      "id": "band_d.r.i._1768994586468",
+      "name": "D.R.I.",
+      "genre": [
+        "thrash",
+        "speed"
+      ],
+      "era": "1980s",
+      "albums": [
+        "Gods of Grind",
+        "The Art of Rebellion"
+      ],
+      "description": "American thrash/speed metal band from California, known for raw, aggressive sound and politically charged lyrics. Influential in the 80s hardcore and speed metal scenes.",
+      "styleNotes": "Evolved from raw speed metal to aggressive thrash with heavier riffing and political themes.",
+      "tier": "popular",
+      "embedding": null
+    },
+    {
+      "id": "band_slaughter_1768994586471",
+      "name": "Slaughter",
+      "genre": [
+        "speed",
+        "thrash"
+      ],
+      "era": "1980s",
+      "albums": [
+        "Bite The Bullet",
+        "The Lost Days",
+        "Stained Class"
+      ],
+      "description": "American speed/thrash metal band formed in 1981, known for their aggressive, high-energy style and influence on the thrash/speed scene. They were part of the Los Angeles thrash movement alongside bands like Metallica and Megadeth.",
+      "styleNotes": "Evolved from raw speed metal to more polished thrash with later albums",
+      "tier": "popular",
+      "embedding": null
+    },
+    {
+      "id": "band_martyr_1768994586474",
+      "name": "Martyr",
+      "genre": [
+        "thrash",
+        "speed"
+      ],
+      "era": "1980s",
+      "albums": [
+        "The Power of One",
+        "Warrior",
+        "The Last Bloodline"
+      ],
+      "description": "Canadian thrash and speed metal band formed in 1984. Known for aggressive, high-energy music with fast tempos and technical guitar work. Influenced by bands like Slayer, Metallica, and early thrash pioneers.",
+      "styleNotes": "Evolved from raw thrash to more polished, progressive thrash/speed in later albums.",
+      "tier": "popular",
+      "embedding": null
+    },
+    {
+      "id": "band_l.a._guns_1768998865297",
+      "name": "L.A. Guns",
+      "genre": [
+        "glam",
+        "heavy"
+      ],
+      "era": "1980s",
+      "albums": [
+        "A Bullet to the Heart",
+        "The Hit List",
+        "Rip and Tear"
+      ],
+      "description": "American glam metal band renowned for their anthemic, radio-friendly songs, theatrical stage presence, and fusion of 80s hair metal energy with hard rock intensity.",
+      "styleNotes": "Evolved from raw glam to polished mainstream metal while maintaining catchy hooks.",
+      "tier": "well-known",
+      "embedding": null
+    },
+    {
+      "id": "band_faster_pussycat_1768998865303",
+      "name": "Faster Pussycat",
+      "genre": [
+        "glam",
+        "heavy"
+      ],
+      "era": "1980s",
+      "albums": [
+        "Faster Pussycat",
+        "Belting Out the Brimstone",
+        "Nothing to Fear"
+      ],
+      "description": "American glam metal band renowned for their flamboyant stage presence, theatrical fashion, and anthemic songs that fused flamboyant rock with pop hooks.",
+      "styleNotes": "Evolved from raw, aggressive glam to polished pop-metal by the late 1980s.",
+      "tier": "well-known",
+      "embedding": null
+    },
+    {
+      "id": "band_slaughter_1768998865314",
+      "name": "Slaughter",
+      "genre": [
+        "glam",
+        "heavy"
+      ],
+      "era": "1980s",
+      "albums": [
+        "Stick It to Ya",
+        "The Wild Life"
+      ],
+      "description": "American glam metal band formed in Los Angeles in 1981. Known for their theatrical stage presence and anthemic songs, they were a major force in the 1980s heavy metal scene.",
+      "styleNotes": "Evolved from classic 80s glam with theatrical flair and hook-laden anthems.",
+      "tier": "popular",
+      "embedding": null
+    },
+    {
+      "id": "band_winger_1768998865321",
+      "name": "Winger",
+      "genre": [
+        "glam",
+        "heavy"
+      ],
+      "era": "1980s",
+      "albums": [
+        "In the Heart of the City",
+        "Kiss of Death"
+      ],
+      "description": "American glam metal band formed in 1984, known for their theatrical stage presence and anthemic songs. They were prominent in the 80s glam metal scene with hits like \"(Rock in) the USA\" and \"Headed for a Heartbreak\".",
+      "styleNotes": "Classic 80s glam metal with catchy production and hard rock influences, maintaining theatrical flair throughout their career.",
+      "tier": "well-known",
+      "embedding": null
+    },
+    {
+      "id": "band_loverboy_1768998865324",
+      "name": "Loverboy",
+      "genre": [
+        "glam",
+        "heavy"
+      ],
+      "era": "1980s",
+      "albums": [
+        "Loverboy",
+        "Wasted Youth",
+        "Keep Coming Back"
+      ],
+      "description": "Canadian glam metal/rock band formed in 1979, known for theatrical stage presence and anthemic songs that blended heavy guitar riffs with pop-friendly melodies typical of 80s glam rock.",
+      "styleNotes": "Evolved from raw glam to polished arena rock while retaining heavy metal foundations.",
+      "tier": "popular",
+      "embedding": null
+    },
+    {
+      "id": "band_warrant_1768998865327",
+      "name": "Warrant",
+      "genre": [
+        "glam",
+        "heavy"
+      ],
+      "era": "1980s",
+      "albums": [
+        "Dirty Rotten Scoundrels",
+        "Dog Eat Dog",
+        "Cherry Pie"
+      ],
+      "description": "American glam metal band formed in 1984, known for their hit single \"Cherry Pie\" and a blend of hard rock and flamboyant glam aesthetics.",
+      "styleNotes": "Evolved from raw hard rock to polished, radio-friendly glam with progressive touches on later works.",
+      "tier": "well-known",
+      "embedding": null
+    },
+    {
+      "id": "band_the_quireboys_1768998865331",
+      "name": "The Quireboys",
+      "genre": [
+        "glam",
+        "heavy"
+      ],
+      "era": "1980s-1990s",
+      "albums": [
+        "Son of a Bitch",
+        "Let's Go Rockin'"
+      ],
+      "description": "A British glam metal/hard rock band formed in 1984, led by vocalist Mike Peters. Known for their theatrical stage presence and catchy anthems that blend glam rock excess with hard rock energy.",
+      "styleNotes": "Started as pure glam but evolved into more hard rock while retaining signature flamboyant style.",
+      "tier": "well-known",
+      "embedding": null
+    },
+    {
+      "id": "band_great_white_1768998865337",
+      "name": "Great White",
+      "genre": [
+        "glam",
+        "heavy"
+      ],
+      "era": "1980s",
+      "albums": [
+        "Once Bitten, Twice Shy",
+        "Twilight",
+        "Slumbering Witch"
+      ],
+      "description": "American glam metal band formed in Los Angeles in the late 1970s, known for their theatrical stage presence and anthemic hard rock songs that blended glam aesthetics with heavy metal energy.",
+      "styleNotes": "Evolved from raw glam to polished stadium rock, emphasizing catchy riffs and powerful vocals.",
+      "tier": "well-known",
+      "embedding": null
+    },
+    {
+      "id": "band_hanoi_rocks_1768998865340",
+      "name": "Hanoi Rocks",
+      "genre": [
+        "glam",
+        "heavy"
+      ],
+      "era": "1980s",
+      "albums": [
+        "Bang Bang Bang",
+        "Street Fighting Years"
+      ],
+      "description": "Finnish glam metal band known for theatrical style, catchy anthems, and influence on 80s rock scene.",
+      "styleNotes": "Evolved from glam rock to harder-edged hard rock with heavier guitar work.",
+      "tier": "well-known",
+      "embedding": null
+    },
+    {
+      "id": "band_white_lion_1768998865347",
+      "name": "White Lion",
+      "genre": [
+        "glam",
+        "heavy"
+      ],
+      "era": "1980s",
+      "albums": [
+        "Pride",
+        "When the Children Cry"
+      ],
+      "description": "American glam metal band known for their theatrical stage presence and anthemic songs that blended glam aesthetics with hard rock energy.",
+      "styleNotes": "Evolved from pure glam to more polished hard rock with progressive elements in later works, maintaining a radio-friendly yet edgy sound.",
+      "tier": "well-known",
+      "embedding": null
+    },
+    {
+      "id": "band_the_cult_1768998865349",
+      "name": "The Cult",
+      "genre": [
+        "glam"
+      ],
+      "era": "1980s",
+      "albums": [
+        "Electric",
+        "Love",
+        "Dreaming With My Eyes Open"
+      ],
+      "description": "British alternative/glam rock band known for theatrical style and anthemic songs like \"She Sells Sanctuary\" and \"Love Removal Service\".",
+      "styleNotes": "Evolved from glam rock to alternative with heavier, more experimental sounds.",
+      "tier": "well-known",
+      "embedding": null
+    },
+    {
+      "id": "band_mudvayne_1769003181778",
+      "name": "Mudvayne",
+      "genre": [
+        "groove"
+      ],
+      "era": "2000s",
+      "albums": [
+        "The End of All Things to Come",
+        "L.D. 50"
+      ],
+      "description": "American groove metal band renowned for their aggressive, experimental sound that merges heavy riffing with alternative rock sensibilities and distinctive vocal techniques.",
+      "styleNotes": "Evolved from raw groove thrash to integrating progressive elements while preserving core riff-driven intensity.",
+      "tier": "well-known",
+      "embedding": null
+    },
+    {
+      "id": "band_gojira_1769003181785",
+      "name": "Gojira",
+      "genre": [
+        "groove",
+        "progressive"
+      ],
+      "era": "2000s",
+      "albums": [
+        "The Art of Dying",
+        "From Chaos"
+      ],
+      "description": "French progressive groove metal band known for technical guitar work, atmospheric soundscapes, and socially conscious lyrics. Formed in 1996, they blend thrash, death, and progressive rock elements to create a unique heavy metal style.",
+      "styleNotes": "Evolved from thrash to progressive groove with complex arrangements and melodic hooks.",
+      "tier": "popular",
+      "embedding": null
+    },
+    {
+      "id": "band_the_faceless_1769003181789",
+      "name": "The Faceless",
+      "genre": [
+        "groove",
+        "thrash"
+      ],
+      "era": "2010s",
+      "albums": [
+        "The Faceless",
+        "The Human Condition",
+        "The Far Side of the Moon"
+      ],
+      "description": "American groove/thrash metal band formed in 2006 by guitarist/vocalist Jason Suecof and drummer Chris Harris. Known for their aggressive, technical sound that blends groove metal with thrash elements, characterized by fast tempos, intricate guitar work, and powerful vocals.",
+      "styleNotes": "Evolved from raw groove to more complex arrangements while maintaining thrash influences.",
+      "tier": "popular",
+      "embedding": null
+    },
+    {
+      "id": "band_sevendust_1769003181792",
+      "name": "Sevendust",
+      "genre": [
+        "groove"
+      ],
+      "era": "2000s",
+      "albums": [
+        "Home",
+        "Animals"
+      ],
+      "description": "American groove metal band formed in Atlanta, Georgia in 1994. Known for blending heavy groove riffs with alternative rock elements and introspective lyrics about personal struggles and relationships.",
+      "styleNotes": "Evolved from rawer sound to polished production while retaining core groove foundation.",
+      "tier": "popular",
+      "embedding": null
+    },
+    {
+      "id": "band_killswitch_engage_1769003181796",
+      "name": "Killswitch Engage",
+      "genre": [
+        "groove",
+        "heavy"
+      ],
+      "era": "2000s",
+      "albums": [
+        "The End of Heartache",
+        "Alive or Just Breathing"
+      ],
+      "description": "American groove-heavy metalcore band known for their aggressive, technical sound and blend of thrash, groove, and melodic elements.",
+      "styleNotes": "Evolved from aggressive metalcore to incorporate more groove and melodic passages.",
+      "tier": "popular",
+      "embedding": null
+    },
+    {
+      "id": "band_soulfly_1769003181801",
+      "name": "Soulfly",
+      "genre": [
+        "groove",
+        "thrash"
+      ],
+      "era": "1990s",
+      "albums": [
+        "Soulfly",
+        "Prayer for the Devoted",
+        "Ritual"
+      ],
+      "description": "American groove metal band formed by Max Cavalera in 1997 following his departure from Sepultura. The group blends aggressive thrash influences with heavy, bass-driven grooves and experimental elements, creating a sound that emphasizes riff complexity and dynamic intensity.",
+      "styleNotes": "Evolved from raw thrash roots into polished, groove-focused metal with heavier production and progressive touches across their discography.",
+      "tier": "popular",
+      "embedding": null
+    },
+    {
+      "id": "band_all_that_remains_1769003181805",
+      "name": "All That Remains",
+      "genre": [
+        "groove"
+      ],
+      "era": "2000s",
+      "albums": [
+        "The Fall of Ideals",
+        "A Different Kind of Truth",
+        "For We Are Many"
+      ],
+      "description": "American groove metal band formed in 1998, blending aggressive riffs with powerful vocals. Known for their unique fusion of groove and metalcore, they have established themselves as a leading act in modern heavy music through critically acclaimed albums.",
+      "styleNotes": "Evolved from raw groove to polished metalcore with progressive elements over time.",
+      "tier": "well-known",
+      "embedding": null
+    },
+    {
+      "id": "band_clutch_1769003181809",
+      "name": "Clutch",
+      "genre": [
+        "heavy",
+        "groove"
+      ],
+      "era": "1990s",
+      "albums": [
+        "The Elephant Riders",
+        "Brothers of the Night"
+      ],
+      "description": "American heavy rock band formed in 1991, known for their groove-driven riffs, blues-influenced lyrics, and a blend of metal genres including hard rock, blues, and progressive elements. They have released numerous albums since their debut, establishing themselves as a prominent act in the groove metal scene with a dedicated fanbase.",
+      "styleNotes": "Evolved from raw hardcore to incorporating more blues and progressive elements while maintaining heavy groove riffs.",
+      "tier": "popular",
+      "embedding": null
+    },
+    {
+      "id": "band_hatebreed_1769003181818",
+      "name": "Hatebreed",
+      "genre": [
+        "groove"
+      ],
+      "era": "1990s-2000s",
+      "albums": [
+        "Perseverance",
+        "The Rise of the Lion",
+        "The Strength of the Mind"
+      ],
+      "description": "American groove metal/hardcore band formed in 1991, known for their aggressive yet melodic sound that blends thrash and hardcore influences. They are recognized for their high-energy live performances and socially conscious lyrics.",
+      "styleNotes": "Evolved from raw hardcore to a more polished groove-focused style with heavier production over time.",
+      "tier": "popular",
+      "embedding": null
+    },
+    {
+      "id": "band_borknagar_1769045480661",
+      "name": "Borknagar",
+      "genre": [
+        "folk",
+        "viking"
+      ],
+      "era": "2000s",
+      "albums": [
+        "Borknarr",
+        "Origin's Curse",
+        "Delusions of Grandeur"
+      ],
+      "description": "Norwegian folk metal band formed in 1993, known for blending Viking and pagan themes with intricate instrumentation. Their music combines black metal aggression with folk melodies, creating a unique sound that has influenced the viking metal subgenre.",
+      "styleNotes": "Evolved from raw black/folk to polished progressive folk metal with symphonic elements.",
       "tier": "popular",
       "embedding": null
     }
