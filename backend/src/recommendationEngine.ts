@@ -1,16 +1,16 @@
 import { LLMClient } from './llmClient';
-import { DatabaseManager } from './database';
+import { IDatabase } from './database';
 import { Band, Session, Comparison, Recommendation, ComparisonPair } from './types';
 import { STATIC_BANDS } from './staticBands';
 import { getConfig } from './config';
 
 export class RecommendationEngine {
   private llmClient: LLMClient;
-  private db: DatabaseManager;
+  private db: IDatabase;
   private maxComparisons: number;
   private maxRecommendations: number;
 
-  constructor(llmClient: LLMClient, db: DatabaseManager, maxComparisons: number, maxRecommendations: number) {
+  constructor(llmClient: LLMClient, db: IDatabase, maxComparisons: number, maxRecommendations: number) {
     this.llmClient = llmClient;
     this.db = db;
     this.maxComparisons = maxComparisons;
@@ -21,7 +21,7 @@ export class RecommendationEngine {
     const config = getConfig();
     const minBandsPerGenre = config.expandGenres.minBandsForGenre || 30;
 
-    const allBands = this.db.getAllBands();
+    const allBands = await this.db.getAllBands();
     const genreCounts: Record<string, number> = {};
 
     allBands.forEach(band => {
@@ -53,7 +53,7 @@ export class RecommendationEngine {
       updatedAt: new Date()
     };
 
-    this.db.createSession(session);
+    await this.db.createSession(session);
 
     // Populate genre bands from local static data (non-blocking)
     this.populateGenreBands(genre).catch(error => {
@@ -64,15 +64,15 @@ export class RecommendationEngine {
   }
 
   async getComparisonPair(sessionId: string): Promise<ComparisonPair | null> {
-    const session = this.db.getSession(sessionId);
+    const session = await this.db.getSession(sessionId);
     if (!session) {
       throw new Error('Session not found');
     }
 
-    const bands = this.db.getBandsByGenre(session.genre);
+    const bands = await this.db.getBandsByGenre(session.genre);
     if (bands.length < 2) {
       await this.populateGenreBands(session.genre);
-      const updatedBands = this.db.getBandsByGenre(session.genre);
+      const updatedBands = await this.db.getBandsByGenre(session.genre);
       if (updatedBands.length < 2) {
         throw new Error('Not enough bands available for comparison');
       }
@@ -84,7 +84,7 @@ export class RecommendationEngine {
   }
 
   async recordPreference(sessionId: string, bandId1: string, bandId2: string, selectedBandId: string): Promise<void> {
-    const session = this.db.getSession(sessionId);
+    const session = await this.db.getSession(sessionId);
     if (!session) {
       throw new Error('Session not found');
     }
@@ -107,9 +107,9 @@ export class RecommendationEngine {
     }
 
     // Update preference weights
-    const selectedBand = this.db.getBand(selectedBandId);
+    const selectedBand = await this.db.getBand(selectedBandId);
     const otherBandId = bandId1 === selectedBandId ? bandId2 : bandId1;
-    const otherBand = this.db.getBand(otherBandId);
+    const otherBand = await this.db.getBand(otherBandId);
 
     if (selectedBand && otherBand) {
       selectedBand.genre.forEach(g => {
@@ -118,11 +118,11 @@ export class RecommendationEngine {
     }
 
     session.updatedAt = new Date();
-    this.db.updateSession(session);
+    await this.db.updateSession(session);
   }
 
   async skipComparison(sessionId: string, bandId1: string, bandId2: string): Promise<void> {
-    const session = this.db.getSession(sessionId);
+    const session = await this.db.getSession(sessionId);
     if (!session) {
       throw new Error('Session not found');
     }
@@ -137,17 +137,17 @@ export class RecommendationEngine {
 
     // Don't update preference weights when skipping
     session.updatedAt = new Date();
-    this.db.updateSession(session);
+    await this.db.updateSession(session);
   }
 
   async getRealTimeSuggestions(sessionId: string, numSuggestions: number = 3): Promise<Recommendation[]> {
-    const session = this.db.getSession(sessionId);
+    const session = await this.db.getSession(sessionId);
     if (!session) {
       throw new Error('Session not found');
     }
 
     const suggestions: Recommendation[] = [];
-    const allBands = this.db.getBandsByGenre(session.genre);
+    const allBands = await this.db.getBandsByGenre(session.genre);
 
     // Get all band IDs that have been compared
     const comparedBandIds = new Set<string>();
@@ -194,13 +194,13 @@ export class RecommendationEngine {
   }
 
   async getRecommendations(sessionId: string): Promise<Recommendation[]> {
-    const session = this.db.getSession(sessionId);
+    const session = await this.db.getSession(sessionId);
     if (!session) {
       throw new Error('Session not found');
     }
 
     const recommendations: Recommendation[] = [];
-    const allBands = this.db.getBandsByGenre(session.genre);
+    const allBands = await this.db.getBandsByGenre(session.genre);
 
     // Get all band IDs that have been compared
     const comparedBandIds = new Set<string>();
@@ -276,7 +276,7 @@ export class RecommendationEngine {
   }
 
   private async populateGenreBands(genre: string): Promise<void> {
-    const existingBands = this.db.getBandsByGenre(genre);
+    const existingBands = await this.db.getBandsByGenre(genre);
 
     // First, try to get static bands from local data
     if (STATIC_BANDS[genre]) {
@@ -292,7 +292,7 @@ export class RecommendationEngine {
 
       // Add bands to database
       for (const band of bands) {
-        this.db.createBand(band);
+        await this.db.createBand(band);
       }
 
       console.log(`Added ${bands.length} local bands for genre ${genre} (total: ${existingBands.length + bands.length})`);
@@ -342,8 +342,8 @@ export class RecommendationEngine {
     };
   }
 
-  private selectTieredPair(genre: string, comparisonHistory: Comparison[] = []): ComparisonPair | null {
-    const allBands = this.db.getBandsByGenre(genre);
+  private async selectTieredPair(genre: string, comparisonHistory: Comparison[] = []): Promise<ComparisonPair | null> {
+    const allBands = await this.db.getBandsByGenre(genre);
 
     // Separate bands by tier
     const tier1Bands = allBands.filter(b => b.tier === 'well-known');

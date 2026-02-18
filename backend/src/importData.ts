@@ -1,5 +1,5 @@
 import { LLMClient } from './llmClient';
-import { DatabaseManager } from './database';
+import { IDatabase } from './database';
 import { Band } from './types';
 
 export interface ImportOptions {
@@ -16,9 +16,9 @@ export interface ImportResult {
 
 export class DataImporter {
   private llmClient: LLMClient;
-  private db: DatabaseManager;
+  private db: IDatabase;
 
-  constructor(llmClient: LLMClient, db: DatabaseManager) {
+  constructor(llmClient: LLMClient, db: IDatabase) {
     this.llmClient = llmClient;
     this.db = db;
   }
@@ -35,7 +35,7 @@ export class DataImporter {
       const genre = options.genre || 'thrash';
       const count = options.count || 5;
 
-      const existingBands = this.db.getBandsByGenre(genre);
+      const existingBands = await this.db.getBandsByGenre(genre);
       const knownBandNames = existingBands.map(b => b.name);
 
       // Prepare reference examples (max 3 bands)
@@ -47,7 +47,7 @@ export class DataImporter {
       for (const band of bands) {
         try {
           if (this.validateBand(band)) {
-            this.db.createBand(band);
+            await this.db.createBand(band);
             result.imported++;
           } else {
             result.skipped++;

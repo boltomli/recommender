@@ -1,4 +1,4 @@
-import { DatabaseManager } from './database';
+import { dbManager, IDatabase } from './database';
 import { STATIC_BANDS } from './staticBands';
 import { Band } from './types';
 import path from 'path';
@@ -8,16 +8,21 @@ import path from 'path';
  * 从 staticBands.ts 中读取所有分类的乐队数据，并导入到数据库中
  */
 export class BandCategoryFiller {
-  private db: DatabaseManager;
+  private db: IDatabase;
 
-  constructor(dbPath: string) {
-    this.db = new DatabaseManager(dbPath);
+  private constructor(db: IDatabase) {
+    this.db = db;
+  }
+
+  static async initialize(): Promise<BandCategoryFiller> {
+    const db = await dbManager.initialize();
+    return new BandCategoryFiller(db);
   }
 
   /**
    * 填充所有分类的乐队数据
    */
-  fillAllCategories(): void {
+  async fillAllCategories(): Promise<void> {
     console.log('开始填充乐队数据...');
 
     let totalImported = 0;
@@ -28,7 +33,7 @@ export class BandCategoryFiller {
     console.log(`发现 ${categories.length} 个分类: ${categories.join(', ')}`);
 
     for (const category of categories) {
-      const result = this.fillCategory(category);
+      const result = await this.fillCategory(category);
       totalImported += result.imported;
       totalSkipped += result.skipped;
       totalUpdated += result.updated;
@@ -36,16 +41,16 @@ export class BandCategoryFiller {
 
     console.log('\n填充完成!');
     console.log(`总计: 导入 ${totalImported} 个, 更新 ${totalUpdated} 个, 跳过 ${totalSkipped} 个`);
-    
-    this.db.close();
+
+    await dbManager.close();
   }
 
   /**
    * 填充指定分类的乐队数据
    */
-  fillCategory(category: string): { imported: number; updated: number; skipped: number } {
+  async fillCategory(category: string): Promise<{ imported: number; updated: number; skipped: number }> {
     const bands = STATIC_BANDS[category];
-    
+
     if (!bands || bands.length === 0) {
       console.log(`分类 "${category}" 没有乐队数据`);
       return { imported: 0, updated: 0, skipped: 0 };
@@ -59,12 +64,12 @@ export class BandCategoryFiller {
 
     for (const band of bands) {
       try {
-        const existingBand = this.db.getBand(band.id);
-        
+        const existingBand = await this.db.getBand(band.id);
+
         if (existingBand) {
           // 检查是否需要更新
           if (this.needsUpdate(existingBand, band)) {
-            this.db.createBand(band);
+            await this.db.createBand(band);
             updated++;
             console.log(`  ✓ 更新: ${band.name}`);
           } else {
@@ -72,7 +77,7 @@ export class BandCategoryFiller {
             console.log(`  - 跳过: ${band.name} (已存在且无需更新)`);
           }
         } else {
-          this.db.createBand(band);
+          await this.db.createBand(band);
           imported++;
           console.log(`  + 导入: ${band.name}`);
         }
@@ -106,19 +111,16 @@ export class BandCategoryFiller {
   /**
    * 清空指定分类的乐队数据
    */
-  clearCategory(category: string): number {
+  async clearCategory(category: string): Promise<number> {
     const bands = STATIC_BANDS[category];
     if (!bands) return 0;
 
     let deleted = 0;
     for (const band of bands) {
       try {
-        const stmt = this.db['db'].prepare('DELETE FROM bands WHERE id = ?');
-        const result = stmt.run(band.id);
-        if (result.changes > 0) {
-          deleted++;
-          console.log(`  - 删除: ${band.name}`);
-        }
+        await this.db.deleteBand(band.id);
+        deleted++;
+        console.log(`  - 删除: ${band.name}`);
       } catch (error) {
         console.error(`  ✗ 删除失败: ${band.name} - ${error instanceof Error ? error.message : String(error)}`);
       }
@@ -131,8 +133,8 @@ export class BandCategoryFiller {
   /**
    * 显示数据库统计信息
    */
-  showStats(): void {
-    const allBands = this.db.getAllBands();
+  async showStats(): Promise<void> {
+    const allBands = await this.db.getAllBands();
     
     // 按分类统计
     const categoryStats: Record<string, number> = {};
@@ -164,12 +166,11 @@ export class BandCategoryFiller {
 }
 
 // CLI 接口
-if (require.main === module) {
+async function main() {
   const { loadConfig } = require('./config');
   const config = loadConfig();
-  
-  const dbPath = path.join(process.cwd(), config.database.path || 'data/bands.db');
-  const filler = new BandCategoryFiller(dbPath);
+
+  const filler = await BandCategoryFiller.initialize();
 
   const args = process.argv.slice(2);
   const command = args[0] || 'fill';
@@ -177,13 +178,13 @@ if (require.main === module) {
   switch (command) {
     case 'fill':
       // 填充所有分类
-      filler.fillAllCategories();
+      await filler.fillAllCategories();
       // 重新创建连接以显示统计
-      const statsFiller = new BandCategoryFiller(dbPath);
-      statsFiller.showStats();
-      statsFiller['db'].close();
+      const statsFiller = await BandCategoryFiller.initialize();
+      await statsFiller.showStats();
+      await dbManager.close();
       break;
-    
+
     case 'fill-category':
       // 填充指定分类
       const category = args[1];
@@ -191,13 +192,13 @@ if (require.main === module) {
         console.error('请指定分类名称');
         process.exit(1);
       }
-      filler.fillCategory(category);
+      await filler.fillCategory(category);
       // 重新创建连接以显示统计
-      const statsFiller1 = new BandCategoryFiller(dbPath);
-      statsFiller1.showStats();
-      statsFiller1['db'].close();
+      const statsFiller1 = await BandCategoryFiller.initialize();
+      await statsFiller1.showStats();
+      await dbManager.close();
       break;
-    
+
     case 'clear':
       // 清空指定分类
       const clearCategory = args[1];
@@ -205,19 +206,19 @@ if (require.main === module) {
         console.error('请指定要清空的分类名称');
         process.exit(1);
       }
-      filler.clearCategory(clearCategory);
+      await filler.clearCategory(clearCategory);
       // 重新创建连接以显示统计
-      const statsFiller2 = new BandCategoryFiller(dbPath);
-      statsFiller2.showStats();
-      statsFiller2['db'].close();
+      const statsFiller2 = await BandCategoryFiller.initialize();
+      await statsFiller2.showStats();
+      await dbManager.close();
       break;
-    
+
     case 'stats':
       // 显示统计信息
-      filler.showStats();
-      filler['db'].close();
+      await filler.showStats();
+      await dbManager.close();
       break;
-    
+
     default:
       console.log('用法:');
       console.log('  npm run fill-bands              # 填充所有分类');
@@ -226,4 +227,11 @@ if (require.main === module) {
       console.log('  npm run fill-bands stats         # 显示统计信息');
       process.exit(1);
   }
+}
+
+if (require.main === module) {
+  main().catch(error => {
+    console.error('Fatal error:', error);
+    process.exit(1);
+  });
 }
