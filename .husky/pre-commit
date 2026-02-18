@@ -1,26 +1,38 @@
-#!/bin/sh
-. "$(dirname "$0")/_/husky.sh"
+#!/usr/bin/env node
 
-echo "Running pre-commit checks..."
+const { execSync } = require('child_process');
+const path = require('path');
 
-# Check backend TypeScript compilation
-echo "Checking backend TypeScript..."
-cd backend
-npm run build
-if [ $? -ne 0 ]; then
-    echo "Backend TypeScript check failed!"
-    exit 1
-fi
-cd ..
+console.log('Running pre-commit checks...');
 
-# Check frontend TypeScript and build
-echo "Checking frontend TypeScript and build..."
-cd frontend
-npm run build
-if [ $? -ne 0 ]; then
-    echo "Frontend build failed!"
-    exit 1
-fi
-cd ..
+const rootDir = path.resolve(__dirname, '..');
 
-echo "Pre-commit checks passed!"
+function runCommand(command, cwd) {
+  try {
+    execSync(command, { 
+      cwd: cwd || rootDir, 
+      stdio: 'inherit',
+      shell: true 
+    });
+    return true;
+  } catch (error) {
+    return false;
+  }
+}
+
+// Check backend TypeScript compilation
+console.log('\nChecking backend TypeScript...');
+if (!runCommand('npm run build', path.join(rootDir, 'backend'))) {
+  console.error('Backend TypeScript check failed!');
+  process.exit(1);
+}
+
+// Check frontend TypeScript and build
+console.log('\nChecking frontend TypeScript and build...');
+if (!runCommand('npm run build', path.join(rootDir, 'frontend'))) {
+  console.error('Frontend build failed!');
+  process.exit(1);
+}
+
+console.log('\nPre-commit checks passed!');
+process.exit(0);
