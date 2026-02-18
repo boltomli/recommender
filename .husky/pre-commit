@@ -1,0 +1,26 @@
+#!/bin/sh
+. "$(dirname "$0")/_/husky.sh"
+
+echo "Running pre-commit checks..."
+
+# Check backend TypeScript compilation
+echo "Checking backend TypeScript..."
+cd backend
+npm run build
+if [ $? -ne 0 ]; then
+    echo "Backend TypeScript check failed!"
+    exit 1
+fi
+cd ..
+
+# Check frontend TypeScript and build
+echo "Checking frontend TypeScript and build..."
+cd frontend
+npm run build
+if [ $? -ne 0 ]; then
+    echo "Frontend build failed!"
+    exit 1
+fi
+cd ..
+
+echo "Pre-commit checks passed!"
