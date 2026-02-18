@@ -1,4 +1,4 @@
-import { DatabaseManager } from './database';
+import { dbManager, IDatabase } from './database';
 import { AppConfig } from './types';
 import config from '../config.json';
 import path from 'path';
@@ -13,12 +13,17 @@ interface SyncStats {
 }
 
 class SyncBandData {
-  private db: DatabaseManager;
+  private db: IDatabase;
   private config: AppConfig;
 
-  constructor(config: AppConfig) {
+  private constructor(db: IDatabase, config: AppConfig) {
+    this.db = db;
     this.config = config;
-    this.db = new DatabaseManager(config.database.path);
+  }
+
+  static async initialize(config: AppConfig): Promise<SyncBandData> {
+    const db = await dbManager.initialize();
+    return new SyncBandData(db, config);
   }
 
   async sync(source: 'db' | 'static' = 'db', dryRun: boolean = false, backup: boolean = false, verify: boolean = false): Promise<void> {
@@ -44,7 +49,7 @@ class SyncBandData {
       stats.backupCreated = true;
     }
 
-    const bands = this.db.getAllBands();
+    const bands = await this.db.getAllBands();
     console.log(`\nLoaded ${bands.length} bands from database.`);
 
     if (!dryRun) {
@@ -68,7 +73,7 @@ class SyncBandData {
     }
 
     this.printSummary(stats);
-    this.db.close();
+    await dbManager.close();
   }
 
   private async syncStaticBands(bands: any[]): Promise<void> {
@@ -313,7 +318,7 @@ async function main() {
     }
   }
 
-  const syncer = new SyncBandData(config as AppConfig);
+  const syncer = await SyncBandData.initialize(config as AppConfig);
   await syncer.sync(source, dryRun, backup, verify);
 }
 

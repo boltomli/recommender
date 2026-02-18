@@ -1,6 +1,6 @@
 import { LLMClient } from './llmClient';
 import { Band, BandTier } from './types';
-import { DatabaseManager } from './database';
+import { dbManager, IDatabase } from './database';
 import fs from 'fs';
 import path from 'path';
 
@@ -23,12 +23,12 @@ interface GeneratedBandData {
 
 export class BandDataGenerator {
   private llmClient: LLMClient;
-  private db: DatabaseManager;
+  private db: IDatabase;
   private cachePath: string;
   private maxRetries: number = 3;
   private retryDelay: number = 1000;
 
-  constructor(llmClient: LLMClient, db: DatabaseManager, cachePath: string = './cache') {
+  constructor(llmClient: LLMClient, db: IDatabase, cachePath: string = './cache') {
     this.llmClient = llmClient;
     this.db = db;
     this.cachePath = cachePath;
@@ -142,7 +142,7 @@ export class BandDataGenerator {
 
     // Get existing bands as reference examples
     let referenceExamples = '';
-    const allBands = this.db.getAllBands();
+    const allBands = await this.db.getAllBands();
     const genreBands = allBands.filter(b => 
       b.genre.some(g => g.toLowerCase().includes(genre.toLowerCase())) && 
       b.tier === tier
@@ -382,7 +382,7 @@ async function main() {
   const configData = JSON.parse(fs.readFileSync(configPath, 'utf-8'));
 
   const llmClient = new LLMClient(configData.llm);
-  const db = new DatabaseManager(configData.database.path);
+  const db = await dbManager.initialize();
   const generator = new BandDataGenerator(llmClient, db, path.join(__dirname, '../cache/band-generation'));
 
   if (clearCache) {
@@ -397,8 +397,8 @@ async function main() {
     fs.writeFileSync(outputPath, JSON.stringify(bands, null, 2));
 
     console.log(`\nBands saved to: ${outputPath}`);
-    
-    db.close();
+
+    await dbManager.close();
   } catch (error) {
     console.error('Error generating bands:', error);
     process.exit(1);

@@ -1,4 +1,4 @@
-import { DatabaseManager } from './database';
+import { IDatabase } from './database';
 import { Band } from './types';
 
 export interface RecommendationResult {
@@ -8,9 +8,9 @@ export interface RecommendationResult {
 }
 
 export class BatchRecommendationGenerator {
-  private db: DatabaseManager;
+  private db: IDatabase;
 
-  constructor(db: DatabaseManager) {
+  constructor(db: IDatabase) {
     this.db = db;
   }
 
@@ -26,7 +26,7 @@ export class BatchRecommendationGenerator {
   }
 
   async generateForGenre(genre: string): Promise<Band[]> {
-    const bands = this.db.getBandsByGenre(genre);
+    const bands = await this.db.getBandsByGenre(genre);
 
     if (bands.length === 0) {
       return [];

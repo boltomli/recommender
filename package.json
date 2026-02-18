@@ -1,0 +1,15 @@
+{
+  "name": "recommender",
+  "version": "1.0.0",
+  "description": "Band recommender system with backend and frontend",
+  "scripts": {
+    "prepare": "husky",
+    "lint:backend": "cd backend && npm run build",
+    "lint:frontend": "cd frontend && npm run build",
+    "test:backend": "cd backend && npm test",
+    "test:frontend": "cd frontend && npm test || echo 'No tests specified'"
+  },
+  "devDependencies": {
+    "husky": "^9.1.7"
+  }
+}

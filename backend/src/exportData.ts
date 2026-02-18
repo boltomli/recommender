@@ -1,6 +1,6 @@
 import fs from 'fs';
 import path from 'path';
-import { DatabaseManager } from './database';
+import { IDatabase } from './database';
 import { Band } from './types';
 
 export interface ExportOptions {
@@ -18,9 +18,9 @@ export interface ExportedData {
 }
 
 export class DataExporter {
-  private db: DatabaseManager;
+  private db: IDatabase;
 
-  constructor(db: DatabaseManager) {
+  constructor(db: IDatabase) {
     this.db = db;
   }
 
@@ -34,7 +34,7 @@ export class DataExporter {
     }
 
     if (options.includeBands !== false) {
-      data.bands = this.db.getAllBands();
+      data.bands = await this.db.getAllBands();
     }
 
     if (options.includeRecommendations) {
@@ -49,7 +49,7 @@ export class DataExporter {
   }
 
   async exportBands(): Promise<Band[]> {
-    return this.db.getAllBands();
+    return await this.db.getAllBands();
   }
 
   async exportRecommendations(): Promise<Record<string, Band[]>> {
@@ -132,7 +132,7 @@ export class DataExporter {
     const recommendations: Record<string, Band[]> = {};
 
     for (const genre of genres) {
-      const bands = this.db.getBandsByGenre(genre);
+      const bands = await this.db.getBandsByGenre(genre);
       recommendations[genre] = bands.slice(0, 10);
     }
 

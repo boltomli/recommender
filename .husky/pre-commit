@@ -1,0 +1,38 @@
+#!/usr/bin/env node
+
+const { execSync } = require('child_process');
+const path = require('path');
+
+console.log('Running pre-commit checks...');
+
+const rootDir = path.resolve(__dirname, '..');
+
+function runCommand(command, cwd) {
+  try {
+    execSync(command, { 
+      cwd: cwd || rootDir, 
+      stdio: 'inherit',
+      shell: true 
+    });
+    return true;
+  } catch (error) {
+    return false;
+  }
+}
+
+// Check backend TypeScript compilation
+console.log('\nChecking backend TypeScript...');
+if (!runCommand('npm run build', path.join(rootDir, 'backend'))) {
+  console.error('Backend TypeScript check failed!');
+  process.exit(1);
+}
+
+// Check frontend TypeScript and build
+console.log('\nChecking frontend TypeScript and build...');
+if (!runCommand('npm run build', path.join(rootDir, 'frontend'))) {
+  console.error('Frontend build failed!');
+  process.exit(1);
+}
+
+console.log('\nPre-commit checks passed!');
+process.exit(0);

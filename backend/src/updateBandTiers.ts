@@ -1,4 +1,4 @@
-import { DatabaseManager } from './database';
+import { dbManager, IDatabase } from './database';
 import { LLMClient } from './llmClient';
 import { CacheManager } from './cacheManager';
 import { AppConfig } from './types';
@@ -15,16 +15,21 @@ interface UpdateStats {
 }
 
 class UpdateBandTiers {
-  private db: DatabaseManager;
+  private db: IDatabase;
   private llm: LLMClient;
   private cache: CacheManager;
   private config: AppConfig;
 
-  constructor(config: AppConfig) {
+  private constructor(db: IDatabase, config: AppConfig) {
+    this.db = db;
     this.config = config;
-    this.db = new DatabaseManager(config.database.path);
     this.llm = new LLMClient(config.llm);
     this.cache = new CacheManager(config.tierUpdate.cachePath);
+  }
+
+  static async initialize(config: AppConfig): Promise<UpdateBandTiers> {
+    const db = await dbManager.initialize();
+    return new UpdateBandTiers(db, config);
   }
 
   async updateAll(genre?: string, dryRun: boolean = false, force: boolean = false, batchSize: number = 10): Promise<void> {
@@ -42,7 +47,7 @@ class UpdateBandTiers {
     console.log(`Batch size: ${batchSize}`);
     console.log('='.repeat(60));
 
-    let bands = genre ? this.db.getBandsByGenre(genre) : this.db.getAllBands();
+    let bands = genre ? await this.db.getBandsByGenre(genre) : await this.db.getAllBands();
 
     if (bands.length === 0) {
       console.log('No bands found to update.');
@@ -68,7 +73,7 @@ class UpdateBandTiers {
 
     this.printSummary(stats);
 
-    this.db.close();
+    await dbManager.close();
   }
 
   private async processBatch(bands: any[], stats: UpdateStats, dryRun: boolean, force: boolean): Promise<void> {
@@ -94,8 +99,8 @@ class UpdateBandTiers {
           console.log(`    Would update tier: ${band.tier} -> ${result.tier}`);
           console.log(`    Reasoning: ${result.reasoning}`);
         } else {
-          const stmt = this.db['db'].prepare('UPDATE bands SET tier = ? WHERE id = ?');
-          stmt.run(result.tier, band.id);
+          const updatedBand = { ...band, tier: result.tier };
+          await this.db.updateBand(updatedBand);
 
           this.cache.set('tier', cacheKey, result);
 
@@ -192,7 +197,7 @@ async function main() {
     }
   }
 
-  const updater = new UpdateBandTiers(config as AppConfig);
+  const updater = await UpdateBandTiers.initialize(config as AppConfig);
 
   if (backup && !dryRun) {
     await updater.backupDatabase();

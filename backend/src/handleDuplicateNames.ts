@@ -1,4 +1,4 @@
-import { DatabaseManager } from './database';
+import { dbManager, IDatabase } from './database';
 import { LLMClient } from './llmClient';
 import { AppConfig } from './types';
 import config from '../config.json';
@@ -18,14 +18,19 @@ interface DuplicateStats {
 }
 
 class HandleDuplicateNames {
-  private db: DatabaseManager;
+  private db: IDatabase;
   private llm: LLMClient;
   private config: AppConfig;
 
-  constructor(config: AppConfig) {
+  private constructor(db: IDatabase, config: AppConfig) {
+    this.db = db;
     this.config = config;
-    this.db = new DatabaseManager(config.database.path);
     this.llm = new LLMClient(config.llm);
+  }
+
+  static async initialize(config: AppConfig): Promise<HandleDuplicateNames> {
+    const db = await dbManager.initialize();
+    return new HandleDuplicateNames(db, config);
   }
 
   async handleAll(genre?: string, dryRun: boolean = false, autoFix: boolean = false): Promise<void> {
@@ -37,7 +42,7 @@ class HandleDuplicateNames {
     console.log(`Auto fix: ${autoFix}`);
     console.log('='.repeat(60));
 
-    const allBands = genre ? this.db.getBandsByGenre(genre) : this.db.getAllBands();
+    const allBands = genre ? await this.db.getBandsByGenre(genre) : await this.db.getAllBands();
     const duplicateGroups = this.findDuplicates(allBands);
 
     if (duplicateGroups.length === 0) {
@@ -71,7 +76,7 @@ class HandleDuplicateNames {
     }
 
     this.printSummary(stats);
-    this.db.close();
+    await dbManager.close();
   }
 
   private findDuplicates(bands: any[]): DuplicateGroup[] {
@@ -116,7 +121,7 @@ class HandleDuplicateNames {
       const genres = group.bands.map(b => b.genre).join(', ');
       
       // Prepare reference examples (max 3 bands from the same genre)
-      const allBands = this.db.getAllBands();
+      const allBands = await this.db.getAllBands();
       const genreBands = allBands.filter(b => 
         b.genre.some(g => genres.toLowerCase().includes(g.toLowerCase()))
       );
@@ -147,8 +152,7 @@ class HandleDuplicateNames {
         if (dryRun) {
           console.log(`    [DRY-RUN] ${targetBand.id}: ${info.distinguishingInfo}`);
         } else {
-          const stmt = this.db['db'].prepare('UPDATE bands SET description = ? WHERE id = ?');
-          stmt.run(newDescription, targetBand.id);
+          await this.db.updateBandDescription(targetBand.id, newDescription);
           console.log(`    [UPDATED] ${targetBand.id}: ${info.distinguishingInfo}`);
         }
 
@@ -234,7 +238,7 @@ async function main() {
     }
   }
 
-  const handler = new HandleDuplicateNames(config as AppConfig);
+  const handler = await HandleDuplicateNames.initialize(config as AppConfig);
   await handler.handleAll(genre, dryRun, autoFix);
 }
 

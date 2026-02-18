@@ -1,15 +1,41 @@
-{"name": "backend", "version": "1.0.0", "description": "", "main": "index.js", "scripts": {"dev": "ts-node src/server.ts", "build": "tsc", "start": "node dist/server.js", "test": "echo \"Error: no test specified\" && exit 1", "export-data": "ts-node src/cli.ts export-data", "import-data": "ts-node src/cli.ts import-data", "generate-recommendations": "ts-node src/cli.ts generate-recommendations", "generate-bands": "ts-node src/generateBandData.ts", "fill-bands": "ts-node src/fillBandsByCategory.ts", "migrate-db": "ts-node src/migrateDatabase.ts", "update-tiers": "ts-node src/updateBandTiers.ts", "expand-genres": "ts-node src/expandGenreBands.ts", "handle-duplicates": "ts-node src/handleDuplicateNames.ts", "sync-data": "ts-node src/syncBandData.ts", "cleanup-genres": "ts-node src/cleanupSmallGenres.ts", "cleanup-genre-tags": "ts-node src/cleanupGenreTags.ts", "full-update": "ts-node src/updateBandTiers.ts && ts-node src/expandGenreBands.ts && ts-node src/handleDuplicateNames.ts --auto-fix && ts-node src/syncBandData.ts --backup --verify"},
-  "keywords": [],
-  "author": "",
-  "license": "ISC",
-  "type": "commonjs",
-  "dependencies": {
-    "@fastify/cors": "^11.2.0",
-    "@types/better-sqlite3": "^7.6.13",
-    "@types/node": "^25.0.9",
-    "better-sqlite3": "^12.6.2",
-    "fastify": "^5.7.1",
-    "ts-node": "^10.9.2",
-    "typescript": "^5.9.3"
-  }
+{
+   "author": "",
+   "dependencies": {
+      "@fastify/cors": "^11.2.0",
+      "@types/better-sqlite3": "^7.6.13",
+      "@types/node": "^25.0.9",
+      "@types/pg": "^8.16.0",
+      "better-sqlite3": "^12.6.2",
+      "dotenv": "^17.3.1",
+      "fastify": "^5.7.4",
+      "pg": "^8.18.0",
+      "ts-node": "^10.9.2",
+      "typescript": "^5.9.3"
+   },
+   "description": "",
+   "keywords": [],
+   "license": "ISC",
+   "main": "index.js",
+   "name": "backend",
+   "scripts": {
+      "build": "tsc",
+      "cleanup-genre-tags": "ts-node src/cleanupGenreTags.ts",
+      "cleanup-genres": "ts-node src/cleanupSmallGenres.ts",
+      "dev": "ts-node src/server.ts",
+      "expand-genres": "ts-node src/expandGenreBands.ts",
+      "export-data": "ts-node src/cli.ts export-data",
+      "fill-bands": "ts-node src/fillBandsByCategory.ts",
+      "full-update": "ts-node src/updateBandTiers.ts && ts-node src/expandGenreBands.ts && ts-node src/handleDuplicateNames.ts --auto-fix && ts-node src/syncBandData.ts --backup --verify",
+      "generate-bands": "ts-node src/generateBandData.ts",
+      "generate-recommendations": "ts-node src/cli.ts generate-recommendations",
+      "handle-duplicates": "ts-node src/handleDuplicateNames.ts",
+      "import-data": "ts-node src/cli.ts import-data",
+      "migrate-db": "ts-node src/migrateDatabase.ts",
+      "start": "node dist/server.js",
+      "sync-data": "ts-node src/syncBandData.ts",
+      "test": "echo \"Error: no test specified\" && exit 1",
+      "update-tiers": "ts-node src/updateBandTiers.ts"
+   },
+   "type": "commonjs",
+   "version": "1.0.0"
 }

@@ -1,19 +1,29 @@
 import { loadConfig } from './config';
 import { LLMClient } from './llmClient';
-import { DatabaseManager } from './database';
+import { dbManager, IDatabase } from './database';
 import { DataExporter } from './exportData';
 import { DataImporter } from './importData';
 import { BatchRecommendationGenerator } from './batchRecommendations';
 import path from 'path';
 
-const config = loadConfig();
-const llmClient = new LLMClient(config.llm);
-const db = new DatabaseManager(config.database.path);
-const exporter = new DataExporter(db);
-const importer = new DataImporter(llmClient, db);
-const batchGenerator = new BatchRecommendationGenerator(db);
-
 const OUTPUT_DIR = path.join(__dirname, '..', '..', 'frontend', 'public', 'data');
+
+let db: IDatabase;
+let exporter: DataExporter;
+let importer: DataImporter;
+let batchGenerator: BatchRecommendationGenerator;
+
+async function initialize() {
+  // Initialize database with fallback (PostgreSQL -> SQLite)
+  db = await dbManager.initialize();
+  console.log(`数据库类型: ${dbManager.getType()}`);
+
+  const config = loadConfig();
+  const llmClient = new LLMClient(config.llm);
+  exporter = new DataExporter(db);
+  importer = new DataImporter(llmClient, db);
+  batchGenerator = new BatchRecommendationGenerator(db);
+}
 
 async function exportData() {
   console.log('Exporting data...');
@@ -58,28 +68,39 @@ async function generateRecommendations() {
   }
 
   await exporter.exportRecommendationsToFile(path.join(OUTPUT_DIR, 'recommendations.json'));
-  console.log('✓ Exported recommendations to file');
-
-  console.log('Recommendation generation complete!');
+  console.log('✓ Exported recommendations');
 }
 
-const command = process.argv[2];
+async function main() {
+  const command = process.argv[2];
 
-switch (command) {
-  case 'export-data':
-    exportData().catch(console.error);
-    break;
-  case 'import-data':
-    importData().catch(console.error);
-    break;
-  case 'generate-recommendations':
-    generateRecommendations().catch(console.error);
-    break;
-  default:
-    console.log('Usage: npm run <command>');
-    console.log('Commands:');
-    console.log('  export-data          Export all data to JSON files');
-    console.log('  import-data          Import bands from LLM (set GENRE and COUNT env vars)');
-    console.log('  generate-recommendations  Generate and export recommendations');
+  try {
+    await initialize();
+
+    switch (command) {
+      case 'export-data':
+        await exportData();
+        break;
+      case 'import-data':
+        await importData();
+        break;
+      case 'generate-recommendations':
+        await generateRecommendations();
+        break;
+      default:
+        console.log('Usage: ts-node cli.ts <command>');
+        console.log('Commands:');
+        console.log('  export-data              Export all data to frontend/public/data');
+        console.log('  import-data              Import bands from LLM');
+        console.log('  generate-recommendations Generate recommendations for all genres');
+        process.exit(1);
+    }
+  } catch (error) {
+    console.error('Error:', error);
     process.exit(1);
+  } finally {
+    await dbManager.close();
+  }
 }
+
+main();

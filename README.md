@@ -4,7 +4,7 @@ By me through openspec.
 
 ## CODE
 
-By glm-4.7 through iflow.
+By glm-4.7, kimi k2.5 through iflow.
 
 ## DATA
 

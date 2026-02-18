@@ -1,4 +1,4 @@
-import { DatabaseManager } from './database';
+import { dbManager, IDatabase } from './database';
 import { LLMClient } from './llmClient';
 import { CacheManager } from './cacheManager';
 import { AppConfig } from './types';
@@ -16,16 +16,21 @@ interface ExpansionStats {
 }
 
 class ExpandGenreBands {
-  private db: DatabaseManager;
+  private db: IDatabase;
   private llm: LLMClient;
   private cache: CacheManager;
   private config: AppConfig;
 
-  constructor(config: AppConfig) {
+  private constructor(db: IDatabase, config: AppConfig) {
+    this.db = db;
     this.config = config;
-    this.db = new DatabaseManager(config.database.path);
     this.llm = new LLMClient(config.llm);
     this.cache = new CacheManager(config.expandGenres.cachePath);
+  }
+
+  static async initialize(config: AppConfig): Promise<ExpandGenreBands> {
+    const db = await dbManager.initialize();
+    return new ExpandGenreBands(db, config);
   }
 
   async expandAll(genre?: string, targetCount?: number, dryRun: boolean = false, force: boolean = false): Promise<void> {
@@ -55,7 +60,7 @@ class ExpandGenreBands {
     if (genre) {
       await this.expandGenre(genre, targetCount || config.expandGenres.minBandsForGenre, dryRun, force, stats);
     } else {
-      const allBands = this.db.getAllBands();
+      const allBands = await this.db.getAllBands();
       const genreCounts = this.getGenreCounts(allBands);
       const minCount = targetCount || config.expandGenres.minBandsForGenre;
 
@@ -80,7 +85,7 @@ class ExpandGenreBands {
     }
 
     this.printSummary(stats);
-    this.db.close();
+    await dbManager.close();
   }
 
   private getGenreCounts(bands: any[]): Record<string, number> {
@@ -97,7 +102,7 @@ class ExpandGenreBands {
   private async expandGenre(genre: string, targetCount: number, dryRun: boolean, force: boolean, stats: ExpansionStats): Promise<void> {
     console.log(`\nProcessing genre: ${genre}`);
 
-    const existingBands = this.db.getBandsByGenre(genre);
+    const existingBands = await this.db.getBandsByGenre(genre);
     const existingNames = new Set(existingBands.map(b => b.name.toLowerCase().trim()));
 
     const needed = targetCount - existingBands.length;
@@ -243,7 +248,7 @@ class ExpandGenreBands {
             tier: bandData.tier || 'niche'
           };
 
-          this.db.createBand(band);
+          await this.db.createBand(band);
           console.log(`    [IMPORTED] ${band.name} (${band.tier})`);
         }
 
@@ -325,7 +330,7 @@ async function main() {
     }
   }
 
-  const expander = new ExpandGenreBands(config as AppConfig);
+  const expander = await ExpandGenreBands.initialize(config as AppConfig);
   await expander.expandAll(genre, targetCount, dryRun, force);
 }
 

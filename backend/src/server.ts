@@ -2,7 +2,7 @@ import Fastify from 'fastify';
 import cors from '@fastify/cors';
 import { loadConfig } from './config';
 import { LLMClient } from './llmClient';
-import { DatabaseManager } from './database';
+import { dbManager, IDatabase } from './database';
 import { RecommendationEngine } from './recommendationEngine';
 import { DataExporter } from './exportData';
 import { DataImporter } from './importData';
@@ -20,22 +20,16 @@ fastify.register(cors, {
   origin: true
 });
 
-// Initialize components
-const llmClient = new LLMClient(config.llm);
-const db = new DatabaseManager(config.database.path);
-const engine = new RecommendationEngine(
-  llmClient,
-  db,
-  config.app.maxComparisons,
-  config.app.maxRecommendations
-);
-const exporter = new DataExporter(db);
-const importer = new DataImporter(llmClient, db);
-const batchGenerator = new BatchRecommendationGenerator(db);
+// Initialize components (will be set up in start())
+let db: IDatabase;
+let engine: RecommendationEngine;
+let exporter: DataExporter;
+let importer: DataImporter;
+let batchGenerator: BatchRecommendationGenerator;
 
 // Health check
 fastify.get('/health', async (request, reply) => {
-  return { status: 'ok', timestamp: new Date().toISOString() };
+  return { status: 'ok', timestamp: new Date().toISOString(), database: dbManager.getType() };
 });
 
 // Get available genres
@@ -299,6 +293,22 @@ fastify.post('/api/recommendations/generate', async (request, reply) => {
 // Start server
 const start = async () => {
   try {
+    // Initialize database with fallback
+    db = await dbManager.initialize();
+    console.log(`数据库类型: ${dbManager.getType()}`);
+
+    // Initialize components
+    const llmClient = new LLMClient(config.llm);
+    engine = new RecommendationEngine(
+      llmClient,
+      db,
+      config.app.maxComparisons,
+      config.app.maxRecommendations
+    );
+    exporter = new DataExporter(db);
+    importer = new DataImporter(llmClient, db);
+    batchGenerator = new BatchRecommendationGenerator(db);
+
     const port = process.env.PORT || 3001;
     await fastify.listen({ port: port as number, host: '0.0.0.0' });
     console.log(`Server listening on http://localhost:${port}`);

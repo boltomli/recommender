@@ -1,4 +1,4 @@
-import { DatabaseManager } from './database';
+import { dbManager, IDatabase } from './database';
 import { AppConfig } from './types';
 import config from '../config.json';
 import path from 'path';
@@ -22,14 +22,19 @@ interface BandOperation {
 }
 
 class CleanupSmallGenres {
-  private db: DatabaseManager;
+  private db: IDatabase;
   private config: AppConfig;
   private minBandsThreshold: number;
 
-  constructor(config: AppConfig, minBandsThreshold: number = 10) {
+  private constructor(db: IDatabase, config: AppConfig, minBandsThreshold: number = 10) {
+    this.db = db;
     this.config = config;
-    this.db = new DatabaseManager(config.database.path);
     this.minBandsThreshold = minBandsThreshold;
+  }
+
+  static async initialize(config: AppConfig, minBandsThreshold: number = 10): Promise<CleanupSmallGenres> {
+    const db = await dbManager.initialize();
+    return new CleanupSmallGenres(db, config, minBandsThreshold);
   }
 
   async cleanup(dryRun: boolean = false, backup: boolean = false): Promise<void> {
@@ -51,15 +56,15 @@ class CleanupSmallGenres {
     if (!dryRun) {
       console.log('\nSynchronizing cleaned data to all sources...');
       const { SyncBandData } = await import('./syncBandData');
-      const syncer = new SyncBandData(config);
+      const syncer = await SyncBandData.initialize(config);
       await syncer.sync('db', false, false, true);
     }
 
-    this.db.close();
+    await dbManager.close();
   }
 
   private async performCleanup(dryRun: boolean): Promise<CleanupStats> {
-    const bands = this.db.getAllBands();
+    const bands = await this.db.getAllBands();
     const genreCounts = this.calculateGenreCounts(bands);
     const smallGenres = this.identifySmallGenres(genreCounts);
 
@@ -98,7 +103,7 @@ class CleanupSmallGenres {
       await this.executeOperations(operations);
     }
 
-    const bandsAfter = this.db.getAllBands();
+    const bandsAfter = await this.db.getAllBands();
     const genreCountsAfter = this.calculateGenreCounts(bandsAfter);
     const genresRemoved = smallGenres.filter(g => !genreCountsAfter[g]);
 
@@ -170,13 +175,13 @@ class CleanupSmallGenres {
     console.log('\n--- Executing Operations ---');
 
     for (const op of deleteOps) {
-      this.db.deleteBand(op.band.id);
+      await this.db.deleteBand(op.band.id);
       console.log(`  Deleted: ${op.band.name} (${op.band.genre.join(', ')})`);
     }
 
     for (const op of modifyOps) {
       const newGenres = op.reason.split(', ');
-      this.db.updateBandGenres(op.band.id, newGenres);
+      await this.db.updateBandGenres(op.band.id, newGenres);
       console.log(`  Modified: ${op.band.name} - ${op.band.genre.join(', ')} -> ${newGenres.join(', ')}`);
     }
   }
@@ -259,7 +264,7 @@ async function main() {
     }
   }
 
-  const cleanup = new CleanupSmallGenres(config as AppConfig, minBandsThreshold);
+  const cleanup = await CleanupSmallGenres.initialize(config as AppConfig, minBandsThreshold);
   await cleanup.cleanup(dryRun, backup);
 }
 

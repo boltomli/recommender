@@ -1,4 +1,4 @@
-import { DatabaseManager } from './database';
+import { dbManager, IDatabase } from './database';
 import { LLMClient } from './llmClient';
 import { loadConfig } from './config';
 
@@ -126,10 +126,11 @@ async function main() {
   console.log('开始清理乐队流派标签...\n');
 
   const config = loadConfig();
-  const dbManager = new DatabaseManager(config.database.path);
+  const db = await dbManager.initialize();
 
   // 获取所有乐队
-  const allBands = dbManager.getAllBands();
+  const allBands = await db.getAllBands();
+
   console.log(`共找到 ${allBands.length} 支乐队\n`);
 
   // Prepare reference bands (max 3, sorted by ID to get earliest)
@@ -167,7 +168,7 @@ async function main() {
       console.log(`  移除标签: ${removedTags.join(', ')}`);
 
       // 更新数据库
-      dbManager.updateBandGenres(band.id, cleanedGenres);
+      await db.updateBandGenres(band.id, cleanedGenres);
 
       results.push({
         bandId: band.id,
@@ -183,7 +184,7 @@ async function main() {
     console.log('');
   }
 
-  dbManager.close();
+  await dbManager.close();
 
   // 输出摘要
   console.log('\n=== 清理完成 ===');
