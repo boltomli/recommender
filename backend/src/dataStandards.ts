@@ -21,6 +21,42 @@ export const STANDARD_GENRES = [
 
 export type StandardGenre = typeof STANDARD_GENRES[number];
 
+// ============ 流派映射规则（非标准流派 -> 标准流派） ============
+export const GENRE_MAPPINGS: Record<string, StandardGenre> = {
+  // 维京金属 -> 民谣金属
+  'viking': 'folk',
+  // 华丽金属 -> 重金属
+  'glam': 'heavy',
+  // 硬摇滚 -> 重金属
+  'hard rock': 'heavy',
+  // 泥浆金属 -> 厄运金属
+  'sludge': 'doom',
+  // 常见变体
+  'melodic death': 'death',
+  'technical death': 'death',
+  'blackened death': 'death',
+  'symphonic black': 'black',
+  'atmospheric black': 'black',
+  'melodic black': 'black',
+  'stoner': 'doom',
+  'drone': 'doom',
+  'funeral': 'doom',
+  'gothic': 'doom',
+  'industrial': 'heavy',
+  'nu': 'groove',
+  'metalcore': 'groove',
+  'deathcore': 'death',
+  'djent': 'progressive',
+  'math': 'progressive',
+  'avant-garde': 'progressive',
+  'post': 'progressive',
+  'neoclassical': 'power',
+  'symphonic': 'power',
+  'epic': 'power',
+  'pagan': 'folk',
+  'celtic': 'folk'
+};
+
 // ============ 年代格式规范 ============
 export const ERA_PATTERNS = {
   // 1980s, 1990s, etc.
@@ -89,12 +125,21 @@ export function isValidGenre(genre: string): boolean {
 
 /**
  * 标准化流派名称
+ * 支持映射非标准流派到标准流派
  */
 export function normalizeGenre(genre: string): StandardGenre | null {
   const normalized = genre.toLowerCase().trim();
+
+  // 首先检查是否已经是标准流派
   if (STANDARD_GENRES.includes(normalized as StandardGenre)) {
     return normalized as StandardGenre;
   }
+
+  // 尝试映射非标准流派
+  if (GENRE_MAPPINGS[normalized]) {
+    return GENRE_MAPPINGS[normalized];
+  }
+
   return null;
 }
 

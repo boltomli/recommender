@@ -95,7 +95,7 @@ export const STATIC_BANDS: Record<string, Band[]> = {
     {
       id: 'band_bathory_1',
       name: 'Bathory',
-      genre: ["black","viking"],
+      genre: ["black", "folk"],
       era: '1980s',
       albums: ["Bathory","The Return","Under the Sign of the Black Mark"],
       description: 'Swedish black metal pioneers.',
@@ -295,7 +295,7 @@ export const STATIC_BANDS: Record<string, Band[]> = {
     {
       id: 'band_graveland_1',
       name: 'Graveland',
-      genre: ["black","viking"],
+      genre: ["black", "folk"],
       era: '1990s',
       albums: ["The Celtic Winter","Thousand Swords","Following the Voice of Blood"],
       description: 'Polish black metal band with Viking themes.',
@@ -1591,7 +1591,7 @@ export const STATIC_BANDS: Record<string, Band[]> = {
     {
       id: 'band_metsatöll_1',
       name: 'Metsatöll',
-      genre: ["folk","viking"],
+      genre: ["folk"],
       era: '2000s',
       albums: ["Hiiekoda","Terast","Äio"],
       description: 'Estonian folk metal band.',
@@ -1601,7 +1601,7 @@ export const STATIC_BANDS: Record<string, Band[]> = {
     {
       id: 'band_tyr_1',
       name: 'Týr',
-      genre: ["folk","viking"],
+      genre: ["folk"],
       era: '2000s',
       albums: ["Eric the Red","Ragnarok","Land"],
       description: 'Faroese folk metal band.',
@@ -1611,7 +1611,7 @@ export const STATIC_BANDS: Record<string, Band[]> = {
     {
       id: 'band_heidevolk_1',
       name: 'Heidevolk',
-      genre: ["folk","viking"],
+      genre: ["folk"],
       era: '2000s',
       albums: ["De Strijdlust is Geboren","Walhalla Wacht","Batavi"],
       description: 'Dutch folk metal band.',
@@ -1621,7 +1621,7 @@ export const STATIC_BANDS: Record<string, Band[]> = {
     {
       id: 'band_wolfchant_1',
       name: 'Wolfchant',
-      genre: ["folk","viking"],
+      genre: ["folk"],
       era: '2000s',
       albums: ["A Pagan Storm","Determined Devastation","Call of the Black Winds"],
       description: 'German folk metal band.',
@@ -1631,7 +1631,7 @@ export const STATIC_BANDS: Record<string, Band[]> = {
     {
       id: 'band_menhir_1',
       name: 'Menhir',
-      genre: ["folk","viking"],
+      genre: ["folk"],
       era: '1990s',
       albums: ["Die ewigen Steine","Thuringia","Hildebrandslied"],
       description: 'German folk metal band.',
@@ -1711,7 +1711,7 @@ export const STATIC_BANDS: Record<string, Band[]> = {
     {
       id: 'band_falkenbach_1',
       name: 'Falkenbach',
-      genre: ["folk","viking"],
+      genre: ["folk"],
       era: '2000s',
       albums: ["...En Their Medh Riki Fara...","Magni Blandinn Ok Megintiri","Heralding - The Fireblade"],
       description: 'German viking metal band.',
@@ -1721,7 +1721,7 @@ export const STATIC_BANDS: Record<string, Band[]> = {
     {
       id: 'band_vintersorg_1',
       name: 'Vintersorg',
-      genre: ["folk","viking"],
+      genre: ["folk"],
       era: '2000s',
       albums: ["Till Fjälls","Ödemarkens Son","Cosmic Genesis"],
       description: 'Swedish viking metal band.',
@@ -1731,7 +1731,7 @@ export const STATIC_BANDS: Record<string, Band[]> = {
     {
       id: 'band_borknagar_1',
       name: 'Borknagar',
-      genre: ["folk","viking"],
+      genre: ["folk"],
       era: '1990s',
       albums: ["Borknagar","The Olden Domain","The Archaic Course"],
       description: 'Norwegian black metal band with progressive elements.',
@@ -1741,7 +1741,7 @@ export const STATIC_BANDS: Record<string, Band[]> = {
     {
       id: 'band_windir_1',
       name: 'Windir',
-      genre: ["folk","viking"],
+      genre: ["folk"],
       era: '2000s',
       albums: ["Sóknardalr","Arntor","1184"],
       description: 'Norwegian viking metal band.',
@@ -1751,7 +1751,7 @@ export const STATIC_BANDS: Record<string, Band[]> = {
     {
       id: 'band_vreid_1',
       name: 'Vreid',
-      genre: ["folk","viking"],
+      genre: ["folk"],
       era: '2000s',
       albums: ["Kraft","Pitch Black Brigade","I Krig"],
       description: 'Norwegian viking metal band.',
@@ -1761,7 +1761,7 @@ export const STATIC_BANDS: Record<string, Band[]> = {
     {
       id: 'band_kampfar_1',
       name: 'Kampfar',
-      genre: ["folk","viking"],
+      genre: ["folk"],
       era: '2000s',
       albums: ["Mellom Skogkledde Aaser","Kvass","Heimgang"],
       description: 'Norwegian viking metal band.',
@@ -1771,7 +1771,7 @@ export const STATIC_BANDS: Record<string, Band[]> = {
     {
       id: 'band_arkona_1',
       name: 'Arkona',
-      genre: ["folk","viking"],
+      genre: ["folk"],
       era: '2000s',
       albums: ["Ot Serdca K Nebu","Lepta","Goi, Rode, Goi!"],
       description: 'Russian viking metal band.',
@@ -1781,7 +1781,7 @@ export const STATIC_BANDS: Record<string, Band[]> = {
     {
       id: 'band_butterfly_temple_1',
       name: 'Butterfly Temple',
-      genre: ["folk","viking"],
+      genre: ["folk"],
       era: '2000s',
       albums: ["Blessed by the Gods","Pagan Songs","Zov Pustykh Dereven"],
       description: 'Russian viking metal band.',
@@ -1791,7 +1791,7 @@ export const STATIC_BANDS: Record<string, Band[]> = {
     {
       id: 'band_nokturnal_mortum_1',
       name: 'Nokturnal Mortum',
-      genre: ["folk","viking"],
+      genre: ["folk"],
       era: '2000s',
       albums: ["Goat Horns","To the Gates of Blasphemous Fire","NeChrist"],
       description: 'Ukrainian viking metal band.',
@@ -1801,7 +1801,7 @@ export const STATIC_BANDS: Record<string, Band[]> = {
     {
       id: 'band_temnozor_1',
       name: 'Temnozor',
-      genre: ["folk","viking"],
+      genre: ["folk"],
       era: '2000s',
       albums: ["Sorcery of Fragrance","Horizons","Ukraina"],
       description: 'Russian viking metal band.',
@@ -1811,7 +1811,7 @@ export const STATIC_BANDS: Record<string, Band[]> = {
     {
       id: 'band_alatyr_1',
       name: 'Alatyr',
-      genre: ["folk","viking"],
+      genre: ["folk"],
       era: '2000s',
       albums: ["Put' k Pochitayemym Rodnikam"],
       description: 'Russian viking metal band.',
@@ -1821,7 +1821,7 @@ export const STATIC_BANDS: Record<string, Band[]> = {
     {
       id: 'band_ruslana_1',
       name: 'Ruslana',
-      genre: ["folk","viking"],
+      genre: ["folk"],
       era: '2000s',
       albums: ["Wild Dances","Amazonka"],
       description: 'Ukrainian viking metal artist.',
@@ -1833,7 +1833,7 @@ export const STATIC_BANDS: Record<string, Band[]> = {
     {
       id: 'band_twisted_sister_1',
       name: 'Twisted Sister',
-      genre: ["heavy","glam"],
+      genre: ["heavy"],
       era: '1980s',
       albums: ["Under the Blade","You Can't Stop Rock 'n' Roll","Stay Hungry"],
       description: 'American heavy metal/glam rock band.',
@@ -1843,7 +1843,7 @@ export const STATIC_BANDS: Record<string, Band[]> = {
     {
       id: 'band_mötley_crüe_1',
       name: 'Mötley Crüe',
-      genre: ["heavy","glam"],
+      genre: ["heavy"],
       era: '1980s',
       albums: ["Shout at the Devil","Theatre of Pain","Girls, Girls, Girls"],
       description: 'American heavy metal/glam rock band.',
@@ -1853,7 +1853,7 @@ export const STATIC_BANDS: Record<string, Band[]> = {
     {
       id: 'band_poison_1',
       name: 'Poison',
-      genre: ["heavy","glam"],
+      genre: ["heavy"],
       era: '1980s',
       albums: ["Look What the Cat Dragged In","Open Up and Say... Ahh!","Flesh & Blood"],
       description: 'American heavy metal/glam rock band.',
@@ -1863,7 +1863,7 @@ export const STATIC_BANDS: Record<string, Band[]> = {
     {
       id: 'band_wasp_1',
       name: 'W.A.S.P.',
-      genre: ["heavy","glam"],
+      genre: ["heavy"],
       era: '1980s',
       albums: ["W.A.S.P.","The Last Command","Inside the Electric Circus"],
       description: 'American heavy metal/glam rock band.',
@@ -1873,7 +1873,7 @@ export const STATIC_BANDS: Record<string, Band[]> = {
     {
       id: 'band_ratt_1',
       name: 'Ratt',
-      genre: ["heavy","glam"],
+      genre: ["heavy"],
       era: '1980s',
       albums: ["Out of the Cellar","Invasion of Your Privacy","Dancing Undercover"],
       description: 'American heavy metal/glam rock band.',
@@ -1883,7 +1883,7 @@ export const STATIC_BANDS: Record<string, Band[]> = {
     {
       id: 'band_cinderella_1',
       name: 'Cinderella',
-      genre: ["heavy","glam"],
+      genre: ["heavy"],
       era: '1980s',
       albums: ["Night Songs","Long Cold Winter","Heartbreak Station"],
       description: 'American heavy metal/glam rock band.',
@@ -1893,7 +1893,7 @@ export const STATIC_BANDS: Record<string, Band[]> = {
     {
       id: 'band_heavy_metal_kids_1',
       name: 'Heavy Metal Kids',
-      genre: ["heavy","glam"],
+      genre: ["heavy"],
       era: '1970s',
       albums: ["Heavy Metal Kids"],
       description: 'British heavy metal/glam rock band.',
@@ -1903,7 +1903,7 @@ export const STATIC_BANDS: Record<string, Band[]> = {
     {
       id: 'band_girls_1',
       name: 'Girl',
-      genre: ["heavy","glam"],
+      genre: ["heavy"],
       era: '1980s',
       albums: ["Sheer Greed","Wasted Youth"],
       description: 'British heavy metal/glam rock band.',
@@ -1913,7 +1913,7 @@ export const STATIC_BANDS: Record<string, Band[]> = {
     {
       id: 'band_london_1',
       name: 'London',
-      genre: ["heavy","glam"],
+      genre: ["heavy"],
       era: '1970s',
       albums: ["London"],
       description: 'American heavy metal/glam rock band.',
@@ -1923,7 +1923,7 @@ export const STATIC_BANDS: Record<string, Band[]> = {
     {
       id: 'band_slade_1',
       name: 'Slade',
-      genre: ["heavy","glam"],
+      genre: ["heavy"],
       era: '1970s',
       albums: ["Slade Alive!","Slayed?","Old New Borrowed and Blue"],
       description: 'British heavy metal/glam rock band.',
@@ -1933,7 +1933,7 @@ export const STATIC_BANDS: Record<string, Band[]> = {
     {
       id: 'band_sweet_1',
       name: 'Sweet',
-      genre: ["heavy","glam"],
+      genre: ["heavy"],
       era: '1970s',
       albums: ["Desolation Boulevard","Give Us a Wink","Off the Record"],
       description: 'British heavy metal/glam rock band.',
@@ -1943,7 +1943,7 @@ export const STATIC_BANDS: Record<string, Band[]> = {
     {
       id: 'band_mud_1',
       name: 'Mud',
-      genre: ["heavy","glam"],
+      genre: ["heavy"],
       era: '1970s',
       albums: ["Mud Rock","Use Your Imagination"],
       description: 'British heavy metal/glam rock band.',
@@ -1953,7 +1953,7 @@ export const STATIC_BANDS: Record<string, Band[]> = {
     {
       id: 'band_new_york_dolls_1',
       name: 'New York Dolls',
-      genre: ["heavy","glam"],
+      genre: ["heavy"],
       era: '1970s',
       albums: ["New York Dolls","Too Much Too Soon"],
       description: 'American heavy metal/glam rock/punk band.',
@@ -2125,7 +2125,7 @@ export const STATIC_BANDS: Record<string, Band[]> = {
     {
       id: 'band_crowbar_1',
       name: 'Crowbar',
-      genre: ["groove","sludge"],
+      genre: ["groove", "doom"],
       era: '1990s',
       albums: ["Crowbar","Time Heals Nothing","Broken Glass"],
       description: 'American sludge/doom metal band.',
@@ -2135,7 +2135,7 @@ export const STATIC_BANDS: Record<string, Band[]> = {
     {
       id: 'band_down_1',
       name: 'Down',
-      genre: ["groove","sludge"],
+      genre: ["groove", "doom"],
       era: '1990s',
       albums: ["NOLA","Down II","Over the Under"],
       description: 'American sludge metal supergroup.',
@@ -2145,7 +2145,7 @@ export const STATIC_BANDS: Record<string, Band[]> = {
     {
       id: 'band_corrosion_of_conformity_1',
       name: 'Corrosion of Conformity',
-      genre: ["groove","sludge"],
+      genre: ["groove", "doom"],
       era: '1980s',
       albums: ["Blind","Deliverance","Wiseblood"],
       description: 'American sludge metal band.',
@@ -2155,7 +2155,7 @@ export const STATIC_BANDS: Record<string, Band[]> = {
     {
       id: 'band_eyehategod_1',
       name: 'Eyehategod',
-      genre: ["groove","sludge"],
+      genre: ["groove", "doom"],
       era: '1990s',
       albums: ["In the Name of Suffering","Take as Needed for Pain","Dopesick"],
       description: 'American sludge metal band.',
@@ -2165,7 +2165,7 @@ export const STATIC_BANDS: Record<string, Band[]> = {
     {
       id: 'band_grief_1',
       name: 'Grief',
-      genre: ["groove","sludge"],
+      genre: ["groove", "doom"],
       era: '1990s',
       albums: ["Dismal","Come to Grief","Torture"],
       description: 'American sludge/doom metal band.',
@@ -2175,7 +2175,7 @@ export const STATIC_BANDS: Record<string, Band[]> = {
     {
       id: 'band_acid_bath_1',
       name: 'Acid Bath',
-      genre: ["groove","sludge"],
+      genre: ["groove", "doom"],
       era: '1990s',
       albums: ["When the Kite String Pops","Paegan Terrorism Tactics"],
       description: 'American sludge/death metal band.',
@@ -2185,7 +2185,7 @@ export const STATIC_BANDS: Record<string, Band[]> = {
     {
       id: 'band_burning_witch_1',
       name: 'Burning Witch',
-      genre: ["groove","sludge"],
+      genre: ["groove", "doom"],
       era: '1990s',
       albums: ["Crippled Lucifer","Towers..."],
       description: 'American sludge/doom metal band.',
@@ -2195,7 +2195,7 @@ export const STATIC_BANDS: Record<string, Band[]> = {
     {
       id: 'band_kylesa_1',
       name: 'Kylesa',
-      genre: ["groove","sludge"],
+      genre: ["groove", "doom"],
       era: '2000s',
       albums: ["To Walk a Middle Course","Time Will Fuse Its Worth","Static Tensions"],
       description: 'American sludge/stoner metal band.',
@@ -2205,7 +2205,7 @@ export const STATIC_BANDS: Record<string, Band[]> = {
     {
       id: 'band_baroness_1',
       name: 'Baroness',
-      genre: ["groove","sludge"],
+      genre: ["groove", "doom"],
       era: '2000s',
       albums: ["Red Album","Blue Record","Yellow & Green"],
       description: 'American sludge/prog metal band.',
@@ -2215,7 +2215,7 @@ export const STATIC_BANDS: Record<string, Band[]> = {
     {
       id: 'band_mastodon_1',
       name: 'Mastodon',
-      genre: ["groove","sludge"],
+      genre: ["groove", "doom"],
       era: '2000s',
       albums: ["Leviathan","Blood Mountain","Crack the Skye"],
       description: 'American progressive metal band known for concept albums.',
@@ -2225,7 +2225,7 @@ export const STATIC_BANDS: Record<string, Band[]> = {
     {
       id: 'band_neurosis_1',
       name: 'Neurosis',
-      genre: ["groove","sludge"],
+      genre: ["groove", "doom"],
       era: '1990s',
       albums: ["Souls at Zero","Enemy of the Sun","Through Silver in Blood"],
       description: 'American post-metal band.',
@@ -2235,7 +2235,7 @@ export const STATIC_BANDS: Record<string, Band[]> = {
     {
       id: 'band_isis_1',
       name: 'Isis',
-      genre: ["groove","sludge"],
+      genre: ["groove", "doom"],
       era: '2000s',
       albums: ["Celestial","Oceanic","Panopticon"],
       description: 'American post-metal band.',
@@ -2245,7 +2245,7 @@ export const STATIC_BANDS: Record<string, Band[]> = {
     {
       id: 'band_pelican_1',
       name: 'Pelican',
-      genre: ["groove","sludge"],
+      genre: ["groove", "doom"],
       era: '2000s',
       albums: ["Australasia","The Fire in Our Throats Will Beckon","City of Echoes"],
       description: 'American instrumental post-metal band.',
@@ -2255,7 +2255,7 @@ export const STATIC_BANDS: Record<string, Band[]> = {
     {
       id: 'band_cult_of_luna_1',
       name: 'Cult of Luna',
-      genre: ["groove","sludge"],
+      genre: ["groove", "doom"],
       era: '2000s',
       albums: ["The Beyond","Salvation","Somewhere Along the Highway"],
       description: 'Swedish post-metal band.',
@@ -2265,7 +2265,7 @@ export const STATIC_BANDS: Record<string, Band[]> = {
     {
       id: 'band_the_ocean_1',
       name: 'The Ocean',
-      genre: ["groove","sludge"],
+      genre: ["groove", "doom"],
       era: '2000s',
       albums: ["Precambrian","Heliocentric","Anthropocentric"],
       description: 'German progressive sludge metal band.',
@@ -2275,7 +2275,7 @@ export const STATIC_BANDS: Record<string, Band[]> = {
     {
       id: 'band_rosetta_1',
       name: 'Rosetta',
-      genre: ["groove","sludge"],
+      genre: ["groove", "doom"],
       era: '2000s',
       albums: ["The Galilean Satellites","Wake/Lift","The Anaesthete"],
       description: 'American post-metal band.',
@@ -2285,7 +2285,7 @@ export const STATIC_BANDS: Record<string, Band[]> = {
     {
       id: 'band_thou_1',
       name: 'Thou',
-      genre: ["groove","sludge"],
+      genre: ["groove", "doom"],
       era: '2000s',
       albums: ["You, Whom I Have Always Hated","Heathen","Rhea Sylvia"],
       description: 'American sludge/doom metal band.',
@@ -2295,7 +2295,7 @@ export const STATIC_BANDS: Record<string, Band[]> = {
     {
       id: 'band_high_on_fire_1',
       name: 'High on Fire',
-      genre: ["groove","sludge"],
+      genre: ["groove", "doom"],
       era: '2000s',
       albums: ["The Art of Self Defense","Surrounded by Thieves","Blessed Black Wings"],
       description: 'American stoner/sludge metal band.',
@@ -2305,7 +2305,7 @@ export const STATIC_BANDS: Record<string, Band[]> = {
     {
       id: 'band_sleep_1',
       name: 'Sleep',
-      genre: ["groove","sludge"],
+      genre: ["groove", "doom"],
       era: '1990s',
       albums: ["Sleep's Holy Mountain","Volume One","Jerusalem"],
       description: 'American stoner doom metal band.',
@@ -2315,7 +2315,7 @@ export const STATIC_BANDS: Record<string, Band[]> = {
     {
       id: 'band_electric_wizard_1',
       name: 'Electric Wizard',
-      genre: ["groove","sludge"],
+      genre: ["groove", "doom"],
       era: '1990s',
       albums: ["Come My Fanatics...","Dopethrone","Let Us Prey"],
       description: 'British doom metal band known for extremely heavy sound.',
@@ -2325,7 +2325,7 @@ export const STATIC_BANDS: Record<string, Band[]> = {
     {
       id: 'band_bongripper_1',
       name: 'Bongripper',
-      genre: ["groove","sludge"],
+      genre: ["groove", "doom"],
       era: '2000s',
       albums: ["Hippie Killer","Hate Ashbury","Sex and Satan"],
       description: 'American stoner doom metal band.',
@@ -2335,7 +2335,7 @@ export const STATIC_BANDS: Record<string, Band[]> = {
     {
       id: 'band_weedeater_1',
       name: 'Weedeater',
-      genre: ["groove","sludge"],
+      genre: ["groove", "doom"],
       era: '2000s',
       albums: ["...And Justice for Y'All","Sixteen Tons","God Luck and Good Speed"],
       description: 'American stoner/sludge metal band.',
@@ -2345,7 +2345,7 @@ export const STATIC_BANDS: Record<string, Band[]> = {
     {
       id: 'band_acid_king_1',
       name: 'Acid King',
-      genre: ["groove","sludge"],
+      genre: ["groove", "doom"],
       era: '1990s',
       albums: ["Zoroaster","Busse Woods","Free the Weed"],
       description: 'American stoner doom metal band.',
@@ -2355,7 +2355,7 @@ export const STATIC_BANDS: Record<string, Band[]> = {
     {
       id: 'band_windhand_1',
       name: 'Windhand',
-      genre: ["groove","sludge"],
+      genre: ["groove", "doom"],
       era: '2010s',
       albums: ["Windhand","Soma","Grief's Infernal Flower"],
       description: 'American stoner doom metal band.',
@@ -2365,7 +2365,7 @@ export const STATIC_BANDS: Record<string, Band[]> = {
     {
       id: 'band_monolord_1',
       name: 'Monolord',
-      genre: ["groove","sludge"],
+      genre: ["groove", "doom"],
       era: '2010s',
       albums: ["Empress Rising","Vænir","Rust"],
       description: 'Swedish stoner doom metal band.',
@@ -2375,7 +2375,7 @@ export const STATIC_BANDS: Record<string, Band[]> = {
     {
       id: 'band_conan_1',
       name: 'Conan',
-      genre: ["groove","sludge"],
+      genre: ["groove", "doom"],
       era: '2010s',
       albums: ["Monnos","Horseback Battle Hammer","Existential Void Guardian"],
       description: 'British stoner doom metal band.',
@@ -2385,7 +2385,7 @@ export const STATIC_BANDS: Record<string, Band[]> = {
     {
       id: 'band_ufomammut_1',
       name: 'Ufomammut',
-      genre: ["groove","sludge"],
+      genre: ["groove", "doom"],
       era: '2000s',
       albums: ["Godlike Snake","Snailking","Idolum"],
       description: 'Italian stoner doom metal band.',
@@ -2395,7 +2395,7 @@ export const STATIC_BANDS: Record<string, Band[]> = {
     {
       id: 'band_boris_1',
       name: 'Boris',
-      genre: ["groove","sludge"],
+      genre: ["groove", "doom"],
       era: '1990s',
       albums: ["Amplifier Worship","Feedbacker","Pink"],
       description: 'Japanese experimental metal band.',
@@ -2405,7 +2405,7 @@ export const STATIC_BANDS: Record<string, Band[]> = {
     {
       id: 'band_sunn_o_1',
       name: 'Sunn O)))',
-      genre: ["groove","sludge"],
+      genre: ["groove", "doom"],
       era: '2000s',
       albums: ["ØØ Void","White1","Black One"],
       description: 'American drone metal band.',
@@ -2415,7 +2415,7 @@ export const STATIC_BANDS: Record<string, Band[]> = {
     {
       id: 'band_earth_1',
       name: 'Earth',
-      genre: ["groove","sludge"],
+      genre: ["groove", "doom"],
       era: '1990s',
       albums: ["Earth 2","Pentastar: In the Style of Demons","The Bees Made Honey in the Lion's Skull"],
       description: 'American drone metal band.',
@@ -2425,7 +2425,7 @@ export const STATIC_BANDS: Record<string, Band[]> = {
     {
       id: 'band_melvins_1',
       name: 'Melvins',
-      genre: ["groove","sludge"],
+      genre: ["groove", "doom"],
       era: '1980s',
       albums: ["Bullhead","Eggnog","Stoner Witch"],
       description: 'American sludge/stoner metal band.',
@@ -2435,7 +2435,7 @@ export const STATIC_BANDS: Record<string, Band[]> = {
     {
       id: 'band_fuck_the_facts_1',
       name: 'Fuck the Facts',
-      genre: ["groove","sludge"],
+      genre: ["groove", "doom"],
       era: '2000s',
       albums: ["Backstabber Etiquette","Disgorge, Mexico","Stigmata High-Five"],
       description: 'Canadian grindcore band.',
@@ -2445,7 +2445,7 @@ export const STATIC_BANDS: Record<string, Band[]> = {
     {
       id: 'band_noothgrush_1',
       name: 'Noothgrush',
-      genre: ["groove","sludge"],
+      genre: ["groove", "doom"],
       era: '1990s',
       albums: ["Erode the Person"],
       description: 'American sludge/doom metal band.',
@@ -2455,7 +2455,7 @@ export const STATIC_BANDS: Record<string, Band[]> = {
     {
       id: 'band_corrupted_1',
       name: 'Corrupted',
-      genre: ["groove","sludge"],
+      genre: ["groove", "doom"],
       era: '1990s',
       albums: ["Paso Inferior","Llenandose de Gusanos","Scars"],
       description: 'Japanese sludge/doom metal band.',
@@ -2467,7 +2467,7 @@ export const STATIC_BANDS: Record<string, Band[]> = {
     {
       id: 'band_rush_1',
       name: 'Rush',
-      genre: ["progressive","hard rock"],
+      genre: ["progressive", "heavy"],
       era: '1970s',
       albums: ["2112","Moving Pictures","Permanent Waves"],
       description: 'Canadian progressive rock band.',
@@ -2477,7 +2477,7 @@ export const STATIC_BANDS: Record<string, Band[]> = {
     {
       id: 'band_scorpions_1',
       name: 'Scorpions',
-      genre: ["heavy","hard rock"],
+      genre: ["heavy"],
       era: '1970s',
       albums: ["Virgin Killer","Lovedrive","Blackout"],
       description: 'German heavy metal band.',
@@ -2487,7 +2487,7 @@ export const STATIC_BANDS: Record<string, Band[]> = {
     {
       id: 'band_rainbow_1',
       name: 'Rainbow',
-      genre: ["heavy","hard rock"],
+      genre: ["heavy"],
       era: '1970s',
       albums: ["Ritchie Blackmore's Rainbow","Rising","Long Live Rock 'n' Roll"],
       description: 'British-American heavy metal/hard rock band.',
@@ -2497,7 +2497,7 @@ export const STATIC_BANDS: Record<string, Band[]> = {
     {
       id: 'band_deep_purple_1',
       name: 'Deep Purple',
-      genre: ["heavy","hard rock"],
+      genre: ["heavy"],
       era: '1960s',
       albums: ["Machine Head","Burn","Perfect Strangers"],
       description: 'British hard rock/heavy metal pioneers.',
@@ -2507,7 +2507,7 @@ export const STATIC_BANDS: Record<string, Band[]> = {
     {
       id: 'band_led_zeppelin_1',
       name: 'Led Zeppelin',
-      genre: ["heavy","hard rock"],
+      genre: ["heavy"],
       era: '1960s',
       albums: ["Led Zeppelin IV","Physical Graffiti","Houses of the Holy"],
       description: 'British hard rock/heavy metal pioneers.',
@@ -2517,7 +2517,7 @@ export const STATIC_BANDS: Record<string, Band[]> = {
     {
       id: 'band_ufo_1',
       name: 'UFO',
-      genre: ["heavy","hard rock"],
+      genre: ["heavy"],
       era: '1970s',
       albums: ["Phenomenon","Force It","Strangers in the Night"],
       description: 'British heavy metal/hard rock band.',
@@ -2527,7 +2527,7 @@ export const STATIC_BANDS: Record<string, Band[]> = {
     {
       id: 'band_whitesnake_1',
       name: 'Whitesnake',
-      genre: ["heavy","hard rock"],
+      genre: ["heavy"],
       era: '1970s',
       albums: ["Ready an' Willing","Come an' Get It","Slide It In"],
       description: 'British heavy metal/hard rock band.',
@@ -2537,7 +2537,7 @@ export const STATIC_BANDS: Record<string, Band[]> = {
     {
       id: 'band_def_leppard_1',
       name: 'Def Leppard',
-      genre: ["heavy","hard rock"],
+      genre: ["heavy"],
       era: '1980s',
       albums: ["High 'n' Dry","Pyromania","Hysteria"],
       description: 'British heavy metal/hard rock band.',
@@ -2547,7 +2547,7 @@ export const STATIC_BANDS: Record<string, Band[]> = {
     {
       id: 'band_quiet_riot_1',
       name: 'Quiet Riot',
-      genre: ["heavy","hard rock"],
+      genre: ["heavy"],
       era: '1980s',
       albums: ["Metal Health","Condition Critical"],
       description: 'American heavy metal/hard rock band.',
@@ -2557,7 +2557,7 @@ export const STATIC_BANDS: Record<string, Band[]> = {
     {
       id: 'band_kiss_1',
       name: 'KISS',
-      genre: ["heavy","hard rock"],
+      genre: ["heavy"],
       era: '1970s',
       albums: ["Destroyer","Love Gun","Rock and Roll Over"],
       description: 'American hard rock/heavy metal band.',
@@ -2567,7 +2567,7 @@ export const STATIC_BANDS: Record<string, Band[]> = {
     {
       id: 'band_aerosmith_1',
       name: 'Aerosmith',
-      genre: ["heavy","hard rock"],
+      genre: ["heavy"],
       era: '1970s',
       albums: ["Toys in the Attic","Rocks","Draw the Line"],
       description: 'American hard rock/heavy metal band.',
@@ -2577,7 +2577,7 @@ export const STATIC_BANDS: Record<string, Band[]> = {
     {
       id: 'band_ac_dc_1',
       name: 'AC/DC',
-      genre: ["heavy","hard rock"],
+      genre: ["heavy"],
       era: '1970s',
       albums: ["Highway to Hell","Back in Black","For Those About to Rock"],
       description: 'Australian hard rock/heavy metal band.',
@@ -2587,7 +2587,7 @@ export const STATIC_BANDS: Record<string, Band[]> = {
     {
       id: 'band_guns_n_roses_1',
       name: 'Guns N\' Roses',
-      genre: ["heavy","hard rock"],
+      genre: ["heavy"],
       era: '1980s',
       albums: ["Appetite for Destruction","Use Your Illusion I","Use Your Illusion II"],
       description: 'American hard rock/heavy metal band.',
@@ -2597,7 +2597,7 @@ export const STATIC_BANDS: Record<string, Band[]> = {
     {
       id: 'band_skid_row_1',
       name: 'Skid Row',
-      genre: ["heavy","hard rock"],
+      genre: ["heavy"],
       era: '1980s',
       albums: ["Skid Row","Slave to the Grind"],
       description: 'American heavy metal/hard rock band.',
@@ -2607,7 +2607,7 @@ export const STATIC_BANDS: Record<string, Band[]> = {
     {
       id: 'band_dokken_1',
       name: 'Dokken',
-      genre: ["heavy","hard rock"],
+      genre: ["heavy"],
       era: '1980s',
       albums: ["Breaking the Chains","Tooth and Nail","Under Lock and Key"],
       description: 'American heavy metal/hard rock band.',
@@ -2617,7 +2617,7 @@ export const STATIC_BANDS: Record<string, Band[]> = {
     {
       id: 'band_bon_jovi_1',
       name: 'Bon Jovi',
-      genre: ["heavy","hard rock"],
+      genre: ["heavy"],
       era: '1980s',
       albums: ["Slippery When Wet","New Jersey","Keep the Faith"],
       description: 'American hard rock/heavy metal band.',
@@ -2627,7 +2627,7 @@ export const STATIC_BANDS: Record<string, Band[]> = {
     {
       id: 'band_europe_1',
       name: 'Europe',
-      genre: ["heavy","hard rock"],
+      genre: ["heavy"],
       era: '1980s',
       albums: ["The Final Countdown","Out of This World","Prisoners in Paradise"],
       description: 'Swedish hard rock/heavy metal band.',
@@ -2637,7 +2637,7 @@ export const STATIC_BANDS: Record<string, Band[]> = {
     {
       id: 'band_krokus_1',
       name: 'Krokus',
-      genre: ["heavy","hard rock"],
+      genre: ["heavy"],
       era: '1980s',
       albums: ["Headhunter","The Blitz"],
       description: 'Swiss heavy metal/hard rock band.',
@@ -2647,7 +2647,7 @@ export const STATIC_BANDS: Record<string, Band[]> = {
     {
       id: 'band_gotthard_1',
       name: 'Gotthard',
-      genre: ["heavy","hard rock"],
+      genre: ["heavy"],
       era: '1990s',
       albums: ["Gotthard","Dial Hard","Open"],
       description: 'Swiss hard rock/heavy metal band.',
@@ -2657,7 +2657,7 @@ export const STATIC_BANDS: Record<string, Band[]> = {
     {
       id: 'band_michael_schenker_group_1',
       name: 'MSG',
-      genre: ["heavy","hard rock"],
+      genre: ["heavy"],
       era: '1980s',
       albums: ["Assault Attack","Built to Destroy"],
       description: 'British heavy metal/hard rock band.',
@@ -2667,7 +2667,7 @@ export const STATIC_BANDS: Record<string, Band[]> = {
     {
       id: 'band_grand_funk_railroad_1',
       name: 'Grand Funk Railroad',
-      genre: ["heavy","hard rock"],
+      genre: ["heavy"],
       era: '1970s',
       albums: ["Closer to Home","Survival","Phoenix"],
       description: 'American hard rock/heavy metal band.',
@@ -2677,7 +2677,7 @@ export const STATIC_BANDS: Record<string, Band[]> = {
     {
       id: 'band_blue_yster_cult_1',
       name: 'Blue Öyster Cult',
-      genre: ["heavy","hard rock"],
+      genre: ["heavy"],
       era: '1970s',
       albums: ["Tyranny and Mutation","Secret Treaties","Agents of Fortune"],
       description: 'American hard rock/heavy metal band.',
@@ -2687,7 +2687,7 @@ export const STATIC_BANDS: Record<string, Band[]> = {
     {
       id: 'band_boston_1',
       name: 'Boston',
-      genre: ["heavy","hard rock"],
+      genre: ["heavy"],
       era: '1970s',
       albums: ["Boston","Don't Look Back","Third Stage"],
       description: 'American hard rock/heavy metal band.',
@@ -2697,7 +2697,7 @@ export const STATIC_BANDS: Record<string, Band[]> = {
     {
       id: 'band_journey_1',
       name: 'Journey',
-      genre: ["heavy","hard rock"],
+      genre: ["heavy"],
       era: '1970s',
       albums: ["Infinity","Evolution","Departure"],
       description: 'American hard rock/heavy metal band.',
@@ -2707,7 +2707,7 @@ export const STATIC_BANDS: Record<string, Band[]> = {
     {
       id: 'band_foreigner_1',
       name: 'Foreigner',
-      genre: ["heavy","hard rock"],
+      genre: ["heavy"],
       era: '1970s',
       albums: ["Foreigner","Double Vision","Head Games"],
       description: 'British-American hard rock/heavy metal band.',
@@ -2717,7 +2717,7 @@ export const STATIC_BANDS: Record<string, Band[]> = {
     {
       id: 'band_styx_1',
       name: 'Styx',
-      genre: ["heavy","hard rock"],
+      genre: ["heavy"],
       era: '1970s',
       albums: ["The Grand Illusion","Pieces of Eight","Cornerstone"],
       description: 'American hard rock/heavy metal band.',
@@ -2727,7 +2727,7 @@ export const STATIC_BANDS: Record<string, Band[]> = {
     {
       id: 'band_reo_speedwagon_1',
       name: 'REO Speedwagon',
-      genre: ["heavy","hard rock"],
+      genre: ["heavy"],
       era: '1970s',
       albums: ["You Can Tune a Piano but You Can't Tuna Fish","Hi Infidelity"],
       description: 'American hard rock/heavy metal band.',
@@ -2737,7 +2737,7 @@ export const STATIC_BANDS: Record<string, Band[]> = {
     {
       id: 'band_38_special_1',
       name: '38 Special',
-      genre: ["heavy","hard rock"],
+      genre: ["heavy"],
       era: '1980s',
       albums: ["Wild-Eyed Southern Boys","Special Forces"],
       description: 'American hard rock/heavy metal band.',
@@ -2747,7 +2747,7 @@ export const STATIC_BANDS: Record<string, Band[]> = {
     {
       id: 'band_molly_hatchet_1',
       name: 'Molly Hatchet',
-      genre: ["heavy","hard rock"],
+      genre: ["heavy"],
       era: '1970s',
       albums: ["Molly Hatchet","Flirtin' with Disaster"],
       description: 'American hard rock/heavy metal band.',
@@ -2757,7 +2757,7 @@ export const STATIC_BANDS: Record<string, Band[]> = {
     {
       id: 'band_blackfoot_1',
       name: 'Blackfoot',
-      genre: ["heavy","hard rock"],
+      genre: ["heavy"],
       era: '1970s',
       albums: ["Marauder","Strikes"],
       description: 'American hard rock/heavy metal band.',
@@ -2767,7 +2767,7 @@ export const STATIC_BANDS: Record<string, Band[]> = {
     {
       id: 'band_outlaws_1',
       name: 'The Outlaws',
-      genre: ["heavy","hard rock"],
+      genre: ["heavy"],
       era: '1970s',
       albums: ["The Outlaws","Lady in Waiting"],
       description: 'American hard rock/heavy metal band.',
@@ -2777,7 +2777,7 @@ export const STATIC_BANDS: Record<string, Band[]> = {
     {
       id: 'band_the_allman_brothers_band_1',
       name: 'The Allman Brothers Band',
-      genre: ["heavy","hard rock"],
+      genre: ["heavy"],
       era: '1970s',
       albums: ["At Fillmore East","Eat a Peach","Brothers and Sisters"],
       description: 'American hard rock/heavy metal band.',
@@ -2787,7 +2787,7 @@ export const STATIC_BANDS: Record<string, Band[]> = {
     {
       id: 'band_lynyrd_skynyrd_1',
       name: 'Lynyrd Skynyrd',
-      genre: ["heavy","hard rock"],
+      genre: ["heavy"],
       era: '1970s',
       albums: ["Pronounced Leh-Nerd Skin-Nerd","Second Helping","Nuthin' Fancy"],
       description: 'American hard rock/heavy metal band.',
@@ -2797,7 +2797,7 @@ export const STATIC_BANDS: Record<string, Band[]> = {
     {
       id: 'band_creedence_clearwater_revival_1',
       name: 'Creedence Clearwater Revival',
-      genre: ["heavy","hard rock"],
+      genre: ["heavy"],
       era: '1960s',
       albums: ["Bayou Country","Green River","Willy and the Poor Boys"],
       description: 'American hard rock/heavy metal band.',
@@ -2807,7 +2807,7 @@ export const STATIC_BANDS: Record<string, Band[]> = {
     {
       id: 'band_status_quo_1',
       name: 'Status Quo',
-      genre: ["heavy","hard rock"],
+      genre: ["heavy"],
       era: '1970s',
       albums: ["Piledriver","Hello!","Quo"],
       description: 'British hard rock/heavy metal band.',
@@ -2817,7 +2817,7 @@ export const STATIC_BANDS: Record<string, Band[]> = {
     {
       id: 'band_van_halen_1',
       name: 'Van Halen',
-      genre: ["heavy","hard rock"],
+      genre: ["heavy"],
       era: '1970s',
       albums: ["Van Halen","Van Halen II","Women and Children First"],
       description: 'American hard rock/heavy metal band.',
@@ -2849,7 +2849,7 @@ export const STATIC_BANDS: Record<string, Band[]> = {
     {
       id: 'band_twisted_sister_1',
       name: 'Twisted Sister',
-      genre: ["heavy","glam"],
+      genre: ["heavy"],
       era: '1980s',
       albums: ["Under the Blade","You Can't Stop Rock 'n' Roll","Stay Hungry"],
       description: 'American heavy metal/glam rock band.',
@@ -2859,7 +2859,7 @@ export const STATIC_BANDS: Record<string, Band[]> = {
     {
       id: 'band_mötley_crüe_1',
       name: 'Mötley Crüe',
-      genre: ["heavy","glam"],
+      genre: ["heavy"],
       era: '1980s',
       albums: ["Shout at the Devil","Theatre of Pain","Girls, Girls, Girls"],
       description: 'American heavy metal/glam rock band.',
@@ -2869,7 +2869,7 @@ export const STATIC_BANDS: Record<string, Band[]> = {
     {
       id: 'band_poison_1',
       name: 'Poison',
-      genre: ["heavy","glam"],
+      genre: ["heavy"],
       era: '1980s',
       albums: ["Look What the Cat Dragged In","Open Up and Say... Ahh!","Flesh & Blood"],
       description: 'American heavy metal/glam rock band.',
@@ -2879,7 +2879,7 @@ export const STATIC_BANDS: Record<string, Band[]> = {
     {
       id: 'band_wasp_1',
       name: 'W.A.S.P.',
-      genre: ["heavy","glam"],
+      genre: ["heavy"],
       era: '1980s',
       albums: ["W.A.S.P.","The Last Command","Inside the Electric Circus"],
       description: 'American heavy metal/glam rock band.',
@@ -2889,7 +2889,7 @@ export const STATIC_BANDS: Record<string, Band[]> = {
     {
       id: 'band_ratt_1',
       name: 'Ratt',
-      genre: ["heavy","glam"],
+      genre: ["heavy"],
       era: '1980s',
       albums: ["Out of the Cellar","Invasion of Your Privacy","Dancing Undercover"],
       description: 'American heavy metal/glam rock band.',
@@ -2899,7 +2899,7 @@ export const STATIC_BANDS: Record<string, Band[]> = {
     {
       id: 'band_cinderella_1',
       name: 'Cinderella',
-      genre: ["heavy","glam"],
+      genre: ["heavy"],
       era: '1980s',
       albums: ["Night Songs","Long Cold Winter","Heartbreak Station"],
       description: 'American heavy metal/glam rock band.',
@@ -2909,7 +2909,7 @@ export const STATIC_BANDS: Record<string, Band[]> = {
     {
       id: 'band_heavy_metal_kids_1',
       name: 'Heavy Metal Kids',
-      genre: ["heavy","glam"],
+      genre: ["heavy"],
       era: '1970s',
       albums: ["Heavy Metal Kids"],
       description: 'British heavy metal/glam rock band.',
@@ -2919,7 +2919,7 @@ export const STATIC_BANDS: Record<string, Band[]> = {
     {
       id: 'band_girls_1',
       name: 'Girl',
-      genre: ["heavy","glam"],
+      genre: ["heavy"],
       era: '1980s',
       albums: ["Sheer Greed","Wasted Youth"],
       description: 'British heavy metal/glam rock band.',
@@ -2929,7 +2929,7 @@ export const STATIC_BANDS: Record<string, Band[]> = {
     {
       id: 'band_london_1',
       name: 'London',
-      genre: ["heavy","glam"],
+      genre: ["heavy"],
       era: '1970s',
       albums: ["London"],
       description: 'American heavy metal/glam rock band.',
@@ -2939,7 +2939,7 @@ export const STATIC_BANDS: Record<string, Band[]> = {
     {
       id: 'band_slade_1',
       name: 'Slade',
-      genre: ["heavy","glam"],
+      genre: ["heavy"],
       era: '1970s',
       albums: ["Slade Alive!","Slayed?","Old New Borrowed and Blue"],
       description: 'British heavy metal/glam rock band.',
@@ -2949,7 +2949,7 @@ export const STATIC_BANDS: Record<string, Band[]> = {
     {
       id: 'band_sweet_1',
       name: 'Sweet',
-      genre: ["heavy","glam"],
+      genre: ["heavy"],
       era: '1970s',
       albums: ["Desolation Boulevard","Give Us a Wink","Off the Record"],
       description: 'British heavy metal/glam rock band.',
@@ -2959,7 +2959,7 @@ export const STATIC_BANDS: Record<string, Band[]> = {
     {
       id: 'band_mud_1',
       name: 'Mud',
-      genre: ["heavy","glam"],
+      genre: ["heavy"],
       era: '1970s',
       albums: ["Mud Rock","Use Your Imagination"],
       description: 'British heavy metal/glam rock band.',
@@ -2969,7 +2969,7 @@ export const STATIC_BANDS: Record<string, Band[]> = {
     {
       id: 'band_new_york_dolls_1',
       name: 'New York Dolls',
-      genre: ["heavy","glam"],
+      genre: ["heavy"],
       era: '1970s',
       albums: ["New York Dolls","Too Much Too Soon"],
       description: 'American heavy metal/glam rock/punk band.',
@@ -2979,7 +2979,7 @@ export const STATIC_BANDS: Record<string, Band[]> = {
     {
       id: 'band_scorpions_1',
       name: 'Scorpions',
-      genre: ["heavy","hard rock"],
+      genre: ["heavy"],
       era: '1970s',
       albums: ["Virgin Killer","Lovedrive","Blackout"],
       description: 'German heavy metal band.',
@@ -2989,7 +2989,7 @@ export const STATIC_BANDS: Record<string, Band[]> = {
     {
       id: 'band_rainbow_1',
       name: 'Rainbow',
-      genre: ["heavy","hard rock"],
+      genre: ["heavy"],
       era: '1970s',
       albums: ["Ritchie Blackmore's Rainbow","Rising","Long Live Rock 'n' Roll"],
       description: 'British-American heavy metal/hard rock band.',
@@ -2999,7 +2999,7 @@ export const STATIC_BANDS: Record<string, Band[]> = {
     {
       id: 'band_deep_purple_1',
       name: 'Deep Purple',
-      genre: ["heavy","hard rock"],
+      genre: ["heavy"],
       era: '1960s',
       albums: ["Machine Head","Burn","Perfect Strangers"],
       description: 'British hard rock/heavy metal pioneers.',
@@ -3009,7 +3009,7 @@ export const STATIC_BANDS: Record<string, Band[]> = {
     {
       id: 'band_led_zeppelin_1',
       name: 'Led Zeppelin',
-      genre: ["heavy","hard rock"],
+      genre: ["heavy"],
       era: '1960s',
       albums: ["Led Zeppelin IV","Physical Graffiti","Houses of the Holy"],
       description: 'British hard rock/heavy metal pioneers.',
@@ -3019,7 +3019,7 @@ export const STATIC_BANDS: Record<string, Band[]> = {
     {
       id: 'band_ufo_1',
       name: 'UFO',
-      genre: ["heavy","hard rock"],
+      genre: ["heavy"],
       era: '1970s',
       albums: ["Phenomenon","Force It","Strangers in the Night"],
       description: 'British heavy metal/hard rock band.',
@@ -3029,7 +3029,7 @@ export const STATIC_BANDS: Record<string, Band[]> = {
     {
       id: 'band_whitesnake_1',
       name: 'Whitesnake',
-      genre: ["heavy","hard rock"],
+      genre: ["heavy"],
       era: '1970s',
       albums: ["Ready an' Willing","Come an' Get It","Slide It In"],
       description: 'British heavy metal/hard rock band.',
@@ -3039,7 +3039,7 @@ export const STATIC_BANDS: Record<string, Band[]> = {
     {
       id: 'band_def_leppard_1',
       name: 'Def Leppard',
-      genre: ["heavy","hard rock"],
+      genre: ["heavy"],
       era: '1980s',
       albums: ["High 'n' Dry","Pyromania","Hysteria"],
       description: 'British heavy metal/hard rock band.',
@@ -3049,7 +3049,7 @@ export const STATIC_BANDS: Record<string, Band[]> = {
     {
       id: 'band_quiet_riot_1',
       name: 'Quiet Riot',
-      genre: ["heavy","hard rock"],
+      genre: ["heavy"],
       era: '1980s',
       albums: ["Metal Health","Condition Critical"],
       description: 'American heavy metal/hard rock band.',
@@ -3059,7 +3059,7 @@ export const STATIC_BANDS: Record<string, Band[]> = {
     {
       id: 'band_kiss_1',
       name: 'KISS',
-      genre: ["heavy","hard rock"],
+      genre: ["heavy"],
       era: '1970s',
       albums: ["Destroyer","Love Gun","Rock and Roll Over"],
       description: 'American hard rock/heavy metal band.',
@@ -3069,7 +3069,7 @@ export const STATIC_BANDS: Record<string, Band[]> = {
     {
       id: 'band_aerosmith_1',
       name: 'Aerosmith',
-      genre: ["heavy","hard rock"],
+      genre: ["heavy"],
       era: '1970s',
       albums: ["Toys in the Attic","Rocks","Draw the Line"],
       description: 'American hard rock/heavy metal band.',
@@ -3079,7 +3079,7 @@ export const STATIC_BANDS: Record<string, Band[]> = {
     {
       id: 'band_ac_dc_1',
       name: 'AC/DC',
-      genre: ["heavy","hard rock"],
+      genre: ["heavy"],
       era: '1970s',
       albums: ["Highway to Hell","Back in Black","For Those About to Rock"],
       description: 'Australian hard rock/heavy metal band.',
@@ -3089,7 +3089,7 @@ export const STATIC_BANDS: Record<string, Band[]> = {
     {
       id: 'band_guns_n_roses_1',
       name: 'Guns N\' Roses',
-      genre: ["heavy","hard rock"],
+      genre: ["heavy"],
       era: '1980s',
       albums: ["Appetite for Destruction","Use Your Illusion I","Use Your Illusion II"],
       description: 'American hard rock/heavy metal band.',
@@ -3099,7 +3099,7 @@ export const STATIC_BANDS: Record<string, Band[]> = {
     {
       id: 'band_skid_row_1',
       name: 'Skid Row',
-      genre: ["heavy","hard rock"],
+      genre: ["heavy"],
       era: '1980s',
       albums: ["Skid Row","Slave to the Grind"],
       description: 'American heavy metal/hard rock band.',
@@ -3109,7 +3109,7 @@ export const STATIC_BANDS: Record<string, Band[]> = {
     {
       id: 'band_dokken_1',
       name: 'Dokken',
-      genre: ["heavy","hard rock"],
+      genre: ["heavy"],
       era: '1980s',
       albums: ["Breaking the Chains","Tooth and Nail","Under Lock and Key"],
       description: 'American heavy metal/hard rock band.',
@@ -3119,7 +3119,7 @@ export const STATIC_BANDS: Record<string, Band[]> = {
     {
       id: 'band_bon_jovi_1',
       name: 'Bon Jovi',
-      genre: ["heavy","hard rock"],
+      genre: ["heavy"],
       era: '1980s',
       albums: ["Slippery When Wet","New Jersey","Keep the Faith"],
       description: 'American hard rock/heavy metal band.',
@@ -3129,7 +3129,7 @@ export const STATIC_BANDS: Record<string, Band[]> = {
     {
       id: 'band_europe_1',
       name: 'Europe',
-      genre: ["heavy","hard rock"],
+      genre: ["heavy"],
       era: '1980s',
       albums: ["The Final Countdown","Out of This World","Prisoners in Paradise"],
       description: 'Swedish hard rock/heavy metal band.',
@@ -3139,7 +3139,7 @@ export const STATIC_BANDS: Record<string, Band[]> = {
     {
       id: 'band_krokus_1',
       name: 'Krokus',
-      genre: ["heavy","hard rock"],
+      genre: ["heavy"],
       era: '1980s',
       albums: ["Headhunter","The Blitz"],
       description: 'Swiss heavy metal/hard rock band.',
@@ -3149,7 +3149,7 @@ export const STATIC_BANDS: Record<string, Band[]> = {
     {
       id: 'band_gotthard_1',
       name: 'Gotthard',
-      genre: ["heavy","hard rock"],
+      genre: ["heavy"],
       era: '1990s',
       albums: ["Gotthard","Dial Hard","Open"],
       description: 'Swiss hard rock/heavy metal band.',
@@ -3159,7 +3159,7 @@ export const STATIC_BANDS: Record<string, Band[]> = {
     {
       id: 'band_michael_schenker_group_1',
       name: 'MSG',
-      genre: ["heavy","hard rock"],
+      genre: ["heavy"],
       era: '1980s',
       albums: ["Assault Attack","Built to Destroy"],
       description: 'British heavy metal/hard rock band.',
@@ -3169,7 +3169,7 @@ export const STATIC_BANDS: Record<string, Band[]> = {
     {
       id: 'band_grand_funk_railroad_1',
       name: 'Grand Funk Railroad',
-      genre: ["heavy","hard rock"],
+      genre: ["heavy"],
       era: '1970s',
       albums: ["Closer to Home","Survival","Phoenix"],
       description: 'American hard rock/heavy metal band.',
@@ -3179,7 +3179,7 @@ export const STATIC_BANDS: Record<string, Band[]> = {
     {
       id: 'band_blue_yster_cult_1',
       name: 'Blue Öyster Cult',
-      genre: ["heavy","hard rock"],
+      genre: ["heavy"],
       era: '1970s',
       albums: ["Tyranny and Mutation","Secret Treaties","Agents of Fortune"],
       description: 'American hard rock/heavy metal band.',
@@ -3189,7 +3189,7 @@ export const STATIC_BANDS: Record<string, Band[]> = {
     {
       id: 'band_boston_1',
       name: 'Boston',
-      genre: ["heavy","hard rock"],
+      genre: ["heavy"],
       era: '1970s',
       albums: ["Boston","Don't Look Back","Third Stage"],
       description: 'American hard rock/heavy metal band.',
@@ -3199,7 +3199,7 @@ export const STATIC_BANDS: Record<string, Band[]> = {
     {
       id: 'band_journey_1',
       name: 'Journey',
-      genre: ["heavy","hard rock"],
+      genre: ["heavy"],
       era: '1970s',
       albums: ["Infinity","Evolution","Departure"],
       description: 'American hard rock/heavy metal band.',
@@ -3209,7 +3209,7 @@ export const STATIC_BANDS: Record<string, Band[]> = {
     {
       id: 'band_foreigner_1',
       name: 'Foreigner',
-      genre: ["heavy","hard rock"],
+      genre: ["heavy"],
       era: '1970s',
       albums: ["Foreigner","Double Vision","Head Games"],
       description: 'British-American hard rock/heavy metal band.',
@@ -3219,7 +3219,7 @@ export const STATIC_BANDS: Record<string, Band[]> = {
     {
       id: 'band_styx_1',
       name: 'Styx',
-      genre: ["heavy","hard rock"],
+      genre: ["heavy"],
       era: '1970s',
       albums: ["The Grand Illusion","Pieces of Eight","Cornerstone"],
       description: 'American hard rock/heavy metal band.',
@@ -3229,7 +3229,7 @@ export const STATIC_BANDS: Record<string, Band[]> = {
     {
       id: 'band_reo_speedwagon_1',
       name: 'REO Speedwagon',
-      genre: ["heavy","hard rock"],
+      genre: ["heavy"],
       era: '1970s',
       albums: ["You Can Tune a Piano but You Can't Tuna Fish","Hi Infidelity"],
       description: 'American hard rock/heavy metal band.',
@@ -3239,7 +3239,7 @@ export const STATIC_BANDS: Record<string, Band[]> = {
     {
       id: 'band_38_special_1',
       name: '38 Special',
-      genre: ["heavy","hard rock"],
+      genre: ["heavy"],
       era: '1980s',
       albums: ["Wild-Eyed Southern Boys","Special Forces"],
       description: 'American hard rock/heavy metal band.',
@@ -3249,7 +3249,7 @@ export const STATIC_BANDS: Record<string, Band[]> = {
     {
       id: 'band_molly_hatchet_1',
       name: 'Molly Hatchet',
-      genre: ["heavy","hard rock"],
+      genre: ["heavy"],
       era: '1970s',
       albums: ["Molly Hatchet","Flirtin' with Disaster"],
       description: 'American hard rock/heavy metal band.',
@@ -3259,7 +3259,7 @@ export const STATIC_BANDS: Record<string, Band[]> = {
     {
       id: 'band_blackfoot_1',
       name: 'Blackfoot',
-      genre: ["heavy","hard rock"],
+      genre: ["heavy"],
       era: '1970s',
       albums: ["Marauder","Strikes"],
       description: 'American hard rock/heavy metal band.',
@@ -3269,7 +3269,7 @@ export const STATIC_BANDS: Record<string, Band[]> = {
     {
       id: 'band_outlaws_1',
       name: 'The Outlaws',
-      genre: ["heavy","hard rock"],
+      genre: ["heavy"],
       era: '1970s',
       albums: ["The Outlaws","Lady in Waiting"],
       description: 'American hard rock/heavy metal band.',
@@ -3279,7 +3279,7 @@ export const STATIC_BANDS: Record<string, Band[]> = {
     {
       id: 'band_the_allman_brothers_band_1',
       name: 'The Allman Brothers Band',
-      genre: ["heavy","hard rock"],
+      genre: ["heavy"],
       era: '1970s',
       albums: ["At Fillmore East","Eat a Peach","Brothers and Sisters"],
       description: 'American hard rock/heavy metal band.',
@@ -3289,7 +3289,7 @@ export const STATIC_BANDS: Record<string, Band[]> = {
     {
       id: 'band_lynyrd_skynyrd_1',
       name: 'Lynyrd Skynyrd',
-      genre: ["heavy","hard rock"],
+      genre: ["heavy"],
       era: '1970s',
       albums: ["Pronounced Leh-Nerd Skin-Nerd","Second Helping","Nuthin' Fancy"],
       description: 'American hard rock/heavy metal band.',
@@ -3299,7 +3299,7 @@ export const STATIC_BANDS: Record<string, Band[]> = {
     {
       id: 'band_creedence_clearwater_revival_1',
       name: 'Creedence Clearwater Revival',
-      genre: ["heavy","hard rock"],
+      genre: ["heavy"],
       era: '1960s',
       albums: ["Bayou Country","Green River","Willy and the Poor Boys"],
       description: 'American hard rock/heavy metal band.',
@@ -3309,7 +3309,7 @@ export const STATIC_BANDS: Record<string, Band[]> = {
     {
       id: 'band_status_quo_1',
       name: 'Status Quo',
-      genre: ["heavy","hard rock"],
+      genre: ["heavy"],
       era: '1970s',
       albums: ["Piledriver","Hello!","Quo"],
       description: 'British hard rock/heavy metal band.',
@@ -3319,7 +3319,7 @@ export const STATIC_BANDS: Record<string, Band[]> = {
     {
       id: 'band_van_halen_1',
       name: 'Van Halen',
-      genre: ["heavy","hard rock"],
+      genre: ["heavy"],
       era: '1970s',
       albums: ["Van Halen","Van Halen II","Women and Children First"],
       description: 'American hard rock/heavy metal band.',
@@ -4102,7 +4102,7 @@ export const STATIC_BANDS: Record<string, Band[]> = {
       id: 'band_iron_savior_1',
       name: 'Iron Savior',
       genre: ["speed","power"],
-      era: '2000ss',
+      era: '2000s',
       albums: ["Iron Savior","Unification","Condition Red"],
       description: 'German power metal band.',
       styleNotes: 'Power metal with sci-fi themes.',
@@ -4353,7 +4353,7 @@ export const STATIC_BANDS: Record<string, Band[]> = {
     {
       id: 'band_rush_1',
       name: 'Rush',
-      genre: ["progressive","hard rock"],
+      genre: ["progressive", "heavy"],
       era: '1970s',
       albums: ["2112","Moving Pictures","Permanent Waves"],
       description: 'Canadian progressive rock band.',
@@ -4755,7 +4755,7 @@ export const STATIC_BANDS: Record<string, Band[]> = {
     {
       id: 'band_crowbar_1',
       name: 'Crowbar',
-      genre: ["groove","sludge"],
+      genre: ["groove", "doom"],
       era: '1990s',
       albums: ["Crowbar","Time Heals Nothing","Broken Glass"],
       description: 'American sludge/doom metal band.',
@@ -4765,7 +4765,7 @@ export const STATIC_BANDS: Record<string, Band[]> = {
     {
       id: 'band_down_1',
       name: 'Down',
-      genre: ["groove","sludge"],
+      genre: ["groove", "doom"],
       era: '1990s',
       albums: ["NOLA","Down II","Over the Under"],
       description: 'American sludge metal supergroup.',
@@ -4775,7 +4775,7 @@ export const STATIC_BANDS: Record<string, Band[]> = {
     {
       id: 'band_corrosion_of_conformity_1',
       name: 'Corrosion of Conformity',
-      genre: ["groove","sludge"],
+      genre: ["groove", "doom"],
       era: '1980s',
       albums: ["Blind","Deliverance","Wiseblood"],
       description: 'American sludge metal band.',
@@ -4785,7 +4785,7 @@ export const STATIC_BANDS: Record<string, Band[]> = {
     {
       id: 'band_eyehategod_1',
       name: 'Eyehategod',
-      genre: ["groove","sludge"],
+      genre: ["groove", "doom"],
       era: '1990s',
       albums: ["In the Name of Suffering","Take as Needed for Pain","Dopesick"],
       description: 'American sludge metal band.',
@@ -4795,7 +4795,7 @@ export const STATIC_BANDS: Record<string, Band[]> = {
     {
       id: 'band_grief_1',
       name: 'Grief',
-      genre: ["groove","sludge"],
+      genre: ["groove", "doom"],
       era: '1990s',
       albums: ["Dismal","Come to Grief","Torture"],
       description: 'American sludge/doom metal band.',
@@ -4805,7 +4805,7 @@ export const STATIC_BANDS: Record<string, Band[]> = {
     {
       id: 'band_acid_bath_1',
       name: 'Acid Bath',
-      genre: ["groove","sludge"],
+      genre: ["groove", "doom"],
       era: '1990s',
       albums: ["When the Kite String Pops","Paegan Terrorism Tactics"],
       description: 'American sludge/death metal band.',
@@ -4815,7 +4815,7 @@ export const STATIC_BANDS: Record<string, Band[]> = {
     {
       id: 'band_burning_witch_1',
       name: 'Burning Witch',
-      genre: ["groove","sludge"],
+      genre: ["groove", "doom"],
       era: '1990s',
       albums: ["Crippled Lucifer","Towers..."],
       description: 'American sludge/doom metal band.',
@@ -4825,7 +4825,7 @@ export const STATIC_BANDS: Record<string, Band[]> = {
     {
       id: 'band_kylesa_1',
       name: 'Kylesa',
-      genre: ["groove","sludge"],
+      genre: ["groove", "doom"],
       era: '2000s',
       albums: ["To Walk a Middle Course","Time Will Fuse Its Worth","Static Tensions"],
       description: 'American sludge/stoner metal band.',
@@ -4835,7 +4835,7 @@ export const STATIC_BANDS: Record<string, Band[]> = {
     {
       id: 'band_baroness_1',
       name: 'Baroness',
-      genre: ["groove","sludge"],
+      genre: ["groove", "doom"],
       era: '2000s',
       albums: ["Red Album","Blue Record","Yellow & Green"],
       description: 'American sludge/prog metal band.',
@@ -4845,7 +4845,7 @@ export const STATIC_BANDS: Record<string, Band[]> = {
     {
       id: 'band_mastodon_1',
       name: 'Mastodon',
-      genre: ["groove","sludge"],
+      genre: ["groove", "doom"],
       era: '2000s',
       albums: ["Leviathan","Blood Mountain","Crack the Skye"],
       description: 'American progressive metal band known for concept albums.',
@@ -4855,7 +4855,7 @@ export const STATIC_BANDS: Record<string, Band[]> = {
     {
       id: 'band_neurosis_1',
       name: 'Neurosis',
-      genre: ["groove","sludge"],
+      genre: ["groove", "doom"],
       era: '1990s',
       albums: ["Souls at Zero","Enemy of the Sun","Through Silver in Blood"],
       description: 'American post-metal band.',
@@ -4865,7 +4865,7 @@ export const STATIC_BANDS: Record<string, Band[]> = {
     {
       id: 'band_isis_1',
       name: 'Isis',
-      genre: ["groove","sludge"],
+      genre: ["groove", "doom"],
       era: '2000s',
       albums: ["Celestial","Oceanic","Panopticon"],
       description: 'American post-metal band.',
@@ -4875,7 +4875,7 @@ export const STATIC_BANDS: Record<string, Band[]> = {
     {
       id: 'band_pelican_1',
       name: 'Pelican',
-      genre: ["groove","sludge"],
+      genre: ["groove", "doom"],
       era: '2000s',
       albums: ["Australasia","The Fire in Our Throats Will Beckon","City of Echoes"],
       description: 'American instrumental post-metal band.',
@@ -4885,7 +4885,7 @@ export const STATIC_BANDS: Record<string, Band[]> = {
     {
       id: 'band_cult_of_luna_1',
       name: 'Cult of Luna',
-      genre: ["groove","sludge"],
+      genre: ["groove", "doom"],
       era: '2000s',
       albums: ["The Beyond","Salvation","Somewhere Along the Highway"],
       description: 'Swedish post-metal band.',
@@ -4895,7 +4895,7 @@ export const STATIC_BANDS: Record<string, Band[]> = {
     {
       id: 'band_the_ocean_1',
       name: 'The Ocean',
-      genre: ["groove","sludge"],
+      genre: ["groove", "doom"],
       era: '2000s',
       albums: ["Precambrian","Heliocentric","Anthropocentric"],
       description: 'German progressive sludge metal band.',
@@ -4905,7 +4905,7 @@ export const STATIC_BANDS: Record<string, Band[]> = {
     {
       id: 'band_rosetta_1',
       name: 'Rosetta',
-      genre: ["groove","sludge"],
+      genre: ["groove", "doom"],
       era: '2000s',
       albums: ["The Galilean Satellites","Wake/Lift","The Anaesthete"],
       description: 'American post-metal band.',
@@ -4915,7 +4915,7 @@ export const STATIC_BANDS: Record<string, Band[]> = {
     {
       id: 'band_thou_1',
       name: 'Thou',
-      genre: ["groove","sludge"],
+      genre: ["groove", "doom"],
       era: '2000s',
       albums: ["You, Whom I Have Always Hated","Heathen","Rhea Sylvia"],
       description: 'American sludge/doom metal band.',
@@ -4925,7 +4925,7 @@ export const STATIC_BANDS: Record<string, Band[]> = {
     {
       id: 'band_high_on_fire_1',
       name: 'High on Fire',
-      genre: ["groove","sludge"],
+      genre: ["groove", "doom"],
       era: '2000s',
       albums: ["The Art of Self Defense","Surrounded by Thieves","Blessed Black Wings"],
       description: 'American stoner/sludge metal band.',
@@ -4935,7 +4935,7 @@ export const STATIC_BANDS: Record<string, Band[]> = {
     {
       id: 'band_sleep_1',
       name: 'Sleep',
-      genre: ["groove","sludge"],
+      genre: ["groove", "doom"],
       era: '1990s',
       albums: ["Sleep's Holy Mountain","Volume One","Jerusalem"],
       description: 'American stoner doom metal band.',
@@ -4945,7 +4945,7 @@ export const STATIC_BANDS: Record<string, Band[]> = {
     {
       id: 'band_electric_wizard_1',
       name: 'Electric Wizard',
-      genre: ["groove","sludge"],
+      genre: ["groove", "doom"],
       era: '1990s',
       albums: ["Come My Fanatics...","Dopethrone","Let Us Prey"],
       description: 'British doom metal band known for extremely heavy sound.',
@@ -4955,7 +4955,7 @@ export const STATIC_BANDS: Record<string, Band[]> = {
     {
       id: 'band_bongripper_1',
       name: 'Bongripper',
-      genre: ["groove","sludge"],
+      genre: ["groove", "doom"],
       era: '2000s',
       albums: ["Hippie Killer","Hate Ashbury","Sex and Satan"],
       description: 'American stoner doom metal band.',
@@ -4965,7 +4965,7 @@ export const STATIC_BANDS: Record<string, Band[]> = {
     {
       id: 'band_weedeater_1',
       name: 'Weedeater',
-      genre: ["groove","sludge"],
+      genre: ["groove", "doom"],
       era: '2000s',
       albums: ["...And Justice for Y'All","Sixteen Tons","God Luck and Good Speed"],
       description: 'American stoner/sludge metal band.',
@@ -4975,7 +4975,7 @@ export const STATIC_BANDS: Record<string, Band[]> = {
     {
       id: 'band_acid_king_1',
       name: 'Acid King',
-      genre: ["groove","sludge"],
+      genre: ["groove", "doom"],
       era: '1990s',
       albums: ["Zoroaster","Busse Woods","Free the Weed"],
       description: 'American stoner doom metal band.',
@@ -4985,7 +4985,7 @@ export const STATIC_BANDS: Record<string, Band[]> = {
     {
       id: 'band_windhand_1',
       name: 'Windhand',
-      genre: ["groove","sludge"],
+      genre: ["groove", "doom"],
       era: '2010s',
       albums: ["Windhand","Soma","Grief's Infernal Flower"],
       description: 'American stoner doom metal band.',
@@ -4995,7 +4995,7 @@ export const STATIC_BANDS: Record<string, Band[]> = {
     {
       id: 'band_monolord_1',
       name: 'Monolord',
-      genre: ["groove","sludge"],
+      genre: ["groove", "doom"],
       era: '2010s',
       albums: ["Empress Rising","Vænir","Rust"],
       description: 'Swedish stoner doom metal band.',
@@ -5005,7 +5005,7 @@ export const STATIC_BANDS: Record<string, Band[]> = {
     {
       id: 'band_conan_1',
       name: 'Conan',
-      genre: ["groove","sludge"],
+      genre: ["groove", "doom"],
       era: '2010s',
       albums: ["Monnos","Horseback Battle Hammer","Existential Void Guardian"],
       description: 'British stoner doom metal band.',
@@ -5015,7 +5015,7 @@ export const STATIC_BANDS: Record<string, Band[]> = {
     {
       id: 'band_ufomammut_1',
       name: 'Ufomammut',
-      genre: ["groove","sludge"],
+      genre: ["groove", "doom"],
       era: '2000s',
       albums: ["Godlike Snake","Snailking","Idolum"],
       description: 'Italian stoner doom metal band.',
@@ -5025,7 +5025,7 @@ export const STATIC_BANDS: Record<string, Band[]> = {
     {
       id: 'band_boris_1',
       name: 'Boris',
-      genre: ["groove","sludge"],
+      genre: ["groove", "doom"],
       era: '1990s',
       albums: ["Amplifier Worship","Feedbacker","Pink"],
       description: 'Japanese experimental metal band.',
@@ -5035,7 +5035,7 @@ export const STATIC_BANDS: Record<string, Band[]> = {
     {
       id: 'band_sunn_o_1',
       name: 'Sunn O)))',
-      genre: ["groove","sludge"],
+      genre: ["groove", "doom"],
       era: '2000s',
       albums: ["ØØ Void","White1","Black One"],
       description: 'American drone metal band.',
@@ -5045,7 +5045,7 @@ export const STATIC_BANDS: Record<string, Band[]> = {
     {
       id: 'band_earth_1',
       name: 'Earth',
-      genre: ["groove","sludge"],
+      genre: ["groove", "doom"],
       era: '1990s',
       albums: ["Earth 2","Pentastar: In the Style of Demons","The Bees Made Honey in the Lion's Skull"],
       description: 'American drone metal band.',
@@ -5055,7 +5055,7 @@ export const STATIC_BANDS: Record<string, Band[]> = {
     {
       id: 'band_melvins_1',
       name: 'Melvins',
-      genre: ["groove","sludge"],
+      genre: ["groove", "doom"],
       era: '1980s',
       albums: ["Bullhead","Eggnog","Stoner Witch"],
       description: 'American sludge/stoner metal band.',
@@ -5065,7 +5065,7 @@ export const STATIC_BANDS: Record<string, Band[]> = {
     {
       id: 'band_fuck_the_facts_1',
       name: 'Fuck the Facts',
-      genre: ["groove","sludge"],
+      genre: ["groove", "doom"],
       era: '2000s',
       albums: ["Backstabber Etiquette","Disgorge, Mexico","Stigmata High-Five"],
       description: 'Canadian grindcore band.',
@@ -5075,7 +5075,7 @@ export const STATIC_BANDS: Record<string, Band[]> = {
     {
       id: 'band_noothgrush_1',
       name: 'Noothgrush',
-      genre: ["groove","sludge"],
+      genre: ["groove", "doom"],
       era: '1990s',
       albums: ["Erode the Person"],
       description: 'American sludge/doom metal band.',
@@ -5085,7 +5085,7 @@ export const STATIC_BANDS: Record<string, Band[]> = {
     {
       id: 'band_corrupted_1',
       name: 'Corrupted',
-      genre: ["groove","sludge"],
+      genre: ["groove", "doom"],
       era: '1990s',
       albums: ["Paso Inferior","Llenandose de Gusanos","Scars"],
       description: 'Japanese sludge/doom metal band.',
@@ -5628,7 +5628,7 @@ export const STATIC_BANDS: Record<string, Band[]> = {
       id: 'band_iron_savior_1',
       name: 'Iron Savior',
       genre: ["speed","power"],
-      era: '2000ss',
+      era: '2000s',
       albums: ["Iron Savior","Unification","Condition Red"],
       description: 'German power metal band.',
       styleNotes: 'Power metal with sci-fi themes.',
@@ -6091,7 +6091,7 @@ export const STATIC_BANDS: Record<string, Band[]> = {
     {
       id: 'band_bathory_1',
       name: 'Bathory',
-      genre: ["black","viking"],
+      genre: ["black", "folk"],
       era: '1980s',
       albums: ["Bathory","The Return","Under the Sign of the Black Mark"],
       description: 'Swedish black metal pioneers.',
@@ -6101,7 +6101,7 @@ export const STATIC_BANDS: Record<string, Band[]> = {
     {
       id: 'band_graveland_1',
       name: 'Graveland',
-      genre: ["black","viking"],
+      genre: ["black", "folk"],
       era: '1990s',
       albums: ["The Celtic Winter","Thousand Swords","Following the Voice of Blood"],
       description: 'Polish black metal band with Viking themes.',
@@ -6111,7 +6111,7 @@ export const STATIC_BANDS: Record<string, Band[]> = {
     {
       id: 'band_metsatöll_1',
       name: 'Metsatöll',
-      genre: ["folk","viking"],
+      genre: ["folk"],
       era: '2000s',
       albums: ["Hiiekoda","Terast","Äio"],
       description: 'Estonian folk metal band.',
@@ -6121,7 +6121,7 @@ export const STATIC_BANDS: Record<string, Band[]> = {
     {
       id: 'band_tyr_1',
       name: 'Týr',
-      genre: ["folk","viking"],
+      genre: ["folk"],
       era: '2000s',
       albums: ["Eric the Red","Ragnarok","Land"],
       description: 'Faroese folk metal band.',
@@ -6131,7 +6131,7 @@ export const STATIC_BANDS: Record<string, Band[]> = {
     {
       id: 'band_heidevolk_1',
       name: 'Heidevolk',
-      genre: ["folk","viking"],
+      genre: ["folk"],
       era: '2000s',
       albums: ["De Strijdlust is Geboren","Walhalla Wacht","Batavi"],
       description: 'Dutch folk metal band.',
@@ -6141,7 +6141,7 @@ export const STATIC_BANDS: Record<string, Band[]> = {
     {
       id: 'band_wolfchant_1',
       name: 'Wolfchant',
-      genre: ["folk","viking"],
+      genre: ["folk"],
       era: '2000s',
       albums: ["A Pagan Storm","Determined Devastation","Call of the Black Winds"],
       description: 'German folk metal band.',
@@ -6151,7 +6151,7 @@ export const STATIC_BANDS: Record<string, Band[]> = {
     {
       id: 'band_menhir_1',
       name: 'Menhir',
-      genre: ["folk","viking"],
+      genre: ["folk"],
       era: '1990s',
       albums: ["Die ewigen Steine","Thuringia","Hildebrandslied"],
       description: 'German folk metal band.',
@@ -6161,7 +6161,7 @@ export const STATIC_BANDS: Record<string, Band[]> = {
     {
       id: 'band_falkenbach_1',
       name: 'Falkenbach',
-      genre: ["folk","viking"],
+      genre: ["folk"],
       era: '2000s',
       albums: ["...En Their Medh Riki Fara...","Magni Blandinn Ok Megintiri","Heralding - The Fireblade"],
       description: 'German viking metal band.',
@@ -6171,7 +6171,7 @@ export const STATIC_BANDS: Record<string, Band[]> = {
     {
       id: 'band_vintersorg_1',
       name: 'Vintersorg',
-      genre: ["folk","viking"],
+      genre: ["folk"],
       era: '2000s',
       albums: ["Till Fjälls","Ödemarkens Son","Cosmic Genesis"],
       description: 'Swedish viking metal band.',
@@ -6181,7 +6181,7 @@ export const STATIC_BANDS: Record<string, Band[]> = {
     {
       id: 'band_borknagar_1',
       name: 'Borknagar',
-      genre: ["folk","viking"],
+      genre: ["folk"],
       era: '1990s',
       albums: ["Borknagar","The Olden Domain","The Archaic Course"],
       description: 'Norwegian black metal band with progressive elements.',
@@ -6191,7 +6191,7 @@ export const STATIC_BANDS: Record<string, Band[]> = {
     {
       id: 'band_windir_1',
       name: 'Windir',
-      genre: ["folk","viking"],
+      genre: ["folk"],
       era: '2000s',
       albums: ["Sóknardalr","Arntor","1184"],
       description: 'Norwegian viking metal band.',
@@ -6201,7 +6201,7 @@ export const STATIC_BANDS: Record<string, Band[]> = {
     {
       id: 'band_vreid_1',
       name: 'Vreid',
-      genre: ["folk","viking"],
+      genre: ["folk"],
       era: '2000s',
       albums: ["Kraft","Pitch Black Brigade","I Krig"],
       description: 'Norwegian viking metal band.',
@@ -6211,7 +6211,7 @@ export const STATIC_BANDS: Record<string, Band[]> = {
     {
       id: 'band_kampfar_1',
       name: 'Kampfar',
-      genre: ["folk","viking"],
+      genre: ["folk"],
       era: '2000s',
       albums: ["Mellom Skogkledde Aaser","Kvass","Heimgang"],
       description: 'Norwegian viking metal band.',
@@ -6221,7 +6221,7 @@ export const STATIC_BANDS: Record<string, Band[]> = {
     {
       id: 'band_arkona_1',
       name: 'Arkona',
-      genre: ["folk","viking"],
+      genre: ["folk"],
       era: '2000s',
       albums: ["Ot Serdca K Nebu","Lepta","Goi, Rode, Goi!"],
       description: 'Russian viking metal band.',
@@ -6231,7 +6231,7 @@ export const STATIC_BANDS: Record<string, Band[]> = {
     {
       id: 'band_butterfly_temple_1',
       name: 'Butterfly Temple',
-      genre: ["folk","viking"],
+      genre: ["folk"],
       era: '2000s',
       albums: ["Blessed by the Gods","Pagan Songs","Zov Pustykh Dereven"],
       description: 'Russian viking metal band.',
@@ -6241,7 +6241,7 @@ export const STATIC_BANDS: Record<string, Band[]> = {
     {
       id: 'band_nokturnal_mortum_1',
       name: 'Nokturnal Mortum',
-      genre: ["folk","viking"],
+      genre: ["folk"],
       era: '2000s',
       albums: ["Goat Horns","To the Gates of Blasphemous Fire","NeChrist"],
       description: 'Ukrainian viking metal band.',
@@ -6251,7 +6251,7 @@ export const STATIC_BANDS: Record<string, Band[]> = {
     {
       id: 'band_temnozor_1',
       name: 'Temnozor',
-      genre: ["folk","viking"],
+      genre: ["folk"],
       era: '2000s',
       albums: ["Sorcery of Fragrance","Horizons","Ukraina"],
       description: 'Russian viking metal band.',
@@ -6261,7 +6261,7 @@ export const STATIC_BANDS: Record<string, Band[]> = {
     {
       id: 'band_alatyr_1',
       name: 'Alatyr',
-      genre: ["folk","viking"],
+      genre: ["folk"],
       era: '2000s',
       albums: ["Put' k Pochitayemym Rodnikam"],
       description: 'Russian viking metal band.',
@@ -6271,7 +6271,7 @@ export const STATIC_BANDS: Record<string, Band[]> = {
     {
       id: 'band_ruslana_1',
       name: 'Ruslana',
-      genre: ["folk","viking"],
+      genre: ["folk"],
       era: '2000s',
       albums: ["Wild Dances","Amazonka"],
       description: 'Ukrainian viking metal artist.',
