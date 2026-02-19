@@ -3,6 +3,18 @@ import { IDatabase } from './database';
 import { Band, BandTier, Session, Comparison, Recommendation, ComparisonPair } from './types';
 import { STATIC_BANDS } from './staticBands';
 import { getConfig } from './config';
+import {
+  STANDARD_GENRES,
+  normalizeGenres,
+  normalizeEra,
+  normalizeAlbums,
+  normalizeDescription,
+  normalizeStyleNotes,
+  normalizeTier,
+  isValidBandName,
+  validateAndNormalizeBand,
+  generateDataFormatReference
+} from './dataStandards';
 
 export class RecommendationEngine {
   private llmClient: LLMClient;
@@ -43,6 +55,14 @@ export class RecommendationEngine {
 
   async startSession(genre: string): Promise<Session> {
     const sessionId = this.generateSessionId();
+
+    // 首先确保该流派有足够的数据
+    await this.ensureGenreBands(genre);
+
+    // 读取并缓存按 tier 排序的前100个乐队
+    const cachedBands = await this.getCachedBandsForGenre(genre);
+    console.log(`Cached ${cachedBands.length} bands for genre ${genre}`);
+
     const session: Session = {
       id: sessionId,
       genre: genre,
@@ -50,17 +70,49 @@ export class RecommendationEngine {
       preferenceWeights: {},
       seenBands: [],
       createdAt: new Date(),
-      updatedAt: new Date()
+      updatedAt: new Date(),
+      cachedBands: cachedBands
     };
 
     await this.db.createSession(session);
 
-    // Populate genre bands from local static data (non-blocking)
-    this.populateGenreBands(genre).catch(error => {
-      console.error(`Error populating bands for genre ${genre}:`, error);
+    return session;
+  }
+
+  /**
+   * 确保流派有足够的数据（按需填充）
+   */
+  private async ensureGenreBands(genre: string): Promise<void> {
+    const config = getConfig();
+    const minBandsForGenre = config.expandGenres.minBandsForGenre || 30;
+    const existingBands = await this.db.getBandsByGenre(genre);
+
+    if (existingBands.length >= minBandsForGenre) {
+      return; // 数据充足，无需填充
+    }
+
+    console.log(`Genre ${genre} has ${existingBands.length} bands, need ${minBandsForGenre}. Populating...`);
+    await this.populateGenreBands(genre);
+  }
+
+  /**
+   * 获取按 tier 排序的前100个乐队用于缓存
+   * 优先级：well-known > popular > niche
+   */
+  private async getCachedBandsForGenre(genre: string): Promise<Band[]> {
+    const allBands = await this.db.getBandsByGenre(genre);
+
+    // 按 tier 排序：well-known (3) > popular (2) > niche (1)
+    const tierOrder = { 'well-known': 3, 'popular': 2, 'niche': 1 };
+
+    const sortedBands = allBands.sort((a, b) => {
+      const tierA = tierOrder[a.tier || 'niche'] || 0;
+      const tierB = tierOrder[b.tier || 'niche'] || 0;
+      return tierB - tierA; // 降序排列
     });
 
-    return session;
+    // 取前100个
+    return sortedBands.slice(0, 100);
   }
 
   async getComparisonPair(sessionId: string): Promise<ComparisonPair | null> {
@@ -146,6 +198,135 @@ export class RecommendationEngine {
       throw new Error('Session not found');
     }
 
+    // 首先尝试使用 LLM 生成实时建议
+    try {
+      const llmSuggestions = await this.tryLLMSuggestions(session, numSuggestions);
+      if (llmSuggestions.length > 0) {
+        console.log(`LLM generated ${llmSuggestions.length} real-time suggestions, using LLM results`);
+        return llmSuggestions;
+      }
+    } catch (error) {
+      console.warn('LLM real-time suggestions failed, falling back to simple logic:', error);
+    }
+
+    // LLM 失败或返回空结果，回退到简单逻辑
+    console.log('Using fallback suggestion logic');
+    return this.getFallbackSuggestions(session, numSuggestions);
+  }
+
+  /**
+   * 尝试使用 LLM 生成实时建议
+   * 使用缓存的乐队数据
+   */
+  private async tryLLMSuggestions(session: Session, numSuggestions: number): Promise<Recommendation[]> {
+    // 检查 LLM 是否已配置
+    const config = getConfig();
+    const effectiveEndpoint = process.env.LLM_ENDPOINT || config.llm.endpoint;
+    const isLLMConfigured = effectiveEndpoint &&
+                           effectiveEndpoint.trim() !== '' &&
+                           !effectiveEndpoint.includes('localhost:1234');
+
+    if (!isLLMConfigured) {
+      console.log('LLM not configured, skipping LLM suggestions');
+      return [];
+    }
+
+    // 使用缓存的乐队数据
+    const cachedBands = session.cachedBands || [];
+    if (cachedBands.length === 0) {
+      console.log('No cached bands available for suggestions');
+      return [];
+    }
+
+    // 获取已见过的乐队ID
+    const seenBandIds = new Set<string>(session.seenBands);
+    session.comparisonHistory.forEach(comp => {
+      seenBandIds.add(comp.bandId1);
+      seenBandIds.add(comp.bandId2);
+    });
+
+    // 从缓存中筛选未见过的乐队
+    const unseenBands = cachedBands.filter(band => !seenBandIds.has(band.id));
+
+    // 准备给 LLM 的候选乐队列表
+    const candidateBandNames = unseenBands.slice(0, 30).map(b => b.name); // 取前30个作为候选
+
+    // 获取已见乐队的名称列表
+    const seenBandNames: string[] = [];
+    for (const bandId of seenBandIds) {
+      const band = cachedBands.find(b => b.id === bandId) || await this.db.getBand(bandId);
+      if (band) {
+        seenBandNames.push(band.name);
+      }
+    }
+
+    // 调用 LLM 生成建议，传入候选乐队列表
+    const llmResults = await this.llmClient.generateRealTimeSuggestionsWithCandidates(
+      session.genre,
+      session.comparisonHistory,
+      numSuggestions,
+      seenBandNames,
+      candidateBandNames
+    );
+
+    if (!llmResults || llmResults.length === 0) {
+      return [];
+    }
+
+    // 将 LLM 结果转换为 Recommendation 格式
+    const suggestions: Recommendation[] = [];
+    const usedBandIds = new Set<string>();
+
+    for (const llmSuggestion of llmResults) {
+      // 首先尝试在缓存中找到对应的乐队
+      let band = cachedBands.find(b =>
+        b.name.toLowerCase() === llmSuggestion.band.toLowerCase()
+      );
+
+      // 如果不在缓存中，尝试从数据库查找
+      if (!band) {
+        const allBands = await this.db.getBandsByGenre(session.genre);
+        band = allBands.find(b =>
+          b.name.toLowerCase() === llmSuggestion.band.toLowerCase()
+        );
+      }
+
+      // 如果数据库中不存在，但LLM返回了完整信息，则创建新乐队
+      if (!band && llmSuggestion.era && llmSuggestion.description) {
+        console.log(`LLM suggested new band not in database: ${llmSuggestion.band}, creating...`);
+        band = await this.createBandFromLLMResult(llmSuggestion, session.genre);
+      }
+
+      if (band && !seenBandIds.has(band.id) && !usedBandIds.has(band.id)) {
+        suggestions.push({
+          band,
+          reason: llmSuggestion.reason || 'Suggested by AI',
+          confidence: llmSuggestion.confidence || 0.7
+        });
+        usedBandIds.add(band.id);
+      }
+    }
+
+    // 如果建议数量不足，按需补充新乐队
+    const neededCount = numSuggestions - suggestions.length;
+    if (neededCount > 0) {
+      console.log(`Need ${neededCount} more bands for suggestions, generating...`);
+      const additionalSuggestions = await this.generateAdditionalBands(
+        session,
+        seenBandNames,
+        neededCount,
+        usedBandIds
+      );
+      suggestions.push(...additionalSuggestions);
+    }
+
+    return suggestions;
+  }
+
+  /**
+   * 回退建议逻辑（基于权重的简单建议）
+   */
+  private async getFallbackSuggestions(session: Session, numSuggestions: number): Promise<Recommendation[]> {
     const suggestions: Recommendation[] = [];
     const allBands = await this.db.getBandsByGenre(session.genre);
 
@@ -199,6 +380,272 @@ export class RecommendationEngine {
       throw new Error('Session not found');
     }
 
+    // 首先尝试使用 LLM 生成推荐
+    try {
+      const llmRecommendations = await this.tryLLMRecommendations(session);
+      if (llmRecommendations.length > 0) {
+        console.log(`LLM generated ${llmRecommendations.length} recommendations, using LLM results`);
+        return llmRecommendations;
+      }
+    } catch (error) {
+      console.warn('LLM recommendation failed, falling back to simple logic:', error);
+    }
+
+    // LLM 失败或返回空结果，回退到简单逻辑
+    console.log('Using fallback recommendation logic');
+    return this.getFallbackRecommendations(session);
+  }
+
+  /**
+   * 尝试使用 LLM 生成推荐
+   * 优先使用缓存中未见过的乐队，不足时按需补充
+   */
+  private async tryLLMRecommendations(session: Session): Promise<Recommendation[]> {
+    // 检查 LLM 是否已配置
+    const config = getConfig();
+    const effectiveEndpoint = process.env.LLM_ENDPOINT || config.llm.endpoint;
+    const isLLMConfigured = effectiveEndpoint &&
+                           effectiveEndpoint.trim() !== '' &&
+                           !effectiveEndpoint.includes('localhost:1234');
+
+    if (!isLLMConfigured) {
+      console.log('LLM not configured, skipping LLM recommendations');
+      return [];
+    }
+
+    // 使用缓存的乐队数据
+    const cachedBands = session.cachedBands || [];
+    if (cachedBands.length === 0) {
+      console.log('No cached bands available');
+      return [];
+    }
+
+    // 获取已见过的乐队ID
+    const seenBandIds = new Set<string>(session.seenBands);
+    session.comparisonHistory.forEach(comp => {
+      seenBandIds.add(comp.bandId1);
+      seenBandIds.add(comp.bandId2);
+    });
+
+    // 从缓存中筛选未见过的乐队
+    const unseenBands = cachedBands.filter(band => !seenBandIds.has(band.id));
+    console.log(`Found ${unseenBands.length} unseen bands in cache (total cached: ${cachedBands.length})`);
+
+    // 准备给 LLM 的候选乐队列表（优先推荐这些）
+    const candidateBandNames = unseenBands.slice(0, 50).map(b => b.name); // 取前50个作为候选
+
+    // 获取已见乐队的名称列表
+    const seenBandNames: string[] = [];
+    for (const bandId of seenBandIds) {
+      const band = cachedBands.find(b => b.id === bandId) || await this.db.getBand(bandId);
+      if (band) {
+        seenBandNames.push(band.name);
+      }
+    }
+
+    // 调用 LLM 生成推荐，传入候选乐队列表
+    const llmResults = await this.llmClient.generateRecommendationsWithCandidates(
+      session.genre,
+      session.comparisonHistory,
+      this.maxRecommendations,
+      seenBandNames,
+      candidateBandNames
+    );
+
+    if (!llmResults || llmResults.length === 0) {
+      return [];
+    }
+
+    // 将 LLM 结果转换为 Recommendation 格式
+    const recommendations: Recommendation[] = [];
+    const usedBandIds = new Set<string>();
+
+    for (const llmRec of llmResults) {
+      // 首先尝试在缓存中找到对应的乐队
+      let band = cachedBands.find(b =>
+        b.name.toLowerCase() === llmRec.band.toLowerCase()
+      );
+
+      // 如果不在缓存中，尝试从数据库查找
+      if (!band) {
+        const allBands = await this.db.getBandsByGenre(session.genre);
+        band = allBands.find(b =>
+          b.name.toLowerCase() === llmRec.band.toLowerCase()
+        );
+      }
+
+      // 如果数据库中不存在，但LLM返回了完整信息，则创建新乐队
+      if (!band && llmRec.era && llmRec.description) {
+        console.log(`LLM recommended new band not in database: ${llmRec.band}, creating...`);
+        band = await this.createBandFromLLMResult(llmRec, session.genre);
+      }
+
+      if (band && !seenBandIds.has(band.id) && !usedBandIds.has(band.id)) {
+        recommendations.push({
+          band,
+          reason: llmRec.reason || 'Recommended by AI',
+          confidence: llmRec.confidence || 0.75
+        });
+        usedBandIds.add(band.id);
+      }
+    }
+
+    // 如果推荐数量不足，按需补充新乐队
+    const neededCount = this.maxRecommendations - recommendations.length;
+    if (neededCount > 0) {
+      console.log(`Need ${neededCount} more bands, generating additional bands...`);
+      const additionalRecommendations = await this.generateAdditionalBands(
+        session,
+        seenBandNames,
+        neededCount,
+        usedBandIds
+      );
+      recommendations.push(...additionalRecommendations);
+    }
+
+    return recommendations;
+  }
+
+  /**
+   * 根据 LLM 返回的结果创建新乐队并保存到数据库
+   * 使用 dataStandards 进行数据验证和标准化
+   */
+  private async createBandFromLLMResult(llmRec: any, genre: string): Promise<Band | undefined> {
+    try {
+      // 使用统一的验证和标准化函数
+      const validation = validateAndNormalizeBand({
+        name: llmRec.band,
+        genre: llmRec.genre,
+        era: llmRec.era,
+        albums: llmRec.albums,
+        description: llmRec.description,
+        styleNotes: llmRec.styleNotes,
+        tier: llmRec.tier
+      }, genre);
+
+      if (!validation.valid || !validation.band) {
+        console.error(`Band validation failed: ${validation.errors.join(', ')}`);
+        return undefined;
+      }
+
+      const band = validation.band;
+
+      // 检查是否已存在同名乐队
+      const existingBands = await this.db.getBandsByGenre(genre);
+      const exists = existingBands.some(b =>
+        b.name.toLowerCase() === band.name.toLowerCase()
+      );
+
+      if (exists) {
+        console.log(`Band ${band.name} already exists, skipping creation`);
+        return undefined;
+      }
+
+      // 生成唯一ID
+      band.id = this.generateBandId(band.name);
+
+      // 保存到数据库
+      await this.db.createBand(band);
+      console.log(`Created and saved new band to database: ${band.name} (tier: ${band.tier}, genres: ${band.genre.join(', ')})`);
+
+      return band;
+    } catch (error) {
+      console.error(`Error creating band from LLM result: ${llmRec?.band}`, error);
+      return undefined;
+    }
+  }
+
+  /**
+   * 按需生成并补充新乐队到数据库
+   * 使用 dataStandards 进行数据验证和标准化
+   */
+  private async generateAdditionalBands(
+    session: Session,
+    excludeBandNames: string[],
+    count: number,
+    usedBandIds: Set<string>
+  ): Promise<Recommendation[]> {
+    const recommendations: Recommendation[] = [];
+
+    try {
+      // 获取参考乐队（用于指导生成质量）
+      const referenceBands = (session.cachedBands || []).slice(0, 3);
+
+      // 调用 LLM 生成新乐队
+      const generatedBands = await this.llmClient.generateBandsForRecommendation(
+        session.genre,
+        excludeBandNames,
+        referenceBands.length > 0 ? referenceBands : undefined,
+        count
+      );
+
+      if (generatedBands.length === 0) {
+        console.log('No new bands generated');
+        return [];
+      }
+
+      // 将生成的乐队保存到数据库并创建推荐
+      for (const generatedBand of generatedBands) {
+        // 使用统一的验证和标准化函数
+        const validation = validateAndNormalizeBand({
+          name: generatedBand.name,
+          genre: generatedBand.genre,
+          era: generatedBand.era,
+          albums: generatedBand.albums,
+          description: generatedBand.description,
+          styleNotes: generatedBand.styleNotes,
+          tier: generatedBand.tier as BandTier
+        }, session.genre);
+
+        if (!validation.valid || !validation.band) {
+          console.error(`Generated band validation failed: ${validation.errors.join(', ')}`);
+          continue;
+        }
+
+        const band = validation.band;
+
+        // 检查是否已存在
+        const existingBands = await this.db.getBandsByGenre(session.genre);
+        const exists = existingBands.some(b =>
+          b.name.toLowerCase() === band.name.toLowerCase()
+        );
+
+        if (exists) {
+          console.log(`Band ${band.name} already exists, skipping`);
+          continue;
+        }
+
+        // 生成唯一ID
+        band.id = this.generateBandId(band.name);
+
+        // 保存到数据库
+        await this.db.createBand(band);
+        console.log(`Added new band to database: ${band.name} (tier: ${band.tier})`);
+
+        if (!usedBandIds.has(band.id)) {
+          recommendations.push({
+            band,
+            reason: 'Newly discovered band for you',
+            confidence: 0.7
+          });
+          usedBandIds.add(band.id);
+        }
+
+        if (recommendations.length >= count) {
+          break;
+        }
+      }
+    } catch (error) {
+      console.error('Error generating additional bands:', error);
+    }
+
+    return recommendations;
+  }
+
+  /**
+   * 回退推荐逻辑（基于权重的简单推荐）
+   */
+  private async getFallbackRecommendations(session: Session): Promise<Recommendation[]> {
     const recommendations: Recommendation[] = [];
     const allBands = await this.db.getBandsByGenre(session.genre);
 

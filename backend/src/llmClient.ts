@@ -1,4 +1,5 @@
 import { LLMConfig, LLMMessage, LLMResponse } from './types';
+import { STANDARD_GENRES, generateDataFormatReference } from './dataStandards';
 
 export class LLMClient {
   private config: LLMConfig;
@@ -172,6 +173,83 @@ export class LLMClient {
     }
   }
 
+  /**
+   * 基于候选乐队列表生成推荐
+   * 优先从候选列表中选择，如果候选不足可以推荐其他合适的乐队
+   */
+  async generateRecommendationsWithCandidates(
+    genre: string,
+    comparisonHistory: any[],
+    maxRecommendations: number,
+    seenBands: string[] = [],
+    candidateBands: string[] = []
+  ): Promise<any[]> {
+    const historySummary = comparisonHistory
+      .map((c: any) => `Preferred ${c.selectedBandId} over ${c.bandId1 === c.selectedBandId ? c.bandId2 : c.bandId1}`)
+      .join('; ');
+
+    let userPrompt = `Genre: ${genre}. User preferences: ${historySummary || 'None'}. Generate ${maxRecommendations} recommendations.`;
+
+    // 提供候选乐队列表，让LLM优先选择
+    if (candidateBands.length > 0) {
+      userPrompt += `\n\nPRIORITY CANDIDATES (strongly prefer selecting from these): ${candidateBands.join(', ')}.`;
+    }
+
+    // Exclude seen bands from recommendations
+    if (seenBands.length > 0) {
+      userPrompt += `\n\nEXCLUSIONS (do NOT recommend these): ${seenBands.join(', ')}.`;
+    }
+
+    const messages: LLMMessage[] = [
+      {
+        role: 'system',
+        content: `You are a metal music recommendation expert. Based on user preferences, recommend up to ${maxRecommendations} bands.
+
+INSTRUCTIONS:
+1. PRIORITIZE selecting from the provided candidate bands list
+2. Only recommend bands NOT in the exclusions list
+3. Provide specific reasons why each band matches the user's taste
+4. For bands NOT in the candidate list, you MUST provide complete band information
+5. Return valid JSON with this structure:
+{
+  "recommendations": [
+    {
+      "band": "Band Name",
+      "reason": "Why this band matches their taste",
+      "confidence": 0.85,
+      "genre": ["genre1", "genre2"],
+      "era": "1980s-1990s",
+      "albums": ["Album 1", "Album 2", "Album 3"],
+      "description": "Brief description of the band's style and significance",
+      "tier": "well-known|popular|niche"
+    }
+  ]
+}
+
+REQUIRED FIELDS for new bands (not in candidate list):
+- genre: array of genres (use standard genres: thrash, death, black, power, doom, progressive, heavy, speed, groove, folk)
+- era: active years or decade (e.g., "1980s-present", "1990s-2000s")
+- albums: array of 2-5 notable albums
+- description: 1-2 sentences describing the band
+- tier: "well-known" (global fame), "popular" (metal community), or "niche" (underground)`
+      },
+      {
+        role: 'user',
+        content: userPrompt
+      }
+    ];
+
+    try {
+      const response = await this.callLLM(messages);
+      const content = this.cleanLLMResponse(response.choices[0]?.message?.content || '{}');
+      const result = JSON.parse(content);
+      return result.recommendations || [];
+    } catch (error) {
+      console.error('Error generating recommendations with candidates:', error);
+      return [];
+    }
+  }
+
   async generateRealTimeSuggestions(
     genre: string,
     comparisonHistory: any[],
@@ -207,6 +285,83 @@ export class LLMClient {
       return result.suggestions || [];
     } catch (error) {
       console.error('Error generating real-time suggestions:', error);
+      return [];
+    }
+  }
+
+  /**
+   * 基于候选乐队列表生成实时建议
+   * 优先从候选列表中选择
+   */
+  async generateRealTimeSuggestionsWithCandidates(
+    genre: string,
+    comparisonHistory: any[],
+    numSuggestions: number,
+    seenBands: string[] = [],
+    candidateBands: string[] = []
+  ): Promise<any[]> {
+    const historySummary = comparisonHistory
+      .map((c: any) => `Preferred ${c.selectedBandId} over ${c.bandId1 === c.selectedBandId ? c.bandId2 : c.bandId1}`)
+      .join('; ');
+
+    let userPrompt = `Genre: ${genre}. User preferences: ${historySummary || 'None'}. Generate ${numSuggestions} real-time suggestions.`;
+
+    // 提供候选乐队列表，让LLM优先选择
+    if (candidateBands.length > 0) {
+      userPrompt += `\n\nPRIORITY CANDIDATES (strongly prefer selecting from these): ${candidateBands.join(', ')}.`;
+    }
+
+    // Exclude seen bands from suggestions
+    if (seenBands.length > 0) {
+      userPrompt += `\n\nEXCLUSIONS (do NOT suggest these): ${seenBands.join(', ')}.`;
+    }
+
+    const messages: LLMMessage[] = [
+      {
+        role: 'system',
+        content: `You are a metal music recommendation expert. Based on user preferences, suggest up to ${numSuggestions} bands as real-time recommendations.
+
+INSTRUCTIONS:
+1. PRIORITIZE selecting from the provided candidate bands list
+2. Only suggest bands NOT in the exclusions list
+3. Provide specific reasons why each band matches the user's taste
+4. For bands NOT in the candidate list, you MUST provide complete band information
+5. Return valid JSON with this structure:
+{
+  "suggestions": [
+    {
+      "band": "Band Name",
+      "reason": "Why this band matches their taste",
+      "confidence": 0.85,
+      "genre": ["genre1", "genre2"],
+      "era": "1980s-1990s",
+      "albums": ["Album 1", "Album 2", "Album 3"],
+      "description": "Brief description of the band's style and significance",
+      "tier": "well-known|popular|niche"
+    }
+  ]
+}
+
+REQUIRED FIELDS for new bands (not in candidate list):
+- genre: array of genres (use standard genres: thrash, death, black, power, doom, progressive, heavy, speed, groove, folk)
+- era: active years or decade (e.g., "1980s-present", "1990s-2000s")
+- albums: array of 2-5 notable albums
+- description: 1-2 sentences describing the band
+- tier: "well-known" (global fame), "popular" (metal community), or "niche" (underground)`
+      },
+      {
+        role: 'user',
+        content: userPrompt
+      }
+    ];
+
+    try {
+      const response = await this.callLLM(messages);
+      const content = this.cleanLLMResponse(response.choices[0]?.message?.content || '{}');
+      const result = JSON.parse(content);
+      return result.suggestions || [];
+    } catch (error) {
+      console.error('Error generating real-time suggestions with candidates:', error);
       return [];
     }
   }
@@ -337,14 +492,17 @@ Return ONLY valid JSON, no explanations or additional text.`
       referenceText = `\n\nREFERENCE EXAMPLES (existing bands in ${genre}):\n${examples}\n\nUse these as a reference for quality and format.`;
     }
 
-    const standardGenres = ['thrash', 'death', 'black', 'power', 'doom', 'progressive', 'heavy', 'speed', 'groove', 'folk'];
+    const dataFormatRef = generateDataFormatReference();
 
     const messages: LLMMessage[] = [
       {
         role: 'system',
         content: `You are a metal music expert. Generate ${targetCount} prominent metal bands in the specified subgenre. Your response must be valid JSON ONLY, no other text or formatting.
 
-Format: {"bands": [{"name": "Band Name", "genre": ["genre1", "genre2"], "era": "1980s", "albums": ["Album1", "Album2", "Album3"], "description": "Detailed description (1-2 sentences)", "styleNotes": "Brief style evolution notes (30-150 characters)", "tier": "well-known|popular|niche"}]}
+${dataFormatRef}
+
+JSON FORMAT:
+{"bands": [{"name": "Band Name", "genre": ["genre1", "genre2"], "era": "1980s", "albums": ["Album1", "Album2", "Album3"], "description": "Detailed description (1-2 sentences)", "styleNotes": "Brief style evolution notes (30-150 characters)", "tier": "well-known|popular|niche"}]}
 
 TIER GUIDELINES:
 - "well-known": Globally famous, mainstream recognition (e.g., Metallica, Iron Maiden)
@@ -360,9 +518,10 @@ IMPORTANT CONSTRAINTS:
 2. Generate NEW bands that are NOT in the list above
 3. Include a mix of tiers (well-known, popular, and niche) for variety
 4. Focus on bands that are truly representative of ${genre} metal
+5. ALL fields in the DATA FORMAT REFERENCE are REQUIRED
 
 GENRE STANDARDIZATION (CRITICAL):
-- You MUST use ONLY these standard genre names: ${standardGenres.join(', ')}
+- You MUST use ONLY these standard genre names: ${STANDARD_GENRES.join(', ')}
 - The primary genre MUST be "${genre}"
 - Additional genres (if any) must also be from the standard list above
 - DO NOT use sub-genres like "melodic death", "technical thrash", "symphonic black", etc.
@@ -380,7 +539,7 @@ Return ONLY valid JSON, no explanations or additional text.`
         const result = JSON.parse(content);
         const bands = result.bands || [];
 
-        // Validate and normalize each band
+        // Basic validation - full validation will be done in recommendationEngine
         return bands.map((band: any) => ({
           name: band.name,
           genre: Array.isArray(band.genre) ? band.genre : [genre],

@@ -4,6 +4,27 @@ const API_BASE_URL = import.meta.env.VITE_API_URL || 'http://localhost:3001';
 const API_MODE = import.meta.env.VITE_API_MODE === 'true';
 const MIN_BANDS_PER_GENRE = Number(import.meta.env.VITE_MIN_BANDS_PER_GENRE) || 30;
 
+// LLM Configuration
+const ENABLE_LLM = import.meta.env.VITE_ENABLE_LLM === 'true';
+
+export interface LLMConfig {
+  endpoint: string;
+  apiKey: string;
+  model: string;
+  enabled: boolean;
+}
+
+// Default LLM configuration from environment variables
+const defaultLLMConfig: LLMConfig = {
+  endpoint: import.meta.env.VITE_LLM_ENDPOINT || '',
+  apiKey: import.meta.env.VITE_LLM_API_KEY || '',
+  model: import.meta.env.VITE_LLM_MODEL || '',
+  enabled: ENABLE_LLM,
+};
+
+// Current LLM configuration (can be updated by user)
+let currentLLMConfig: LLMConfig = { ...defaultLLMConfig };
+
 const api = axios.create({
   baseURL: API_BASE_URL,
   headers: {
@@ -509,5 +530,22 @@ export const apiService = {
 
   isApiMode(): boolean {
     return API_MODE;
-  }
+  },
+
+  // LLM Configuration methods
+  getLLMConfig(): LLMConfig {
+    return { ...currentLLMConfig };
+  },
+
+  updateLLMConfig(config: Partial<LLMConfig>): void {
+    currentLLMConfig = { ...currentLLMConfig, ...config };
+  },
+
+  isLLMEnabled(): boolean {
+    return currentLLMConfig.enabled && API_MODE;
+  },
+
+  resetLLMConfig(): void {
+    currentLLMConfig = { ...defaultLLMConfig };
+  },
 };

@@ -20,6 +20,7 @@ export interface Session {
   seenBands: string[];
   createdAt: Date;
   updatedAt: Date;
+  cachedBands?: Band[]; // 缓存该流派的乐队数据（按tier排序）
 }
 
 export interface Comparison {
