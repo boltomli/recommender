@@ -4,7 +4,12 @@
       <div class="progress-header">
         <div class="header-top">
           <h2 class="text-center">Which band do you prefer?</h2>
-          <button @click="handleRestart" class="restart-btn">Restart</button>
+          <div class="header-actions">
+            <span v-if="zenMode" class="zen-mode-indicator" title="Zen Mode: Continuous comparison with your LLM">
+              <span class="zen-icon">☯</span> Zen Mode
+            </span>
+            <button @click="handleRestart" class="restart-btn">Restart</button>
+          </div>
         </div>
       </div>
 
@@ -106,6 +111,7 @@ import { apiService, type ComparisonPair, type Recommendation } from '../api';
 const props = defineProps<{
   sessionId: string;
   comparisonCount: number;
+  zenMode?: boolean;
 }>();
 
 const emit = defineEmits(['preference-recorded', 'recommendations-ready', 'restart']);
@@ -238,6 +244,39 @@ defineExpose({
   gap: 2rem;
   margin-bottom: 1.5rem;
   flex-wrap: wrap;
+}
+
+.header-actions {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.zen-mode-indicator {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  background: linear-gradient(135deg, #10b981 0%, #059669 100%);
+  color: #fff;
+  padding: 0.5rem 1rem;
+  border-radius: 20px;
+  font-weight: 600;
+  font-size: 0.9rem;
+  box-shadow: 0 2px 8px rgba(16, 185, 129, 0.3);
+  animation: zenPulse 2s ease-in-out infinite;
+}
+
+.zen-icon {
+  font-size: 1.2rem;
+}
+
+@keyframes zenPulse {
+  0%, 100% {
+    box-shadow: 0 2px 8px rgba(16, 185, 129, 0.3);
+  }
+  50% {
+    box-shadow: 0 2px 16px rgba(16, 185, 129, 0.6);
+  }
 }
 
 .progress-header h2 {

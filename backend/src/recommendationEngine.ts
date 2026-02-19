@@ -88,7 +88,7 @@ export class RecommendationEngine {
       cachedBands: cachedBands
     };
 
-    // 如果用户提供了LLM配置，保存到session中（BYOK模式）
+    // 如果用户提供了LLM配置，保存到session中（BYOK模式）并启用 Zen Mode
     if (userLLMConfig?.endpoint) {
       session.userLLMConfig = {
         endpoint: userLLMConfig.endpoint,
@@ -96,7 +96,8 @@ export class RecommendationEngine {
         model: userLLMConfig.model || getConfig().llm.model,
         timeout: getConfig().llm.timeout,
       };
-      console.log(`Session ${sessionId} using user-provided LLM config: ${userLLMConfig.endpoint}`);
+      session.zenMode = true; // 启用 Zen Mode：持续提供乐队比较
+      console.log(`Session ${sessionId} using user-provided LLM config: ${userLLMConfig.endpoint}, Zen Mode enabled`);
     }
 
     await this.db.createSession(session);
@@ -157,7 +158,7 @@ export class RecommendationEngine {
     }
 
     // Use tiered selection that prioritizes well-known bands
-    const pair = await this.selectTieredPair(session.genre, session.comparisonHistory);
+    let pair = await this.selectTieredPair(session.genre, session.comparisonHistory);
     if (pair) {
       return pair;
     }
@@ -166,7 +167,32 @@ export class RecommendationEngine {
     const MIN_COMPARISONS = 3;
     if (session.comparisonHistory.length < MIN_COMPARISONS) {
       console.log(`Only ${session.comparisonHistory.length} comparisons done, minimum ${MIN_COMPARISONS} required. Using Tier 3 bands.`);
-      return this.selectTieredPairWithFallback(session.genre, session.comparisonHistory);
+      pair = await this.selectTieredPairWithFallback(session.genre, session.comparisonHistory);
+      if (pair) {
+        return pair;
+      }
+    }
+
+    // Zen Mode: 如果启用了 Zen Mode 且没有更多可用对，清空历史以持续提供比较
+    if (session.zenMode && session.comparisonHistory.length > 0) {
+      console.log(`Zen Mode: Resetting comparison history after ${session.comparisonHistory.length} comparisons to continue providing pairs`);
+      session.comparisonHistory = [];
+      session.updatedAt = new Date();
+      await this.db.updateSession(session);
+
+      // 重新尝试获取乐队对
+      pair = await this.selectTieredPair(session.genre, session.comparisonHistory);
+      if (pair) {
+        console.log('Zen Mode: Providing new pair after history reset');
+        return pair;
+      }
+
+      // 如果 Tier 1/2 没有可用对，尝试使用 Tier 3
+      pair = await this.selectTieredPairWithFallback(session.genre, session.comparisonHistory);
+      if (pair) {
+        console.log('Zen Mode: Providing fallback pair after history reset');
+        return pair;
+      }
     }
 
     return null;
