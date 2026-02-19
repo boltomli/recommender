@@ -19,7 +19,7 @@ npm install
 
 ## 运行模式
 
-### 静态模式（默认）
+### 静态模式（默认，推荐）
 
 静态模式不需要后端服务器运行，所有数据预生成在 JSON 文件中。适用于生产部署和离线使用。
 
@@ -59,7 +59,7 @@ API 模式需要后端服务器运行，通过 HTTP API 获取数据。适用于
 npm run build
 ```
 
-### 完整构建（包含数据）
+### 完整构建（包含数据，推荐）
 
 构建生产版本并从后端导出数据：
 
@@ -113,7 +113,6 @@ npm run preview
 frontend/
 ├── src/
 │   ├── api.ts                      # API 客户端（支持静态和 API 模式）
-│   ├── recommendationCalculator.ts # 客户端推荐计算器
 │   ├── App.vue                     # 根组件
 │   ├── main.ts                     # 应用入口
 │   ├── style.css                   # 全局样式
@@ -122,7 +121,6 @@ frontend/
 │       ├── BandCard.vue           # 乐队卡片
 │       ├── BandComparison.vue     # 乐队对比
 │       ├── GenreSelection.vue     # 流派选择
-│       ├── HelloWorld.vue         # 示例组件
 │       └── Recommendations.vue    # 推荐列表
 ├── public/
 │   └── data/                       # 静态数据文件（构建时生成）
@@ -167,6 +165,7 @@ npm run export-data
 ```
 
 或使用完整构建命令：
+
 ```bash
 cd frontend
 npm run build-with-data

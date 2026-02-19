@@ -10,7 +10,7 @@ export const STATIC_BANDS: Record<string, Band[]> = {
       albums: ["De Mysteriis Dom Sathanas","Deathcrush","Grand Declaration of War"],
       description: 'One of the most influential black metal bands, known for their controversial history.',
       styleNotes: 'Evolved from raw black metal to more experimental and avant-garde styles.',
-      tier: 'niche'
+      tier: 'popular'
     },
     {
       id: 'band_darkthrone_1',
@@ -20,7 +20,7 @@ export const STATIC_BANDS: Record<string, Band[]> = {
       albums: ["A Blaze in the Northern Sky","Under a Funeral Moon","Transilvanian Hunger"],
       description: 'Pioneering Norwegian black metal band known for raw, lo-fi production.',
       styleNotes: 'Started as death metal, evolved to raw black metal, later incorporated punk/crust elements.',
-      tier: 'niche'
+      tier: 'popular'
     },
     {
       id: 'band_emperor_1',
@@ -30,7 +30,7 @@ export const STATIC_BANDS: Record<string, Band[]> = {
       albums: ["In the Nightside Eclipse","Anthems to the Welkin at Dusk","IX Equilibrium"],
       description: 'Known for incorporating symphonic elements into black metal.',
       styleNotes: 'Pioneered symphonic black metal with complex song structures.',
-      tier: 'niche'
+      tier: 'popular'
     },
     {
       id: 'band_cradle_of_filth_1',
@@ -40,7 +40,7 @@ export const STATIC_BANDS: Record<string, Band[]> = {
       albums: ["The Principle of Evil Made Flesh","Dusk and Her Embrace","Cruelty and the Beast"],
       description: 'Known for theatrical style and incorporation of gothic elements.',
       styleNotes: 'Evolved from raw black metal to more symphonic and gothic styles.',
-      tier: 'niche'
+      tier: 'popular'
     },
     {
       id: 'band_dimmu_borgir_1',
@@ -50,7 +50,7 @@ export const STATIC_BANDS: Record<string, Band[]> = {
       albums: ["Enthrone Darkness Triumphant","Spiritual Black Dimensions","Puritanical Euphoric Misanthropia"],
       description: 'Norwegian black metal band known for symphonic elements and commercial success.',
       styleNotes: 'Evolved to more polished symphonic black metal with orchestral arrangements.',
-      tier: 'niche'
+      tier: 'popular'
     },
     {
       id: 'band_burzum_1',
@@ -60,7 +60,7 @@ export const STATIC_BANDS: Record<string, Band[]> = {
       albums: ["Burzum","Det Som Engang Var","Hvis Lyset Tar Oss"],
       description: 'One-man black metal project known for atmospheric sound.',
       styleNotes: 'Evolved from raw black metal to ambient and electronic music.',
-      tier: 'niche'
+      tier: 'popular'
     },
     {
       id: 'band_immortal_1',
@@ -70,7 +70,7 @@ export const STATIC_BANDS: Record<string, Band[]> = {
       albums: ["Diabolical Fullmoon Mysticism","Pure Holocaust","Battles in the North"],
       description: 'Norwegian black metal band known for Blashyrkh mythology.',
       styleNotes: 'Cold, frosty black metal with unique riffing style.',
-      tier: 'niche'
+      tier: 'popular'
     },
     {
       id: 'band_satyricon_1',
@@ -80,7 +80,7 @@ export const STATIC_BANDS: Record<string, Band[]> = {
       albums: ["Dark Medieval Times","The Shadowthrone","Nemesis Divina"],
       description: 'Norwegian black metal band.',
       styleNotes: 'Evolved to incorporate rock and industrial elements.',
-      tier: 'niche'
+      tier: 'popular'
     },
     {
       id: 'band_enslaved_1',
@@ -90,17 +90,17 @@ export const STATIC_BANDS: Record<string, Band[]> = {
       albums: ["Vikingligr Veldi","Frost","Eld"],
       description: 'Norwegian black metal band with Viking themes.',
       styleNotes: 'Evolved to progressive black metal with Viking themes.',
-      tier: 'niche'
+      tier: 'popular'
     },
     {
       id: 'band_bathory_1',
       name: 'Bathory',
-      genre: ["black","viking"],
+      genre: ["black", "folk"],
       era: '1980s',
       albums: ["Bathory","The Return","Under the Sign of the Black Mark"],
       description: 'Swedish black metal pioneers.',
       styleNotes: 'Pioneered both black metal and Viking metal.',
-      tier: 'niche'
+      tier: 'popular'
     },
     {
       id: 'band_marduk_1',
@@ -110,7 +110,7 @@ export const STATIC_BANDS: Record<string, Band[]> = {
       albums: ["Those of the Unlight","Opus Nocturne","Heaven Shall Burn"],
       description: 'Swedish black metal band.',
       styleNotes: 'Fast, aggressive black metal.',
-      tier: 'niche'
+      tier: 'popular'
     },
     {
       id: 'band_watain_1',
@@ -120,7 +120,7 @@ export const STATIC_BANDS: Record<string, Band[]> = {
       albums: ["Rabid Death's Curse","Casus Luciferi","Sworn to the Dark"],
       description: 'Swedish black metal band with occult themes.',
       styleNotes: 'Traditional Swedish black metal with satanic themes.',
-      tier: 'niche'
+      tier: 'popular'
     },
     {
       id: 'band_dissection_1',
@@ -140,7 +140,7 @@ export const STATIC_BANDS: Record<string, Band[]> = {
       albums: ["Vittra","Diabolical","Pariah"],
       description: 'Swedish black/melodic death metal band.',
       styleNotes: 'Melodic black metal with death metal influences.',
-      tier: 'niche'
+      tier: 'popular'
     },
     {
       id: 'band_shining_1',
@@ -150,7 +150,7 @@ export const STATIC_BANDS: Record<string, Band[]> = {
       albums: ["Within Deep Dark Chambers","Livets Ändhållplats","V - Halmstad"],
       description: 'Swedish black metal band with depressive themes.',
       styleNotes: 'Pioneers of depressive suicidal black metal.',
-      tier: 'niche'
+      tier: 'popular'
     },
     {
       id: 'band_silencer_1',
@@ -210,7 +210,7 @@ export const STATIC_BANDS: Record<string, Band[]> = {
       albums: ["Roads to Judah","Sunbather","New Bermuda"],
       description: 'American black metal band with shoegaze influences.',
       styleNotes: 'Black metal combined with post-rock and shoegaze.',
-      tier: 'niche'
+      tier: 'popular'
     },
     {
       id: 'band_alcest_1',
@@ -220,7 +220,7 @@ export const STATIC_BANDS: Record<string, Band[]> = {
       albums: ["Souvenirs d'un Autre Monde","Écailles de Lune","Shelter"],
       description: 'French black metal band with shoegaze influences.',
       styleNotes: 'Black metal combined with shoegaze and post-rock.',
-      tier: 'niche'
+      tier: 'popular'
     },
     {
       id: 'band_wintersun_1',
@@ -230,7 +230,7 @@ export const STATIC_BANDS: Record<string, Band[]> = {
       albums: ["Wintersun","Time I"],
       description: 'Finnish black metal band with folk and power elements.',
       styleNotes: 'Melodic black metal with folk and power metal influences.',
-      tier: 'niche'
+      tier: 'popular'
     },
     {
       id: 'band_arcturus_1',
@@ -240,7 +240,7 @@ export const STATIC_BANDS: Record<string, Band[]> = {
       albums: ["Aspera Hiems Symfonia","La Masquerade Infernale","The Sham Mirrors"],
       description: 'Norwegian avant-garde black metal band.',
       styleNotes: 'Avant-garde black metal with symphonic elements.',
-      tier: 'niche'
+      tier: 'popular'
     },
     {
       id: 'band_gorgoroth_1',
@@ -250,7 +250,7 @@ export const STATIC_BANDS: Record<string, Band[]> = {
       albums: ["Pentagram","Antichrist","Under the Sign of Hell"],
       description: 'Norwegian black metal band.',
       styleNotes: 'Traditional Norwegian black metal.',
-      tier: 'niche'
+      tier: 'popular'
     },
     {
       id: 'band_gehenna_1',
@@ -260,7 +260,7 @@ export const STATIC_BANDS: Record<string, Band[]> = {
       albums: ["First Spell","Seen Through the Veils of Darkness","Malice"],
       description: 'Norwegian black metal band.',
       styleNotes: 'Early Norwegian black metal with occult themes.',
-      tier: 'niche'
+      tier: 'popular'
     },
     {
       id: 'band_horna_1',
@@ -290,17 +290,17 @@ export const STATIC_BANDS: Record<string, Band[]> = {
       albums: ["Rituale Satanum","By the Blessing of Satan","From the Devil's Chalice"],
       description: 'Finnish black metal band.',
       styleNotes: 'Raw Finnish black metal with satanic themes.',
-      tier: 'niche'
+      tier: 'popular'
     },
     {
       id: 'band_graveland_1',
       name: 'Graveland',
-      genre: ["black","viking"],
+      genre: ["black", "folk"],
       era: '1990s',
       albums: ["The Celtic Winter","Thousand Swords","Following the Voice of Blood"],
       description: 'Polish black metal band with Viking themes.',
       styleNotes: 'Black metal with Viking and pagan themes.',
-      tier: 'niche'
+      tier: 'popular'
     },
     {
       id: 'band_dub Buk_1',
@@ -340,7 +340,7 @@ export const STATIC_BANDS: Record<string, Band[]> = {
       albums: ["Satanica","Thelema.6","Demigod"],
       description: 'Polish death/black metal band.',
       styleNotes: 'Evolved from black metal to death metal with occult themes.',
-      tier: 'niche'
+      tier: 'popular'
     },
     {
       id: 'band_melechesh_1',
@@ -350,7 +350,7 @@ export const STATIC_BANDS: Record<string, Band[]> = {
       albums: ["As Jerusalem Burns...","Djinn","Emissaries"],
       description: 'Black metal band with Middle Eastern influences.',
       styleNotes: 'Black metal with Mesopotamian and Middle Eastern themes.',
-      tier: 'niche'
+      tier: 'popular'
     },
     {
       id: 'band_absu_1',
@@ -390,7 +390,7 @@ export const STATIC_BANDS: Record<string, Band[]> = {
       albums: ["Jaktens Tid","Nattfödd","Ur Jordens Djup"],
       description: 'Finnish folk metal band with troll themes.',
       styleNotes: 'Folk metal with black metal and humppa (polka) influences.',
-      tier: 'niche'
+      tier: 'popular'
     },
     {
       id: 'band_moonsorrow_1',
@@ -400,7 +400,7 @@ export const STATIC_BANDS: Record<string, Band[]> = {
       albums: ["Suden Uni","Voimasta ja Kunniasta","Kivenkantaja"],
       description: 'Finnish black metal band with folk influences.',
       styleNotes: 'Epic black metal with Finnish folk elements.',
-      tier: 'niche'
+      tier: 'popular'
     },
     {
       id: 'band_wolves_in_the_throne_room_1',
@@ -410,7 +410,7 @@ export const STATIC_BANDS: Record<string, Band[]> = {
       albums: ["Two Hunters","Black Cascade","Celestial Lineage"],
       description: 'American black metal band with folk influences.',
       styleNotes: 'Atmospheric black metal with folk and nature themes.',
-      tier: 'niche'
+      tier: 'popular'
     },
     {
       id: 'band_agalloch_1',
@@ -420,7 +420,7 @@ export const STATIC_BANDS: Record<string, Band[]> = {
       albums: ["Pale Folklore","The Mantle","Ashes Against the Grain"],
       description: 'American black metal band with folk influences.',
       styleNotes: 'Black metal with folk, doom, and post-rock elements.',
-      tier: 'niche'
+      tier: 'popular'
     },
     {
       id: 'band_drudkh_1',
@@ -450,7 +450,7 @@ export const STATIC_BANDS: Record<string, Band[]> = {
       albums: ["Imrama","A Journey's End","The Gathering Wilderness"],
       description: 'Irish black metal band with folk influences.',
       styleNotes: 'Black metal with Celtic and folk elements.',
-      tier: 'niche'
+      tier: 'popular'
     },
     {
       id: 'band_waylander_1',
@@ -522,7 +522,7 @@ export const STATIC_BANDS: Record<string, Band[]> = {
       albums: ["Satanica","Thelema.6","Demigod"],
       description: 'Polish death/black metal band.',
       styleNotes: 'Evolved from black metal to death metal with occult themes.',
-      tier: 'niche'
+      tier: 'popular'
     },
     {
       id: 'band_death_1',
@@ -532,7 +532,7 @@ export const STATIC_BANDS: Record<string, Band[]> = {
       albums: ["Scream Bloody Gore","Human","Symbolic"],
       description: 'Pioneering death metal band founded by Chuck Schuldiner, evolved to incorporate progressive elements.',
       styleNotes: 'Started as raw death metal, evolved to highly technical and progressive death metal.',
-      tier: 'niche'
+      tier: 'popular'
     },
     {
       id: 'band_nile_1',
@@ -542,7 +542,7 @@ export const STATIC_BANDS: Record<string, Band[]> = {
       albums: ["Amongst the Catacombs of Nephren-Ka","Black Seeds of Vengeance","Annihilation of the Wicked"],
       description: 'American technical death band known for Egyptian themes.',
       styleNotes: 'Combines technical death metal with Egyptian mythology.',
-      tier: 'niche'
+      tier: 'popular'
     },
     {
       id: 'band_carcass_1',
@@ -552,7 +552,7 @@ export const STATIC_BANDS: Record<string, Band[]> = {
       albums: ["Reek of Putrefaction","Symphonies of Sickness","Necroticism"],
       description: 'British death/grind band known for medical lyrics.',
       styleNotes: 'Evolved from grindcore to melodic death metal.',
-      tier: 'niche'
+      tier: 'popular'
     },
     {
       id: 'band_entombed_1',
@@ -562,7 +562,7 @@ export const STATIC_BANDS: Record<string, Band[]> = {
       albums: ["Left Hand Path","Clandestine","Wolverine Blues"],
       description: 'Swedish death metal pioneers.',
       styleNotes: 'Created the "Sunlight sound" Swedish death metal production.',
-      tier: 'niche'
+      tier: 'popular'
     },
     {
       id: 'band_dismember_1',
@@ -572,7 +572,7 @@ export const STATIC_BANDS: Record<string, Band[]> = {
       albums: ["Like an Ever Flowing Stream","Indecent & Obscene","Death Metal"],
       description: 'Swedish death metal band.',
       styleNotes: 'Classic Swedish death metal with buzzsaw guitar tone.',
-      tier: 'niche'
+      tier: 'popular'
     },
     {
       id: 'band_grave_1',
@@ -582,7 +582,7 @@ export const STATIC_BANDS: Record<string, Band[]> = {
       albums: ["Into the Grave","Soulless","Hating Life"],
       description: 'Swedish death metal band.',
       styleNotes: 'Raw, old-school Swedish death metal.',
-      tier: 'niche'
+      tier: 'popular'
     },
     {
       id: 'band_unleashed_1',
@@ -592,7 +592,7 @@ export const STATIC_BANDS: Record<string, Band[]> = {
       albums: ["Where No Life Dwells","Shadows in the Deep","Midvinterblot"],
       description: 'Swedish death metal band with Viking themes.',
       styleNotes: 'Death metal with Viking and Norse mythology themes.',
-      tier: 'niche'
+      tier: 'popular'
     },
     {
       id: 'band_bolt_thrower_1',
@@ -602,7 +602,7 @@ export const STATIC_BANDS: Record<string, Band[]> = {
       albums: ["Realm of Chaos","War Master","The IVth Crusade"],
       description: 'British death metal band with war themes.',
       styleNotes: 'Known for heavy, militaristic death metal.',
-      tier: 'niche'
+      tier: 'popular'
     },
     {
       id: 'band_benediction_1',
@@ -612,7 +612,7 @@ export const STATIC_BANDS: Record<string, Band[]> = {
       albums: ["Subconscious Terror","The Grand Leveller","Transcend the Rubicon"],
       description: 'British death metal band.',
       styleNotes: 'Old-school British death metal.',
-      tier: 'niche'
+      tier: 'popular'
     },
     {
       id: 'band_hate_eternal_1',
@@ -622,7 +622,7 @@ export const STATIC_BANDS: Record<string, Band[]> = {
       albums: ["Conquering the Throne","King of All Kings","I, Monarch"],
       description: 'American technical death metal band.',
       styleNotes: 'Extremely fast and technical death metal.',
-      tier: 'niche'
+      tier: 'popular'
     },
     {
       id: 'band_asphyx_1',
@@ -632,7 +632,7 @@ export const STATIC_BANDS: Record<string, Band[]> = {
       albums: ["The Rack","Last One on Earth","God Cries"],
       description: 'Dutch death/doom metal band.',
       styleNotes: 'Death metal with doom and sludge influences.',
-      tier: 'niche'
+      tier: 'popular'
     },
     {
       id: 'band_paradise_lost_1',
@@ -642,7 +642,7 @@ export const STATIC_BANDS: Record<string, Band[]> = {
       albums: ["Lost Paradise","Gothic","Shades of God"],
       description: 'British death/doom metal band.',
       styleNotes: 'Pioneers of gothic doom metal.',
-      tier: 'niche'
+      tier: 'popular'
     },
     {
       id: 'band_my_dying_bride_1',
@@ -652,7 +652,7 @@ export const STATIC_BANDS: Record<string, Band[]> = {
       albums: ["As the Flower Withers","Turn Loose the Swans","The Angel and the Dark River"],
       description: 'British death/doom metal band.',
       styleNotes: 'Death/doom with gothic and romantic elements.',
-      tier: 'niche'
+      tier: 'popular'
     },
     {
       id: 'band_type_o_negative_1',
@@ -662,7 +662,7 @@ export const STATIC_BANDS: Record<string, Band[]> = {
       albums: ["Slow, Deep and Hard","Bloody Kisses","October Rust"],
       description: 'American gothic doom metal band.',
       styleNotes: 'Gothic doom with dark humor and romantic themes.',
-      tier: 'niche'
+      tier: 'popular'
     },
     {
       id: 'band_ulcerate_1',
@@ -672,7 +672,7 @@ export const STATIC_BANDS: Record<string, Band[]> = {
       albums: ["Everything Is Fire","The Destroyers of All","Shrines of Paralysis"],
       description: 'New Zealand technical death metal band.',
       styleNotes: 'Dissonant, atmospheric technical death metal.',
-      tier: 'niche'
+      tier: 'popular'
     },
     {
       id: 'band_evoken_1',
@@ -692,7 +692,7 @@ export const STATIC_BANDS: Record<string, Band[]> = {
       albums: ["Shades of...","Angels of Distress","Illusion's Play"],
       description: 'Finnish funeral doom metal band.',
       styleNotes: 'Funeral doom with atmospheric and melancholic elements.',
-      tier: 'niche'
+      tier: 'popular'
     },
     {
       id: 'band_wormphlegm_1',
@@ -712,7 +712,7 @@ export const STATIC_BANDS: Record<string, Band[]> = {
       albums: ["Where Lovers Mourn","Arcane Rain Fell","Turning Season Within"],
       description: 'Swedish death/doom/gothic metal band.',
       styleNotes: 'Death/doom with gothic and romantic elements.',
-      tier: 'niche'
+      tier: 'popular'
     },
     {
       id: 'band_october_tide_1',
@@ -722,7 +722,7 @@ export const STATIC_BANDS: Record<string, Band[]> = {
       albums: ["Rain Without End","Grey Dawn"],
       description: 'Swedish death/doom metal band.',
       styleNotes: 'Melodic death/doom metal.',
-      tier: 'niche'
+      tier: 'popular'
     },
     {
       id: 'band_katatonia_1',
@@ -732,7 +732,7 @@ export const STATIC_BANDS: Record<string, Band[]> = {
       albums: ["Brave Murder Day","Discouraged Ones","Tonight's Decision"],
       description: 'Swedish death/doom/gothic metal band.',
       styleNotes: 'Evolved from death/doom to gothic rock/metal.',
-      tier: 'niche'
+      tier: 'popular'
     },
     {
       id: 'band_rapture_1',
@@ -762,7 +762,7 @@ export const STATIC_BANDS: Record<string, Band[]> = {
       albums: ["Blackwater Park","Still Life","Damnation"],
       description: 'Swedish progressive metal band known for incorporating death metal and acoustic elements.',
       styleNotes: 'Evolved from death metal to progressive metal with clean vocals and acoustic passages.',
-      tier: 'niche'
+      tier: 'well-known'
     },
     {
       id: 'band_cynic_1',
@@ -772,7 +772,7 @@ export const STATIC_BANDS: Record<string, Band[]> = {
       albums: ["Focus","Traced in Air"],
       description: 'American progressive death metal band.',
       styleNotes: 'Combined death metal with fusion and progressive rock.',
-      tier: 'niche'
+      tier: 'popular'
     },
     {
       id: 'band_pestilence_1',
@@ -782,7 +782,7 @@ export const STATIC_BANDS: Record<string, Band[]> = {
       albums: ["Malleus Maleficarum","Consuming Impulse","Testimony of the Ancients"],
       description: 'Dutch death metal band.',
       styleNotes: 'Evolved from death metal to technical death with jazz fusion.',
-      tier: 'niche'
+      tier: 'popular'
     },
     {
       id: 'band_athon_1',
@@ -792,7 +792,7 @@ export const STATIC_BANDS: Record<string, Band[]> = {
       albums: ["Piece of Time","Unquestionable Presence","Elements"],
       description: 'American technical death metal band.',
       styleNotes: 'Pioneered jazz fusion in death metal.',
-      tier: 'niche'
+      tier: 'popular'
     },
     {
       id: 'band_gorguts_1',
@@ -802,7 +802,7 @@ export const STATIC_BANDS: Record<string, Band[]> = {
       albums: ["Considered Dead","The Erosion of Sanity","Obscura"],
       description: 'Canadian death metal band.',
       styleNotes: 'Pioneered avant-garde and technical death metal.',
-      tier: 'niche'
+      tier: 'popular'
     },
     {
       id: 'band_necrophagist_1',
@@ -842,7 +842,7 @@ export const STATIC_BANDS: Record<string, Band[]> = {
       albums: ["Incurso","Noctambulant"],
       description: 'Swedish technical death metal band.',
       styleNotes: 'Technical death metal with neoclassical influences.',
-      tier: 'niche'
+      tier: 'popular'
     },
     {
       id: 'band_soreption_1',
@@ -862,7 +862,7 @@ export const STATIC_BANDS: Record<string, Band[]> = {
       albums: ["Truth Beyond...","Imagery","Trilateral Progression"],
       description: 'Canadian technical death metal band.',
       styleNotes: 'Technical death metal with melodic elements.',
-      tier: 'niche'
+      tier: 'popular'
     },
     {
       id: 'band_augury_1',
@@ -872,7 +872,7 @@ export const STATIC_BANDS: Record<string, Band[]> = {
       albums: ["Concealed","Fragmentary Evidence"],
       description: 'Canadian technical death metal band.',
       styleNotes: 'Technical death metal with progressive and atmospheric elements.',
-      tier: 'niche'
+      tier: 'popular'
     },
     {
       id: 'band_gorod_1',
@@ -882,7 +882,7 @@ export const STATIC_BANDS: Record<string, Band[]> = {
       albums: ["Leading Vision","Process of a New Decline","A Perfect Absolution"],
       description: 'French technical death metal band.',
       styleNotes: 'Technical death metal with jazz fusion influences.',
-      tier: 'niche'
+      tier: 'popular'
     },
     {
       id: 'band_ultar_1',
@@ -922,7 +922,7 @@ export const STATIC_BANDS: Record<string, Band[]> = {
       albums: ["The Constant","Monolith","Where Owls Know My Name"],
       description: 'American technical death metal band.',
       styleNotes: 'Technical death metal with progressive and atmospheric elements.',
-      tier: 'niche'
+      tier: 'popular'
     },
     {
       id: 'band_black_crown_initiate_1',
@@ -972,7 +972,7 @@ export const STATIC_BANDS: Record<string, Band[]> = {
       albums: ["Six Seconds Kill","Outpost Fort Europa","Regiment Ragnarok"],
       description: 'Danish death metal band.',
       styleNotes: 'Death metal with war themes.',
-      tier: 'niche'
+      tier: 'popular'
     },
     {
       id: 'band_koldborn_1',
@@ -982,7 +982,7 @@ export const STATIC_BANDS: Record<string, Band[]> = {
       albums: ["The First Five"],
       description: 'Danish death metal band.',
       styleNotes: 'Death metal with old-school influences.',
-      tier: 'niche'
+      tier: 'popular'
     },
     {
       id: 'band_suffocation_1',
@@ -992,7 +992,7 @@ export const STATIC_BANDS: Record<string, Band[]> = {
       albums: ["Effigy of the Forgotten","Pierced from Within","Souls to Deny"],
       description: 'Pioneers of brutal death metal with slam elements.',
       styleNotes: 'Created the slam death metal subgenre.',
-      tier: 'niche'
+      tier: 'popular'
     },
     {
       id: 'band_morbid_angel_1',
@@ -1002,7 +1002,7 @@ export const STATIC_BANDS: Record<string, Band[]> = {
       albums: ["Altars of Madness","Blessed Are the Sick","Covenant"],
       description: 'Pioneering death metal band known for technical complexity and dark themes.',
       styleNotes: 'Incorporated industrial and electronic elements in later albums.',
-      tier: 'niche'
+      tier: 'popular'
     },
     {
       id: 'band_deicide_1',
@@ -1012,7 +1012,7 @@ export const STATIC_BANDS: Record<string, Band[]> = {
       albums: ["Deicide","Legion","Once Upon the Cross"],
       description: 'Known for satanic themes and aggressive sound.',
       styleNotes: 'Consistent brutal death metal with anti-religious themes.',
-      tier: 'niche'
+      tier: 'popular'
     },
     {
       id: 'band_cannibal_corpse_1',
@@ -1022,7 +1022,7 @@ export const STATIC_BANDS: Record<string, Band[]> = {
       albums: ["Tomb of the Mutilated","The Bleeding","Kill"],
       description: 'Known for extreme brutality and controversial lyrics.',
       styleNotes: 'Consistent brutal death metal style throughout their career.',
-      tier: 'niche'
+      tier: 'popular'
     },
     {
       id: 'band_obituary_1',
@@ -1032,7 +1032,7 @@ export const STATIC_BANDS: Record<string, Band[]> = {
       albums: ["Slowly We Rot","Cause of Death","The End Complete"],
       description: 'Known for their slow, heavy sound and growling vocals.',
       styleNotes: 'Consistent death/doom style with signature growling vocals.',
-      tier: 'niche'
+      tier: 'popular'
     },
     {
       id: 'band_autopsy_1',
@@ -1082,7 +1082,7 @@ export const STATIC_BANDS: Record<string, Band[]> = {
       albums: ["Black Force Domain","Conquerors of Armageddon","Ageless Venomous"],
       description: 'Brazilian death metal band.',
       styleNotes: 'High-speed, technical death metal.',
-      tier: 'niche'
+      tier: 'popular'
     },
     {
       id: 'band_sepultura_1',
@@ -1092,7 +1092,7 @@ export const STATIC_BANDS: Record<string, Band[]> = {
       albums: ["Beneath the Remains","Arise","Chaos A.D."],
       description: 'Brazilian metal band known for incorporating tribal elements.',
       styleNotes: 'Evolved from death/thrash to groove metal with tribal influences.',
-      tier: 'niche'
+      tier: 'popular'
     },
   ],
   doom: [
@@ -1104,7 +1104,7 @@ export const STATIC_BANDS: Record<string, Band[]> = {
       albums: ["The Rack","Last One on Earth","God Cries"],
       description: 'Dutch death/doom metal band.',
       styleNotes: 'Death metal with doom and sludge influences.',
-      tier: 'niche'
+      tier: 'popular'
     },
     {
       id: 'band_paradise_lost_1',
@@ -1114,7 +1114,7 @@ export const STATIC_BANDS: Record<string, Band[]> = {
       albums: ["Lost Paradise","Gothic","Shades of God"],
       description: 'British death/doom metal band.',
       styleNotes: 'Pioneers of gothic doom metal.',
-      tier: 'niche'
+      tier: 'popular'
     },
     {
       id: 'band_my_dying_bride_1',
@@ -1124,7 +1124,7 @@ export const STATIC_BANDS: Record<string, Band[]> = {
       albums: ["As the Flower Withers","Turn Loose the Swans","The Angel and the Dark River"],
       description: 'British death/doom metal band.',
       styleNotes: 'Death/doom with gothic and romantic elements.',
-      tier: 'niche'
+      tier: 'popular'
     },
     {
       id: 'band_type_o_negative_1',
@@ -1134,7 +1134,7 @@ export const STATIC_BANDS: Record<string, Band[]> = {
       albums: ["Slow, Deep and Hard","Bloody Kisses","October Rust"],
       description: 'American gothic doom metal band.',
       styleNotes: 'Gothic doom with dark humor and romantic themes.',
-      tier: 'niche'
+      tier: 'popular'
     },
     {
       id: 'band_evoken_1',
@@ -1154,7 +1154,7 @@ export const STATIC_BANDS: Record<string, Band[]> = {
       albums: ["Shades of...","Angels of Distress","Illusion's Play"],
       description: 'Finnish funeral doom metal band.',
       styleNotes: 'Funeral doom with atmospheric and melancholic elements.',
-      tier: 'niche'
+      tier: 'popular'
     },
     {
       id: 'band_wormphlegm_1',
@@ -1174,7 +1174,7 @@ export const STATIC_BANDS: Record<string, Band[]> = {
       albums: ["Where Lovers Mourn","Arcane Rain Fell","Turning Season Within"],
       description: 'Swedish death/doom/gothic metal band.',
       styleNotes: 'Death/doom with gothic and romantic elements.',
-      tier: 'niche'
+      tier: 'popular'
     },
     {
       id: 'band_october_tide_1',
@@ -1184,7 +1184,7 @@ export const STATIC_BANDS: Record<string, Band[]> = {
       albums: ["Rain Without End","Grey Dawn"],
       description: 'Swedish death/doom metal band.',
       styleNotes: 'Melodic death/doom metal.',
-      tier: 'niche'
+      tier: 'popular'
     },
     {
       id: 'band_katatonia_1',
@@ -1194,7 +1194,7 @@ export const STATIC_BANDS: Record<string, Band[]> = {
       albums: ["Brave Murder Day","Discouraged Ones","Tonight's Decision"],
       description: 'Swedish death/doom/gothic metal band.',
       styleNotes: 'Evolved from death/doom to gothic rock/metal.',
-      tier: 'niche'
+      tier: 'popular'
     },
     {
       id: 'band_rapture_1',
@@ -1234,7 +1234,7 @@ export const STATIC_BANDS: Record<string, Band[]> = {
       albums: ["Epicus Doomicus Metallicus","Nightfall","Ancient Dreams"],
       description: 'Pioneering doom metal band from Sweden.',
       styleNotes: 'Epic doom metal with operatic vocals and heavy riffing.',
-      tier: 'niche'
+      tier: 'popular'
     },
     {
       id: 'band_pentagram_1',
@@ -1254,7 +1254,7 @@ export const STATIC_BANDS: Record<string, Band[]> = {
       albums: ["Saint Vitus","Hallow's Victim","Born Too Late"],
       description: 'American doom metal band known for their slow, heavy sound.',
       styleNotes: 'Traditional doom metal with punk influences.',
-      tier: 'niche'
+      tier: 'popular'
     },
     {
       id: 'band_cathedral_1',
@@ -1264,7 +1264,7 @@ export const STATIC_BANDS: Record<string, Band[]> = {
       albums: ["Forest of Equilibrium","The Ethereal Mirror","The Carnival Bizarre"],
       description: 'British doom metal band.',
       styleNotes: 'Doom metal with stoner and psychedelic elements.',
-      tier: 'niche'
+      tier: 'popular'
     },
     {
       id: 'band_paranoid_1',
@@ -1314,7 +1314,7 @@ export const STATIC_BANDS: Record<string, Band[]> = {
       albums: ["Sorrow and Extinction","Foundations of Burden","Heartless"],
       description: 'American doom metal band.',
       styleNotes: 'Doom metal with emotional and melodic elements.',
-      tier: 'niche'
+      tier: 'popular'
     },
     {
       id: 'band_yob_1',
@@ -1324,7 +1324,7 @@ export const STATIC_BANDS: Record<string, Band[]> = {
       albums: ["The Illusion of Motion","The Unreal Never Lived","The Great Cessation"],
       description: 'American doom metal band.',
       styleNotes: 'Stoner doom with progressive and psychedelic elements.',
-      tier: 'niche'
+      tier: 'popular'
     },
     {
       id: 'band_reverend_bizarre_1',
@@ -1334,7 +1334,7 @@ export const STATIC_BANDS: Record<string, Band[]> = {
       albums: ["In the Rectory of the Bizarre Reverend","II: Crush the Insects","III: So Long Suckers"],
       description: 'Finnish doom metal band.',
       styleNotes: 'Traditional doom metal with epic elements.',
-      tier: 'niche'
+      tier: 'popular'
     },
     {
       id: 'band_ministry_1',
@@ -1344,7 +1344,7 @@ export const STATIC_BANDS: Record<string, Band[]> = {
       albums: ["The Mind Is a Terrible Thing to Taste","Psalm 69","The Land of Rape and Honey"],
       description: 'American industrial metal band.',
       styleNotes: 'Industrial metal with heavy, aggressive sound.',
-      tier: 'niche'
+      tier: 'well-known'
     },
     {
       id: 'band_skepticism_1',
@@ -1374,7 +1374,7 @@ export const STATIC_BANDS: Record<string, Band[]> = {
       albums: ["Black Sabbath","Paranoid","Master of Reality"],
       description: 'Pioneering heavy metal band from Birmingham.',
       styleNotes: 'Created the foundation for heavy metal and doom metal.',
-      tier: 'niche'
+      tier: 'well-known'
     },
   ],
   folk: [
@@ -1386,7 +1386,7 @@ export const STATIC_BANDS: Record<string, Band[]> = {
       albums: ["Wintersun","Time I"],
       description: 'Finnish black metal band with folk and power elements.',
       styleNotes: 'Melodic black metal with folk and power metal influences.',
-      tier: 'niche'
+      tier: 'popular'
     },
     {
       id: 'band_dub Buk_1',
@@ -1416,7 +1416,7 @@ export const STATIC_BANDS: Record<string, Band[]> = {
       albums: ["Jaktens Tid","Nattfödd","Ur Jordens Djup"],
       description: 'Finnish folk metal band with troll themes.',
       styleNotes: 'Folk metal with black metal and humppa (polka) influences.',
-      tier: 'niche'
+      tier: 'popular'
     },
     {
       id: 'band_moonsorrow_1',
@@ -1426,7 +1426,7 @@ export const STATIC_BANDS: Record<string, Band[]> = {
       albums: ["Suden Uni","Voimasta ja Kunniasta","Kivenkantaja"],
       description: 'Finnish black metal band with folk influences.',
       styleNotes: 'Epic black metal with Finnish folk elements.',
-      tier: 'niche'
+      tier: 'popular'
     },
     {
       id: 'band_wolves_in_the_throne_room_1',
@@ -1436,7 +1436,7 @@ export const STATIC_BANDS: Record<string, Band[]> = {
       albums: ["Two Hunters","Black Cascade","Celestial Lineage"],
       description: 'American black metal band with folk influences.',
       styleNotes: 'Atmospheric black metal with folk and nature themes.',
-      tier: 'niche'
+      tier: 'popular'
     },
     {
       id: 'band_agalloch_1',
@@ -1446,7 +1446,7 @@ export const STATIC_BANDS: Record<string, Band[]> = {
       albums: ["Pale Folklore","The Mantle","Ashes Against the Grain"],
       description: 'American black metal band with folk influences.',
       styleNotes: 'Black metal with folk, doom, and post-rock elements.',
-      tier: 'niche'
+      tier: 'popular'
     },
     {
       id: 'band_drudkh_1',
@@ -1476,7 +1476,7 @@ export const STATIC_BANDS: Record<string, Band[]> = {
       albums: ["Imrama","A Journey's End","The Gathering Wilderness"],
       description: 'Irish black metal band with folk influences.',
       styleNotes: 'Black metal with Celtic and folk elements.',
-      tier: 'niche'
+      tier: 'popular'
     },
     {
       id: 'band_waylander_1',
@@ -1526,7 +1526,7 @@ export const STATIC_BANDS: Record<string, Band[]> = {
       albums: ["Falconer","Chapters from a Vale Forlorn","The Sceptre of Deception"],
       description: 'Swedish power metal band with folk influences.',
       styleNotes: 'Power metal with medieval and folk elements.',
-      tier: 'niche'
+      tier: 'popular'
     },
     {
       id: 'band_kiuas_1',
@@ -1536,7 +1536,7 @@ export const STATIC_BANDS: Record<string, Band[]> = {
       albums: ["The Spirit of Ukko","Reformation","The New Dark Age"],
       description: 'Finnish power metal band with folk influences.',
       styleNotes: 'Power metal with folk and heavy elements.',
-      tier: 'niche'
+      tier: 'popular'
     },
     {
       id: 'band_skyclad_1',
@@ -1546,7 +1546,7 @@ export const STATIC_BANDS: Record<string, Band[]> = {
       albums: ["The Wayward Sons of Mother Earth","Jonah's Ark","Prince of the Poverty Line"],
       description: 'British folk metal pioneers.',
       styleNotes: 'Combined thrash metal with folk instruments and themes.',
-      tier: 'niche'
+      tier: 'popular'
     },
     {
       id: 'band_ensiferum_1',
@@ -1556,7 +1556,7 @@ export const STATIC_BANDS: Record<string, Band[]> = {
       albums: ["Ensiferum","Iron","Victory Songs"],
       description: 'Finnish folk metal band known for epic songs.',
       styleNotes: 'Folk metal with melodic death metal and viking themes.',
-      tier: 'niche'
+      tier: 'popular'
     },
     {
       id: 'band_turisas_1',
@@ -1566,7 +1566,7 @@ export const STATIC_BANDS: Record<string, Band[]> = {
       albums: ["Battle Metal","The Varangian Way","Stand Up and Fight"],
       description: 'Finnish folk metal band known for viking themes.',
       styleNotes: 'Folk metal with symphonic elements and viking themes.',
-      tier: 'niche'
+      tier: 'popular'
     },
     {
       id: 'band_eluveitie_1',
@@ -1576,7 +1576,7 @@ export const STATIC_BANDS: Record<string, Band[]> = {
       albums: ["Slania","Everything Remains (As It Never Was)","Helvetios"],
       description: 'Swiss folk metal band using Celtic instruments.',
       styleNotes: 'Folk metal with melodic death metal and Celtic themes.',
-      tier: 'niche'
+      tier: 'popular'
     },
     {
       id: 'band_korpiklaani_1',
@@ -1586,32 +1586,32 @@ export const STATIC_BANDS: Record<string, Band[]> = {
       albums: ["Spirit of the Forest","Voice of Wilderness","Tervaskanto"],
       description: 'Finnish folk metal band.',
       styleNotes: 'Folk metal with power metal and party themes.',
-      tier: 'niche'
+      tier: 'popular'
     },
     {
       id: 'band_metsatöll_1',
       name: 'Metsatöll',
-      genre: ["folk","viking"],
+      genre: ["folk"],
       era: '2000s',
       albums: ["Hiiekoda","Terast","Äio"],
       description: 'Estonian folk metal band.',
       styleNotes: 'Folk metal with Estonian folk elements.',
-      tier: 'niche'
+      tier: 'popular'
     },
     {
       id: 'band_tyr_1',
       name: 'Týr',
-      genre: ["folk","viking"],
+      genre: ["folk"],
       era: '2000s',
       albums: ["Eric the Red","Ragnarok","Land"],
       description: 'Faroese folk metal band.',
       styleNotes: 'Viking metal with Faroese folk influences.',
-      tier: 'niche'
+      tier: 'popular'
     },
     {
       id: 'band_heidevolk_1',
       name: 'Heidevolk',
-      genre: ["folk","viking"],
+      genre: ["folk"],
       era: '2000s',
       albums: ["De Strijdlust is Geboren","Walhalla Wacht","Batavi"],
       description: 'Dutch folk metal band.',
@@ -1621,22 +1621,22 @@ export const STATIC_BANDS: Record<string, Band[]> = {
     {
       id: 'band_wolfchant_1',
       name: 'Wolfchant',
-      genre: ["folk","viking"],
+      genre: ["folk"],
       era: '2000s',
       albums: ["A Pagan Storm","Determined Devastation","Call of the Black Winds"],
       description: 'German folk metal band.',
       styleNotes: 'Viking metal with folk elements.',
-      tier: 'niche'
+      tier: 'popular'
     },
     {
       id: 'band_menhir_1',
       name: 'Menhir',
-      genre: ["folk","viking"],
+      genre: ["folk"],
       era: '1990s',
       albums: ["Die ewigen Steine","Thuringia","Hildebrandslied"],
       description: 'German folk metal band.',
       styleNotes: 'Viking metal with Germanic folk elements.',
-      tier: 'niche'
+      tier: 'popular'
     },
     {
       id: 'band_suidakra_1',
@@ -1711,17 +1711,17 @@ export const STATIC_BANDS: Record<string, Band[]> = {
     {
       id: 'band_falkenbach_1',
       name: 'Falkenbach',
-      genre: ["folk","viking"],
+      genre: ["folk"],
       era: '2000s',
       albums: ["...En Their Medh Riki Fara...","Magni Blandinn Ok Megintiri","Heralding - The Fireblade"],
       description: 'German viking metal band.',
       styleNotes: 'Viking metal with folk and black metal elements.',
-      tier: 'niche'
+      tier: 'popular'
     },
     {
       id: 'band_vintersorg_1',
       name: 'Vintersorg',
-      genre: ["folk","viking"],
+      genre: ["folk"],
       era: '2000s',
       albums: ["Till Fjälls","Ödemarkens Son","Cosmic Genesis"],
       description: 'Swedish viking metal band.',
@@ -1731,77 +1731,77 @@ export const STATIC_BANDS: Record<string, Band[]> = {
     {
       id: 'band_borknagar_1',
       name: 'Borknagar',
-      genre: ["folk","viking"],
+      genre: ["folk"],
       era: '1990s',
       albums: ["Borknagar","The Olden Domain","The Archaic Course"],
       description: 'Norwegian black metal band with progressive elements.',
       styleNotes: 'Progressive black metal with folk influences.',
-      tier: 'niche'
+      tier: 'popular'
     },
     {
       id: 'band_windir_1',
       name: 'Windir',
-      genre: ["folk","viking"],
+      genre: ["folk"],
       era: '2000s',
       albums: ["Sóknardalr","Arntor","1184"],
       description: 'Norwegian viking metal band.',
       styleNotes: 'Viking metal with black metal and folk elements.',
-      tier: 'niche'
+      tier: 'popular'
     },
     {
       id: 'band_vreid_1',
       name: 'Vreid',
-      genre: ["folk","viking"],
+      genre: ["folk"],
       era: '2000s',
       albums: ["Kraft","Pitch Black Brigade","I Krig"],
       description: 'Norwegian viking metal band.',
       styleNotes: 'Viking metal with black metal and thrash elements.',
-      tier: 'niche'
+      tier: 'popular'
     },
     {
       id: 'band_kampfar_1',
       name: 'Kampfar',
-      genre: ["folk","viking"],
+      genre: ["folk"],
       era: '2000s',
       albums: ["Mellom Skogkledde Aaser","Kvass","Heimgang"],
       description: 'Norwegian viking metal band.',
       styleNotes: 'Viking metal with black metal and folk elements.',
-      tier: 'niche'
+      tier: 'popular'
     },
     {
       id: 'band_arkona_1',
       name: 'Arkona',
-      genre: ["folk","viking"],
+      genre: ["folk"],
       era: '2000s',
       albums: ["Ot Serdca K Nebu","Lepta","Goi, Rode, Goi!"],
       description: 'Russian viking metal band.',
       styleNotes: 'Viking metal with Slavic folk elements.',
-      tier: 'niche'
+      tier: 'popular'
     },
     {
       id: 'band_butterfly_temple_1',
       name: 'Butterfly Temple',
-      genre: ["folk","viking"],
+      genre: ["folk"],
       era: '2000s',
       albums: ["Blessed by the Gods","Pagan Songs","Zov Pustykh Dereven"],
       description: 'Russian viking metal band.',
       styleNotes: 'Viking metal with Slavic folk elements.',
-      tier: 'niche'
+      tier: 'popular'
     },
     {
       id: 'band_nokturnal_mortum_1',
       name: 'Nokturnal Mortum',
-      genre: ["folk","viking"],
+      genre: ["folk"],
       era: '2000s',
       albums: ["Goat Horns","To the Gates of Blasphemous Fire","NeChrist"],
       description: 'Ukrainian viking metal band.',
       styleNotes: 'Viking metal with black metal and folk elements.',
-      tier: 'niche'
+      tier: 'popular'
     },
     {
       id: 'band_temnozor_1',
       name: 'Temnozor',
-      genre: ["folk","viking"],
+      genre: ["folk"],
       era: '2000s',
       albums: ["Sorcery of Fragrance","Horizons","Ukraina"],
       description: 'Russian viking metal band.',
@@ -1811,17 +1811,17 @@ export const STATIC_BANDS: Record<string, Band[]> = {
     {
       id: 'band_alatyr_1',
       name: 'Alatyr',
-      genre: ["folk","viking"],
+      genre: ["folk"],
       era: '2000s',
       albums: ["Put' k Pochitayemym Rodnikam"],
       description: 'Russian viking metal band.',
       styleNotes: 'Viking metal with Slavic folk elements.',
-      tier: 'niche'
+      tier: 'popular'
     },
     {
       id: 'band_ruslana_1',
       name: 'Ruslana',
-      genre: ["folk","viking"],
+      genre: ["folk"],
       era: '2000s',
       albums: ["Wild Dances","Amazonka"],
       description: 'Ukrainian viking metal artist.',
@@ -1833,67 +1833,67 @@ export const STATIC_BANDS: Record<string, Band[]> = {
     {
       id: 'band_twisted_sister_1',
       name: 'Twisted Sister',
-      genre: ["heavy","glam"],
+      genre: ["heavy"],
       era: '1980s',
       albums: ["Under the Blade","You Can't Stop Rock 'n' Roll","Stay Hungry"],
       description: 'American heavy metal/glam rock band.',
       styleNotes: 'Heavy metal with glam and punk influences.',
-      tier: 'niche'
+      tier: 'well-known'
     },
     {
       id: 'band_mötley_crüe_1',
       name: 'Mötley Crüe',
-      genre: ["heavy","glam"],
+      genre: ["heavy"],
       era: '1980s',
       albums: ["Shout at the Devil","Theatre of Pain","Girls, Girls, Girls"],
       description: 'American heavy metal/glam rock band.',
       styleNotes: 'Heavy metal with glam and hard rock influences.',
-      tier: 'niche'
+      tier: 'well-known'
     },
     {
       id: 'band_poison_1',
       name: 'Poison',
-      genre: ["heavy","glam"],
+      genre: ["heavy"],
       era: '1980s',
       albums: ["Look What the Cat Dragged In","Open Up and Say... Ahh!","Flesh & Blood"],
       description: 'American heavy metal/glam rock band.',
       styleNotes: 'Heavy metal with glam and pop influences.',
-      tier: 'niche'
+      tier: 'well-known'
     },
     {
       id: 'band_wasp_1',
       name: 'W.A.S.P.',
-      genre: ["heavy","glam"],
+      genre: ["heavy"],
       era: '1980s',
       albums: ["W.A.S.P.","The Last Command","Inside the Electric Circus"],
       description: 'American heavy metal/glam rock band.',
       styleNotes: 'Heavy metal with glam and shock rock elements.',
-      tier: 'niche'
+      tier: 'popular'
     },
     {
       id: 'band_ratt_1',
       name: 'Ratt',
-      genre: ["heavy","glam"],
+      genre: ["heavy"],
       era: '1980s',
       albums: ["Out of the Cellar","Invasion of Your Privacy","Dancing Undercover"],
       description: 'American heavy metal/glam rock band.',
       styleNotes: 'Heavy metal with glam and hard rock influences.',
-      tier: 'niche'
+      tier: 'popular'
     },
     {
       id: 'band_cinderella_1',
       name: 'Cinderella',
-      genre: ["heavy","glam"],
+      genre: ["heavy"],
       era: '1980s',
       albums: ["Night Songs","Long Cold Winter","Heartbreak Station"],
       description: 'American heavy metal/glam rock band.',
       styleNotes: 'Heavy metal with glam and blues influences.',
-      tier: 'niche'
+      tier: 'well-known'
     },
     {
       id: 'band_heavy_metal_kids_1',
       name: 'Heavy Metal Kids',
-      genre: ["heavy","glam"],
+      genre: ["heavy"],
       era: '1970s',
       albums: ["Heavy Metal Kids"],
       description: 'British heavy metal/glam rock band.',
@@ -1903,7 +1903,7 @@ export const STATIC_BANDS: Record<string, Band[]> = {
     {
       id: 'band_girls_1',
       name: 'Girl',
-      genre: ["heavy","glam"],
+      genre: ["heavy"],
       era: '1980s',
       albums: ["Sheer Greed","Wasted Youth"],
       description: 'British heavy metal/glam rock band.',
@@ -1913,7 +1913,7 @@ export const STATIC_BANDS: Record<string, Band[]> = {
     {
       id: 'band_london_1',
       name: 'London',
-      genre: ["heavy","glam"],
+      genre: ["heavy"],
       era: '1970s',
       albums: ["London"],
       description: 'American heavy metal/glam rock band.',
@@ -1923,27 +1923,27 @@ export const STATIC_BANDS: Record<string, Band[]> = {
     {
       id: 'band_slade_1',
       name: 'Slade',
-      genre: ["heavy","glam"],
+      genre: ["heavy"],
       era: '1970s',
       albums: ["Slade Alive!","Slayed?","Old New Borrowed and Blue"],
       description: 'British heavy metal/glam rock band.',
       styleNotes: 'Heavy metal with glam and hard rock influences.',
-      tier: 'niche'
+      tier: 'popular'
     },
     {
       id: 'band_sweet_1',
       name: 'Sweet',
-      genre: ["heavy","glam"],
+      genre: ["heavy"],
       era: '1970s',
       albums: ["Desolation Boulevard","Give Us a Wink","Off the Record"],
       description: 'British heavy metal/glam rock band.',
       styleNotes: 'Heavy metal with glam and hard rock influences.',
-      tier: 'niche'
+      tier: 'popular'
     },
     {
       id: 'band_mud_1',
       name: 'Mud',
-      genre: ["heavy","glam"],
+      genre: ["heavy"],
       era: '1970s',
       albums: ["Mud Rock","Use Your Imagination"],
       description: 'British heavy metal/glam rock band.',
@@ -1953,12 +1953,12 @@ export const STATIC_BANDS: Record<string, Band[]> = {
     {
       id: 'band_new_york_dolls_1',
       name: 'New York Dolls',
-      genre: ["heavy","glam"],
+      genre: ["heavy"],
       era: '1970s',
       albums: ["New York Dolls","Too Much Too Soon"],
       description: 'American heavy metal/glam rock/punk band.',
       styleNotes: 'Heavy metal with glam and punk influences.',
-      tier: 'niche'
+      tier: 'popular'
     },
   ],
   groove: [
@@ -1970,7 +1970,7 @@ export const STATIC_BANDS: Record<string, Band[]> = {
       albums: ["Beneath the Remains","Arise","Chaos A.D."],
       description: 'Brazilian metal band known for incorporating tribal elements.',
       styleNotes: 'Evolved from death/thrash to groove metal with tribal influences.',
-      tier: 'niche'
+      tier: 'popular'
     },
     {
       id: 'band_pantera_1',
@@ -1980,7 +1980,7 @@ export const STATIC_BANDS: Record<string, Band[]> = {
       albums: ["Cowboys from Hell","Vulgar Display of Power","Far Beyond Driven"],
       description: 'American groove metal pioneers.',
       styleNotes: 'Evolved from glam metal to groove/thrash metal.',
-      tier: 'niche'
+      tier: 'well-known'
     },
     {
       id: 'band_lamb_of_god_1',
@@ -1990,7 +1990,7 @@ export const STATIC_BANDS: Record<string, Band[]> = {
       albums: ["Ashes of the Wake","Sacrament","Wrath"],
       description: 'American groove metal band.',
       styleNotes: 'Groove metal with metalcore and thrash influences.',
-      tier: 'niche'
+      tier: 'well-known'
     },
     {
       id: 'band_machine_head_1',
@@ -2000,7 +2000,7 @@ export const STATIC_BANDS: Record<string, Band[]> = {
       albums: ["Burn My Eyes","The More Things Change","The Blackening"],
       description: 'American groove/thrash metal band.',
       styleNotes: 'Evolved from groove metal to incorporate thrash and progressive elements.',
-      tier: 'niche'
+      tier: 'popular'
     },
     {
       id: 'band_devil_driver_1',
@@ -2010,7 +2010,7 @@ export const STATIC_BANDS: Record<string, Band[]> = {
       albums: ["DevilDriver","The Fury of Our Makers' Hand","The Last Kind Words"],
       description: 'American groove metal band.',
       styleNotes: 'Groove metal with melodic death metal influences.',
-      tier: 'niche'
+      tier: 'popular'
     },
     {
       id: 'band_exodus_1',
@@ -2020,7 +2020,7 @@ export const STATIC_BANDS: Record<string, Band[]> = {
       albums: ["Bonded by Blood","Fabulous Disaster","Impact Is Imminent"],
       description: 'Pioneering Bay Area thrash band with aggressive, fast-paced songs.',
       styleNotes: 'Consistent thrash style with occasional groove elements.',
-      tier: 'niche'
+      tier: 'popular'
     },
     {
       id: 'band_slayer_1',
@@ -2030,7 +2030,7 @@ export const STATIC_BANDS: Record<string, Band[]> = {
       albums: ["Reign in Blood","South of Heaven","Seasons in the Abyss"],
       description: 'Known for their fast, aggressive style and dark lyrical themes.',
       styleNotes: 'Maintained consistent thrash/death style throughout their career.',
-      tier: 'niche'
+      tier: 'well-known'
     },
     {
       id: 'band_megadeth_1',
@@ -2040,7 +2040,7 @@ export const STATIC_BANDS: Record<string, Band[]> = {
       albums: ["Rust in Peace","Peace Sells... but Who's Buying?","Countdown to Extinction"],
       description: 'Founded by former Metallica guitarist Dave Mustaine, known for technical proficiency and political lyrics.',
       styleNotes: 'Evolved from thrash to more mainstream metal while maintaining technical complexity.',
-      tier: 'niche'
+      tier: 'well-known'
     },
     {
       id: 'band_anthrax_1',
@@ -2050,7 +2050,7 @@ export const STATIC_BANDS: Record<string, Band[]> = {
       albums: ["Among the Living","Spreading the Disease","Persistence of Time"],
       description: 'One of the "Big Four" thrash bands, known for incorporating rap and punk elements.',
       styleNotes: 'Experimented with different styles including rap-metal crossover.',
-      tier: 'niche'
+      tier: 'well-known'
     },
     {
       id: 'band_testament_1',
@@ -2060,7 +2060,7 @@ export const STATIC_BANDS: Record<string, Band[]> = {
       albums: ["The Legacy","Practice What You Preach","Souls of Black"],
       description: 'Bay Area thrash band known for technical proficiency and dark themes.',
       styleNotes: 'Maintained consistent thrash style with progressive elements.',
-      tier: 'niche'
+      tier: 'popular'
     },
     {
       id: 'band_overkill_1',
@@ -2070,7 +2070,7 @@ export const STATIC_BANDS: Record<string, Band[]> = {
       albums: ["Feel the Fire","Taking Over","Horrorscope"],
       description: 'American speed/thrash metal band.',
       styleNotes: 'Consistent speed/thrash metal with punk influences.',
-      tier: 'niche'
+      tier: 'popular'
     },
     {
       id: 'band_nuclear_assault_1',
@@ -2080,7 +2080,7 @@ export const STATIC_BANDS: Record<string, Band[]> = {
       albums: ["Game Over","Survive","Handle with Care"],
       description: 'American thrash band with crossover appeal.',
       styleNotes: 'Incorporated punk and hardcore elements.',
-      tier: 'niche'
+      tier: 'popular'
     },
     {
       id: 'band_sacred_reich_1',
@@ -2090,7 +2090,7 @@ export const STATIC_BANDS: Record<string, Band[]> = {
       albums: ["Ignorance","The American Way","Independent"],
       description: 'American thrash band with political lyrics.',
       styleNotes: 'Incorporated groove and crossover elements.',
-      tier: 'niche'
+      tier: 'popular'
     },
     {
       id: 'band_municipal_waste_1',
@@ -2100,7 +2100,7 @@ export const STATIC_BANDS: Record<string, Band[]> = {
       albums: ["Hazardous Mutation","The Art of Partying","Massive Aggressive"],
       description: 'American crossover thrash band.',
       styleNotes: 'Revived crossover thrash in the 2000s.',
-      tier: 'niche'
+      tier: 'popular'
     },
     {
       id: 'band_toxic_holocaust_1',
@@ -2120,62 +2120,62 @@ export const STATIC_BANDS: Record<string, Band[]> = {
       albums: ["Manifest Decimation","Nightmare Logic"],
       description: 'American crossover thrash band.',
       styleNotes: 'Combined thrash with hardcore punk.',
-      tier: 'niche'
+      tier: 'popular'
     },
     {
       id: 'band_crowbar_1',
       name: 'Crowbar',
-      genre: ["groove","sludge"],
+      genre: ["groove", "doom"],
       era: '1990s',
       albums: ["Crowbar","Time Heals Nothing","Broken Glass"],
       description: 'American sludge/doom metal band.',
       styleNotes: 'Sludge/doom metal with heavy, downtuned riffs.',
-      tier: 'niche'
+      tier: 'popular'
     },
     {
       id: 'band_down_1',
       name: 'Down',
-      genre: ["groove","sludge"],
+      genre: ["groove", "doom"],
       era: '1990s',
       albums: ["NOLA","Down II","Over the Under"],
       description: 'American sludge metal supergroup.',
       styleNotes: 'Sludge metal with southern rock influences.',
-      tier: 'niche'
+      tier: 'popular'
     },
     {
       id: 'band_corrosion_of_conformity_1',
       name: 'Corrosion of Conformity',
-      genre: ["groove","sludge"],
+      genre: ["groove", "doom"],
       era: '1980s',
       albums: ["Blind","Deliverance","Wiseblood"],
       description: 'American sludge metal band.',
       styleNotes: 'Evolved from hardcore to sludge and groove metal.',
-      tier: 'niche'
+      tier: 'popular'
     },
     {
       id: 'band_eyehategod_1',
       name: 'Eyehategod',
-      genre: ["groove","sludge"],
+      genre: ["groove", "doom"],
       era: '1990s',
       albums: ["In the Name of Suffering","Take as Needed for Pain","Dopesick"],
       description: 'American sludge metal band.',
       styleNotes: 'Sludge metal with dark, nihilistic themes.',
-      tier: 'niche'
+      tier: 'popular'
     },
     {
       id: 'band_grief_1',
       name: 'Grief',
-      genre: ["groove","sludge"],
+      genre: ["groove", "doom"],
       era: '1990s',
       albums: ["Dismal","Come to Grief","Torture"],
       description: 'American sludge/doom metal band.',
       styleNotes: 'Sludge/doom metal with depressive themes.',
-      tier: 'niche'
+      tier: 'popular'
     },
     {
       id: 'band_acid_bath_1',
       name: 'Acid Bath',
-      genre: ["groove","sludge"],
+      genre: ["groove", "doom"],
       era: '1990s',
       albums: ["When the Kite String Pops","Paegan Terrorism Tactics"],
       description: 'American sludge/death metal band.',
@@ -2185,7 +2185,7 @@ export const STATIC_BANDS: Record<string, Band[]> = {
     {
       id: 'band_burning_witch_1',
       name: 'Burning Witch',
-      genre: ["groove","sludge"],
+      genre: ["groove", "doom"],
       era: '1990s',
       albums: ["Crippled Lucifer","Towers..."],
       description: 'American sludge/doom metal band.',
@@ -2195,87 +2195,87 @@ export const STATIC_BANDS: Record<string, Band[]> = {
     {
       id: 'band_kylesa_1',
       name: 'Kylesa',
-      genre: ["groove","sludge"],
+      genre: ["groove", "doom"],
       era: '2000s',
       albums: ["To Walk a Middle Course","Time Will Fuse Its Worth","Static Tensions"],
       description: 'American sludge/stoner metal band.',
       styleNotes: 'Sludge/stoner metal with psychedelic elements.',
-      tier: 'niche'
+      tier: 'popular'
     },
     {
       id: 'band_baroness_1',
       name: 'Baroness',
-      genre: ["groove","sludge"],
+      genre: ["groove", "doom"],
       era: '2000s',
       albums: ["Red Album","Blue Record","Yellow & Green"],
       description: 'American sludge/prog metal band.',
       styleNotes: 'Sludge metal with progressive and melodic elements.',
-      tier: 'niche'
+      tier: 'popular'
     },
     {
       id: 'band_mastodon_1',
       name: 'Mastodon',
-      genre: ["groove","sludge"],
+      genre: ["groove", "doom"],
       era: '2000s',
       albums: ["Leviathan","Blood Mountain","Crack the Skye"],
       description: 'American progressive metal band known for concept albums.',
       styleNotes: 'Evolved from sludge metal to progressive metal with concept albums.',
-      tier: 'niche'
+      tier: 'popular'
     },
     {
       id: 'band_neurosis_1',
       name: 'Neurosis',
-      genre: ["groove","sludge"],
+      genre: ["groove", "doom"],
       era: '1990s',
       albums: ["Souls at Zero","Enemy of the Sun","Through Silver in Blood"],
       description: 'American post-metal band.',
       styleNotes: 'Post-metal with sludge and doom elements.',
-      tier: 'niche'
+      tier: 'popular'
     },
     {
       id: 'band_isis_1',
       name: 'Isis',
-      genre: ["groove","sludge"],
+      genre: ["groove", "doom"],
       era: '2000s',
       albums: ["Celestial","Oceanic","Panopticon"],
       description: 'American post-metal band.',
       styleNotes: 'Post-metal with sludge and atmospheric elements.',
-      tier: 'niche'
+      tier: 'popular'
     },
     {
       id: 'band_pelican_1',
       name: 'Pelican',
-      genre: ["groove","sludge"],
+      genre: ["groove", "doom"],
       era: '2000s',
       albums: ["Australasia","The Fire in Our Throats Will Beckon","City of Echoes"],
       description: 'American instrumental post-metal band.',
       styleNotes: 'Instrumental post-metal with heavy riffs.',
-      tier: 'niche'
+      tier: 'popular'
     },
     {
       id: 'band_cult_of_luna_1',
       name: 'Cult of Luna',
-      genre: ["groove","sludge"],
+      genre: ["groove", "doom"],
       era: '2000s',
       albums: ["The Beyond","Salvation","Somewhere Along the Highway"],
       description: 'Swedish post-metal band.',
       styleNotes: 'Post-metal with sludge and atmospheric elements.',
-      tier: 'niche'
+      tier: 'popular'
     },
     {
       id: 'band_the_ocean_1',
       name: 'The Ocean',
-      genre: ["groove","sludge"],
+      genre: ["groove", "doom"],
       era: '2000s',
       albums: ["Precambrian","Heliocentric","Anthropocentric"],
       description: 'German progressive sludge metal band.',
       styleNotes: 'Progressive sludge with concept albums.',
-      tier: 'niche'
+      tier: 'popular'
     },
     {
       id: 'band_rosetta_1',
       name: 'Rosetta',
-      genre: ["groove","sludge"],
+      genre: ["groove", "doom"],
       era: '2000s',
       albums: ["The Galilean Satellites","Wake/Lift","The Anaesthete"],
       description: 'American post-metal band.',
@@ -2285,47 +2285,47 @@ export const STATIC_BANDS: Record<string, Band[]> = {
     {
       id: 'band_thou_1',
       name: 'Thou',
-      genre: ["groove","sludge"],
+      genre: ["groove", "doom"],
       era: '2000s',
       albums: ["You, Whom I Have Always Hated","Heathen","Rhea Sylvia"],
       description: 'American sludge/doom metal band.',
       styleNotes: 'Sludge/doom metal with political and philosophical themes.',
-      tier: 'niche'
+      tier: 'popular'
     },
     {
       id: 'band_high_on_fire_1',
       name: 'High on Fire',
-      genre: ["groove","sludge"],
+      genre: ["groove", "doom"],
       era: '2000s',
       albums: ["The Art of Self Defense","Surrounded by Thieves","Blessed Black Wings"],
       description: 'American stoner/sludge metal band.',
       styleNotes: 'Stoner/sludge metal with aggressive elements.',
-      tier: 'niche'
+      tier: 'popular'
     },
     {
       id: 'band_sleep_1',
       name: 'Sleep',
-      genre: ["groove","sludge"],
+      genre: ["groove", "doom"],
       era: '1990s',
       albums: ["Sleep's Holy Mountain","Volume One","Jerusalem"],
       description: 'American stoner doom metal band.',
       styleNotes: 'Stoner doom with heavy, hypnotic riffs.',
-      tier: 'niche'
+      tier: 'popular'
     },
     {
       id: 'band_electric_wizard_1',
       name: 'Electric Wizard',
-      genre: ["groove","sludge"],
+      genre: ["groove", "doom"],
       era: '1990s',
       albums: ["Come My Fanatics...","Dopethrone","Let Us Prey"],
       description: 'British doom metal band known for extremely heavy sound.',
       styleNotes: 'Stoner doom with sludge influences and dark themes.',
-      tier: 'niche'
+      tier: 'popular'
     },
     {
       id: 'band_bongripper_1',
       name: 'Bongripper',
-      genre: ["groove","sludge"],
+      genre: ["groove", "doom"],
       era: '2000s',
       albums: ["Hippie Killer","Hate Ashbury","Sex and Satan"],
       description: 'American stoner doom metal band.',
@@ -2335,7 +2335,7 @@ export const STATIC_BANDS: Record<string, Band[]> = {
     {
       id: 'band_weedeater_1',
       name: 'Weedeater',
-      genre: ["groove","sludge"],
+      genre: ["groove", "doom"],
       era: '2000s',
       albums: ["...And Justice for Y'All","Sixteen Tons","God Luck and Good Speed"],
       description: 'American stoner/sludge metal band.',
@@ -2345,27 +2345,27 @@ export const STATIC_BANDS: Record<string, Band[]> = {
     {
       id: 'band_acid_king_1',
       name: 'Acid King',
-      genre: ["groove","sludge"],
+      genre: ["groove", "doom"],
       era: '1990s',
       albums: ["Zoroaster","Busse Woods","Free the Weed"],
       description: 'American stoner doom metal band.',
       styleNotes: 'Stoner doom with psychedelic elements.',
-      tier: 'niche'
+      tier: 'popular'
     },
     {
       id: 'band_windhand_1',
       name: 'Windhand',
-      genre: ["groove","sludge"],
+      genre: ["groove", "doom"],
       era: '2010s',
       albums: ["Windhand","Soma","Grief's Infernal Flower"],
       description: 'American stoner doom metal band.',
       styleNotes: 'Stoner doom with melodic and psychedelic elements.',
-      tier: 'niche'
+      tier: 'popular'
     },
     {
       id: 'band_monolord_1',
       name: 'Monolord',
-      genre: ["groove","sludge"],
+      genre: ["groove", "doom"],
       era: '2010s',
       albums: ["Empress Rising","Vænir","Rust"],
       description: 'Swedish stoner doom metal band.',
@@ -2375,17 +2375,17 @@ export const STATIC_BANDS: Record<string, Band[]> = {
     {
       id: 'band_conan_1',
       name: 'Conan',
-      genre: ["groove","sludge"],
+      genre: ["groove", "doom"],
       era: '2010s',
       albums: ["Monnos","Horseback Battle Hammer","Existential Void Guardian"],
       description: 'British stoner doom metal band.',
       styleNotes: 'Stoner doom with extremely heavy sound.',
-      tier: 'niche'
+      tier: 'popular'
     },
     {
       id: 'band_ufomammut_1',
       name: 'Ufomammut',
-      genre: ["groove","sludge"],
+      genre: ["groove", "doom"],
       era: '2000s',
       albums: ["Godlike Snake","Snailking","Idolum"],
       description: 'Italian stoner doom metal band.',
@@ -2395,27 +2395,27 @@ export const STATIC_BANDS: Record<string, Band[]> = {
     {
       id: 'band_boris_1',
       name: 'Boris',
-      genre: ["groove","sludge"],
+      genre: ["groove", "doom"],
       era: '1990s',
       albums: ["Amplifier Worship","Feedbacker","Pink"],
       description: 'Japanese experimental metal band.',
       styleNotes: 'Experimental metal with drone, doom, and stoner elements.',
-      tier: 'niche'
+      tier: 'popular'
     },
     {
       id: 'band_sunn_o_1',
       name: 'Sunn O)))',
-      genre: ["groove","sludge"],
+      genre: ["groove", "doom"],
       era: '2000s',
       albums: ["ØØ Void","White1","Black One"],
       description: 'American drone metal band.',
       styleNotes: 'Drone metal with extremely heavy, minimal compositions.',
-      tier: 'niche'
+      tier: 'popular'
     },
     {
       id: 'band_earth_1',
       name: 'Earth',
-      genre: ["groove","sludge"],
+      genre: ["groove", "doom"],
       era: '1990s',
       albums: ["Earth 2","Pentastar: In the Style of Demons","The Bees Made Honey in the Lion's Skull"],
       description: 'American drone metal band.',
@@ -2425,17 +2425,17 @@ export const STATIC_BANDS: Record<string, Band[]> = {
     {
       id: 'band_melvins_1',
       name: 'Melvins',
-      genre: ["groove","sludge"],
+      genre: ["groove", "doom"],
       era: '1980s',
       albums: ["Bullhead","Eggnog","Stoner Witch"],
       description: 'American sludge/stoner metal band.',
       styleNotes: 'Sludge/stoner metal with experimental elements.',
-      tier: 'niche'
+      tier: 'popular'
     },
     {
       id: 'band_fuck_the_facts_1',
       name: 'Fuck the Facts',
-      genre: ["groove","sludge"],
+      genre: ["groove", "doom"],
       era: '2000s',
       albums: ["Backstabber Etiquette","Disgorge, Mexico","Stigmata High-Five"],
       description: 'Canadian grindcore band.',
@@ -2445,7 +2445,7 @@ export const STATIC_BANDS: Record<string, Band[]> = {
     {
       id: 'band_noothgrush_1',
       name: 'Noothgrush',
-      genre: ["groove","sludge"],
+      genre: ["groove", "doom"],
       era: '1990s',
       albums: ["Erode the Person"],
       description: 'American sludge/doom metal band.',
@@ -2455,7 +2455,7 @@ export const STATIC_BANDS: Record<string, Band[]> = {
     {
       id: 'band_corrupted_1',
       name: 'Corrupted',
-      genre: ["groove","sludge"],
+      genre: ["groove", "doom"],
       era: '1990s',
       albums: ["Paso Inferior","Llenandose de Gusanos","Scars"],
       description: 'Japanese sludge/doom metal band.',
@@ -2467,362 +2467,362 @@ export const STATIC_BANDS: Record<string, Band[]> = {
     {
       id: 'band_rush_1',
       name: 'Rush',
-      genre: ["progressive","hard rock"],
+      genre: ["progressive", "heavy"],
       era: '1970s',
       albums: ["2112","Moving Pictures","Permanent Waves"],
       description: 'Canadian progressive rock band.',
       styleNotes: 'Progressive rock with complex compositions and technical proficiency.',
-      tier: 'niche'
+      tier: 'well-known'
     },
     {
       id: 'band_scorpions_1',
       name: 'Scorpions',
-      genre: ["heavy","hard rock"],
+      genre: ["heavy"],
       era: '1970s',
       albums: ["Virgin Killer","Lovedrive","Blackout"],
       description: 'German heavy metal band.',
       styleNotes: 'Heavy metal with hard rock influences.',
-      tier: 'niche'
+      tier: 'well-known'
     },
     {
       id: 'band_rainbow_1',
       name: 'Rainbow',
-      genre: ["heavy","hard rock"],
+      genre: ["heavy"],
       era: '1970s',
       albums: ["Ritchie Blackmore's Rainbow","Rising","Long Live Rock 'n' Roll"],
       description: 'British-American heavy metal/hard rock band.',
       styleNotes: 'Heavy metal with hard rock and medieval influences.',
-      tier: 'niche'
+      tier: 'popular'
     },
     {
       id: 'band_deep_purple_1',
       name: 'Deep Purple',
-      genre: ["heavy","hard rock"],
+      genre: ["heavy"],
       era: '1960s',
       albums: ["Machine Head","Burn","Perfect Strangers"],
       description: 'British hard rock/heavy metal pioneers.',
       styleNotes: 'Pioneers of hard rock and heavy metal.',
-      tier: 'niche'
+      tier: 'well-known'
     },
     {
       id: 'band_led_zeppelin_1',
       name: 'Led Zeppelin',
-      genre: ["heavy","hard rock"],
+      genre: ["heavy"],
       era: '1960s',
       albums: ["Led Zeppelin IV","Physical Graffiti","Houses of the Holy"],
       description: 'British hard rock/heavy metal pioneers.',
       styleNotes: 'Pioneers of hard rock and heavy metal.',
-      tier: 'niche'
+      tier: 'well-known'
     },
     {
       id: 'band_ufo_1',
       name: 'UFO',
-      genre: ["heavy","hard rock"],
+      genre: ["heavy"],
       era: '1970s',
       albums: ["Phenomenon","Force It","Strangers in the Night"],
       description: 'British heavy metal/hard rock band.',
       styleNotes: 'Heavy metal with hard rock influences.',
-      tier: 'niche'
+      tier: 'popular'
     },
     {
       id: 'band_whitesnake_1',
       name: 'Whitesnake',
-      genre: ["heavy","hard rock"],
+      genre: ["heavy"],
       era: '1970s',
       albums: ["Ready an' Willing","Come an' Get It","Slide It In"],
       description: 'British heavy metal/hard rock band.',
       styleNotes: 'Heavy metal with hard rock and blues influences.',
-      tier: 'niche'
+      tier: 'well-known'
     },
     {
       id: 'band_def_leppard_1',
       name: 'Def Leppard',
-      genre: ["heavy","hard rock"],
+      genre: ["heavy"],
       era: '1980s',
       albums: ["High 'n' Dry","Pyromania","Hysteria"],
       description: 'British heavy metal/hard rock band.',
       styleNotes: 'Heavy metal with hard rock and pop influences.',
-      tier: 'niche'
+      tier: 'well-known'
     },
     {
       id: 'band_quiet_riot_1',
       name: 'Quiet Riot',
-      genre: ["heavy","hard rock"],
+      genre: ["heavy"],
       era: '1980s',
       albums: ["Metal Health","Condition Critical"],
       description: 'American heavy metal/hard rock band.',
       styleNotes: 'Heavy metal with hard rock and glam influences.',
-      tier: 'niche'
+      tier: 'well-known'
     },
     {
       id: 'band_kiss_1',
       name: 'KISS',
-      genre: ["heavy","hard rock"],
+      genre: ["heavy"],
       era: '1970s',
       albums: ["Destroyer","Love Gun","Rock and Roll Over"],
       description: 'American hard rock/heavy metal band.',
       styleNotes: 'Hard rock/heavy metal with theatrical elements.',
-      tier: 'niche'
+      tier: 'well-known'
     },
     {
       id: 'band_aerosmith_1',
       name: 'Aerosmith',
-      genre: ["heavy","hard rock"],
+      genre: ["heavy"],
       era: '1970s',
       albums: ["Toys in the Attic","Rocks","Draw the Line"],
       description: 'American hard rock/heavy metal band.',
       styleNotes: 'Hard rock/heavy metal with blues influences.',
-      tier: 'niche'
+      tier: 'well-known'
     },
     {
       id: 'band_ac_dc_1',
       name: 'AC/DC',
-      genre: ["heavy","hard rock"],
+      genre: ["heavy"],
       era: '1970s',
       albums: ["Highway to Hell","Back in Black","For Those About to Rock"],
       description: 'Australian hard rock/heavy metal band.',
       styleNotes: 'Hard rock/heavy metal with blues influences.',
-      tier: 'niche'
+      tier: 'well-known'
     },
     {
       id: 'band_guns_n_roses_1',
       name: 'Guns N\' Roses',
-      genre: ["heavy","hard rock"],
+      genre: ["heavy"],
       era: '1980s',
       albums: ["Appetite for Destruction","Use Your Illusion I","Use Your Illusion II"],
       description: 'American hard rock/heavy metal band.',
       styleNotes: 'Hard rock/heavy metal with punk and blues influences.',
-      tier: 'niche'
+      tier: 'well-known'
     },
     {
       id: 'band_skid_row_1',
       name: 'Skid Row',
-      genre: ["heavy","hard rock"],
+      genre: ["heavy"],
       era: '1980s',
       albums: ["Skid Row","Slave to the Grind"],
       description: 'American heavy metal/hard rock band.',
       styleNotes: 'Heavy metal with hard rock and glam influences.',
-      tier: 'niche'
+      tier: 'popular'
     },
     {
       id: 'band_dokken_1',
       name: 'Dokken',
-      genre: ["heavy","hard rock"],
+      genre: ["heavy"],
       era: '1980s',
       albums: ["Breaking the Chains","Tooth and Nail","Under Lock and Key"],
       description: 'American heavy metal/hard rock band.',
       styleNotes: 'Heavy metal with hard rock and melodic elements.',
-      tier: 'niche'
+      tier: 'popular'
     },
     {
       id: 'band_bon_jovi_1',
       name: 'Bon Jovi',
-      genre: ["heavy","hard rock"],
+      genre: ["heavy"],
       era: '1980s',
       albums: ["Slippery When Wet","New Jersey","Keep the Faith"],
       description: 'American hard rock/heavy metal band.',
       styleNotes: 'Hard rock/heavy metal with pop influences.',
-      tier: 'niche'
+      tier: 'well-known'
     },
     {
       id: 'band_europe_1',
       name: 'Europe',
-      genre: ["heavy","hard rock"],
+      genre: ["heavy"],
       era: '1980s',
       albums: ["The Final Countdown","Out of This World","Prisoners in Paradise"],
       description: 'Swedish hard rock/heavy metal band.',
       styleNotes: 'Hard rock/heavy metal with pop influences.',
-      tier: 'niche'
+      tier: 'well-known'
     },
     {
       id: 'band_krokus_1',
       name: 'Krokus',
-      genre: ["heavy","hard rock"],
+      genre: ["heavy"],
       era: '1980s',
       albums: ["Headhunter","The Blitz"],
       description: 'Swiss heavy metal/hard rock band.',
       styleNotes: 'Heavy metal with hard rock influences.',
-      tier: 'niche'
+      tier: 'popular'
     },
     {
       id: 'band_gotthard_1',
       name: 'Gotthard',
-      genre: ["heavy","hard rock"],
+      genre: ["heavy"],
       era: '1990s',
       albums: ["Gotthard","Dial Hard","Open"],
       description: 'Swiss hard rock/heavy metal band.',
       styleNotes: 'Hard rock/heavy metal with melodic elements.',
-      tier: 'niche'
+      tier: 'popular'
     },
     {
       id: 'band_michael_schenker_group_1',
       name: 'MSG',
-      genre: ["heavy","hard rock"],
+      genre: ["heavy"],
       era: '1980s',
       albums: ["Assault Attack","Built to Destroy"],
       description: 'British heavy metal/hard rock band.',
       styleNotes: 'Heavy metal with melodic guitar work.',
-      tier: 'niche'
+      tier: 'popular'
     },
     {
       id: 'band_grand_funk_railroad_1',
       name: 'Grand Funk Railroad',
-      genre: ["heavy","hard rock"],
+      genre: ["heavy"],
       era: '1970s',
       albums: ["Closer to Home","Survival","Phoenix"],
       description: 'American hard rock/heavy metal band.',
       styleNotes: 'Hard rock/heavy metal with blues influences.',
-      tier: 'niche'
+      tier: 'popular'
     },
     {
       id: 'band_blue_yster_cult_1',
       name: 'Blue Öyster Cult',
-      genre: ["heavy","hard rock"],
+      genre: ["heavy"],
       era: '1970s',
       albums: ["Tyranny and Mutation","Secret Treaties","Agents of Fortune"],
       description: 'American hard rock/heavy metal band.',
       styleNotes: 'Hard rock/heavy metal with psychedelic influences.',
-      tier: 'niche'
+      tier: 'popular'
     },
     {
       id: 'band_boston_1',
       name: 'Boston',
-      genre: ["heavy","hard rock"],
+      genre: ["heavy"],
       era: '1970s',
       albums: ["Boston","Don't Look Back","Third Stage"],
       description: 'American hard rock/heavy metal band.',
       styleNotes: 'Hard rock/heavy metal with melodic elements.',
-      tier: 'niche'
+      tier: 'popular'
     },
     {
       id: 'band_journey_1',
       name: 'Journey',
-      genre: ["heavy","hard rock"],
+      genre: ["heavy"],
       era: '1970s',
       albums: ["Infinity","Evolution","Departure"],
       description: 'American hard rock/heavy metal band.',
       styleNotes: 'Hard rock/heavy metal with progressive elements.',
-      tier: 'niche'
+      tier: 'well-known'
     },
     {
       id: 'band_foreigner_1',
       name: 'Foreigner',
-      genre: ["heavy","hard rock"],
+      genre: ["heavy"],
       era: '1970s',
       albums: ["Foreigner","Double Vision","Head Games"],
       description: 'British-American hard rock/heavy metal band.',
       styleNotes: 'Hard rock/heavy metal with pop influences.',
-      tier: 'niche'
+      tier: 'popular'
     },
     {
       id: 'band_styx_1',
       name: 'Styx',
-      genre: ["heavy","hard rock"],
+      genre: ["heavy"],
       era: '1970s',
       albums: ["The Grand Illusion","Pieces of Eight","Cornerstone"],
       description: 'American hard rock/heavy metal band.',
       styleNotes: 'Hard rock/heavy metal with progressive elements.',
-      tier: 'niche'
+      tier: 'popular'
     },
     {
       id: 'band_reo_speedwagon_1',
       name: 'REO Speedwagon',
-      genre: ["heavy","hard rock"],
+      genre: ["heavy"],
       era: '1970s',
       albums: ["You Can Tune a Piano but You Can't Tuna Fish","Hi Infidelity"],
       description: 'American hard rock/heavy metal band.',
       styleNotes: 'Hard rock/heavy metal with pop influences.',
-      tier: 'niche'
+      tier: 'popular'
     },
     {
       id: 'band_38_special_1',
       name: '38 Special',
-      genre: ["heavy","hard rock"],
+      genre: ["heavy"],
       era: '1980s',
       albums: ["Wild-Eyed Southern Boys","Special Forces"],
       description: 'American hard rock/heavy metal band.',
       styleNotes: 'Hard rock/heavy metal with southern rock influences.',
-      tier: 'niche'
+      tier: 'popular'
     },
     {
       id: 'band_molly_hatchet_1',
       name: 'Molly Hatchet',
-      genre: ["heavy","hard rock"],
+      genre: ["heavy"],
       era: '1970s',
       albums: ["Molly Hatchet","Flirtin' with Disaster"],
       description: 'American hard rock/heavy metal band.',
       styleNotes: 'Hard rock/heavy metal with southern rock influences.',
-      tier: 'niche'
+      tier: 'popular'
     },
     {
       id: 'band_blackfoot_1',
       name: 'Blackfoot',
-      genre: ["heavy","hard rock"],
+      genre: ["heavy"],
       era: '1970s',
       albums: ["Marauder","Strikes"],
       description: 'American hard rock/heavy metal band.',
       styleNotes: 'Hard rock/heavy metal with southern rock influences.',
-      tier: 'niche'
+      tier: 'popular'
     },
     {
       id: 'band_outlaws_1',
       name: 'The Outlaws',
-      genre: ["heavy","hard rock"],
+      genre: ["heavy"],
       era: '1970s',
       albums: ["The Outlaws","Lady in Waiting"],
       description: 'American hard rock/heavy metal band.',
       styleNotes: 'Hard rock/heavy metal with southern rock influences.',
-      tier: 'niche'
+      tier: 'popular'
     },
     {
       id: 'band_the_allman_brothers_band_1',
       name: 'The Allman Brothers Band',
-      genre: ["heavy","hard rock"],
+      genre: ["heavy"],
       era: '1970s',
       albums: ["At Fillmore East","Eat a Peach","Brothers and Sisters"],
       description: 'American hard rock/heavy metal band.',
       styleNotes: 'Hard rock/heavy metal with southern rock and jam band influences.',
-      tier: 'niche'
+      tier: 'popular'
     },
     {
       id: 'band_lynyrd_skynyrd_1',
       name: 'Lynyrd Skynyrd',
-      genre: ["heavy","hard rock"],
+      genre: ["heavy"],
       era: '1970s',
       albums: ["Pronounced Leh-Nerd Skin-Nerd","Second Helping","Nuthin' Fancy"],
       description: 'American hard rock/heavy metal band.',
       styleNotes: 'Hard rock/heavy metal with southern rock influences.',
-      tier: 'niche'
+      tier: 'well-known'
     },
     {
       id: 'band_creedence_clearwater_revival_1',
       name: 'Creedence Clearwater Revival',
-      genre: ["heavy","hard rock"],
+      genre: ["heavy"],
       era: '1960s',
       albums: ["Bayou Country","Green River","Willy and the Poor Boys"],
       description: 'American hard rock/heavy metal band.',
       styleNotes: 'Hard rock/heavy metal with swamp rock influences.',
-      tier: 'niche'
+      tier: 'popular'
     },
     {
       id: 'band_status_quo_1',
       name: 'Status Quo',
-      genre: ["heavy","hard rock"],
+      genre: ["heavy"],
       era: '1970s',
       albums: ["Piledriver","Hello!","Quo"],
       description: 'British hard rock/heavy metal band.',
       styleNotes: 'Hard rock/heavy metal with boogie rock influences.',
-      tier: 'niche'
+      tier: 'popular'
     },
     {
       id: 'band_van_halen_1',
       name: 'Van Halen',
-      genre: ["heavy","hard rock"],
+      genre: ["heavy"],
       era: '1970s',
       albums: ["Van Halen","Van Halen II","Women and Children First"],
       description: 'American hard rock/heavy metal band.',
       styleNotes: 'Hard rock/heavy metal with virtuoso guitar work.',
-      tier: 'niche'
+      tier: 'well-known'
     },
   ],
   heavy: [
@@ -2844,72 +2844,72 @@ export const STATIC_BANDS: Record<string, Band[]> = {
       albums: ["Black Sabbath","Paranoid","Master of Reality"],
       description: 'Pioneering heavy metal band from Birmingham.',
       styleNotes: 'Created the foundation for heavy metal and doom metal.',
-      tier: 'niche'
+      tier: 'well-known'
     },
     {
       id: 'band_twisted_sister_1',
       name: 'Twisted Sister',
-      genre: ["heavy","glam"],
+      genre: ["heavy"],
       era: '1980s',
       albums: ["Under the Blade","You Can't Stop Rock 'n' Roll","Stay Hungry"],
       description: 'American heavy metal/glam rock band.',
       styleNotes: 'Heavy metal with glam and punk influences.',
-      tier: 'niche'
+      tier: 'well-known'
     },
     {
       id: 'band_mötley_crüe_1',
       name: 'Mötley Crüe',
-      genre: ["heavy","glam"],
+      genre: ["heavy"],
       era: '1980s',
       albums: ["Shout at the Devil","Theatre of Pain","Girls, Girls, Girls"],
       description: 'American heavy metal/glam rock band.',
       styleNotes: 'Heavy metal with glam and hard rock influences.',
-      tier: 'niche'
+      tier: 'well-known'
     },
     {
       id: 'band_poison_1',
       name: 'Poison',
-      genre: ["heavy","glam"],
+      genre: ["heavy"],
       era: '1980s',
       albums: ["Look What the Cat Dragged In","Open Up and Say... Ahh!","Flesh & Blood"],
       description: 'American heavy metal/glam rock band.',
       styleNotes: 'Heavy metal with glam and pop influences.',
-      tier: 'niche'
+      tier: 'well-known'
     },
     {
       id: 'band_wasp_1',
       name: 'W.A.S.P.',
-      genre: ["heavy","glam"],
+      genre: ["heavy"],
       era: '1980s',
       albums: ["W.A.S.P.","The Last Command","Inside the Electric Circus"],
       description: 'American heavy metal/glam rock band.',
       styleNotes: 'Heavy metal with glam and shock rock elements.',
-      tier: 'niche'
+      tier: 'popular'
     },
     {
       id: 'band_ratt_1',
       name: 'Ratt',
-      genre: ["heavy","glam"],
+      genre: ["heavy"],
       era: '1980s',
       albums: ["Out of the Cellar","Invasion of Your Privacy","Dancing Undercover"],
       description: 'American heavy metal/glam rock band.',
       styleNotes: 'Heavy metal with glam and hard rock influences.',
-      tier: 'niche'
+      tier: 'popular'
     },
     {
       id: 'band_cinderella_1',
       name: 'Cinderella',
-      genre: ["heavy","glam"],
+      genre: ["heavy"],
       era: '1980s',
       albums: ["Night Songs","Long Cold Winter","Heartbreak Station"],
       description: 'American heavy metal/glam rock band.',
       styleNotes: 'Heavy metal with glam and blues influences.',
-      tier: 'niche'
+      tier: 'well-known'
     },
     {
       id: 'band_heavy_metal_kids_1',
       name: 'Heavy Metal Kids',
-      genre: ["heavy","glam"],
+      genre: ["heavy"],
       era: '1970s',
       albums: ["Heavy Metal Kids"],
       description: 'British heavy metal/glam rock band.',
@@ -2919,7 +2919,7 @@ export const STATIC_BANDS: Record<string, Band[]> = {
     {
       id: 'band_girls_1',
       name: 'Girl',
-      genre: ["heavy","glam"],
+      genre: ["heavy"],
       era: '1980s',
       albums: ["Sheer Greed","Wasted Youth"],
       description: 'British heavy metal/glam rock band.',
@@ -2929,7 +2929,7 @@ export const STATIC_BANDS: Record<string, Band[]> = {
     {
       id: 'band_london_1',
       name: 'London',
-      genre: ["heavy","glam"],
+      genre: ["heavy"],
       era: '1970s',
       albums: ["London"],
       description: 'American heavy metal/glam rock band.',
@@ -2939,27 +2939,27 @@ export const STATIC_BANDS: Record<string, Band[]> = {
     {
       id: 'band_slade_1',
       name: 'Slade',
-      genre: ["heavy","glam"],
+      genre: ["heavy"],
       era: '1970s',
       albums: ["Slade Alive!","Slayed?","Old New Borrowed and Blue"],
       description: 'British heavy metal/glam rock band.',
       styleNotes: 'Heavy metal with glam and hard rock influences.',
-      tier: 'niche'
+      tier: 'popular'
     },
     {
       id: 'band_sweet_1',
       name: 'Sweet',
-      genre: ["heavy","glam"],
+      genre: ["heavy"],
       era: '1970s',
       albums: ["Desolation Boulevard","Give Us a Wink","Off the Record"],
       description: 'British heavy metal/glam rock band.',
       styleNotes: 'Heavy metal with glam and hard rock influences.',
-      tier: 'niche'
+      tier: 'popular'
     },
     {
       id: 'band_mud_1',
       name: 'Mud',
-      genre: ["heavy","glam"],
+      genre: ["heavy"],
       era: '1970s',
       albums: ["Mud Rock","Use Your Imagination"],
       description: 'British heavy metal/glam rock band.',
@@ -2969,362 +2969,362 @@ export const STATIC_BANDS: Record<string, Band[]> = {
     {
       id: 'band_new_york_dolls_1',
       name: 'New York Dolls',
-      genre: ["heavy","glam"],
+      genre: ["heavy"],
       era: '1970s',
       albums: ["New York Dolls","Too Much Too Soon"],
       description: 'American heavy metal/glam rock/punk band.',
       styleNotes: 'Heavy metal with glam and punk influences.',
-      tier: 'niche'
+      tier: 'popular'
     },
     {
       id: 'band_scorpions_1',
       name: 'Scorpions',
-      genre: ["heavy","hard rock"],
+      genre: ["heavy"],
       era: '1970s',
       albums: ["Virgin Killer","Lovedrive","Blackout"],
       description: 'German heavy metal band.',
       styleNotes: 'Heavy metal with hard rock influences.',
-      tier: 'niche'
+      tier: 'well-known'
     },
     {
       id: 'band_rainbow_1',
       name: 'Rainbow',
-      genre: ["heavy","hard rock"],
+      genre: ["heavy"],
       era: '1970s',
       albums: ["Ritchie Blackmore's Rainbow","Rising","Long Live Rock 'n' Roll"],
       description: 'British-American heavy metal/hard rock band.',
       styleNotes: 'Heavy metal with hard rock and medieval influences.',
-      tier: 'niche'
+      tier: 'popular'
     },
     {
       id: 'band_deep_purple_1',
       name: 'Deep Purple',
-      genre: ["heavy","hard rock"],
+      genre: ["heavy"],
       era: '1960s',
       albums: ["Machine Head","Burn","Perfect Strangers"],
       description: 'British hard rock/heavy metal pioneers.',
       styleNotes: 'Pioneers of hard rock and heavy metal.',
-      tier: 'niche'
+      tier: 'well-known'
     },
     {
       id: 'band_led_zeppelin_1',
       name: 'Led Zeppelin',
-      genre: ["heavy","hard rock"],
+      genre: ["heavy"],
       era: '1960s',
       albums: ["Led Zeppelin IV","Physical Graffiti","Houses of the Holy"],
       description: 'British hard rock/heavy metal pioneers.',
       styleNotes: 'Pioneers of hard rock and heavy metal.',
-      tier: 'niche'
+      tier: 'well-known'
     },
     {
       id: 'band_ufo_1',
       name: 'UFO',
-      genre: ["heavy","hard rock"],
+      genre: ["heavy"],
       era: '1970s',
       albums: ["Phenomenon","Force It","Strangers in the Night"],
       description: 'British heavy metal/hard rock band.',
       styleNotes: 'Heavy metal with hard rock influences.',
-      tier: 'niche'
+      tier: 'popular'
     },
     {
       id: 'band_whitesnake_1',
       name: 'Whitesnake',
-      genre: ["heavy","hard rock"],
+      genre: ["heavy"],
       era: '1970s',
       albums: ["Ready an' Willing","Come an' Get It","Slide It In"],
       description: 'British heavy metal/hard rock band.',
       styleNotes: 'Heavy metal with hard rock and blues influences.',
-      tier: 'niche'
+      tier: 'well-known'
     },
     {
       id: 'band_def_leppard_1',
       name: 'Def Leppard',
-      genre: ["heavy","hard rock"],
+      genre: ["heavy"],
       era: '1980s',
       albums: ["High 'n' Dry","Pyromania","Hysteria"],
       description: 'British heavy metal/hard rock band.',
       styleNotes: 'Heavy metal with hard rock and pop influences.',
-      tier: 'niche'
+      tier: 'well-known'
     },
     {
       id: 'band_quiet_riot_1',
       name: 'Quiet Riot',
-      genre: ["heavy","hard rock"],
+      genre: ["heavy"],
       era: '1980s',
       albums: ["Metal Health","Condition Critical"],
       description: 'American heavy metal/hard rock band.',
       styleNotes: 'Heavy metal with hard rock and glam influences.',
-      tier: 'niche'
+      tier: 'well-known'
     },
     {
       id: 'band_kiss_1',
       name: 'KISS',
-      genre: ["heavy","hard rock"],
+      genre: ["heavy"],
       era: '1970s',
       albums: ["Destroyer","Love Gun","Rock and Roll Over"],
       description: 'American hard rock/heavy metal band.',
       styleNotes: 'Hard rock/heavy metal with theatrical elements.',
-      tier: 'niche'
+      tier: 'well-known'
     },
     {
       id: 'band_aerosmith_1',
       name: 'Aerosmith',
-      genre: ["heavy","hard rock"],
+      genre: ["heavy"],
       era: '1970s',
       albums: ["Toys in the Attic","Rocks","Draw the Line"],
       description: 'American hard rock/heavy metal band.',
       styleNotes: 'Hard rock/heavy metal with blues influences.',
-      tier: 'niche'
+      tier: 'well-known'
     },
     {
       id: 'band_ac_dc_1',
       name: 'AC/DC',
-      genre: ["heavy","hard rock"],
+      genre: ["heavy"],
       era: '1970s',
       albums: ["Highway to Hell","Back in Black","For Those About to Rock"],
       description: 'Australian hard rock/heavy metal band.',
       styleNotes: 'Hard rock/heavy metal with blues influences.',
-      tier: 'niche'
+      tier: 'well-known'
     },
     {
       id: 'band_guns_n_roses_1',
       name: 'Guns N\' Roses',
-      genre: ["heavy","hard rock"],
+      genre: ["heavy"],
       era: '1980s',
       albums: ["Appetite for Destruction","Use Your Illusion I","Use Your Illusion II"],
       description: 'American hard rock/heavy metal band.',
       styleNotes: 'Hard rock/heavy metal with punk and blues influences.',
-      tier: 'niche'
+      tier: 'well-known'
     },
     {
       id: 'band_skid_row_1',
       name: 'Skid Row',
-      genre: ["heavy","hard rock"],
+      genre: ["heavy"],
       era: '1980s',
       albums: ["Skid Row","Slave to the Grind"],
       description: 'American heavy metal/hard rock band.',
       styleNotes: 'Heavy metal with hard rock and glam influences.',
-      tier: 'niche'
+      tier: 'popular'
     },
     {
       id: 'band_dokken_1',
       name: 'Dokken',
-      genre: ["heavy","hard rock"],
+      genre: ["heavy"],
       era: '1980s',
       albums: ["Breaking the Chains","Tooth and Nail","Under Lock and Key"],
       description: 'American heavy metal/hard rock band.',
       styleNotes: 'Heavy metal with hard rock and melodic elements.',
-      tier: 'niche'
+      tier: 'popular'
     },
     {
       id: 'band_bon_jovi_1',
       name: 'Bon Jovi',
-      genre: ["heavy","hard rock"],
+      genre: ["heavy"],
       era: '1980s',
       albums: ["Slippery When Wet","New Jersey","Keep the Faith"],
       description: 'American hard rock/heavy metal band.',
       styleNotes: 'Hard rock/heavy metal with pop influences.',
-      tier: 'niche'
+      tier: 'well-known'
     },
     {
       id: 'band_europe_1',
       name: 'Europe',
-      genre: ["heavy","hard rock"],
+      genre: ["heavy"],
       era: '1980s',
       albums: ["The Final Countdown","Out of This World","Prisoners in Paradise"],
       description: 'Swedish hard rock/heavy metal band.',
       styleNotes: 'Hard rock/heavy metal with pop influences.',
-      tier: 'niche'
+      tier: 'well-known'
     },
     {
       id: 'band_krokus_1',
       name: 'Krokus',
-      genre: ["heavy","hard rock"],
+      genre: ["heavy"],
       era: '1980s',
       albums: ["Headhunter","The Blitz"],
       description: 'Swiss heavy metal/hard rock band.',
       styleNotes: 'Heavy metal with hard rock influences.',
-      tier: 'niche'
+      tier: 'popular'
     },
     {
       id: 'band_gotthard_1',
       name: 'Gotthard',
-      genre: ["heavy","hard rock"],
+      genre: ["heavy"],
       era: '1990s',
       albums: ["Gotthard","Dial Hard","Open"],
       description: 'Swiss hard rock/heavy metal band.',
       styleNotes: 'Hard rock/heavy metal with melodic elements.',
-      tier: 'niche'
+      tier: 'popular'
     },
     {
       id: 'band_michael_schenker_group_1',
       name: 'MSG',
-      genre: ["heavy","hard rock"],
+      genre: ["heavy"],
       era: '1980s',
       albums: ["Assault Attack","Built to Destroy"],
       description: 'British heavy metal/hard rock band.',
       styleNotes: 'Heavy metal with melodic guitar work.',
-      tier: 'niche'
+      tier: 'popular'
     },
     {
       id: 'band_grand_funk_railroad_1',
       name: 'Grand Funk Railroad',
-      genre: ["heavy","hard rock"],
+      genre: ["heavy"],
       era: '1970s',
       albums: ["Closer to Home","Survival","Phoenix"],
       description: 'American hard rock/heavy metal band.',
       styleNotes: 'Hard rock/heavy metal with blues influences.',
-      tier: 'niche'
+      tier: 'popular'
     },
     {
       id: 'band_blue_yster_cult_1',
       name: 'Blue Öyster Cult',
-      genre: ["heavy","hard rock"],
+      genre: ["heavy"],
       era: '1970s',
       albums: ["Tyranny and Mutation","Secret Treaties","Agents of Fortune"],
       description: 'American hard rock/heavy metal band.',
       styleNotes: 'Hard rock/heavy metal with psychedelic influences.',
-      tier: 'niche'
+      tier: 'popular'
     },
     {
       id: 'band_boston_1',
       name: 'Boston',
-      genre: ["heavy","hard rock"],
+      genre: ["heavy"],
       era: '1970s',
       albums: ["Boston","Don't Look Back","Third Stage"],
       description: 'American hard rock/heavy metal band.',
       styleNotes: 'Hard rock/heavy metal with melodic elements.',
-      tier: 'niche'
+      tier: 'popular'
     },
     {
       id: 'band_journey_1',
       name: 'Journey',
-      genre: ["heavy","hard rock"],
+      genre: ["heavy"],
       era: '1970s',
       albums: ["Infinity","Evolution","Departure"],
       description: 'American hard rock/heavy metal band.',
       styleNotes: 'Hard rock/heavy metal with progressive elements.',
-      tier: 'niche'
+      tier: 'well-known'
     },
     {
       id: 'band_foreigner_1',
       name: 'Foreigner',
-      genre: ["heavy","hard rock"],
+      genre: ["heavy"],
       era: '1970s',
       albums: ["Foreigner","Double Vision","Head Games"],
       description: 'British-American hard rock/heavy metal band.',
       styleNotes: 'Hard rock/heavy metal with pop influences.',
-      tier: 'niche'
+      tier: 'popular'
     },
     {
       id: 'band_styx_1',
       name: 'Styx',
-      genre: ["heavy","hard rock"],
+      genre: ["heavy"],
       era: '1970s',
       albums: ["The Grand Illusion","Pieces of Eight","Cornerstone"],
       description: 'American hard rock/heavy metal band.',
       styleNotes: 'Hard rock/heavy metal with progressive elements.',
-      tier: 'niche'
+      tier: 'popular'
     },
     {
       id: 'band_reo_speedwagon_1',
       name: 'REO Speedwagon',
-      genre: ["heavy","hard rock"],
+      genre: ["heavy"],
       era: '1970s',
       albums: ["You Can Tune a Piano but You Can't Tuna Fish","Hi Infidelity"],
       description: 'American hard rock/heavy metal band.',
       styleNotes: 'Hard rock/heavy metal with pop influences.',
-      tier: 'niche'
+      tier: 'popular'
     },
     {
       id: 'band_38_special_1',
       name: '38 Special',
-      genre: ["heavy","hard rock"],
+      genre: ["heavy"],
       era: '1980s',
       albums: ["Wild-Eyed Southern Boys","Special Forces"],
       description: 'American hard rock/heavy metal band.',
       styleNotes: 'Hard rock/heavy metal with southern rock influences.',
-      tier: 'niche'
+      tier: 'popular'
     },
     {
       id: 'band_molly_hatchet_1',
       name: 'Molly Hatchet',
-      genre: ["heavy","hard rock"],
+      genre: ["heavy"],
       era: '1970s',
       albums: ["Molly Hatchet","Flirtin' with Disaster"],
       description: 'American hard rock/heavy metal band.',
       styleNotes: 'Hard rock/heavy metal with southern rock influences.',
-      tier: 'niche'
+      tier: 'popular'
     },
     {
       id: 'band_blackfoot_1',
       name: 'Blackfoot',
-      genre: ["heavy","hard rock"],
+      genre: ["heavy"],
       era: '1970s',
       albums: ["Marauder","Strikes"],
       description: 'American hard rock/heavy metal band.',
       styleNotes: 'Hard rock/heavy metal with southern rock influences.',
-      tier: 'niche'
+      tier: 'popular'
     },
     {
       id: 'band_outlaws_1',
       name: 'The Outlaws',
-      genre: ["heavy","hard rock"],
+      genre: ["heavy"],
       era: '1970s',
       albums: ["The Outlaws","Lady in Waiting"],
       description: 'American hard rock/heavy metal band.',
       styleNotes: 'Hard rock/heavy metal with southern rock influences.',
-      tier: 'niche'
+      tier: 'popular'
     },
     {
       id: 'band_the_allman_brothers_band_1',
       name: 'The Allman Brothers Band',
-      genre: ["heavy","hard rock"],
+      genre: ["heavy"],
       era: '1970s',
       albums: ["At Fillmore East","Eat a Peach","Brothers and Sisters"],
       description: 'American hard rock/heavy metal band.',
       styleNotes: 'Hard rock/heavy metal with southern rock and jam band influences.',
-      tier: 'niche'
+      tier: 'popular'
     },
     {
       id: 'band_lynyrd_skynyrd_1',
       name: 'Lynyrd Skynyrd',
-      genre: ["heavy","hard rock"],
+      genre: ["heavy"],
       era: '1970s',
       albums: ["Pronounced Leh-Nerd Skin-Nerd","Second Helping","Nuthin' Fancy"],
       description: 'American hard rock/heavy metal band.',
       styleNotes: 'Hard rock/heavy metal with southern rock influences.',
-      tier: 'niche'
+      tier: 'well-known'
     },
     {
       id: 'band_creedence_clearwater_revival_1',
       name: 'Creedence Clearwater Revival',
-      genre: ["heavy","hard rock"],
+      genre: ["heavy"],
       era: '1960s',
       albums: ["Bayou Country","Green River","Willy and the Poor Boys"],
       description: 'American hard rock/heavy metal band.',
       styleNotes: 'Hard rock/heavy metal with swamp rock influences.',
-      tier: 'niche'
+      tier: 'popular'
     },
     {
       id: 'band_status_quo_1',
       name: 'Status Quo',
-      genre: ["heavy","hard rock"],
+      genre: ["heavy"],
       era: '1970s',
       albums: ["Piledriver","Hello!","Quo"],
       description: 'British hard rock/heavy metal band.',
       styleNotes: 'Hard rock/heavy metal with boogie rock influences.',
-      tier: 'niche'
+      tier: 'popular'
     },
     {
       id: 'band_van_halen_1',
       name: 'Van Halen',
-      genre: ["heavy","hard rock"],
+      genre: ["heavy"],
       era: '1970s',
       albums: ["Van Halen","Van Halen II","Women and Children First"],
       description: 'American hard rock/heavy metal band.',
       styleNotes: 'Hard rock/heavy metal with virtuoso guitar work.',
-      tier: 'niche'
+      tier: 'well-known'
     },
     {
       id: 'band_metallica_1',
@@ -3344,7 +3344,7 @@ export const STATIC_BANDS: Record<string, Band[]> = {
       albums: ["Iced Earth","Night of the Stormrider","The Dark Saga"],
       description: 'American power metal band.',
       styleNotes: 'Power metal with heavy and thrash influences.',
-      tier: 'niche'
+      tier: 'popular'
     },
     {
       id: 'band_pharaoh_1',
@@ -3354,7 +3354,7 @@ export const STATIC_BANDS: Record<string, Band[]> = {
       albums: ["After the Fire","The Longest Night","Bury the Light"],
       description: 'American power metal band.',
       styleNotes: 'Traditional heavy/power metal.',
-      tier: 'niche'
+      tier: 'popular'
     },
     {
       id: 'band_queensryche_1',
@@ -3364,7 +3364,7 @@ export const STATIC_BANDS: Record<string, Band[]> = {
       albums: ["The Warning","Rage for Order","Operation: Mindcrime"],
       description: 'American progressive metal band.',
       styleNotes: 'Progressive metal with concept albums.',
-      tier: 'niche'
+      tier: 'popular'
     },
     {
       id: 'band_dio_1',
@@ -3374,7 +3374,7 @@ export const STATIC_BANDS: Record<string, Band[]> = {
       albums: ["Holy Diver","The Last in Line","Sacred Heart"],
       description: 'American heavy metal band led by Ronnie James Dio.',
       styleNotes: 'Classic heavy metal with epic themes.',
-      tier: 'niche'
+      tier: 'popular'
     },
     {
       id: 'band_manowar_1',
@@ -3384,7 +3384,7 @@ export const STATIC_BANDS: Record<string, Band[]> = {
       albums: ["Battle Hymns","Into Glory Ride","Hail to England"],
       description: 'American heavy metal band known for fantasy themes.',
       styleNotes: 'Heavy metal with fantasy and warrior themes.',
-      tier: 'niche'
+      tier: 'popular'
     },
     {
       id: 'band_kansas_1',
@@ -3394,7 +3394,7 @@ export const STATIC_BANDS: Record<string, Band[]> = {
       albums: ["Leftoverture","Point of Know Return"],
       description: 'American progressive rock/heavy metal band.',
       styleNotes: 'Progressive rock with heavy metal elements.',
-      tier: 'niche'
+      tier: 'popular'
     },
     {
       id: 'band_suicide_1',
@@ -3414,7 +3414,7 @@ export const STATIC_BANDS: Record<string, Band[]> = {
       albums: ["The Stooges","Fun House","Raw Power"],
       description: 'American heavy metal/punk band.',
       styleNotes: 'Heavy metal with punk and garage rock influences.',
-      tier: 'niche'
+      tier: 'popular'
     },
     {
       id: 'band_mc5_1',
@@ -3434,7 +3434,7 @@ export const STATIC_BANDS: Record<string, Band[]> = {
       albums: ["Metal on Metal","Forged in Fire","This Is Thirteen"],
       description: 'Canadian heavy/speed metal band.',
       styleNotes: 'Consistent heavy/speed metal style.',
-      tier: 'niche'
+      tier: 'popular'
     },
     {
       id: 'band_accept_1',
@@ -3444,7 +3444,7 @@ export const STATIC_BANDS: Record<string, Band[]> = {
       albums: ["Restless and Wild","Balls to the Wall","Metal Heart"],
       description: 'German heavy metal band known for aggressive sound.',
       styleNotes: 'Influenced speed metal and thrash metal development.',
-      tier: 'niche'
+      tier: 'popular'
     },
     {
       id: 'band_saxon_1',
@@ -3454,7 +3454,7 @@ export const STATIC_BANDS: Record<string, Band[]> = {
       albums: ["Wheels of Steel","Strong Arm of the Law","Denim and Leather"],
       description: 'British heavy metal band part of the NWOBHM movement.',
       styleNotes: 'Consistent heavy metal style with NWOBHM influences.',
-      tier: 'niche'
+      tier: 'popular'
     },
     {
       id: 'band_iron_maiden_1',
@@ -3464,7 +3464,7 @@ export const STATIC_BANDS: Record<string, Band[]> = {
       albums: ["The Number of the Beast","Powerslave","Somewhere in Time"],
       description: 'British heavy metal pioneers known for epic songs and mascot Eddie.',
       styleNotes: 'Consistent heavy metal style with progressive and symphonic elements.',
-      tier: 'niche'
+      tier: 'well-known'
     },
     {
       id: 'band_judas_priest_1',
@@ -3474,7 +3474,7 @@ export const STATIC_BANDS: Record<string, Band[]> = {
       albums: ["British Steel","Screaming for Vengeance","Painkiller"],
       description: 'British heavy metal pioneers known for twin guitar harmonies.',
       styleNotes: 'Evolved from hard rock to heavy metal, maintained consistent style.',
-      tier: 'niche'
+      tier: 'well-known'
     },
     {
       id: 'band_motorhead_1',
@@ -3484,7 +3484,7 @@ export const STATIC_BANDS: Record<string, Band[]> = {
       albums: ["Overkill","Ace of Spades","No Sleep 'til Hammersmith"],
       description: 'British heavy metal pioneers.',
       styleNotes: 'Created the foundation for speed metal and thrash metal.',
-      tier: 'niche'
+      tier: 'well-known'
     },
     {
       id: 'band_raven_1',
@@ -3494,7 +3494,7 @@ export const STATIC_BANDS: Record<string, Band[]> = {
       albums: ["Rock Until You Drop","Wiped Out","All for One"],
       description: 'British heavy/speed metal band.',
       styleNotes: 'Heavy metal with speed metal and punk influences.',
-      tier: 'niche'
+      tier: 'popular'
     },
     {
       id: 'band_satan_1',
@@ -3514,7 +3514,7 @@ export const STATIC_BANDS: Record<string, Band[]> = {
       albums: ["A Time of Changes","Buried Alive"],
       description: 'British heavy metal band.',
       styleNotes: 'Heavy metal with NWOBHM influences.',
-      tier: 'niche'
+      tier: 'popular'
     },
     {
       id: 'band_battleaxe_1',
@@ -3534,7 +3534,7 @@ export const STATIC_BANDS: Record<string, Band[]> = {
       albums: ["Demolition","Hit and Run","Screaming Blue Murder"],
       description: 'British heavy metal band.',
       styleNotes: 'Heavy metal with punk influences.',
-      tier: 'niche'
+      tier: 'popular'
     },
     {
       id: 'band_rock_goddess_1',
@@ -3554,7 +3554,7 @@ export const STATIC_BANDS: Record<string, Band[]> = {
       albums: ["Red, Hot and Heavy","Future World","Jump the Gun"],
       description: 'Danish heavy metal band.',
       styleNotes: 'Heavy metal with melodic elements.',
-      tier: 'niche'
+      tier: 'popular'
     },
     {
       id: 'band_mercyful_fate_1',
@@ -3564,7 +3564,7 @@ export const STATIC_BANDS: Record<string, Band[]> = {
       albums: ["Melissa","Don't Break the Oath","In the Shadows"],
       description: 'Danish heavy/thrash band with occult themes.',
       styleNotes: 'Influenced black metal with their occult imagery.',
-      tier: 'niche'
+      tier: 'popular'
     },
     {
       id: 'band_king_diamond_1',
@@ -3574,7 +3574,7 @@ export const STATIC_BANDS: Record<string, Band[]> = {
       albums: ["Fatal Portrait","Abigail","Them"],
       description: 'Danish heavy metal artist.',
       styleNotes: 'Heavy metal with horror themes and theatrical vocals.',
-      tier: 'niche'
+      tier: 'popular'
     },
     {
       id: 'band_volbeat_1',
@@ -3584,7 +3584,7 @@ export const STATIC_BANDS: Record<string, Band[]> = {
       albums: ["The Strength / The Sound / The Songs","Rock the Rebel / Metal the Devil","Guitar Gangsters & Cadillac Blood"],
       description: 'Danish heavy metal band.',
       styleNotes: 'Heavy metal with rockabilly and psychobilly influences.',
-      tier: 'niche'
+      tier: 'well-known'
     },
   ],
   power: [
@@ -3596,7 +3596,7 @@ export const STATIC_BANDS: Record<string, Band[]> = {
       albums: ["Wintersun","Time I"],
       description: 'Finnish black metal band with folk and power elements.',
       styleNotes: 'Melodic black metal with folk and power metal influences.',
-      tier: 'niche'
+      tier: 'popular'
     },
     {
       id: 'band_falconer_1',
@@ -3606,7 +3606,7 @@ export const STATIC_BANDS: Record<string, Band[]> = {
       albums: ["Falconer","Chapters from a Vale Forlorn","The Sceptre of Deception"],
       description: 'Swedish power metal band with folk influences.',
       styleNotes: 'Power metal with medieval and folk elements.',
-      tier: 'niche'
+      tier: 'popular'
     },
     {
       id: 'band_kiuas_1',
@@ -3616,7 +3616,7 @@ export const STATIC_BANDS: Record<string, Band[]> = {
       albums: ["The Spirit of Ukko","Reformation","The New Dark Age"],
       description: 'Finnish power metal band with folk influences.',
       styleNotes: 'Power metal with folk and heavy elements.',
-      tier: 'niche'
+      tier: 'popular'
     },
     {
       id: 'band_korpiklaani_1',
@@ -3626,7 +3626,7 @@ export const STATIC_BANDS: Record<string, Band[]> = {
       albums: ["Spirit of the Forest","Voice of Wilderness","Tervaskanto"],
       description: 'Finnish folk metal band.',
       styleNotes: 'Folk metal with power metal and party themes.',
-      tier: 'niche'
+      tier: 'popular'
     },
     {
       id: 'band_iced_earth_1',
@@ -3636,7 +3636,7 @@ export const STATIC_BANDS: Record<string, Band[]> = {
       albums: ["Iced Earth","Night of the Stormrider","The Dark Saga"],
       description: 'American power metal band.',
       styleNotes: 'Power metal with heavy and thrash influences.',
-      tier: 'niche'
+      tier: 'popular'
     },
     {
       id: 'band_pharaoh_1',
@@ -3646,7 +3646,7 @@ export const STATIC_BANDS: Record<string, Band[]> = {
       albums: ["After the Fire","The Longest Night","Bury the Light"],
       description: 'American power metal band.',
       styleNotes: 'Traditional heavy/power metal.',
-      tier: 'niche'
+      tier: 'popular'
     },
     {
       id: 'band_manowar_1',
@@ -3656,7 +3656,7 @@ export const STATIC_BANDS: Record<string, Band[]> = {
       albums: ["Battle Hymns","Into Glory Ride","Hail to England"],
       description: 'American heavy metal band known for fantasy themes.',
       styleNotes: 'Heavy metal with fantasy and warrior themes.',
-      tier: 'niche'
+      tier: 'popular'
     },
     {
       id: 'band_sonata_arctica_1',
@@ -3666,7 +3666,7 @@ export const STATIC_BANDS: Record<string, Band[]> = {
       albums: ["Ecliptica","Silence","Winterheart's Guild"],
       description: 'Finnish power metal band known for melodic songs and fantasy themes.',
       styleNotes: 'Consistent melodic power metal style with progressive elements.',
-      tier: 'niche'
+      tier: 'popular'
     },
     {
       id: 'band_kamelot_1',
@@ -3676,7 +3676,7 @@ export const STATIC_BANDS: Record<string, Band[]> = {
       albums: ["The Fourth Legacy","The Black Halo","Ghost Opera"],
       description: 'American power metal band known for concept albums and theatrical elements.',
       styleNotes: 'Evolved from traditional power metal to more progressive and symphonic styles.',
-      tier: 'niche'
+      tier: 'popular'
     },
     {
       id: 'band_avantasia_1',
@@ -3686,7 +3686,7 @@ export const STATIC_BANDS: Record<string, Band[]> = {
       albums: ["The Metal Opera","The Scarecrow","The Wicked Symphony"],
       description: 'German power metal supergroup project.',
       styleNotes: 'Symphonic power metal with guest vocalists.',
-      tier: 'niche'
+      tier: 'popular'
     },
     {
       id: 'band_dragonforce_1',
@@ -3696,7 +3696,7 @@ export const STATIC_BANDS: Record<string, Band[]> = {
       albums: ["Valley of the Damned","Sonic Firestorm","Inhuman Rampage"],
       description: 'British power metal band known for extreme speed.',
       styleNotes: 'Fast-paced power metal with video game influences.',
-      tier: 'niche'
+      tier: 'popular'
     },
     {
       id: 'band_pagan_s_mind_1',
@@ -3706,7 +3706,7 @@ export const STATIC_BANDS: Record<string, Band[]> = {
       albums: ["Celestial Entrance","Enigmatic: Calling","God's Equation"],
       description: 'Norwegian power metal band.',
       styleNotes: 'Progressive power metal with sci-fi themes.',
-      tier: 'niche'
+      tier: 'popular'
     },
     {
       id: 'band_circus_maximus_1',
@@ -3716,7 +3716,7 @@ export const STATIC_BANDS: Record<string, Band[]> = {
       albums: ["The 1st Chapter","Isolate","Nine"],
       description: 'Norwegian power metal band.',
       styleNotes: 'Progressive power metal.',
-      tier: 'niche'
+      tier: 'popular'
     },
     {
       id: 'band_conception_1',
@@ -3736,7 +3736,7 @@ export const STATIC_BANDS: Record<string, Band[]> = {
       albums: ["Land of Broken Hearts","Moving Target","Paradox"],
       description: 'Danish progressive power metal band.',
       styleNotes: 'Symphonic progressive power metal.',
-      tier: 'niche'
+      tier: 'popular'
     },
     {
       id: 'band_vanden_plas_1',
@@ -3746,7 +3746,7 @@ export const STATIC_BANDS: Record<string, Band[]> = {
       albums: ["Colour Temple","The God Thing","Far Off Grace"],
       description: 'German progressive power metal band.',
       styleNotes: 'Progressive power metal.',
-      tier: 'niche'
+      tier: 'popular'
     },
     {
       id: 'band_hammerfall_1',
@@ -3756,7 +3756,7 @@ export const STATIC_BANDS: Record<string, Band[]> = {
       albums: ["Glory to the Brave","Legacy of Kings","Renegade"],
       description: 'Swedish power metal band.',
       styleNotes: 'Traditional power metal with heavy metal influences.',
-      tier: 'niche'
+      tier: 'popular'
     },
     {
       id: 'band_nocturnal_rites_1',
@@ -3766,7 +3766,7 @@ export const STATIC_BANDS: Record<string, Band[]> = {
       albums: ["In a Time of Blood and Fire","The Sacred Talisman","Afterlife"],
       description: 'Swedish power metal band.',
       styleNotes: 'Melodic power metal.',
-      tier: 'niche'
+      tier: 'popular'
     },
     {
       id: 'band_bloodbound_1',
@@ -3776,7 +3776,7 @@ export const STATIC_BANDS: Record<string, Band[]> = {
       albums: ["Nosferatu","Book of the Dead","Tabula Rasa"],
       description: 'Swedish power metal band.',
       styleNotes: 'Heavy power metal.',
-      tier: 'niche'
+      tier: 'popular'
     },
     {
       id: 'band_sabaton_1',
@@ -3786,7 +3786,7 @@ export const STATIC_BANDS: Record<string, Band[]> = {
       albums: ["Primo Victoria","Attero Dominatus","The Art of War"],
       description: 'Swedish power metal band with war themes.',
       styleNotes: 'Power metal with historical war themes.',
-      tier: 'niche'
+      tier: 'well-known'
     },
     {
       id: 'band_powerwolf_1',
@@ -3796,7 +3796,7 @@ export const STATIC_BANDS: Record<string, Band[]> = {
       albums: ["Return in Bloodred","Lupus Dei","Bible of the Beast"],
       description: 'German power metal band with religious themes.',
       styleNotes: 'Symphonic power metal with werewolf and religious themes.',
-      tier: 'niche'
+      tier: 'popular'
     },
     {
       id: 'band_dragonland_1',
@@ -3806,7 +3806,7 @@ export const STATIC_BANDS: Record<string, Band[]> = {
       albums: ["Starfall","Astronomy","The Battle of the Ivory Plains"],
       description: 'Swedish power metal band.',
       styleNotes: 'Symphonic power metal with fantasy themes.',
-      tier: 'niche'
+      tier: 'popular'
     },
     {
       id: 'band_eldritch_1',
@@ -3816,7 +3816,7 @@ export const STATIC_BANDS: Record<string, Band[]> = {
       albums: ["Seeds of Rage","El Nino","Portrait of the Abyss Within"],
       description: 'Italian progressive power metal band.',
       styleNotes: 'Progressive power metal.',
-      tier: 'niche'
+      tier: 'popular'
     },
     {
       id: 'band_domine_1',
@@ -3826,7 +3826,7 @@ export const STATIC_BANDS: Record<string, Band[]> = {
       albums: ["Champion Eternal","Dragonlord","Stormbringer Ruler"],
       description: 'Italian power metal band.',
       styleNotes: 'Power metal with fantasy themes.',
-      tier: 'niche'
+      tier: 'popular'
     },
     {
       id: 'band_heathen_1',
@@ -3836,7 +3836,7 @@ export const STATIC_BANDS: Record<string, Band[]> = {
       albums: ["Breaking the Silence","Victims of Deception"],
       description: 'Bay Area thrash band known for technical complexity.',
       styleNotes: 'Progressive thrash metal with complex arrangements.',
-      tier: 'niche'
+      tier: 'popular'
     },
     {
       id: 'band_dream_evil_1',
@@ -3846,7 +3846,7 @@ export const STATIC_BANDS: Record<string, Band[]> = {
       albums: ["DragonSlayer","Evilized","The Book of Heavy Metal"],
       description: 'Swedish power metal band.',
       styleNotes: 'Melodic power metal with heavy elements.',
-      tier: 'niche'
+      tier: 'popular'
     },
     {
       id: 'band_cellador_1',
@@ -3866,7 +3866,7 @@ export const STATIC_BANDS: Record<string, Band[]> = {
       albums: ["Tales of Ancient Prophecy","Heroes of Mighty Magic","Dawn of the Dragonstar"],
       description: 'Swedish symphonic power metal band.',
       styleNotes: 'Symphonic power metal with fantasy themes.',
-      tier: 'niche'
+      tier: 'popular'
     },
     {
       id: 'band_adagio_1',
@@ -3876,7 +3876,7 @@ export const STATIC_BANDS: Record<string, Band[]> = {
       albums: ["Sanctus Ignis","Underworld","Dominate"],
       description: 'French progressive power metal band.',
       styleNotes: 'Progressive power metal with neoclassical influences.',
-      tier: 'niche'
+      tier: 'popular'
     },
     {
       id: 'band_symphony_x_1',
@@ -3886,7 +3886,7 @@ export const STATIC_BANDS: Record<string, Band[]> = {
       albums: ["The Damnation Game","The Divine Wings of Tragedy","V: The New Mythology Suite"],
       description: 'American progressive power metal band.',
       styleNotes: 'Progressive power metal with neoclassical influences.',
-      tier: 'niche'
+      tier: 'popular'
     },
     {
       id: 'band_agent_steel_1',
@@ -3896,7 +3896,7 @@ export const STATIC_BANDS: Record<string, Band[]> = {
       albums: ["Skeptics Apocalypse","Unstoppable Force","Omega Conspiracy"],
       description: 'American speed metal band known for high-pitched vocals.',
       styleNotes: 'Speed metal with power metal elements and sci-fi themes.',
-      tier: 'niche'
+      tier: 'popular'
     },
     {
       id: 'band_running_wild_1',
@@ -3906,7 +3906,7 @@ export const STATIC_BANDS: Record<string, Band[]> = {
       albums: ["Under Jolly Roger","Port Royal","Black Hand Inn"],
       description: 'German metal band known for pirate themes.',
       styleNotes: 'Combined thrash and power metal with pirate imagery.',
-      tier: 'niche'
+      tier: 'popular'
     },
     {
       id: 'band_grave_digger_1',
@@ -3916,7 +3916,7 @@ export const STATIC_BANDS: Record<string, Band[]> = {
       albums: ["Heavy Metal Breakdown","Heart of Darkness","The Reaper"],
       description: 'German metal band with dark themes.',
       styleNotes: 'Evolved from speed metal to power metal.',
-      tier: 'niche'
+      tier: 'popular'
     },
     {
       id: 'band_rage_1',
@@ -3926,7 +3926,7 @@ export const STATIC_BANDS: Record<string, Band[]> = {
       albums: ["Reign of Fear","Execution Guaranteed","Perfect Man"],
       description: 'German metal band blending thrash and power metal.',
       styleNotes: 'Evolved to incorporate symphonic elements.',
-      tier: 'niche'
+      tier: 'popular'
     },
     {
       id: 'band_helloween_1',
@@ -3936,7 +3936,7 @@ export const STATIC_BANDS: Record<string, Band[]> = {
       albums: ["Keeper of the Seven Keys Part I","Keeper of the Seven Keys Part II","Master of the Rings"],
       description: 'Pioneering German power metal band.',
       styleNotes: 'Started as speed metal, evolved to power metal, experimented with different styles.',
-      tier: 'niche'
+      tier: 'well-known'
     },
     {
       id: 'band_blind_guardian_1',
@@ -3946,7 +3946,7 @@ export const STATIC_BANDS: Record<string, Band[]> = {
       albums: ["Somewhere Far Beyond","Imaginations from the Other Side","Nightfall in Middle-Earth"],
       description: 'German power metal band known for fantasy themes and complex vocal harmonies.',
       styleNotes: 'Evolved from speed metal to more symphonic power metal with orchestral elements.',
-      tier: 'niche'
+      tier: 'popular'
     },
     {
       id: 'band_gamma_ray_1',
@@ -3956,7 +3956,7 @@ export const STATIC_BANDS: Record<string, Band[]> = {
       albums: ["Heading for Tomorrow","Land of the Free","Majestic"],
       description: 'German power metal band.',
       styleNotes: 'Power metal with space and science fiction themes.',
-      tier: 'niche'
+      tier: 'popular'
     },
     {
       id: 'band_stratovarius_1',
@@ -3966,7 +3966,7 @@ export const STATIC_BANDS: Record<string, Band[]> = {
       albums: ["Visions","Destiny","Infinite"],
       description: 'Finnish power metal band known for neoclassical influences.',
       styleNotes: 'Incorporated progressive and neoclassical elements into power metal.',
-      tier: 'niche'
+      tier: 'popular'
     },
     {
       id: 'band_primal_fear_1',
@@ -3976,7 +3976,7 @@ export const STATIC_BANDS: Record<string, Band[]> = {
       albums: ["Primal Fear","Jaws of Death","Black Sun"],
       description: 'German power metal band.',
       styleNotes: 'Power metal with heavy and speed metal influences.',
-      tier: 'niche'
+      tier: 'popular'
     },
     {
       id: 'band_freedom_call_1',
@@ -3986,7 +3986,7 @@ export const STATIC_BANDS: Record<string, Band[]> = {
       albums: ["Stairway to Fairyland","Eternity","The Circle of Life"],
       description: 'German power metal band.',
       styleNotes: 'Melodic power metal with fantasy themes.',
-      tier: 'niche'
+      tier: 'popular'
     },
     {
       id: 'band_edguy_1',
@@ -3996,7 +3996,7 @@ export const STATIC_BANDS: Record<string, Band[]> = {
       albums: ["Theater of Salvation","Mandrake","Hellfire Club"],
       description: 'German power metal band with humorous elements.',
       styleNotes: 'Power metal with theatrical and humorous elements.',
-      tier: 'niche'
+      tier: 'popular'
     },
     {
       id: 'band_manticora_1',
@@ -4006,7 +4006,7 @@ export const STATIC_BANDS: Record<string, Band[]> = {
       albums: ["Roots of Eternity","Deadlock","8 Deadly Sins"],
       description: 'Danish power metal band.',
       styleNotes: 'Progressive power metal with concept albums.',
-      tier: 'niche'
+      tier: 'popular'
     },
     {
       id: 'band_pyramaze_1',
@@ -4026,7 +4026,7 @@ export const STATIC_BANDS: Record<string, Band[]> = {
       albums: ["Shakespeare's Macbeth","Sagas of Iceland","Arise"],
       description: 'German power metal band.',
       styleNotes: 'Power metal with historical themes.',
-      tier: 'niche'
+      tier: 'popular'
     },
     {
       id: 'band_metalium_1',
@@ -4036,7 +4036,7 @@ export const STATIC_BANDS: Record<string, Band[]> = {
       albums: ["Millennium Metal","State of Triumph","Hero Nation"],
       description: 'German power metal band.',
       styleNotes: 'Power metal with melodic elements.',
-      tier: 'niche'
+      tier: 'popular'
     },
     {
       id: 'band_mob_rules_1',
@@ -4066,7 +4066,7 @@ export const STATIC_BANDS: Record<string, Band[]> = {
       albums: ["Ambiguity","Soul Temptation","Liquid Monster"],
       description: 'German power metal band.',
       styleNotes: 'Melodic power metal.',
-      tier: 'niche'
+      tier: 'popular'
     },
     {
       id: 'band_silent_force_1',
@@ -4076,7 +4076,7 @@ export const STATIC_BANDS: Record<string, Band[]> = {
       albums: ["The Empire of Future","Infatuator","Worlds Apart"],
       description: 'German power metal band.',
       styleNotes: 'Melodic power metal.',
-      tier: 'niche'
+      tier: 'popular'
     },
     {
       id: 'band_masterplan_1',
@@ -4086,7 +4086,7 @@ export const STATIC_BANDS: Record<string, Band[]> = {
       albums: ["Masterplan","Aeronautics","MK II"],
       description: 'German power metal supergroup.',
       styleNotes: 'Melodic power metal with heavy elements.',
-      tier: 'niche'
+      tier: 'popular'
     },
     {
       id: 'band_at_vance_1',
@@ -4096,17 +4096,17 @@ export const STATIC_BANDS: Record<string, Band[]> = {
       albums: ["No Escape","Heart of Steel","The Evil in You"],
       description: 'German power metal band.',
       styleNotes: 'Power metal with neoclassical influences.',
-      tier: 'niche'
+      tier: 'popular'
     },
     {
       id: 'band_iron_savior_1',
       name: 'Iron Savior',
       genre: ["speed","power"],
-      era: '2000ss',
+      era: '2000s',
       albums: ["Iron Savior","Unification","Condition Red"],
       description: 'German power metal band.',
       styleNotes: 'Power metal with sci-fi themes.',
-      tier: 'niche'
+      tier: 'popular'
     },
     {
       id: 'band_pink_cream_69_1',
@@ -4116,7 +4116,7 @@ export const STATIC_BANDS: Record<string, Band[]> = {
       albums: ["Pink Cream 69","One Way Live","Games People Play"],
       description: 'German power metal band.',
       styleNotes: 'Melodic power metal.',
-      tier: 'niche'
+      tier: 'popular'
     },
   ],
   progressive: [
@@ -4128,7 +4128,7 @@ export const STATIC_BANDS: Record<string, Band[]> = {
       albums: ["Vikingligr Veldi","Frost","Eld"],
       description: 'Norwegian black metal band with Viking themes.',
       styleNotes: 'Evolved to progressive black metal with Viking themes.',
-      tier: 'niche'
+      tier: 'popular'
     },
     {
       id: 'band_arcturus_1',
@@ -4138,7 +4138,7 @@ export const STATIC_BANDS: Record<string, Band[]> = {
       albums: ["Aspera Hiems Symfonia","La Masquerade Infernale","The Sham Mirrors"],
       description: 'Norwegian avant-garde black metal band.',
       styleNotes: 'Avant-garde black metal with symphonic elements.',
-      tier: 'niche'
+      tier: 'popular'
     },
     {
       id: 'band_death_1',
@@ -4148,7 +4148,7 @@ export const STATIC_BANDS: Record<string, Band[]> = {
       albums: ["Scream Bloody Gore","Human","Symbolic"],
       description: 'Pioneering death metal band founded by Chuck Schuldiner, evolved to incorporate progressive elements.',
       styleNotes: 'Started as raw death metal, evolved to highly technical and progressive death metal.',
-      tier: 'niche'
+      tier: 'popular'
     },
     {
       id: 'band_slumber_1',
@@ -4168,7 +4168,7 @@ export const STATIC_BANDS: Record<string, Band[]> = {
       albums: ["Blackwater Park","Still Life","Damnation"],
       description: 'Swedish progressive metal band known for incorporating death metal and acoustic elements.',
       styleNotes: 'Evolved from death metal to progressive metal with clean vocals and acoustic passages.',
-      tier: 'niche'
+      tier: 'well-known'
     },
     {
       id: 'band_cynic_1',
@@ -4178,7 +4178,7 @@ export const STATIC_BANDS: Record<string, Band[]> = {
       albums: ["Focus","Traced in Air"],
       description: 'American progressive death metal band.',
       styleNotes: 'Combined death metal with fusion and progressive rock.',
-      tier: 'niche'
+      tier: 'popular'
     },
     {
       id: 'band_pestilence_1',
@@ -4188,7 +4188,7 @@ export const STATIC_BANDS: Record<string, Band[]> = {
       albums: ["Malleus Maleficarum","Consuming Impulse","Testimony of the Ancients"],
       description: 'Dutch death metal band.',
       styleNotes: 'Evolved from death metal to technical death with jazz fusion.',
-      tier: 'niche'
+      tier: 'popular'
     },
     {
       id: 'band_athon_1',
@@ -4198,7 +4198,7 @@ export const STATIC_BANDS: Record<string, Band[]> = {
       albums: ["Piece of Time","Unquestionable Presence","Elements"],
       description: 'American technical death metal band.',
       styleNotes: 'Pioneered jazz fusion in death metal.',
-      tier: 'niche'
+      tier: 'popular'
     },
     {
       id: 'band_gorguts_1',
@@ -4208,7 +4208,7 @@ export const STATIC_BANDS: Record<string, Band[]> = {
       albums: ["Considered Dead","The Erosion of Sanity","Obscura"],
       description: 'Canadian death metal band.',
       styleNotes: 'Pioneered avant-garde and technical death metal.',
-      tier: 'niche'
+      tier: 'popular'
     },
     {
       id: 'band_necrophagist_1',
@@ -4248,7 +4248,7 @@ export const STATIC_BANDS: Record<string, Band[]> = {
       albums: ["Incurso","Noctambulant"],
       description: 'Swedish technical death metal band.',
       styleNotes: 'Technical death metal with neoclassical influences.',
-      tier: 'niche'
+      tier: 'popular'
     },
     {
       id: 'band_soreption_1',
@@ -4268,7 +4268,7 @@ export const STATIC_BANDS: Record<string, Band[]> = {
       albums: ["Truth Beyond...","Imagery","Trilateral Progression"],
       description: 'Canadian technical death metal band.',
       styleNotes: 'Technical death metal with melodic elements.',
-      tier: 'niche'
+      tier: 'popular'
     },
     {
       id: 'band_augury_1',
@@ -4278,7 +4278,7 @@ export const STATIC_BANDS: Record<string, Band[]> = {
       albums: ["Concealed","Fragmentary Evidence"],
       description: 'Canadian technical death metal band.',
       styleNotes: 'Technical death metal with progressive and atmospheric elements.',
-      tier: 'niche'
+      tier: 'popular'
     },
     {
       id: 'band_gorod_1',
@@ -4288,7 +4288,7 @@ export const STATIC_BANDS: Record<string, Band[]> = {
       albums: ["Leading Vision","Process of a New Decline","A Perfect Absolution"],
       description: 'French technical death metal band.',
       styleNotes: 'Technical death metal with jazz fusion influences.',
-      tier: 'niche'
+      tier: 'popular'
     },
     {
       id: 'band_ultar_1',
@@ -4328,7 +4328,7 @@ export const STATIC_BANDS: Record<string, Band[]> = {
       albums: ["The Constant","Monolith","Where Owls Know My Name"],
       description: 'American technical death metal band.',
       styleNotes: 'Technical death metal with progressive and atmospheric elements.',
-      tier: 'niche'
+      tier: 'popular'
     },
     {
       id: 'band_black_crown_initiate_1',
@@ -4353,12 +4353,12 @@ export const STATIC_BANDS: Record<string, Band[]> = {
     {
       id: 'band_rush_1',
       name: 'Rush',
-      genre: ["progressive","hard rock"],
+      genre: ["progressive", "heavy"],
       era: '1970s',
       albums: ["2112","Moving Pictures","Permanent Waves"],
       description: 'Canadian progressive rock band.',
       styleNotes: 'Progressive rock with complex compositions and technical proficiency.',
-      tier: 'niche'
+      tier: 'well-known'
     },
     {
       id: 'band_queensryche_1',
@@ -4368,7 +4368,7 @@ export const STATIC_BANDS: Record<string, Band[]> = {
       albums: ["The Warning","Rage for Order","Operation: Mindcrime"],
       description: 'American progressive metal band.',
       styleNotes: 'Progressive metal with concept albums.',
-      tier: 'niche'
+      tier: 'popular'
     },
     {
       id: 'band_kansas_1',
@@ -4378,7 +4378,7 @@ export const STATIC_BANDS: Record<string, Band[]> = {
       albums: ["Leftoverture","Point of Know Return"],
       description: 'American progressive rock/heavy metal band.',
       styleNotes: 'Progressive rock with heavy metal elements.',
-      tier: 'niche'
+      tier: 'popular'
     },
     {
       id: 'band_kamelot_1',
@@ -4388,7 +4388,7 @@ export const STATIC_BANDS: Record<string, Band[]> = {
       albums: ["The Fourth Legacy","The Black Halo","Ghost Opera"],
       description: 'American power metal band known for concept albums and theatrical elements.',
       styleNotes: 'Evolved from traditional power metal to more progressive and symphonic styles.',
-      tier: 'niche'
+      tier: 'popular'
     },
     {
       id: 'band_pagan_s_mind_1',
@@ -4398,7 +4398,7 @@ export const STATIC_BANDS: Record<string, Band[]> = {
       albums: ["Celestial Entrance","Enigmatic: Calling","God's Equation"],
       description: 'Norwegian power metal band.',
       styleNotes: 'Progressive power metal with sci-fi themes.',
-      tier: 'niche'
+      tier: 'popular'
     },
     {
       id: 'band_circus_maximus_1',
@@ -4408,7 +4408,7 @@ export const STATIC_BANDS: Record<string, Band[]> = {
       albums: ["The 1st Chapter","Isolate","Nine"],
       description: 'Norwegian power metal band.',
       styleNotes: 'Progressive power metal.',
-      tier: 'niche'
+      tier: 'popular'
     },
     {
       id: 'band_conception_1',
@@ -4428,7 +4428,7 @@ export const STATIC_BANDS: Record<string, Band[]> = {
       albums: ["Land of Broken Hearts","Moving Target","Paradox"],
       description: 'Danish progressive power metal band.',
       styleNotes: 'Symphonic progressive power metal.',
-      tier: 'niche'
+      tier: 'popular'
     },
     {
       id: 'band_vanden_plas_1',
@@ -4438,7 +4438,7 @@ export const STATIC_BANDS: Record<string, Band[]> = {
       albums: ["Colour Temple","The God Thing","Far Off Grace"],
       description: 'German progressive power metal band.',
       styleNotes: 'Progressive power metal.',
-      tier: 'niche'
+      tier: 'popular'
     },
     {
       id: 'band_eldritch_1',
@@ -4448,7 +4448,7 @@ export const STATIC_BANDS: Record<string, Band[]> = {
       albums: ["Seeds of Rage","El Nino","Portrait of the Abyss Within"],
       description: 'Italian progressive power metal band.',
       styleNotes: 'Progressive power metal.',
-      tier: 'niche'
+      tier: 'popular'
     },
     {
       id: 'band_adagio_1',
@@ -4458,7 +4458,7 @@ export const STATIC_BANDS: Record<string, Band[]> = {
       albums: ["Sanctus Ignis","Underworld","Dominate"],
       description: 'French progressive power metal band.',
       styleNotes: 'Progressive power metal with neoclassical influences.',
-      tier: 'niche'
+      tier: 'popular'
     },
     {
       id: 'band_symphony_x_1',
@@ -4468,7 +4468,7 @@ export const STATIC_BANDS: Record<string, Band[]> = {
       albums: ["The Damnation Game","The Divine Wings of Tragedy","V: The New Mythology Suite"],
       description: 'American progressive power metal band.',
       styleNotes: 'Progressive power metal with neoclassical influences.',
-      tier: 'niche'
+      tier: 'popular'
     },
     {
       id: 'band_vektor_1',
@@ -4478,7 +4478,7 @@ export const STATIC_BANDS: Record<string, Band[]> = {
       albums: ["Black Future","Outer Isolation","Terminal Redux"],
       description: 'American progressive thrash band.',
       styleNotes: 'Highly technical thrash with progressive and sci-fi themes.',
-      tier: 'niche'
+      tier: 'popular'
     },
     {
       id: 'band_dream_theater_1',
@@ -4488,7 +4488,7 @@ export const STATIC_BANDS: Record<string, Band[]> = {
       albums: ["Images and Words","Awake","Metropolis Pt. 2: Scenes from a Memory"],
       description: 'American progressive metal band known for technical proficiency.',
       styleNotes: 'Consistent progressive metal style with complex compositions and instrumental sections.',
-      tier: 'niche'
+      tier: 'popular'
     },
     {
       id: 'band_tool_1',
@@ -4498,7 +4498,7 @@ export const STATIC_BANDS: Record<string, Band[]> = {
       albums: ["Undertow","Ænima","Lateralus"],
       description: 'American progressive metal band known for complex rhythms and philosophical lyrics.',
       styleNotes: 'Incorporated progressive, alternative, and psychedelic elements.',
-      tier: 'niche'
+      tier: 'well-known'
     },
     {
       id: 'band_between_the_buried_and_me_1',
@@ -4508,7 +4508,7 @@ export const STATIC_BANDS: Record<string, Band[]> = {
       albums: ["Colors","The Great Misdirect","The Parallax II: Future Sequence"],
       description: 'American progressive metal band known for genre blending.',
       styleNotes: 'Incorporated deathcore, progressive, and jazz fusion elements.',
-      tier: 'niche'
+      tier: 'popular'
     },
     {
       id: 'band_fates_warning_1',
@@ -4518,7 +4518,7 @@ export const STATIC_BANDS: Record<string, Band[]> = {
       albums: ["Awaken the Guardian","Perfect Symmetry","Parallels"],
       description: 'American progressive metal pioneers.',
       styleNotes: 'Pioneers of progressive metal.',
-      tier: 'niche'
+      tier: 'popular'
     },
     {
       id: 'band_watchtower_1',
@@ -4528,7 +4528,7 @@ export const STATIC_BANDS: Record<string, Band[]> = {
       albums: ["Energetic Disassembly","Control and Resistance"],
       description: 'American progressive thrash metal band.',
       styleNotes: 'Technical progressive thrash metal.',
-      tier: 'niche'
+      tier: 'popular'
     },
     {
       id: 'band_coroner_1',
@@ -4538,7 +4538,7 @@ export const STATIC_BANDS: Record<string, Band[]> = {
       albums: ["R.I.P.","Punishment for Decadence","No More Color"],
       description: 'Swiss progressive thrash metal band.',
       styleNotes: 'Technical progressive thrash metal.',
-      tier: 'niche'
+      tier: 'popular'
     },
     {
       id: 'band_mekong_delta_1',
@@ -4548,7 +4548,7 @@ export const STATIC_BANDS: Record<string, Band[]> = {
       albums: ["Mekong Delta","The Music of Erich Zann","Kaleidoscope"],
       description: 'German progressive thrash metal band.',
       styleNotes: 'Technical progressive thrash metal.',
-      tier: 'niche'
+      tier: 'popular'
     },
     {
       id: 'band_voivod_1',
@@ -4558,7 +4558,7 @@ export const STATIC_BANDS: Record<string, Band[]> = {
       albums: ["Killing Technology","Dimension Hatröss","Nothingface"],
       description: 'Canadian progressive thrash metal band.',
       styleNotes: 'Progressive thrash with sci-fi themes and unique guitar work.',
-      tier: 'niche'
+      tier: 'popular'
     },
     {
       id: 'band_caligula_s_horse_1',
@@ -4578,7 +4578,7 @@ export const STATIC_BANDS: Record<string, Band[]> = {
       albums: ["Handmade Cities","Sunhead"],
       description: 'Australian instrumental progressive metal artist.',
       styleNotes: 'Instrumental progressive metal with melodic elements.',
-      tier: 'niche'
+      tier: 'popular'
     },
     {
       id: 'band_sithu_aye_1',
@@ -4608,7 +4608,7 @@ export const STATIC_BANDS: Record<string, Band[]> = {
       albums: ["One","Altered State","Polaris"],
       description: 'British progressive metal band.',
       styleNotes: 'Progressive metal with djent and atmospheric elements.',
-      tier: 'niche'
+      tier: 'popular'
     },
     {
       id: 'band_periphery_1',
@@ -4618,7 +4618,7 @@ export const STATIC_BANDS: Record<string, Band[]> = {
       albums: ["Periphery","Periphery II: This Time It's Personal","Juggernaut: Alpha and Omega"],
       description: 'American progressive metal band.',
       styleNotes: 'Progressive metal with djent and pop elements.',
-      tier: 'niche'
+      tier: 'popular'
     },
     {
       id: 'band_animals_as_leaders_1',
@@ -4628,7 +4628,7 @@ export const STATIC_BANDS: Record<string, Band[]> = {
       albums: ["Animals as Leaders","Weightless","The Joy of Motion"],
       description: 'American instrumental progressive metal band.',
       styleNotes: 'Instrumental progressive metal with djent and jazz fusion.',
-      tier: 'niche'
+      tier: 'popular'
     },
     {
       id: 'band_meshuggah_1',
@@ -4638,7 +4638,7 @@ export const STATIC_BANDS: Record<string, Band[]> = {
       albums: ["Destroy Erase Improve","Chaosphere","Nothing"],
       description: 'Swedish progressive metal band.',
       styleNotes: 'Pioneers of djent and polyrhythmic metal.',
-      tier: 'niche'
+      tier: 'popular'
     },
     {
       id: 'band_textures_1',
@@ -4648,7 +4648,7 @@ export const STATIC_BANDS: Record<string, Band[]> = {
       albums: ["Polars","Drawing Circles","Silhouettes"],
       description: 'Dutch progressive metal band.',
       styleNotes: 'Progressive metal with djent and groove elements.',
-      tier: 'niche'
+      tier: 'popular'
     },
     {
       id: 'band_vildhjarta_1',
@@ -4658,7 +4658,7 @@ export const STATIC_BANDS: Record<string, Band[]> = {
       albums: ["Måsstaden","Måsstaden funderar"],
       description: 'Swedish progressive metal band.',
       styleNotes: 'Progressive metal with djent and atmospheric elements.',
-      tier: 'niche'
+      tier: 'popular'
     },
     {
       id: 'band_uneven_structure_1',
@@ -4678,7 +4678,7 @@ export const STATIC_BANDS: Record<string, Band[]> = {
       albums: ["Themata","Sound Awake","Asymmetry"],
       description: 'Australian progressive metal band.',
       styleNotes: 'Progressive metal with alternative rock elements.',
-      tier: 'niche'
+      tier: 'popular'
     },
     {
       id: 'band_leprous_1',
@@ -4688,7 +4688,7 @@ export const STATIC_BANDS: Record<string, Band[]> = {
       albums: ["Bilateral","Coal","The Congregation"],
       description: 'Norwegian progressive metal band.',
       styleNotes: 'Progressive metal with avant-garde and theatrical elements.',
-      tier: 'niche'
+      tier: 'popular'
     },
     {
       id: 'band_ihsahn_1',
@@ -4698,7 +4698,7 @@ export const STATIC_BANDS: Record<string, Band[]> = {
       albums: ["The Adversary","angL","After"],
       description: 'Norwegian progressive metal artist.',
       styleNotes: 'Progressive metal with avant-garde and symphonic elements.',
-      tier: 'niche'
+      tier: 'popular'
     },
     {
       id: 'band_devin_townsend_project_1',
@@ -4708,7 +4708,7 @@ export const STATIC_BANDS: Record<string, Band[]> = {
       albums: ["Ki","Addicted","Deconstruction"],
       description: 'Canadian progressive metal project.',
       styleNotes: 'Progressive metal with diverse musical styles.',
-      tier: 'niche'
+      tier: 'popular'
     },
     {
       id: 'band_ayreon_1',
@@ -4718,7 +4718,7 @@ export const STATIC_BANDS: Record<string, Band[]> = {
       albums: ["The Final Experiment","Into the Electric Castle","The Human Equation"],
       description: 'Dutch progressive rock opera project.',
       styleNotes: 'Progressive rock opera with guest vocalists.',
-      tier: 'niche'
+      tier: 'popular'
     },
     {
       id: 'band_pain_of_salvation_1',
@@ -4728,7 +4728,7 @@ export const STATIC_BANDS: Record<string, Band[]> = {
       albums: ["Entropia","One Hour by the Concrete Lake","The Perfect Element"],
       description: 'Swedish progressive metal band.',
       styleNotes: 'Progressive metal with concept albums and emotional depth.',
-      tier: 'niche'
+      tier: 'popular'
     },
     {
       id: 'band_porcupine_tree_1',
@@ -4738,7 +4738,7 @@ export const STATIC_BANDS: Record<string, Band[]> = {
       albums: ["In Absentia","Deadwing","Fear of a Blank Planet"],
       description: 'British progressive rock/metal band.',
       styleNotes: 'Progressive rock/metal with psychedelic and alternative elements.',
-      tier: 'niche'
+      tier: 'popular'
     },
     {
       id: 'band_king_crimson_1',
@@ -4748,64 +4748,64 @@ export const STATIC_BANDS: Record<string, Band[]> = {
       albums: ["In the Court of the Crimson King","Red","Discipline"],
       description: 'British progressive rock pioneers.',
       styleNotes: 'Pioneers of progressive rock with complex compositions.',
-      tier: 'niche'
+      tier: 'popular'
     },
   ],
   sludge: [
     {
       id: 'band_crowbar_1',
       name: 'Crowbar',
-      genre: ["groove","sludge"],
+      genre: ["groove", "doom"],
       era: '1990s',
       albums: ["Crowbar","Time Heals Nothing","Broken Glass"],
       description: 'American sludge/doom metal band.',
       styleNotes: 'Sludge/doom metal with heavy, downtuned riffs.',
-      tier: 'niche'
+      tier: 'popular'
     },
     {
       id: 'band_down_1',
       name: 'Down',
-      genre: ["groove","sludge"],
+      genre: ["groove", "doom"],
       era: '1990s',
       albums: ["NOLA","Down II","Over the Under"],
       description: 'American sludge metal supergroup.',
       styleNotes: 'Sludge metal with southern rock influences.',
-      tier: 'niche'
+      tier: 'popular'
     },
     {
       id: 'band_corrosion_of_conformity_1',
       name: 'Corrosion of Conformity',
-      genre: ["groove","sludge"],
+      genre: ["groove", "doom"],
       era: '1980s',
       albums: ["Blind","Deliverance","Wiseblood"],
       description: 'American sludge metal band.',
       styleNotes: 'Evolved from hardcore to sludge and groove metal.',
-      tier: 'niche'
+      tier: 'popular'
     },
     {
       id: 'band_eyehategod_1',
       name: 'Eyehategod',
-      genre: ["groove","sludge"],
+      genre: ["groove", "doom"],
       era: '1990s',
       albums: ["In the Name of Suffering","Take as Needed for Pain","Dopesick"],
       description: 'American sludge metal band.',
       styleNotes: 'Sludge metal with dark, nihilistic themes.',
-      tier: 'niche'
+      tier: 'popular'
     },
     {
       id: 'band_grief_1',
       name: 'Grief',
-      genre: ["groove","sludge"],
+      genre: ["groove", "doom"],
       era: '1990s',
       albums: ["Dismal","Come to Grief","Torture"],
       description: 'American sludge/doom metal band.',
       styleNotes: 'Sludge/doom metal with depressive themes.',
-      tier: 'niche'
+      tier: 'popular'
     },
     {
       id: 'band_acid_bath_1',
       name: 'Acid Bath',
-      genre: ["groove","sludge"],
+      genre: ["groove", "doom"],
       era: '1990s',
       albums: ["When the Kite String Pops","Paegan Terrorism Tactics"],
       description: 'American sludge/death metal band.',
@@ -4815,7 +4815,7 @@ export const STATIC_BANDS: Record<string, Band[]> = {
     {
       id: 'band_burning_witch_1',
       name: 'Burning Witch',
-      genre: ["groove","sludge"],
+      genre: ["groove", "doom"],
       era: '1990s',
       albums: ["Crippled Lucifer","Towers..."],
       description: 'American sludge/doom metal band.',
@@ -4825,87 +4825,87 @@ export const STATIC_BANDS: Record<string, Band[]> = {
     {
       id: 'band_kylesa_1',
       name: 'Kylesa',
-      genre: ["groove","sludge"],
+      genre: ["groove", "doom"],
       era: '2000s',
       albums: ["To Walk a Middle Course","Time Will Fuse Its Worth","Static Tensions"],
       description: 'American sludge/stoner metal band.',
       styleNotes: 'Sludge/stoner metal with psychedelic elements.',
-      tier: 'niche'
+      tier: 'popular'
     },
     {
       id: 'band_baroness_1',
       name: 'Baroness',
-      genre: ["groove","sludge"],
+      genre: ["groove", "doom"],
       era: '2000s',
       albums: ["Red Album","Blue Record","Yellow & Green"],
       description: 'American sludge/prog metal band.',
       styleNotes: 'Sludge metal with progressive and melodic elements.',
-      tier: 'niche'
+      tier: 'popular'
     },
     {
       id: 'band_mastodon_1',
       name: 'Mastodon',
-      genre: ["groove","sludge"],
+      genre: ["groove", "doom"],
       era: '2000s',
       albums: ["Leviathan","Blood Mountain","Crack the Skye"],
       description: 'American progressive metal band known for concept albums.',
       styleNotes: 'Evolved from sludge metal to progressive metal with concept albums.',
-      tier: 'niche'
+      tier: 'popular'
     },
     {
       id: 'band_neurosis_1',
       name: 'Neurosis',
-      genre: ["groove","sludge"],
+      genre: ["groove", "doom"],
       era: '1990s',
       albums: ["Souls at Zero","Enemy of the Sun","Through Silver in Blood"],
       description: 'American post-metal band.',
       styleNotes: 'Post-metal with sludge and doom elements.',
-      tier: 'niche'
+      tier: 'popular'
     },
     {
       id: 'band_isis_1',
       name: 'Isis',
-      genre: ["groove","sludge"],
+      genre: ["groove", "doom"],
       era: '2000s',
       albums: ["Celestial","Oceanic","Panopticon"],
       description: 'American post-metal band.',
       styleNotes: 'Post-metal with sludge and atmospheric elements.',
-      tier: 'niche'
+      tier: 'popular'
     },
     {
       id: 'band_pelican_1',
       name: 'Pelican',
-      genre: ["groove","sludge"],
+      genre: ["groove", "doom"],
       era: '2000s',
       albums: ["Australasia","The Fire in Our Throats Will Beckon","City of Echoes"],
       description: 'American instrumental post-metal band.',
       styleNotes: 'Instrumental post-metal with heavy riffs.',
-      tier: 'niche'
+      tier: 'popular'
     },
     {
       id: 'band_cult_of_luna_1',
       name: 'Cult of Luna',
-      genre: ["groove","sludge"],
+      genre: ["groove", "doom"],
       era: '2000s',
       albums: ["The Beyond","Salvation","Somewhere Along the Highway"],
       description: 'Swedish post-metal band.',
       styleNotes: 'Post-metal with sludge and atmospheric elements.',
-      tier: 'niche'
+      tier: 'popular'
     },
     {
       id: 'band_the_ocean_1',
       name: 'The Ocean',
-      genre: ["groove","sludge"],
+      genre: ["groove", "doom"],
       era: '2000s',
       albums: ["Precambrian","Heliocentric","Anthropocentric"],
       description: 'German progressive sludge metal band.',
       styleNotes: 'Progressive sludge with concept albums.',
-      tier: 'niche'
+      tier: 'popular'
     },
     {
       id: 'band_rosetta_1',
       name: 'Rosetta',
-      genre: ["groove","sludge"],
+      genre: ["groove", "doom"],
       era: '2000s',
       albums: ["The Galilean Satellites","Wake/Lift","The Anaesthete"],
       description: 'American post-metal band.',
@@ -4915,47 +4915,47 @@ export const STATIC_BANDS: Record<string, Band[]> = {
     {
       id: 'band_thou_1',
       name: 'Thou',
-      genre: ["groove","sludge"],
+      genre: ["groove", "doom"],
       era: '2000s',
       albums: ["You, Whom I Have Always Hated","Heathen","Rhea Sylvia"],
       description: 'American sludge/doom metal band.',
       styleNotes: 'Sludge/doom metal with political and philosophical themes.',
-      tier: 'niche'
+      tier: 'popular'
     },
     {
       id: 'band_high_on_fire_1',
       name: 'High on Fire',
-      genre: ["groove","sludge"],
+      genre: ["groove", "doom"],
       era: '2000s',
       albums: ["The Art of Self Defense","Surrounded by Thieves","Blessed Black Wings"],
       description: 'American stoner/sludge metal band.',
       styleNotes: 'Stoner/sludge metal with aggressive elements.',
-      tier: 'niche'
+      tier: 'popular'
     },
     {
       id: 'band_sleep_1',
       name: 'Sleep',
-      genre: ["groove","sludge"],
+      genre: ["groove", "doom"],
       era: '1990s',
       albums: ["Sleep's Holy Mountain","Volume One","Jerusalem"],
       description: 'American stoner doom metal band.',
       styleNotes: 'Stoner doom with heavy, hypnotic riffs.',
-      tier: 'niche'
+      tier: 'popular'
     },
     {
       id: 'band_electric_wizard_1',
       name: 'Electric Wizard',
-      genre: ["groove","sludge"],
+      genre: ["groove", "doom"],
       era: '1990s',
       albums: ["Come My Fanatics...","Dopethrone","Let Us Prey"],
       description: 'British doom metal band known for extremely heavy sound.',
       styleNotes: 'Stoner doom with sludge influences and dark themes.',
-      tier: 'niche'
+      tier: 'popular'
     },
     {
       id: 'band_bongripper_1',
       name: 'Bongripper',
-      genre: ["groove","sludge"],
+      genre: ["groove", "doom"],
       era: '2000s',
       albums: ["Hippie Killer","Hate Ashbury","Sex and Satan"],
       description: 'American stoner doom metal band.',
@@ -4965,7 +4965,7 @@ export const STATIC_BANDS: Record<string, Band[]> = {
     {
       id: 'band_weedeater_1',
       name: 'Weedeater',
-      genre: ["groove","sludge"],
+      genre: ["groove", "doom"],
       era: '2000s',
       albums: ["...And Justice for Y'All","Sixteen Tons","God Luck and Good Speed"],
       description: 'American stoner/sludge metal band.',
@@ -4975,27 +4975,27 @@ export const STATIC_BANDS: Record<string, Band[]> = {
     {
       id: 'band_acid_king_1',
       name: 'Acid King',
-      genre: ["groove","sludge"],
+      genre: ["groove", "doom"],
       era: '1990s',
       albums: ["Zoroaster","Busse Woods","Free the Weed"],
       description: 'American stoner doom metal band.',
       styleNotes: 'Stoner doom with psychedelic elements.',
-      tier: 'niche'
+      tier: 'popular'
     },
     {
       id: 'band_windhand_1',
       name: 'Windhand',
-      genre: ["groove","sludge"],
+      genre: ["groove", "doom"],
       era: '2010s',
       albums: ["Windhand","Soma","Grief's Infernal Flower"],
       description: 'American stoner doom metal band.',
       styleNotes: 'Stoner doom with melodic and psychedelic elements.',
-      tier: 'niche'
+      tier: 'popular'
     },
     {
       id: 'band_monolord_1',
       name: 'Monolord',
-      genre: ["groove","sludge"],
+      genre: ["groove", "doom"],
       era: '2010s',
       albums: ["Empress Rising","Vænir","Rust"],
       description: 'Swedish stoner doom metal band.',
@@ -5005,17 +5005,17 @@ export const STATIC_BANDS: Record<string, Band[]> = {
     {
       id: 'band_conan_1',
       name: 'Conan',
-      genre: ["groove","sludge"],
+      genre: ["groove", "doom"],
       era: '2010s',
       albums: ["Monnos","Horseback Battle Hammer","Existential Void Guardian"],
       description: 'British stoner doom metal band.',
       styleNotes: 'Stoner doom with extremely heavy sound.',
-      tier: 'niche'
+      tier: 'popular'
     },
     {
       id: 'band_ufomammut_1',
       name: 'Ufomammut',
-      genre: ["groove","sludge"],
+      genre: ["groove", "doom"],
       era: '2000s',
       albums: ["Godlike Snake","Snailking","Idolum"],
       description: 'Italian stoner doom metal band.',
@@ -5025,27 +5025,27 @@ export const STATIC_BANDS: Record<string, Band[]> = {
     {
       id: 'band_boris_1',
       name: 'Boris',
-      genre: ["groove","sludge"],
+      genre: ["groove", "doom"],
       era: '1990s',
       albums: ["Amplifier Worship","Feedbacker","Pink"],
       description: 'Japanese experimental metal band.',
       styleNotes: 'Experimental metal with drone, doom, and stoner elements.',
-      tier: 'niche'
+      tier: 'popular'
     },
     {
       id: 'band_sunn_o_1',
       name: 'Sunn O)))',
-      genre: ["groove","sludge"],
+      genre: ["groove", "doom"],
       era: '2000s',
       albums: ["ØØ Void","White1","Black One"],
       description: 'American drone metal band.',
       styleNotes: 'Drone metal with extremely heavy, minimal compositions.',
-      tier: 'niche'
+      tier: 'popular'
     },
     {
       id: 'band_earth_1',
       name: 'Earth',
-      genre: ["groove","sludge"],
+      genre: ["groove", "doom"],
       era: '1990s',
       albums: ["Earth 2","Pentastar: In the Style of Demons","The Bees Made Honey in the Lion's Skull"],
       description: 'American drone metal band.',
@@ -5055,17 +5055,17 @@ export const STATIC_BANDS: Record<string, Band[]> = {
     {
       id: 'band_melvins_1',
       name: 'Melvins',
-      genre: ["groove","sludge"],
+      genre: ["groove", "doom"],
       era: '1980s',
       albums: ["Bullhead","Eggnog","Stoner Witch"],
       description: 'American sludge/stoner metal band.',
       styleNotes: 'Sludge/stoner metal with experimental elements.',
-      tier: 'niche'
+      tier: 'popular'
     },
     {
       id: 'band_fuck_the_facts_1',
       name: 'Fuck the Facts',
-      genre: ["groove","sludge"],
+      genre: ["groove", "doom"],
       era: '2000s',
       albums: ["Backstabber Etiquette","Disgorge, Mexico","Stigmata High-Five"],
       description: 'Canadian grindcore band.',
@@ -5075,7 +5075,7 @@ export const STATIC_BANDS: Record<string, Band[]> = {
     {
       id: 'band_noothgrush_1',
       name: 'Noothgrush',
-      genre: ["groove","sludge"],
+      genre: ["groove", "doom"],
       era: '1990s',
       albums: ["Erode the Person"],
       description: 'American sludge/doom metal band.',
@@ -5085,7 +5085,7 @@ export const STATIC_BANDS: Record<string, Band[]> = {
     {
       id: 'band_corrupted_1',
       name: 'Corrupted',
-      genre: ["groove","sludge"],
+      genre: ["groove", "doom"],
       era: '1990s',
       albums: ["Paso Inferior","Llenandose de Gusanos","Scars"],
       description: 'Japanese sludge/doom metal band.',
@@ -5122,7 +5122,7 @@ export const STATIC_BANDS: Record<string, Band[]> = {
       albums: ["Six Seconds Kill","Outpost Fort Europa","Regiment Ragnarok"],
       description: 'Danish death metal band.',
       styleNotes: 'Death metal with war themes.',
-      tier: 'niche'
+      tier: 'popular'
     },
     {
       id: 'band_koldborn_1',
@@ -5132,7 +5132,7 @@ export const STATIC_BANDS: Record<string, Band[]> = {
       albums: ["The First Five"],
       description: 'Danish death metal band.',
       styleNotes: 'Death metal with old-school influences.',
-      tier: 'niche'
+      tier: 'popular'
     },
     {
       id: 'band_suffocation_1',
@@ -5142,7 +5142,7 @@ export const STATIC_BANDS: Record<string, Band[]> = {
       albums: ["Effigy of the Forgotten","Pierced from Within","Souls to Deny"],
       description: 'Pioneers of brutal death metal with slam elements.',
       styleNotes: 'Created the slam death metal subgenre.',
-      tier: 'niche'
+      tier: 'popular'
     },
     {
       id: 'band_morbid_angel_1',
@@ -5152,7 +5152,7 @@ export const STATIC_BANDS: Record<string, Band[]> = {
       albums: ["Altars of Madness","Blessed Are the Sick","Covenant"],
       description: 'Pioneering death metal band known for technical complexity and dark themes.',
       styleNotes: 'Incorporated industrial and electronic elements in later albums.',
-      tier: 'niche'
+      tier: 'popular'
     },
     {
       id: 'band_deicide_1',
@@ -5162,7 +5162,7 @@ export const STATIC_BANDS: Record<string, Band[]> = {
       albums: ["Deicide","Legion","Once Upon the Cross"],
       description: 'Known for satanic themes and aggressive sound.',
       styleNotes: 'Consistent brutal death metal with anti-religious themes.',
-      tier: 'niche'
+      tier: 'popular'
     },
     {
       id: 'band_cannibal_corpse_1',
@@ -5172,7 +5172,7 @@ export const STATIC_BANDS: Record<string, Band[]> = {
       albums: ["Tomb of the Mutilated","The Bleeding","Kill"],
       description: 'Known for extreme brutality and controversial lyrics.',
       styleNotes: 'Consistent brutal death metal style throughout their career.',
-      tier: 'niche'
+      tier: 'popular'
     },
     {
       id: 'band_obituary_1',
@@ -5182,7 +5182,7 @@ export const STATIC_BANDS: Record<string, Band[]> = {
       albums: ["Slowly We Rot","Cause of Death","The End Complete"],
       description: 'Known for their slow, heavy sound and growling vocals.',
       styleNotes: 'Consistent death/doom style with signature growling vocals.',
-      tier: 'niche'
+      tier: 'popular'
     },
     {
       id: 'band_autopsy_1',
@@ -5232,7 +5232,7 @@ export const STATIC_BANDS: Record<string, Band[]> = {
       albums: ["Black Force Domain","Conquerors of Armageddon","Ageless Venomous"],
       description: 'Brazilian death metal band.',
       styleNotes: 'High-speed, technical death metal.',
-      tier: 'niche'
+      tier: 'popular'
     },
     {
       id: 'band_anvil_1',
@@ -5242,7 +5242,7 @@ export const STATIC_BANDS: Record<string, Band[]> = {
       albums: ["Metal on Metal","Forged in Fire","This Is Thirteen"],
       description: 'Canadian heavy/speed metal band.',
       styleNotes: 'Consistent heavy/speed metal style.',
-      tier: 'niche'
+      tier: 'popular'
     },
     {
       id: 'band_accept_1',
@@ -5252,7 +5252,7 @@ export const STATIC_BANDS: Record<string, Band[]> = {
       albums: ["Restless and Wild","Balls to the Wall","Metal Heart"],
       description: 'German heavy metal band known for aggressive sound.',
       styleNotes: 'Influenced speed metal and thrash metal development.',
-      tier: 'niche'
+      tier: 'popular'
     },
     {
       id: 'band_saxon_1',
@@ -5262,7 +5262,7 @@ export const STATIC_BANDS: Record<string, Band[]> = {
       albums: ["Wheels of Steel","Strong Arm of the Law","Denim and Leather"],
       description: 'British heavy metal band part of the NWOBHM movement.',
       styleNotes: 'Consistent heavy metal style with NWOBHM influences.',
-      tier: 'niche'
+      tier: 'popular'
     },
     {
       id: 'band_iron_maiden_1',
@@ -5272,7 +5272,7 @@ export const STATIC_BANDS: Record<string, Band[]> = {
       albums: ["The Number of the Beast","Powerslave","Somewhere in Time"],
       description: 'British heavy metal pioneers known for epic songs and mascot Eddie.',
       styleNotes: 'Consistent heavy metal style with progressive and symphonic elements.',
-      tier: 'niche'
+      tier: 'well-known'
     },
     {
       id: 'band_judas_priest_1',
@@ -5282,7 +5282,7 @@ export const STATIC_BANDS: Record<string, Band[]> = {
       albums: ["British Steel","Screaming for Vengeance","Painkiller"],
       description: 'British heavy metal pioneers known for twin guitar harmonies.',
       styleNotes: 'Evolved from hard rock to heavy metal, maintained consistent style.',
-      tier: 'niche'
+      tier: 'well-known'
     },
     {
       id: 'band_motorhead_1',
@@ -5292,7 +5292,7 @@ export const STATIC_BANDS: Record<string, Band[]> = {
       albums: ["Overkill","Ace of Spades","No Sleep 'til Hammersmith"],
       description: 'British heavy metal pioneers.',
       styleNotes: 'Created the foundation for speed metal and thrash metal.',
-      tier: 'niche'
+      tier: 'well-known'
     },
     {
       id: 'band_raven_1',
@@ -5302,7 +5302,7 @@ export const STATIC_BANDS: Record<string, Band[]> = {
       albums: ["Rock Until You Drop","Wiped Out","All for One"],
       description: 'British heavy/speed metal band.',
       styleNotes: 'Heavy metal with speed metal and punk influences.',
-      tier: 'niche'
+      tier: 'popular'
     },
     {
       id: 'band_satan_1',
@@ -5322,7 +5322,7 @@ export const STATIC_BANDS: Record<string, Band[]> = {
       albums: ["A Time of Changes","Buried Alive"],
       description: 'British heavy metal band.',
       styleNotes: 'Heavy metal with NWOBHM influences.',
-      tier: 'niche'
+      tier: 'popular'
     },
     {
       id: 'band_battleaxe_1',
@@ -5342,7 +5342,7 @@ export const STATIC_BANDS: Record<string, Band[]> = {
       albums: ["Demolition","Hit and Run","Screaming Blue Murder"],
       description: 'British heavy metal band.',
       styleNotes: 'Heavy metal with punk influences.',
-      tier: 'niche'
+      tier: 'popular'
     },
     {
       id: 'band_rock_goddess_1',
@@ -5362,7 +5362,7 @@ export const STATIC_BANDS: Record<string, Band[]> = {
       albums: ["Red, Hot and Heavy","Future World","Jump the Gun"],
       description: 'Danish heavy metal band.',
       styleNotes: 'Heavy metal with melodic elements.',
-      tier: 'niche'
+      tier: 'popular'
     },
     {
       id: 'band_mercyful_fate_1',
@@ -5372,7 +5372,7 @@ export const STATIC_BANDS: Record<string, Band[]> = {
       albums: ["Melissa","Don't Break the Oath","In the Shadows"],
       description: 'Danish heavy/thrash band with occult themes.',
       styleNotes: 'Influenced black metal with their occult imagery.',
-      tier: 'niche'
+      tier: 'popular'
     },
     {
       id: 'band_king_diamond_1',
@@ -5382,7 +5382,7 @@ export const STATIC_BANDS: Record<string, Band[]> = {
       albums: ["Fatal Portrait","Abigail","Them"],
       description: 'Danish heavy metal artist.',
       styleNotes: 'Heavy metal with horror themes and theatrical vocals.',
-      tier: 'niche'
+      tier: 'popular'
     },
     {
       id: 'band_volbeat_1',
@@ -5392,7 +5392,7 @@ export const STATIC_BANDS: Record<string, Band[]> = {
       albums: ["The Strength / The Sound / The Songs","Rock the Rebel / Metal the Devil","Guitar Gangsters & Cadillac Blood"],
       description: 'Danish heavy metal band.',
       styleNotes: 'Heavy metal with rockabilly and psychobilly influences.',
-      tier: 'niche'
+      tier: 'well-known'
     },
     {
       id: 'band_dragonforce_1',
@@ -5402,7 +5402,7 @@ export const STATIC_BANDS: Record<string, Band[]> = {
       albums: ["Valley of the Damned","Sonic Firestorm","Inhuman Rampage"],
       description: 'British power metal band known for extreme speed.',
       styleNotes: 'Fast-paced power metal with video game influences.',
-      tier: 'niche'
+      tier: 'popular'
     },
     {
       id: 'band_cellador_1',
@@ -5422,7 +5422,7 @@ export const STATIC_BANDS: Record<string, Band[]> = {
       albums: ["Skeptics Apocalypse","Unstoppable Force","Omega Conspiracy"],
       description: 'American speed metal band known for high-pitched vocals.',
       styleNotes: 'Speed metal with power metal elements and sci-fi themes.',
-      tier: 'niche'
+      tier: 'popular'
     },
     {
       id: 'band_running_wild_1',
@@ -5432,7 +5432,7 @@ export const STATIC_BANDS: Record<string, Band[]> = {
       albums: ["Under Jolly Roger","Port Royal","Black Hand Inn"],
       description: 'German metal band known for pirate themes.',
       styleNotes: 'Combined thrash and power metal with pirate imagery.',
-      tier: 'niche'
+      tier: 'popular'
     },
     {
       id: 'band_grave_digger_1',
@@ -5442,7 +5442,7 @@ export const STATIC_BANDS: Record<string, Band[]> = {
       albums: ["Heavy Metal Breakdown","Heart of Darkness","The Reaper"],
       description: 'German metal band with dark themes.',
       styleNotes: 'Evolved from speed metal to power metal.',
-      tier: 'niche'
+      tier: 'popular'
     },
     {
       id: 'band_rage_1',
@@ -5452,7 +5452,7 @@ export const STATIC_BANDS: Record<string, Band[]> = {
       albums: ["Reign of Fear","Execution Guaranteed","Perfect Man"],
       description: 'German metal band blending thrash and power metal.',
       styleNotes: 'Evolved to incorporate symphonic elements.',
-      tier: 'niche'
+      tier: 'popular'
     },
     {
       id: 'band_helloween_1',
@@ -5462,7 +5462,7 @@ export const STATIC_BANDS: Record<string, Band[]> = {
       albums: ["Keeper of the Seven Keys Part I","Keeper of the Seven Keys Part II","Master of the Rings"],
       description: 'Pioneering German power metal band.',
       styleNotes: 'Started as speed metal, evolved to power metal, experimented with different styles.',
-      tier: 'niche'
+      tier: 'well-known'
     },
     {
       id: 'band_blind_guardian_1',
@@ -5472,7 +5472,7 @@ export const STATIC_BANDS: Record<string, Band[]> = {
       albums: ["Somewhere Far Beyond","Imaginations from the Other Side","Nightfall in Middle-Earth"],
       description: 'German power metal band known for fantasy themes and complex vocal harmonies.',
       styleNotes: 'Evolved from speed metal to more symphonic power metal with orchestral elements.',
-      tier: 'niche'
+      tier: 'popular'
     },
     {
       id: 'band_gamma_ray_1',
@@ -5482,7 +5482,7 @@ export const STATIC_BANDS: Record<string, Band[]> = {
       albums: ["Heading for Tomorrow","Land of the Free","Majestic"],
       description: 'German power metal band.',
       styleNotes: 'Power metal with space and science fiction themes.',
-      tier: 'niche'
+      tier: 'popular'
     },
     {
       id: 'band_stratovarius_1',
@@ -5492,7 +5492,7 @@ export const STATIC_BANDS: Record<string, Band[]> = {
       albums: ["Visions","Destiny","Infinite"],
       description: 'Finnish power metal band known for neoclassical influences.',
       styleNotes: 'Incorporated progressive and neoclassical elements into power metal.',
-      tier: 'niche'
+      tier: 'popular'
     },
     {
       id: 'band_primal_fear_1',
@@ -5502,7 +5502,7 @@ export const STATIC_BANDS: Record<string, Band[]> = {
       albums: ["Primal Fear","Jaws of Death","Black Sun"],
       description: 'German power metal band.',
       styleNotes: 'Power metal with heavy and speed metal influences.',
-      tier: 'niche'
+      tier: 'popular'
     },
     {
       id: 'band_freedom_call_1',
@@ -5512,7 +5512,7 @@ export const STATIC_BANDS: Record<string, Band[]> = {
       albums: ["Stairway to Fairyland","Eternity","The Circle of Life"],
       description: 'German power metal band.',
       styleNotes: 'Melodic power metal with fantasy themes.',
-      tier: 'niche'
+      tier: 'popular'
     },
     {
       id: 'band_edguy_1',
@@ -5522,7 +5522,7 @@ export const STATIC_BANDS: Record<string, Band[]> = {
       albums: ["Theater of Salvation","Mandrake","Hellfire Club"],
       description: 'German power metal band with humorous elements.',
       styleNotes: 'Power metal with theatrical and humorous elements.',
-      tier: 'niche'
+      tier: 'popular'
     },
     {
       id: 'band_manticora_1',
@@ -5532,7 +5532,7 @@ export const STATIC_BANDS: Record<string, Band[]> = {
       albums: ["Roots of Eternity","Deadlock","8 Deadly Sins"],
       description: 'Danish power metal band.',
       styleNotes: 'Progressive power metal with concept albums.',
-      tier: 'niche'
+      tier: 'popular'
     },
     {
       id: 'band_pyramaze_1',
@@ -5552,7 +5552,7 @@ export const STATIC_BANDS: Record<string, Band[]> = {
       albums: ["Shakespeare's Macbeth","Sagas of Iceland","Arise"],
       description: 'German power metal band.',
       styleNotes: 'Power metal with historical themes.',
-      tier: 'niche'
+      tier: 'popular'
     },
     {
       id: 'band_metalium_1',
@@ -5562,7 +5562,7 @@ export const STATIC_BANDS: Record<string, Band[]> = {
       albums: ["Millennium Metal","State of Triumph","Hero Nation"],
       description: 'German power metal band.',
       styleNotes: 'Power metal with melodic elements.',
-      tier: 'niche'
+      tier: 'popular'
     },
     {
       id: 'band_mob_rules_1',
@@ -5592,7 +5592,7 @@ export const STATIC_BANDS: Record<string, Band[]> = {
       albums: ["Ambiguity","Soul Temptation","Liquid Monster"],
       description: 'German power metal band.',
       styleNotes: 'Melodic power metal.',
-      tier: 'niche'
+      tier: 'popular'
     },
     {
       id: 'band_silent_force_1',
@@ -5602,7 +5602,7 @@ export const STATIC_BANDS: Record<string, Band[]> = {
       albums: ["The Empire of Future","Infatuator","Worlds Apart"],
       description: 'German power metal band.',
       styleNotes: 'Melodic power metal.',
-      tier: 'niche'
+      tier: 'popular'
     },
     {
       id: 'band_masterplan_1',
@@ -5612,7 +5612,7 @@ export const STATIC_BANDS: Record<string, Band[]> = {
       albums: ["Masterplan","Aeronautics","MK II"],
       description: 'German power metal supergroup.',
       styleNotes: 'Melodic power metal with heavy elements.',
-      tier: 'niche'
+      tier: 'popular'
     },
     {
       id: 'band_at_vance_1',
@@ -5622,17 +5622,17 @@ export const STATIC_BANDS: Record<string, Band[]> = {
       albums: ["No Escape","Heart of Steel","The Evil in You"],
       description: 'German power metal band.',
       styleNotes: 'Power metal with neoclassical influences.',
-      tier: 'niche'
+      tier: 'popular'
     },
     {
       id: 'band_iron_savior_1',
       name: 'Iron Savior',
       genre: ["speed","power"],
-      era: '2000ss',
+      era: '2000s',
       albums: ["Iron Savior","Unification","Condition Red"],
       description: 'German power metal band.',
       styleNotes: 'Power metal with sci-fi themes.',
-      tier: 'niche'
+      tier: 'popular'
     },
     {
       id: 'band_pink_cream_69_1',
@@ -5642,7 +5642,7 @@ export const STATIC_BANDS: Record<string, Band[]> = {
       albums: ["Pink Cream 69","One Way Live","Games People Play"],
       description: 'German power metal band.',
       styleNotes: 'Melodic power metal.',
-      tier: 'niche'
+      tier: 'popular'
     },
     {
       id: 'band_exciter_1',
@@ -5652,7 +5652,7 @@ export const STATIC_BANDS: Record<string, Band[]> = {
       albums: ["Heavy Metal Maniac","Violence & Force","Long Live the Loud"],
       description: 'Canadian speed metal pioneers.',
       styleNotes: 'Influenced thrash metal development with fast, aggressive songs.',
-      tier: 'niche'
+      tier: 'popular'
     },
     {
       id: 'band_razor_1',
@@ -5662,7 +5662,7 @@ export const STATIC_BANDS: Record<string, Band[]> = {
       albums: ["Executioner's Song","Evil Invaders","Malicious Intent"],
       description: 'Canadian speed/thrash metal band.',
       styleNotes: 'Fast, aggressive speed/thrash metal.',
-      tier: 'niche'
+      tier: 'popular'
     },
     {
       id: 'band_mercenary_1',
@@ -5672,7 +5672,7 @@ export const STATIC_BANDS: Record<string, Band[]> = {
       albums: ["Everblack","11 Dreams","The Hours That Remain"],
       description: 'Danish melodic death metal band.',
       styleNotes: 'Melodic death metal with progressive elements.',
-      tier: 'niche'
+      tier: 'popular'
     },
     {
       id: 'band_mnemic_1',
@@ -5682,7 +5682,7 @@ export const STATIC_BANDS: Record<string, Band[]> = {
       albums: ["Mechanical Spin Phenomena","The Audio Injected Soul","Passenger"],
       description: 'Danish industrial metal band.',
       styleNotes: 'Industrial metal with progressive elements.',
-      tier: 'niche'
+      tier: 'popular'
     },
     {
       id: 'band_raunchy_1',
@@ -5692,7 +5692,7 @@ export const STATIC_BANDS: Record<string, Band[]> = {
       albums: ["Velvet Noise","Death Pop Romance","Pop Graphitti"],
       description: 'Danish industrial metal band.',
       styleNotes: 'Industrial metal with melodic elements.',
-      tier: 'niche'
+      tier: 'popular'
     },
   ],
   thrash: [
@@ -5714,7 +5714,7 @@ export const STATIC_BANDS: Record<string, Band[]> = {
       albums: ["Beneath the Remains","Arise","Chaos A.D."],
       description: 'Brazilian metal band known for incorporating tribal elements.',
       styleNotes: 'Evolved from death/thrash to groove metal with tribal influences.',
-      tier: 'niche'
+      tier: 'popular'
     },
     {
       id: 'band_skyclad_1',
@@ -5724,7 +5724,7 @@ export const STATIC_BANDS: Record<string, Band[]> = {
       albums: ["The Wayward Sons of Mother Earth","Jonah's Ark","Prince of the Poverty Line"],
       description: 'British folk metal pioneers.',
       styleNotes: 'Combined thrash metal with folk instruments and themes.',
-      tier: 'niche'
+      tier: 'popular'
     },
     {
       id: 'band_pantera_1',
@@ -5734,7 +5734,7 @@ export const STATIC_BANDS: Record<string, Band[]> = {
       albums: ["Cowboys from Hell","Vulgar Display of Power","Far Beyond Driven"],
       description: 'American groove metal pioneers.',
       styleNotes: 'Evolved from glam metal to groove/thrash metal.',
-      tier: 'niche'
+      tier: 'well-known'
     },
     {
       id: 'band_machine_head_1',
@@ -5744,7 +5744,7 @@ export const STATIC_BANDS: Record<string, Band[]> = {
       albums: ["Burn My Eyes","The More Things Change","The Blackening"],
       description: 'American groove/thrash metal band.',
       styleNotes: 'Evolved from groove metal to incorporate thrash and progressive elements.',
-      tier: 'niche'
+      tier: 'popular'
     },
     {
       id: 'band_exodus_1',
@@ -5754,7 +5754,7 @@ export const STATIC_BANDS: Record<string, Band[]> = {
       albums: ["Bonded by Blood","Fabulous Disaster","Impact Is Imminent"],
       description: 'Pioneering Bay Area thrash band with aggressive, fast-paced songs.',
       styleNotes: 'Consistent thrash style with occasional groove elements.',
-      tier: 'niche'
+      tier: 'popular'
     },
     {
       id: 'band_slayer_1',
@@ -5764,7 +5764,7 @@ export const STATIC_BANDS: Record<string, Band[]> = {
       albums: ["Reign in Blood","South of Heaven","Seasons in the Abyss"],
       description: 'Known for their fast, aggressive style and dark lyrical themes.',
       styleNotes: 'Maintained consistent thrash/death style throughout their career.',
-      tier: 'niche'
+      tier: 'well-known'
     },
     {
       id: 'band_megadeth_1',
@@ -5774,7 +5774,7 @@ export const STATIC_BANDS: Record<string, Band[]> = {
       albums: ["Rust in Peace","Peace Sells... but Who's Buying?","Countdown to Extinction"],
       description: 'Founded by former Metallica guitarist Dave Mustaine, known for technical proficiency and political lyrics.',
       styleNotes: 'Evolved from thrash to more mainstream metal while maintaining technical complexity.',
-      tier: 'niche'
+      tier: 'well-known'
     },
     {
       id: 'band_anthrax_1',
@@ -5784,7 +5784,7 @@ export const STATIC_BANDS: Record<string, Band[]> = {
       albums: ["Among the Living","Spreading the Disease","Persistence of Time"],
       description: 'One of the "Big Four" thrash bands, known for incorporating rap and punk elements.',
       styleNotes: 'Experimented with different styles including rap-metal crossover.',
-      tier: 'niche'
+      tier: 'well-known'
     },
     {
       id: 'band_testament_1',
@@ -5794,7 +5794,7 @@ export const STATIC_BANDS: Record<string, Band[]> = {
       albums: ["The Legacy","Practice What You Preach","Souls of Black"],
       description: 'Bay Area thrash band known for technical proficiency and dark themes.',
       styleNotes: 'Maintained consistent thrash style with progressive elements.',
-      tier: 'niche'
+      tier: 'popular'
     },
     {
       id: 'band_overkill_1',
@@ -5804,7 +5804,7 @@ export const STATIC_BANDS: Record<string, Band[]> = {
       albums: ["Feel the Fire","Taking Over","Horrorscope"],
       description: 'American speed/thrash metal band.',
       styleNotes: 'Consistent speed/thrash metal with punk influences.',
-      tier: 'niche'
+      tier: 'popular'
     },
     {
       id: 'band_nuclear_assault_1',
@@ -5814,7 +5814,7 @@ export const STATIC_BANDS: Record<string, Band[]> = {
       albums: ["Game Over","Survive","Handle with Care"],
       description: 'American thrash band with crossover appeal.',
       styleNotes: 'Incorporated punk and hardcore elements.',
-      tier: 'niche'
+      tier: 'popular'
     },
     {
       id: 'band_sacred_reich_1',
@@ -5824,7 +5824,7 @@ export const STATIC_BANDS: Record<string, Band[]> = {
       albums: ["Ignorance","The American Way","Independent"],
       description: 'American thrash band with political lyrics.',
       styleNotes: 'Incorporated groove and crossover elements.',
-      tier: 'niche'
+      tier: 'popular'
     },
     {
       id: 'band_municipal_waste_1',
@@ -5834,7 +5834,7 @@ export const STATIC_BANDS: Record<string, Band[]> = {
       albums: ["Hazardous Mutation","The Art of Partying","Massive Aggressive"],
       description: 'American crossover thrash band.',
       styleNotes: 'Revived crossover thrash in the 2000s.',
-      tier: 'niche'
+      tier: 'popular'
     },
     {
       id: 'band_toxic_holocaust_1',
@@ -5854,7 +5854,7 @@ export const STATIC_BANDS: Record<string, Band[]> = {
       albums: ["Manifest Decimation","Nightmare Logic"],
       description: 'American crossover thrash band.',
       styleNotes: 'Combined thrash with hardcore punk.',
-      tier: 'niche'
+      tier: 'popular'
     },
     {
       id: 'band_metallica_1',
@@ -5884,7 +5884,7 @@ export const STATIC_BANDS: Record<string, Band[]> = {
       albums: ["Breaking the Silence","Victims of Deception"],
       description: 'Bay Area thrash band known for technical complexity.',
       styleNotes: 'Progressive thrash metal with complex arrangements.',
-      tier: 'niche'
+      tier: 'popular'
     },
     {
       id: 'band_vektor_1',
@@ -5894,7 +5894,7 @@ export const STATIC_BANDS: Record<string, Band[]> = {
       albums: ["Black Future","Outer Isolation","Terminal Redux"],
       description: 'American progressive thrash band.',
       styleNotes: 'Highly technical thrash with progressive and sci-fi themes.',
-      tier: 'niche'
+      tier: 'popular'
     },
     {
       id: 'band_watchtower_1',
@@ -5904,7 +5904,7 @@ export const STATIC_BANDS: Record<string, Band[]> = {
       albums: ["Energetic Disassembly","Control and Resistance"],
       description: 'American progressive thrash metal band.',
       styleNotes: 'Technical progressive thrash metal.',
-      tier: 'niche'
+      tier: 'popular'
     },
     {
       id: 'band_coroner_1',
@@ -5914,7 +5914,7 @@ export const STATIC_BANDS: Record<string, Band[]> = {
       albums: ["R.I.P.","Punishment for Decadence","No More Color"],
       description: 'Swiss progressive thrash metal band.',
       styleNotes: 'Technical progressive thrash metal.',
-      tier: 'niche'
+      tier: 'popular'
     },
     {
       id: 'band_mekong_delta_1',
@@ -5924,7 +5924,7 @@ export const STATIC_BANDS: Record<string, Band[]> = {
       albums: ["Mekong Delta","The Music of Erich Zann","Kaleidoscope"],
       description: 'German progressive thrash metal band.',
       styleNotes: 'Technical progressive thrash metal.',
-      tier: 'niche'
+      tier: 'popular'
     },
     {
       id: 'band_voivod_1',
@@ -5934,7 +5934,7 @@ export const STATIC_BANDS: Record<string, Band[]> = {
       albums: ["Killing Technology","Dimension Hatröss","Nothingface"],
       description: 'Canadian progressive thrash metal band.',
       styleNotes: 'Progressive thrash with sci-fi themes and unique guitar work.',
-      tier: 'niche'
+      tier: 'popular'
     },
     {
       id: 'band_exciter_1',
@@ -5944,7 +5944,7 @@ export const STATIC_BANDS: Record<string, Band[]> = {
       albums: ["Heavy Metal Maniac","Violence & Force","Long Live the Loud"],
       description: 'Canadian speed metal pioneers.',
       styleNotes: 'Influenced thrash metal development with fast, aggressive songs.',
-      tier: 'niche'
+      tier: 'popular'
     },
     {
       id: 'band_razor_1',
@@ -5954,7 +5954,7 @@ export const STATIC_BANDS: Record<string, Band[]> = {
       albums: ["Executioner's Song","Evil Invaders","Malicious Intent"],
       description: 'Canadian speed/thrash metal band.',
       styleNotes: 'Fast, aggressive speed/thrash metal.',
-      tier: 'niche'
+      tier: 'popular'
     },
     {
       id: 'band_kreator_1',
@@ -5964,7 +5964,7 @@ export const STATIC_BANDS: Record<string, Band[]> = {
       albums: ["Pleasure to Kill","Coma of Souls","Violent Revolution"],
       description: 'German thrash metal pioneers known for extreme aggression.',
       styleNotes: 'Influenced death metal development with their extreme sound.',
-      tier: 'niche'
+      tier: 'popular'
     },
     {
       id: 'band_sodom_1',
@@ -5974,7 +5974,7 @@ export const STATIC_BANDS: Record<string, Band[]> = {
       albums: ["Persecution Mania","Agent Orange","M-16"],
       description: 'German thrash metal band known for raw, aggressive sound.',
       styleNotes: 'Maintained consistent extreme thrash style.',
-      tier: 'niche'
+      tier: 'popular'
     },
     {
       id: 'band_destruction_1',
@@ -5984,7 +5984,7 @@ export const STATIC_BANDS: Record<string, Band[]> = {
       albums: ["Infernal Overkill","Release from Agony","Eternal Devastation"],
       description: 'German thrash metal band part of the "Teutonic Thrash" scene.',
       styleNotes: 'Known for aggressive vocals and fast riffing.',
-      tier: 'niche'
+      tier: 'popular'
     },
     {
       id: 'band_dark_angel_1',
@@ -5994,7 +5994,7 @@ export const STATIC_BANDS: Record<string, Band[]> = {
       albums: ["Darkness Descends","Leave Scars","Time Does Not Heal"],
       description: 'American thrash metal band known for extreme speed and complexity.',
       styleNotes: 'Pioneered technical thrash metal.',
-      tier: 'niche'
+      tier: 'popular'
     },
     {
       id: 'band_vio-lence_1',
@@ -6004,7 +6004,7 @@ export const STATIC_BANDS: Record<string, Band[]> = {
       albums: ["Eternal Nightmare","Oppressing the Masses","Nothing to Gain"],
       description: 'Bay Area thrash band known for technical riffs.',
       styleNotes: 'Part of the second wave of Bay Area thrash.',
-      tier: 'niche'
+      tier: 'popular'
     },
     {
       id: 'band_death_angel_1',
@@ -6014,7 +6014,7 @@ export const STATIC_BANDS: Record<string, Band[]> = {
       albums: ["The Ultra-Violence","Frolic Through the Park","Act III"],
       description: 'Bay Area thrash band with diverse influences.',
       styleNotes: 'Incorporated funk and experimental elements.',
-      tier: 'niche'
+      tier: 'popular'
     },
     {
       id: 'band_flotsam_and_jetsam_1',
@@ -6024,7 +6024,7 @@ export const STATIC_BANDS: Record<string, Band[]> = {
       albums: ["Doomsday for the Deceiver","No Place for Disgrace"],
       description: 'American thrash band with progressive tendencies.',
       styleNotes: 'Known for complex song structures.',
-      tier: 'niche'
+      tier: 'popular'
     },
     {
       id: 'band_hallows_eve_1',
@@ -6034,7 +6034,7 @@ export const STATIC_BANDS: Record<string, Band[]> = {
       albums: ["Death and Insanity","Monument","Tales of Terror"],
       description: 'American thrash band from Atlanta.',
       styleNotes: 'Known for dark, atmospheric thrash.',
-      tier: 'niche'
+      tier: 'popular'
     },
     {
       id: 'band_annihilator_1',
@@ -6044,7 +6044,7 @@ export const STATIC_BANDS: Record<string, Band[]> = {
       albums: ["Alice in Hell","Never, Neverland"],
       description: 'Canadian thrash band known for technical prowess.',
       styleNotes: 'Technical thrash with complex riffing.',
-      tier: 'niche'
+      tier: 'popular'
     },
     {
       id: 'band_revocation_1',
@@ -6054,7 +6054,7 @@ export const STATIC_BANDS: Record<string, Band[]> = {
       albums: ["Empire of the Obscene","Existence Is Futile","The Outer Ones"],
       description: 'American technical death/thrash band.',
       styleNotes: 'Blends technical death metal with thrash.',
-      tier: 'niche'
+      tier: 'popular'
     },
     {
       id: 'band_tankard_1',
@@ -6064,7 +6064,7 @@ export const STATIC_BANDS: Record<string, Band[]> = {
       albums: ["Zombie Attack","Chemical Invasion","The Morning After"],
       description: 'German thrash band known for drinking themes.',
       styleNotes: 'Fun, party-oriented thrash metal.',
-      tier: 'niche'
+      tier: 'popular'
     },
     {
       id: 'band_whiplash_1',
@@ -6074,7 +6074,7 @@ export const STATIC_BANDS: Record<string, Band[]> = {
       albums: ["Power and Pain","Ticket to Mayhem","Cult of One"],
       description: 'American thrash band from New Jersey.',
       styleNotes: 'Fast, aggressive East Coast thrash.',
-      tier: 'niche'
+      tier: 'popular'
     },
     {
       id: 'band_artillery_1',
@@ -6084,54 +6084,54 @@ export const STATIC_BANDS: Record<string, Band[]> = {
       albums: ["Fear of Tomorrow","Terror Squad","By Inheritance"],
       description: 'Danish thrash metal band.',
       styleNotes: 'Technical thrash with progressive elements.',
-      tier: 'niche'
+      tier: 'popular'
     },
   ],
   viking: [
     {
       id: 'band_bathory_1',
       name: 'Bathory',
-      genre: ["black","viking"],
+      genre: ["black", "folk"],
       era: '1980s',
       albums: ["Bathory","The Return","Under the Sign of the Black Mark"],
       description: 'Swedish black metal pioneers.',
       styleNotes: 'Pioneered both black metal and Viking metal.',
-      tier: 'niche'
+      tier: 'popular'
     },
     {
       id: 'band_graveland_1',
       name: 'Graveland',
-      genre: ["black","viking"],
+      genre: ["black", "folk"],
       era: '1990s',
       albums: ["The Celtic Winter","Thousand Swords","Following the Voice of Blood"],
       description: 'Polish black metal band with Viking themes.',
       styleNotes: 'Black metal with Viking and pagan themes.',
-      tier: 'niche'
+      tier: 'popular'
     },
     {
       id: 'band_metsatöll_1',
       name: 'Metsatöll',
-      genre: ["folk","viking"],
+      genre: ["folk"],
       era: '2000s',
       albums: ["Hiiekoda","Terast","Äio"],
       description: 'Estonian folk metal band.',
       styleNotes: 'Folk metal with Estonian folk elements.',
-      tier: 'niche'
+      tier: 'popular'
     },
     {
       id: 'band_tyr_1',
       name: 'Týr',
-      genre: ["folk","viking"],
+      genre: ["folk"],
       era: '2000s',
       albums: ["Eric the Red","Ragnarok","Land"],
       description: 'Faroese folk metal band.',
       styleNotes: 'Viking metal with Faroese folk influences.',
-      tier: 'niche'
+      tier: 'popular'
     },
     {
       id: 'band_heidevolk_1',
       name: 'Heidevolk',
-      genre: ["folk","viking"],
+      genre: ["folk"],
       era: '2000s',
       albums: ["De Strijdlust is Geboren","Walhalla Wacht","Batavi"],
       description: 'Dutch folk metal band.',
@@ -6141,37 +6141,37 @@ export const STATIC_BANDS: Record<string, Band[]> = {
     {
       id: 'band_wolfchant_1',
       name: 'Wolfchant',
-      genre: ["folk","viking"],
+      genre: ["folk"],
       era: '2000s',
       albums: ["A Pagan Storm","Determined Devastation","Call of the Black Winds"],
       description: 'German folk metal band.',
       styleNotes: 'Viking metal with folk elements.',
-      tier: 'niche'
+      tier: 'popular'
     },
     {
       id: 'band_menhir_1',
       name: 'Menhir',
-      genre: ["folk","viking"],
+      genre: ["folk"],
       era: '1990s',
       albums: ["Die ewigen Steine","Thuringia","Hildebrandslied"],
       description: 'German folk metal band.',
       styleNotes: 'Viking metal with Germanic folk elements.',
-      tier: 'niche'
+      tier: 'popular'
     },
     {
       id: 'band_falkenbach_1',
       name: 'Falkenbach',
-      genre: ["folk","viking"],
+      genre: ["folk"],
       era: '2000s',
       albums: ["...En Their Medh Riki Fara...","Magni Blandinn Ok Megintiri","Heralding - The Fireblade"],
       description: 'German viking metal band.',
       styleNotes: 'Viking metal with folk and black metal elements.',
-      tier: 'niche'
+      tier: 'popular'
     },
     {
       id: 'band_vintersorg_1',
       name: 'Vintersorg',
-      genre: ["folk","viking"],
+      genre: ["folk"],
       era: '2000s',
       albums: ["Till Fjälls","Ödemarkens Son","Cosmic Genesis"],
       description: 'Swedish viking metal band.',
@@ -6181,77 +6181,77 @@ export const STATIC_BANDS: Record<string, Band[]> = {
     {
       id: 'band_borknagar_1',
       name: 'Borknagar',
-      genre: ["folk","viking"],
+      genre: ["folk"],
       era: '1990s',
       albums: ["Borknagar","The Olden Domain","The Archaic Course"],
       description: 'Norwegian black metal band with progressive elements.',
       styleNotes: 'Progressive black metal with folk influences.',
-      tier: 'niche'
+      tier: 'popular'
     },
     {
       id: 'band_windir_1',
       name: 'Windir',
-      genre: ["folk","viking"],
+      genre: ["folk"],
       era: '2000s',
       albums: ["Sóknardalr","Arntor","1184"],
       description: 'Norwegian viking metal band.',
       styleNotes: 'Viking metal with black metal and folk elements.',
-      tier: 'niche'
+      tier: 'popular'
     },
     {
       id: 'band_vreid_1',
       name: 'Vreid',
-      genre: ["folk","viking"],
+      genre: ["folk"],
       era: '2000s',
       albums: ["Kraft","Pitch Black Brigade","I Krig"],
       description: 'Norwegian viking metal band.',
       styleNotes: 'Viking metal with black metal and thrash elements.',
-      tier: 'niche'
+      tier: 'popular'
     },
     {
       id: 'band_kampfar_1',
       name: 'Kampfar',
-      genre: ["folk","viking"],
+      genre: ["folk"],
       era: '2000s',
       albums: ["Mellom Skogkledde Aaser","Kvass","Heimgang"],
       description: 'Norwegian viking metal band.',
       styleNotes: 'Viking metal with black metal and folk elements.',
-      tier: 'niche'
+      tier: 'popular'
     },
     {
       id: 'band_arkona_1',
       name: 'Arkona',
-      genre: ["folk","viking"],
+      genre: ["folk"],
       era: '2000s',
       albums: ["Ot Serdca K Nebu","Lepta","Goi, Rode, Goi!"],
       description: 'Russian viking metal band.',
       styleNotes: 'Viking metal with Slavic folk elements.',
-      tier: 'niche'
+      tier: 'popular'
     },
     {
       id: 'band_butterfly_temple_1',
       name: 'Butterfly Temple',
-      genre: ["folk","viking"],
+      genre: ["folk"],
       era: '2000s',
       albums: ["Blessed by the Gods","Pagan Songs","Zov Pustykh Dereven"],
       description: 'Russian viking metal band.',
       styleNotes: 'Viking metal with Slavic folk elements.',
-      tier: 'niche'
+      tier: 'popular'
     },
     {
       id: 'band_nokturnal_mortum_1',
       name: 'Nokturnal Mortum',
-      genre: ["folk","viking"],
+      genre: ["folk"],
       era: '2000s',
       albums: ["Goat Horns","To the Gates of Blasphemous Fire","NeChrist"],
       description: 'Ukrainian viking metal band.',
       styleNotes: 'Viking metal with black metal and folk elements.',
-      tier: 'niche'
+      tier: 'popular'
     },
     {
       id: 'band_temnozor_1',
       name: 'Temnozor',
-      genre: ["folk","viking"],
+      genre: ["folk"],
       era: '2000s',
       albums: ["Sorcery of Fragrance","Horizons","Ukraina"],
       description: 'Russian viking metal band.',
@@ -6261,17 +6261,17 @@ export const STATIC_BANDS: Record<string, Band[]> = {
     {
       id: 'band_alatyr_1',
       name: 'Alatyr',
-      genre: ["folk","viking"],
+      genre: ["folk"],
       era: '2000s',
       albums: ["Put' k Pochitayemym Rodnikam"],
       description: 'Russian viking metal band.',
       styleNotes: 'Viking metal with Slavic folk elements.',
-      tier: 'niche'
+      tier: 'popular'
     },
     {
       id: 'band_ruslana_1',
       name: 'Ruslana',
-      genre: ["folk","viking"],
+      genre: ["folk"],
       era: '2000s',
       albums: ["Wild Dances","Amazonka"],
       description: 'Ukrainian viking metal artist.',

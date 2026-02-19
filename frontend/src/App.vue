@@ -8,6 +8,7 @@
       v-else-if="currentView === 'comparison'"
       :session-id="sessionId"
       :comparison-count="comparisonCount"
+      :zen-mode="zenMode"
       @preference-recorded="onPreferenceRecorded"
       @restart="restart"
     />
@@ -25,10 +26,16 @@ type View = 'genre' | 'comparison';
 const currentView = ref<View>('genre');
 const sessionId = ref('');
 const comparisonCount = ref(0);
+const zenMode = ref(false);
 
 const onGenreSelected = async (genre: string) => {
   try {
-    sessionId.value = await apiService.createSession(genre);
+    // 获取当前 LLM 配置
+    const llmConfig = apiService.getLLMConfig();
+    // 如果启用了 LLM 配置，则进入 Zen Mode
+    zenMode.value = llmConfig.enabled && !!llmConfig.endpoint;
+    // 创建 session，传递 LLM 配置
+    sessionId.value = await apiService.createSession(genre, llmConfig);
     comparisonCount.value = 0;
     currentView.value = 'comparison';
   } catch (error) {
@@ -45,6 +52,7 @@ const restart = () => {
   currentView.value = 'genre';
   sessionId.value = '';
   comparisonCount.value = 0;
+  zenMode.value = false;
 };
 </script>
 

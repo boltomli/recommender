@@ -27,6 +27,9 @@ export function loadConfig(configPath: string = './config.json'): AppConfig {
   if (process.env.LLM_AUTH_TOKEN) {
     config.llm.apiKey = process.env.LLM_AUTH_TOKEN;
   }
+  if (process.env.LLM_API_TYPE) {
+    (config.llm as any).apiType = process.env.LLM_API_TYPE;
+  }
   if (process.env.DATABASE_PATH) {
     config.database.path = process.env.DATABASE_PATH;
   }
