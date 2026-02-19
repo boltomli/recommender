@@ -40,10 +40,18 @@ export class PostgresAdapter implements IDatabase {
           genre TEXT NOT NULL,
           comparison_history TEXT NOT NULL,
           preference_weights TEXT NOT NULL,
+          cached_bands TEXT,
           created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
           updated_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
         )
       `);
+
+      // Migrate: add cached_bands column if it doesn't exist
+      try {
+        await client.query(`ALTER TABLE sessions ADD COLUMN IF NOT EXISTS cached_bands TEXT`);
+      } catch (e) {
+        // Ignore migration errors
+      }
 
       // Create indexes
       await client.query(`
@@ -162,13 +170,14 @@ export class PostgresAdapter implements IDatabase {
   // Session operations
   async createSession(session: Session): Promise<void> {
     await this.pool.query(`
-      INSERT INTO sessions (id, genre, comparison_history, preference_weights)
-      VALUES ($1, $2, $3, $4)
+      INSERT INTO sessions (id, genre, comparison_history, preference_weights, cached_bands)
+      VALUES ($1, $2, $3, $4, $5)
     `, [
       session.id,
       session.genre,
       JSON.stringify(session.comparisonHistory),
-      JSON.stringify(session.preferenceWeights)
+      JSON.stringify(session.preferenceWeights),
+      session.cachedBands ? JSON.stringify(session.cachedBands) : null
     ]);
   }
 
@@ -181,11 +190,12 @@ export class PostgresAdapter implements IDatabase {
   async updateSession(session: Session): Promise<void> {
     await this.pool.query(`
       UPDATE sessions
-      SET comparison_history = $1, preference_weights = $2, updated_at = CURRENT_TIMESTAMP
-      WHERE id = $3
+      SET comparison_history = $1, preference_weights = $2, cached_bands = $3, updated_at = CURRENT_TIMESTAMP
+      WHERE id = $4
     `, [
       JSON.stringify(session.comparisonHistory),
       JSON.stringify(session.preferenceWeights),
+      session.cachedBands ? JSON.stringify(session.cachedBands) : null,
       session.id
     ]);
   }
@@ -220,6 +230,7 @@ export class PostgresAdapter implements IDatabase {
       comparisonHistory: JSON.parse(row.comparison_history),
       preferenceWeights: JSON.parse(row.preference_weights),
       seenBands: [],
+      cachedBands: row.cached_bands ? JSON.parse(row.cached_bands) : undefined,
       createdAt: new Date(row.created_at),
       updatedAt: new Date(row.updated_at)
     };

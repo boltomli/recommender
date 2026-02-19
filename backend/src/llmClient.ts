@@ -690,30 +690,60 @@ Follow the guidelines shown in the examples above. Return ONLY valid JSON, no ex
   }
 
   private async callLLM(messages: LLMMessage[]): Promise<LLMResponse> {
+    const isAnthropic = this.config.apiType === 'anthropic';
     const controller = new AbortController();
     const timeoutId = setTimeout(() => controller.abort(), this.config.timeout);
 
-    // Build headers with optional authorization
+    // Build headers based on API type
     const headers: Record<string, string> = {
       'Content-Type': 'application/json',
     };
 
-    // Add authorization header if apiKey is configured
     if (this.config.apiKey) {
-      headers['Authorization'] = `Bearer ${this.config.apiKey}`;
+      if (isAnthropic) {
+        headers['x-api-key'] = this.config.apiKey;
+        headers['anthropic-version'] = '2023-06-01';
+      } else {
+        headers['Authorization'] = `Bearer ${this.config.apiKey}`;
+      }
     }
 
     try {
-      const response = await fetch(`${this.config.endpoint}/v1/chat/completions`, {
-        method: 'POST',
-        headers,
-        body: JSON.stringify({
-          model: this.config.model,
-          messages: messages,
-          temperature: 0.7,
-        }),
-        signal: controller.signal,
-      });
+      let response;
+      
+      if (isAnthropic) {
+        // Anthropic API format
+        const systemMessage = messages.find(m => m.role === 'system')?.content || '';
+        const userMessages = messages.filter(m => m.role !== 'system');
+        
+        response = await fetch(`${this.config.endpoint}/v1/messages`, {
+          method: 'POST',
+          headers,
+          body: JSON.stringify({
+            model: this.config.model,
+            max_tokens: 2048,
+            temperature: 0.7,
+            system: systemMessage,
+            messages: userMessages.map(m => ({
+              role: m.role === 'assistant' ? 'assistant' : 'user',
+              content: m.content,
+            })),
+          }),
+          signal: controller.signal,
+        });
+      } else {
+        // OpenAI-compatible API format
+        response = await fetch(`${this.config.endpoint}/v1/chat/completions`, {
+          method: 'POST',
+          headers,
+          body: JSON.stringify({
+            model: this.config.model,
+            messages: messages,
+            temperature: 0.7,
+          }),
+          signal: controller.signal,
+        });
+      }
 
       clearTimeout(timeoutId);
 
@@ -721,7 +751,24 @@ Follow the guidelines shown in the examples above. Return ONLY valid JSON, no ex
         throw new Error(`LLM API error: ${response.status} ${response.statusText}`);
       }
 
-      return await response.json() as LLMResponse;
+      const data = await response.json() as Record<string, unknown>;
+      
+      // Convert Anthropic response to OpenAI format if needed
+      if (isAnthropic) {
+        const content = (data.content as Array<{text?: string}>)?.[0]?.text 
+          || (data.completion as string) 
+          || '';
+        const anthropicResponse: LLMResponse = {
+          choices: [{
+            message: {
+              content,
+            },
+          }],
+        };
+        return anthropicResponse;
+      }
+
+      return data as unknown as LLMResponse;
     } catch (error) {
       clearTimeout(timeoutId);
       throw error;

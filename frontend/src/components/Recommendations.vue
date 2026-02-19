@@ -118,9 +118,11 @@ const restart = () => {
 .recommendations-grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
-  gap: 1.5rem;
+  gap: 2.5rem;
   max-width: 1400px;
   margin: 0 auto;
+  padding-top: 1rem;
+  align-items: start;
 }
 
 .recommendation-card {
@@ -128,9 +130,11 @@ const restart = () => {
   background: #2d2d2d;
   border: 1px solid #444;
   border-radius: 8px;
-  padding: 1.25rem 1.25rem 1.25rem 1.25rem;
+  padding: 2rem 1.25rem 1.5rem 1.25rem;
   transition: border-color 0.2s ease;
   overflow: visible;
+  margin-top: 0.5rem;
+  height: auto;
 }
 
 .recommendation-card:hover {
@@ -151,7 +155,7 @@ const restart = () => {
 
 .rank-badge {
   position: absolute;
-  top: -8px;
+  top: -12px;
   left: 15px;
   background: #4a4a4a;
   color: #e0e0e0;
@@ -164,6 +168,7 @@ const restart = () => {
   font-weight: 600;
   font-size: 0.95rem;
   z-index: 10;
+  border: 2px solid #2d2d2d;
 }
 
 .recommendation-reason {

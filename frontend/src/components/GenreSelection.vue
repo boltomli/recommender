@@ -5,7 +5,7 @@
       <p class="text-center mb-5">Select a subgenre to discover bands that match your taste</p>
 
       <!-- LLM Configuration Panel -->
-      <div v-if="isApiMode" class="llm-config-section">
+      <div class="llm-config-section">
         <button
           @click="toggleLLMConfig"
           class="btn btn-llm-toggle"
@@ -35,16 +35,38 @@
 
           <div v-if="llmConfig.enabled" class="llm-inputs">
             <div class="form-group">
+              <label for="llm-api-type">API Type</label>
+              <select
+                id="llm-api-type"
+                v-model="llmConfig.apiType"
+                class="form-control"
+                @change="updateLLMConfig"
+              >
+                <option value="openai">OpenAI / Compatible (OpenAI format)</option>
+                <option value="anthropic">Anthropic Claude</option>
+              </select>
+              <small class="form-text">
+                Select the API format your LLM service uses
+              </small>
+            </div>
+
+            <div class="form-group">
               <label for="llm-endpoint">LLM Endpoint URL</label>
               <input
                 id="llm-endpoint"
                 v-model="llmConfig.endpoint"
                 type="text"
-                placeholder="https://api.openai.com/v1 or your custom endpoint"
+                :placeholder="llmConfig.apiType === 'anthropic' 
+                  ? 'https://api.anthropic.com' 
+                  : 'https://api.openai.com/v1'"
                 class="form-control"
                 @blur="updateLLMConfig"
               />
-              <small class="form-text">The API endpoint for your LLM service</small>
+              <small class="form-text">
+                {{ llmConfig.apiType === 'anthropic' 
+                  ? 'Anthropic API endpoint (e.g., https://api.anthropic.com or your proxy)' 
+                  : 'OpenAI-compatible API endpoint (e.g., https://api.openai.com/v1, http://localhost:1234/v1)' }}
+              </small>
             </div>
 
             <div class="form-group">
@@ -129,11 +151,12 @@ const llmConfig = ref<LLMConfig>({
   apiKey: '',
   model: '',
   enabled: false,
+  apiType: 'openai',
 });
 const testingConnection = ref(false);
 const testResult = ref<{ success: boolean; message: string } | null>(null);
 
-const llmEnabled = computed(() => llmConfig.value.enabled && isApiMode.value);
+const llmEnabled = computed(() => llmConfig.value.enabled && !!llmConfig.value.endpoint);
 
 onMounted(async () => {
   // Check if we're in API mode
@@ -171,21 +194,9 @@ const testLLMConnection = async () => {
   testResult.value = null;
 
   try {
-    // Simple test - just check if endpoint is provided
-    if (!llmConfig.value.endpoint) {
-      testResult.value = {
-        success: false,
-        message: 'Please provide an LLM endpoint URL',
-      };
-      return;
-    }
-
-    // In a real implementation, you might want to make an actual API call here
-    // For now, we'll just simulate a successful configuration
-    testResult.value = {
-      success: true,
-      message: 'Configuration saved successfully! AI recommendations are enabled.',
-    };
+    // Actually test the LLM connection by making an API call
+    const result = await apiService.testLLMConnection();
+    testResult.value = result;
   } catch (err) {
     testResult.value = {
       success: false,

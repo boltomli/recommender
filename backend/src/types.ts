@@ -21,6 +21,7 @@ export interface Session {
   createdAt: Date;
   updatedAt: Date;
   cachedBands?: Band[]; // 缓存该流派的乐队数据（按tier排序）
+  userLLMConfig?: LLMConfig; // 用户提供的LLM配置（BYOK模式）
 }
 
 export interface Comparison {
@@ -46,6 +47,7 @@ export interface LLMConfig {
   model: string;
   timeout: number;
   apiKey?: string;
+  apiType?: 'openai' | 'anthropic';
 }
 
 export interface EmbeddingConfig {

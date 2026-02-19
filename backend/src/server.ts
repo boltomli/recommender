@@ -45,14 +45,14 @@ fastify.get('/api/genres', async (request, reply) => {
 // Start a new session
 fastify.post('/api/session', async (request, reply) => {
   try {
-    const { genre } = request.body as { genre: string };
+    const { genre, llmConfig } = request.body as { genre: string; llmConfig?: { endpoint: string; apiKey?: string; model?: string } };
     if (!genre) {
       reply.code(400).send({ error: 'Genre is required' });
       return;
     }
 
-    fastify.log.info(`Creating session for genre: ${genre}`);
-    const session = await engine.startSession(genre);
+    fastify.log.info(`Creating session for genre: ${genre}${llmConfig ? ' (with user LLM config)' : ''}`);
+    const session = await engine.startSession(genre, llmConfig);
     fastify.log.info(`Session created successfully: ${session.id}`);
     return { sessionId: session.id };
   } catch (error) {
@@ -201,6 +201,151 @@ fastify.get('/api/recommendations', async (request, reply) => {
     };
   } catch (error) {
     reply.code(500).send({ error: 'Failed to get recommendations' });
+  }
+});
+
+// Proxy LLM requests (for testing connection to local LLMs without CORS)
+fastify.post('/api/proxy/llm', async (request, reply) => {
+  try {
+    const { endpoint, apiKey, model, messages, temperature, max_tokens, apiType } = request.body as {
+      endpoint: string;
+      apiKey?: string;
+      model: string;
+      messages: Array<{ role: string; content: string }>;
+      temperature?: number;
+      max_tokens?: number;
+      apiType?: 'openai' | 'anthropic';
+    };
+
+    if (!endpoint) {
+      reply.code(400).send({ error: 'Endpoint is required' });
+      return;
+    }
+
+    const isAnthropic = apiType === 'anthropic';
+
+    // Build headers based on API type
+    const headers: Record<string, string> = {
+      'Content-Type': 'application/json',
+    };
+
+    if (apiKey) {
+      if (isAnthropic) {
+        headers['x-api-key'] = apiKey;
+        headers['anthropic-version'] = '2023-06-01';
+      } else {
+        headers['Authorization'] = `Bearer ${apiKey}`;
+      }
+    }
+
+    // Build target URL and request body based on API type
+    let targetUrl: string;
+    let requestBody: unknown;
+
+    if (isAnthropic) {
+      // Anthropic API format
+      targetUrl = endpoint.endsWith('/v1/messages') 
+        ? endpoint 
+        : `${endpoint}/v1/messages`;
+      
+      // Convert OpenAI message format to Anthropic format
+      const systemMessage = messages.find(m => m.role === 'system')?.content || '';
+      const userMessages = messages.filter(m => m.role !== 'system');
+      
+      requestBody = {
+        model: model || 'claude-3-sonnet-20240229',
+        max_tokens: max_tokens ?? 1024,
+        temperature: temperature ?? 0.7,
+        system: systemMessage,
+        messages: userMessages.map(m => ({
+          role: m.role === 'assistant' ? 'assistant' : 'user',
+          content: m.content,
+        })),
+      };
+    } else {
+      // OpenAI-compatible API format
+      if (endpoint.endsWith('/chat/completions')) {
+        targetUrl = endpoint;
+      } else if (endpoint.endsWith('/v1')) {
+        targetUrl = `${endpoint}/chat/completions`;
+      } else {
+        targetUrl = `${endpoint}/v1/chat/completions`;
+      }
+      
+      requestBody = {
+        model: model || 'default',
+        messages,
+        temperature: temperature ?? 0.7,
+        max_tokens: max_tokens ?? 2048,
+      };
+    }
+    
+    fastify.log.info(`Proxying LLM request to: ${targetUrl} (type: ${apiType || 'openai'})`);
+
+    // Forward request to LLM
+    let response;
+    try {
+      response = await fetch(targetUrl, {
+        method: 'POST',
+        headers,
+        body: JSON.stringify(requestBody),
+      });
+    } catch (fetchError) {
+      // Handle connection errors (e.g., server not running)
+      const errorMessage = fetchError instanceof Error ? fetchError.message : String(fetchError);
+      fastify.log.error(`Failed to connect to LLM server at ${targetUrl}: ${errorMessage}`);
+      
+      if (errorMessage.includes('ECONNREFUSED') || errorMessage.includes('fetch failed')) {
+        reply.code(503).send({
+          error: 'Cannot connect to LLM server',
+          details: `Unable to connect to ${endpoint}. Please check:\n` +
+                   `- The LLM server is running\n` +
+                   `- The URL is correct\n` +
+                   `- Network connectivity to the server`,
+        });
+        return;
+      }
+      
+      throw fetchError;
+    }
+
+    if (!response.ok) {
+      const errorText = await response.text();
+      fastify.log.error(`LLM API error: ${response.status} ${response.statusText} - ${errorText}`);
+      reply.code(response.status).send({
+        error: `LLM API error: ${response.status} ${response.statusText}`,
+        details: errorText,
+      });
+      return;
+    }
+
+    // Convert Anthropic response to OpenAI format for consistency
+    const data = await response.json() as Record<string, unknown>;
+    
+    if (isAnthropic) {
+      // Convert Anthropic response to OpenAI-compatible format
+      const content = (data.content as Array<{text?: string}>)?.[0]?.text 
+        || (data.completion as string) 
+        || '';
+      return {
+        choices: [{
+          message: {
+            role: 'assistant',
+            content,
+          },
+        }],
+        model: data.model,
+        usage: data.usage,
+      };
+    }
+
+    return data;
+  } catch (error) {
+    fastify.log.error(error);
+    reply.code(500).send({
+      error: 'Failed to proxy LLM request',
+      details: error instanceof Error ? error.message : String(error),
+    });
   }
 });
 

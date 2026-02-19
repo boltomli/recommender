@@ -9,7 +9,7 @@
     <div class="band-info">
       <p class="era"><strong>Era:</strong> {{ band.era }}</p>
       <p class="description">{{ band.description }}</p>
-      <div class="expandable-info" :class="{ 'expanded': !compact || isHovered }">
+      <div class="expandable-info" :class="{ 'expanded': !compact, 'compact-hover': compact && isHovered }">
         <div v-if="band.albums && band.albums.length > 0" class="albums">
           <strong>Notable Albums:</strong>
           <ul>
@@ -57,10 +57,10 @@ const onLeave = () => {
   padding: 1.25rem;
   cursor: pointer;
   transition: border-color 0.2s ease;
-  height: 100%;
+  height: auto;
   display: flex;
   flex-direction: column;
-  overflow: hidden;
+  overflow: visible;
 }
 
 .band-card:hover {
@@ -145,6 +145,13 @@ const onLeave = () => {
 
 .expandable-info.expanded {
   max-height: 500px;
+  opacity: 1;
+  margin-top: 0.5rem;
+}
+
+/* In compact mode within recommendations, always show content */
+.band-card.compact .expandable-info.expanded {
+  max-height: none;
   opacity: 1;
   margin-top: 0.5rem;
 }

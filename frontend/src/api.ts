@@ -1,28 +1,30 @@
 import axios from 'axios';
 
 const API_BASE_URL = import.meta.env.VITE_API_URL || 'http://localhost:3001';
-const API_MODE = import.meta.env.VITE_API_MODE === 'true';
 const MIN_BANDS_PER_GENRE = Number(import.meta.env.VITE_MIN_BANDS_PER_GENRE) || 30;
 
-// LLM Configuration
-const ENABLE_LLM = import.meta.env.VITE_ENABLE_LLM === 'true';
+// User-provided LLM Configuration (BYOK - Bring Your Own Key mode)
+// This allows users to use their own LLM API keys
+export type LLMApiType = 'openai' | 'anthropic';
 
 export interface LLMConfig {
   endpoint: string;
   apiKey: string;
   model: string;
   enabled: boolean;
+  apiType?: LLMApiType; // 'openai' or 'anthropic'
 }
 
-// Default LLM configuration from environment variables
+// Default LLM configuration (empty - will use backend default)
 const defaultLLMConfig: LLMConfig = {
-  endpoint: import.meta.env.VITE_LLM_ENDPOINT || '',
-  apiKey: import.meta.env.VITE_LLM_API_KEY || '',
-  model: import.meta.env.VITE_LLM_MODEL || '',
-  enabled: ENABLE_LLM,
+  endpoint: '',
+  apiKey: '',
+  model: '',
+  enabled: false,
+  apiType: 'openai',
 };
 
-// Current LLM configuration (can be updated by user)
+// Current LLM configuration (can be updated by user for BYOK mode)
 let currentLLMConfig: LLMConfig = { ...defaultLLMConfig };
 
 const api = axios.create({
@@ -56,247 +58,34 @@ export interface Recommendation {
   confidence: number;
 }
 
-interface StaticData {
-  genres: string[];
-  counts: Record<string, number>;
-  bands: Band[];
-  recommendations: Record<string, Band[]>;
-}
-
-interface SessionInfo {
-  genre: string;
-  createdAt: number;
-  selectedBands: Set<string>;
-  preferenceWeights: Record<string, number>;
-  comparisonHistory: string[][];
-}
-
-let staticDataCache: StaticData | null = null;
-let sessions: Record<string, SessionInfo> = {};
-
-function findNewPair(bands: Band[], previousPairs: Set<string>): ComparisonPair | null {
-  if (bands.length < 2) {
-    return null;
-  }
-
-  let attempts = 0;
-  const maxAttempts = 100;
-
-  while (attempts < maxAttempts) {
-    const shuffled = [...bands].sort(() => Math.random() - 0.5);
-    const band1 = shuffled[0];
-    const band2 = shuffled[1];
-
-    if (band1 && band2 && band1.id !== band2.id) {
-      const pairKey = [band1.id, band2.id].sort().join('|');
-
-      if (!previousPairs.has(pairKey)) {
-        return { band1, band2 };
-      }
-    }
-
-    attempts++;
-  }
-
-  return null;
-}
-
-function findMixedPair(bands1: Band[], bands2: Band[], previousPairs: Set<string>): ComparisonPair | null {
-  if (bands1.length === 0 || bands2.length === 0) {
-    return null;
-  }
-
-  let attempts = 0;
-  const maxAttempts = 100;
-
-  while (attempts < maxAttempts) {
-    const shuffled1 = [...bands1].sort(() => Math.random() - 0.5);
-    const shuffled2 = [...bands2].sort(() => Math.random() - 0.5);
-    const band1 = shuffled1[0];
-    const band2 = shuffled2[0];
-
-    if (band1 && band2 && band1.id !== band2.id) {
-      const pairKey = [band1.id, band2.id].sort().join('|');
-
-      if (!previousPairs.has(pairKey)) {
-        return { band1, band2 };
-      }
-    }
-
-    attempts++;
-  }
-
-  return null;
-}
-
-function selectTieredPair(bands: Band[], comparisonHistory: string[][]): ComparisonPair | null {
-  // Separate bands by tier
-  const tier1Bands = bands.filter(b => b.tier === 'well-known');
-  const tier2Bands = bands.filter(b => b.tier === 'popular');
-  const tier3Bands = bands.filter(b => b.tier === 'niche');
-
-  // Get all previous pairs
-  const previousPairs = new Set(
-    comparisonHistory.map((pair: string[]) => {
-      return pair.sort().join('|');
-    })
-  );
-
-  // Phase 1: Try Tier 1 × Tier 1 comparisons
-  const tier1Pair = findNewPair(tier1Bands, previousPairs);
-  if (tier1Pair) {
-    return tier1Pair;
-  }
-
-  // Phase 2: Try Tier 1 × Tier 2 comparisons
-  const tier1Tier2Pair = findMixedPair(tier1Bands, tier2Bands, previousPairs);
-  if (tier1Tier2Pair) {
-    return tier1Tier2Pair;
-  }
-
-  // Phase 3: Try Tier 2 × Tier 2 comparisons
-  const tier2Pair = findNewPair(tier2Bands, previousPairs);
-  if (tier2Pair) {
-    return tier2Pair;
-  }
-
-  // Phase 4: Try Tier 1 × Tier 3 comparisons
-  const tier1Tier3Pair = findMixedPair(tier1Bands, tier3Bands, previousPairs);
-  if (tier1Tier3Pair) {
-    return tier1Tier3Pair;
-  }
-
-  // Phase 5: Try Tier 2 × Tier 3 comparisons
-  const tier2Tier3Pair = findMixedPair(tier2Bands, tier3Bands, previousPairs);
-  if (tier2Tier3Pair) {
-    return tier2Tier3Pair;
-  }
-
-  // Phase 6: Try Tier 3 × Tier 3 comparisons
-  const tier3Pair = findNewPair(tier3Bands, previousPairs);
-  if (tier3Pair) {
-    return tier3Pair;
-  }
-
-  // No more comparisons available
-  return null;
-}
-
-async function loadStaticData(): Promise<StaticData> {
-  if (staticDataCache) {
-    return staticDataCache;
-  }
-
-  try {
-    const [genresResponse, bandsResponse, recommendationsResponse] = await Promise.all([
-      fetch('/data/genres.json'),
-      fetch('/data/bands.json'),
-      fetch('/data/recommendations.json')
-    ]);
-
-    const genresData = await genresResponse.json();
-    const bandsData = await bandsResponse.json();
-    const recommendationsData = await recommendationsResponse.json();
-
-    // Calculate counts from bands data
-    const counts: Record<string, number> = {};
-    const bandsArray = Array.isArray(bandsData) ? bandsData : bandsData.bands || [];
-    bandsArray.forEach((band: Band) => {
-      band.genre.forEach((g: string) => {
-        counts[g] = (counts[g] || 0) + 1;
-      });
-    });
-
+export const apiService = {
+  async getGenres(): Promise<string[]> {
+    const response = await api.get('/api/genres');
+    const genresData = response.data;
+    const genres = genresData.genres || [];
+    const counts = genresData.counts || {};
+    
     // Filter genres with insufficient bands
-    const filteredGenres = genresData.genres.filter((genre: string) => {
+    return genres.filter((genre: string) => {
       const count = counts[genre] || 0;
       return count >= MIN_BANDS_PER_GENRE;
     });
-
-    staticDataCache = {
-      genres: filteredGenres,
-      counts: counts,
-      bands: bandsArray,
-      recommendations: recommendationsData.recommendations || {}
-    };
-
-    return staticDataCache;
-  } catch (error) {
-    console.error('Failed to load static data:', error);
-    throw new Error('Failed to load static data. Please ensure the data files exist.');
-  }
-}
-
-export const apiService = {
-  async getGenres(): Promise<string[]> {
-    if (API_MODE) {
-      const response = await api.get('/api/genres');
-      const genresData = response.data;
-      const genres = genresData.genres || [];
-      const counts = genresData.counts || {};
-      
-      // Filter genres with insufficient bands
-      return genres.filter((genre: string) => {
-        const count = counts[genre] || 0;
-        return count >= MIN_BANDS_PER_GENRE;
-      });
-    } else {
-      const data = await loadStaticData();
-      return data.genres;
-    }
   },
 
-  async createSession(genre: string): Promise<string> {
-    if (API_MODE) {
-      const response = await api.post('/api/session', { genre });
-      return response.data.sessionId;
-    } else {
-      const sessionId = `static_session_${Date.now()}_${Math.random().toString(36).substr(2, 9)}`;
-      sessions[sessionId] = {
-        genre,
-        createdAt: Date.now(),
-        selectedBands: new Set<string>(),
-        preferenceWeights: {},
-        comparisonHistory: []
-      };
-      return sessionId;
+  async createSession(genre: string, llmConfig?: LLMConfig): Promise<string> {
+    const payload: { genre: string; llmConfig?: LLMConfig } = { genre };
+    if (llmConfig?.enabled && llmConfig?.endpoint) {
+      payload.llmConfig = llmConfig;
     }
+    const response = await api.post('/api/session', payload);
+    return response.data.sessionId;
   },
 
   async getComparison(sessionId: string): Promise<ComparisonPair | { done: true }> {
-    if (API_MODE) {
-      const response = await api.get('/api/comparison', {
-        params: { sessionId },
-      });
-      return response.data;
-    } else {
-      const session = sessions[sessionId];
-      if (!session) {
-        throw new Error('Session not found');
-      }
-
-      const data = await loadStaticData();
-      const bands = data.bands.filter(band =>
-        band.genre.some(g => g.toLowerCase().includes(session.genre.toLowerCase()))
-      );
-
-      // Filter out selected bands
-      const availableBands = bands.filter(band => !session.selectedBands.has(band.id));
-
-      // If 5 or fewer bands remain, go directly to recommendations
-      if (availableBands.length <= 5) {
-        return { done: true };
-      }
-
-      // Use tiered selection
-      const pair = selectTieredPair(availableBands, session.comparisonHistory);
-
-      if (!pair) {
-        return { done: true };
-      }
-
-      return pair;
-    }
+    const response = await api.get('/api/comparison', {
+      params: { sessionId },
+    });
+    return response.data;
   },
 
   async submitPreference(
@@ -305,35 +94,12 @@ export const apiService = {
     bandId2: string,
     selectedBandId: string
   ): Promise<void> {
-    if (API_MODE) {
-      await api.post('/api/preference', {
-        sessionId,
-        bandId1,
-        bandId2,
-        selectedBandId,
-      });
-    } else {
-      const session = sessions[sessionId];
-      if (!session) {
-        throw new Error('Session not found');
-      }
-
-      // Track comparison history
-      session.comparisonHistory.push([bandId1, bandId2]);
-
-      // Mark selected band
-      session.selectedBands.add(selectedBandId);
-
-      // Update preference weights based on selected band's genres
-      const data = await loadStaticData();
-      const selectedBand = data.bands.find(b => b.id === selectedBandId);
-
-      if (selectedBand) {
-        selectedBand.genre.forEach(g => {
-          session.preferenceWeights[g] = (session.preferenceWeights[g] || 0) + 1;
-        });
-      }
-    }
+    await api.post('/api/preference', {
+      sessionId,
+      bandId1,
+      bandId2,
+      selectedBandId,
+    });
   },
 
   async skipComparison(
@@ -341,195 +107,35 @@ export const apiService = {
     bandId1: string,
     bandId2: string
   ): Promise<void> {
-    if (API_MODE) {
-      await api.post('/api/skip', {
-        sessionId,
-        bandId1,
-        bandId2,
-      });
-    } else {
-      const session = sessions[sessionId];
-      if (!session) {
-        throw new Error('Session not found');
-      }
-
-      // Track comparison history even when skipping
-      session.comparisonHistory.push([bandId1, bandId2]);
-    }
+    await api.post('/api/skip', {
+      sessionId,
+      bandId1,
+      bandId2,
+    });
   },
 
   async getSuggestions(sessionId: string, count: number = 3): Promise<Recommendation[]> {
-    if (API_MODE) {
-      const response = await api.get('/api/suggestions', {
-        params: { sessionId, count: count.toString() },
-      });
-      return response.data.suggestions;
-    } else {
-      const session = sessions[sessionId];
-      if (!session) {
-        throw new Error('Session not found');
-      }
-
-      const data = await loadStaticData();
-
-      // Filter bands by genre and exclude selected bands
-      const bands = data.bands.filter(band =>
-        band.genre.some(g => g.toLowerCase().includes(session.genre.toLowerCase())) &&
-        !session.selectedBands.has(band.id)
-      );
-
-      // Calculate preference scores for all bands
-      const scoredBands = bands.map(band => {
-        const score = band.genre.reduce((sum, g) => sum + (session.preferenceWeights[g] || 0), 0);
-        return { band, score };
-      });
-
-      // Sort by score descending
-      scoredBands.sort((a, b) => b.score - a.score);
-
-      // Take top count bands
-      const selectedBands = scoredBands.slice(0, count);
-
-      // Generate suggestions with tier-based confidence scores
-      return selectedBands.map(({ band, score }) => {
-        // Base confidence from preference score
-        let confidence = 0.5 + (score * 0.1);
-
-        // Add tier bonus
-        if (band.tier === 'well-known') {
-          confidence += 0.05;
-        } else if (band.tier === 'popular') {
-          confidence += 0.02;
-        }
-
-        // Cap confidence at 0.9
-        confidence = Math.min(0.9, confidence);
-
-        const reason = score > 0
-          ? `Matches your taste in ${band.genre.join(' and ')}`
-          : 'Popular choice';
-
-        return {
-          band,
-          reason,
-          confidence
-        };
-      });
-    }
+    const response = await api.get('/api/suggestions', {
+      params: { sessionId, count: count.toString() },
+    });
+    return response.data.suggestions;
   },
 
   async getRecommendations(sessionId: string): Promise<Recommendation[]> {
-    if (API_MODE) {
-      const response = await api.get('/api/recommendations', {
-        params: { sessionId },
-      });
-      return response.data.recommendations;
-    } else {
-      const session = sessions[sessionId];
-      if (!session) {
-        throw new Error('Session not found');
-      }
-
-      const data = await loadStaticData();
-
-      // Filter bands by genre and exclude selected bands
-      const bands = data.bands.filter(band =>
-        band.genre.some(g => g.toLowerCase().includes(session.genre.toLowerCase())) &&
-        !session.selectedBands.has(band.id)
-      );
-
-      // Calculate preference scores for all bands
-      const scoredBands = bands.map(band => {
-        const score = band.genre.reduce((sum, g) => sum + (session.preferenceWeights[g] || 0), 0);
-        return { band, score };
-      });
-
-      // Sort by score descending
-      scoredBands.sort((a, b) => b.score - a.score);
-
-      // Separate bands by tier
-      const tier1Bands = scoredBands.filter(bs => bs.band.tier === 'well-known');
-      const tier2Bands = scoredBands.filter(bs => bs.band.tier === 'popular');
-
-      // Ensure tier diversity in recommendations
-      const selectedBands: Array<{ band: Band; score: number }> = [];
-      const minTier1 = Math.min(2, tier1Bands.length);
-      const minTier2 = Math.min(3, tier2Bands.length);
-      const maxRecommendations = 10;
-
-      // Add top Tier 1 bands
-      for (let i = 0; i < minTier1 && i < tier1Bands.length; i++) {
-        const band = tier1Bands[i];
-        if (band) {
-          selectedBands.push(band);
-        }
-      }
-
-      // Add top Tier 2 bands
-      for (let i = 0; i < minTier2 && i < tier2Bands.length; i++) {
-        const band = tier2Bands[i];
-        if (band) {
-          selectedBands.push(band);
-        }
-      }
-
-      // Fill remaining spots with highest-scoring bands from any tier
-      const remainingNeeded = maxRecommendations - selectedBands.length;
-      if (remainingNeeded > 0) {
-        const allRemainingBands = scoredBands.filter(bs =>
-          !selectedBands.some(sb => sb.band.id === bs.band.id)
-        );
-
-        for (let i = 0; i < remainingNeeded && i < allRemainingBands.length; i++) {
-          const band = allRemainingBands[i];
-          if (band) {
-            selectedBands.push(band);
-          }
-        }
-      }
-
-      // Generate recommendations with tier-based confidence scores
-      return selectedBands.map(({ band, score }) => {
-        // Base confidence from preference score
-        let confidence = 0.6 + (score * 0.15);
-
-        // Add tier bonus
-        if (band.tier === 'well-known') {
-          confidence += 0.05;
-        } else if (band.tier === 'popular') {
-          confidence += 0.02;
-        }
-
-        // Cap confidence at 0.95
-        confidence = Math.min(0.95, confidence);
-
-        const reason = score > 0
-          ? `Based on your preference for ${band.genre.join(' and ')}`
-          : 'Popular band in this genre';
-
-        return {
-          band,
-          reason,
-          confidence
-        };
-      });
-    }
+    const response = await api.get('/api/recommendations', {
+      params: { sessionId },
+    });
+    return response.data.recommendations;
   },
 
   async getBandsByGenre(genre: string): Promise<Band[]> {
-    if (API_MODE) {
-      const response = await api.get(`/api/bands?genre=${genre}`);
-      return response.data.bands;
-    } else {
-      const data = await loadStaticData();
-      return data.bands.filter(band =>
-        band.genre.some(g => g.toLowerCase().includes(genre.toLowerCase()))
-      );
-    }
+    const response = await api.get(`/api/bands?genre=${genre}`);
+    return response.data.bands;
   },
 
   isApiMode(): boolean {
-    return API_MODE;
+    // Always use backend API mode
+    return true;
   },
 
   // LLM Configuration methods
@@ -542,10 +148,109 @@ export const apiService = {
   },
 
   isLLMEnabled(): boolean {
-    return currentLLMConfig.enabled && API_MODE;
+    return currentLLMConfig.enabled && !!currentLLMConfig.endpoint;
   },
 
   resetLLMConfig(): void {
     currentLLMConfig = { ...defaultLLMConfig };
+  },
+
+  // Test LLM connection by making an actual API call
+  // Uses backend proxy to avoid CORS issues with local LLMs
+  async testLLMConnection(): Promise<{ success: boolean; message: string }> {
+    if (!currentLLMConfig.enabled) {
+      return { success: false, message: 'LLM is not enabled' };
+    }
+
+    if (!currentLLMConfig.endpoint) {
+      return { success: false, message: 'Please provide an LLM endpoint URL' };
+    }
+
+    try {
+      console.log('Testing LLM connection via backend proxy to:', currentLLMConfig.endpoint);
+      console.log('Model:', currentLLMConfig.model || 'default');
+
+      // Use backend proxy to avoid CORS issues
+      const response = await api.post('/api/proxy/llm', {
+        endpoint: currentLLMConfig.endpoint.replace(/\/$/, ''),
+        apiKey: currentLLMConfig.apiKey || undefined,
+        model: currentLLMConfig.model || 'default',
+        apiType: currentLLMConfig.apiType || 'openai',
+        messages: [
+          { role: 'system', content: 'You are a helpful assistant.' },
+          { role: 'user', content: 'Say "Connection successful" and nothing else.' }
+        ],
+        temperature: 0,
+        max_tokens: 20,
+      });
+
+      const data = response.data;
+      const content = data.choices?.[0]?.message?.content || '';
+
+      return {
+        success: true,
+        message: `Connection successful! LLM responded: "${content.trim()}"`,
+      };
+    } catch (error) {
+      console.error('LLM connection error:', error);
+      
+      if (axios.isAxiosError(error)) {
+        const status = error.response?.status;
+        const errorData = error.response?.data;
+        
+        if (status === 403) {
+          return {
+            success: false,
+            message: `Access forbidden (403). The LLM server rejected the request.\n` +
+                    `Possible causes:\n` +
+                    `- API key is invalid or missing\n` +
+                    `- The endpoint requires authentication\n` +
+                    `- The model name is incorrect\n\n` +
+                    `Details: ${errorData?.details || errorData?.error || 'No details provided'}`,
+          };
+        }
+        
+        if (status === 401) {
+          return {
+            success: false,
+            message: `Authentication failed (401). Please check your API key.`,
+          };
+        }
+        
+        if (status === 404) {
+          return {
+            success: false,
+            message: `LLM endpoint returned 404. The server at "${currentLLMConfig.endpoint}" is running but the API path was not found.\n\n` +
+                    `Please check:\n` +
+                    `- The URL is correct (you entered: ${currentLLMConfig.endpoint})\n` +
+                    `- The LLM service supports OpenAI-compatible API (/v1/chat/completions)\n` +
+                    `- If using Ollama, ensure it was started with proper API support`,
+          };
+        }
+        
+        if (status === 503) {
+          return {
+            success: false,
+            message: errorData?.details || `Cannot connect to LLM server at "${currentLLMConfig.endpoint}".\n\n` +
+                    `Please check:\n` +
+                    `- The LLM server is running and accessible\n` +
+                    `- The URL you entered is correct: ${currentLLMConfig.endpoint}\n` +
+                    `- Network connectivity to the LLM server\n` +
+                    `- If using a local LLM (LM Studio, Ollama), ensure it's started`,
+          };
+        }
+        
+        return {
+          success: false,
+          message: `Connection failed: ${errorData?.error || errorData?.details || error.message}`,
+        };
+      }
+      
+      if (error instanceof Error) {
+        return { success: false, message: `Connection failed: ${error.message}` };
+      }
+      
+      return { success: false, message: 'Connection failed: Unknown error' };
+    }
   },
 };

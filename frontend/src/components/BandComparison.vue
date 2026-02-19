@@ -383,9 +383,10 @@ defineExpose({
   background: linear-gradient(145deg, #2a2a2a 0%, #1a1a1a 100%);
   border: 2px solid #444;
   border-radius: 12px;
-  padding: 1.25rem 1.25rem 1.25rem 1.25rem;
+  padding: 1.25rem 1.25rem 2rem 1.25rem;
   transition: all 0.3s ease;
   overflow: visible;
+  margin-bottom: 1rem;
 }
 
 .recommendation-card:hover {
