@@ -112,7 +112,9 @@ class SyncBandData {
     content += `export const STATIC_BANDS: Record<string, Band[]> = {\n`;
 
     sortedGenres.forEach(genre => {
-      content += `  ${genre}: [\n`;
+      // 如果流派名称包含空格或特殊字符，使用引号包裹
+      const genreKey = genre.includes(' ') || genre.includes('-') ? `'${genre}'` : genre;
+      content += `  ${genreKey}: [\n`;
       genreMap[genre].forEach(band => {
         content += `    {\n`;
         content += `      id: '${band.id}',\n`;
