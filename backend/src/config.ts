@@ -1,6 +1,10 @@
 import fs from 'fs';
 import path from 'path';
+import dotenv from 'dotenv';
 import { AppConfig } from './types';
+
+// 加载 .env 文件中的环境变量
+dotenv.config();
 
 let config: AppConfig | null = null;
 
@@ -19,6 +23,9 @@ export function loadConfig(configPath: string = './config.json'): AppConfig {
   }
   if (process.env.LLM_MODEL) {
     config.llm.model = process.env.LLM_MODEL;
+  }
+  if (process.env.LLM_AUTH_TOKEN) {
+    config.llm.apiKey = process.env.LLM_AUTH_TOKEN;
   }
   if (process.env.DATABASE_PATH) {
     config.database.path = process.env.DATABASE_PATH;

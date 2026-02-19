@@ -268,7 +268,7 @@ export class LLMClient {
   ): Promise<{ name: string; genre: string[]; era: string; albums: string[]; description: string; tier: string; styleNotes: string } | null> {
     let referenceText = '';
     if (referenceBands && referenceBands.length > 0) {
-      const examples = referenceBands.slice(0, 3).map(band => 
+      const examples = referenceBands.slice(0, 3).map(band =>
         `Example ${band.name}:\n` +
         `  Genre: ${Array.isArray(band.genre) ? band.genre.join(', ') : band.genre}\n` +
         `  Era: ${band.era}\n` +
@@ -299,7 +299,7 @@ Return ONLY valid JSON, no explanations or additional text.`
     try {
       const response = await this.callLLM(messages);
       const content = this.cleanLLMResponse(response.choices[0]?.message?.content || '{}');
-      
+
       try {
         const result = JSON.parse(content);
         return result || null;
@@ -311,6 +311,93 @@ Return ONLY valid JSON, no explanations or additional text.`
     } catch (error) {
       console.error('Error generating band for expansion:', error);
       return null;
+    }
+  }
+
+  /**
+   * 为推荐系统生成不在数据库中的乐队列表
+   * 当某个流派的乐队数据不足时，调用此方法生成补充乐队
+   */
+  async generateBandsForRecommendation(
+    genre: string,
+    excludeBands: string[],
+    referenceBands?: any[],
+    targetCount: number = 10
+  ): Promise<Array<{ name: string; genre: string[]; era: string; albums: string[]; description: string; tier: string; styleNotes: string }>> {
+    let referenceText = '';
+    if (referenceBands && referenceBands.length > 0) {
+      const examples = referenceBands.slice(0, 3).map(band =>
+        `Example ${band.name}:\n` +
+        `  Genre: ${Array.isArray(band.genre) ? band.genre.join(', ') : band.genre}\n` +
+        `  Era: ${band.era}\n` +
+        `  Albums: ${Array.isArray(band.albums) ? band.albums.slice(0, 3).join(', ') : band.albums}\n` +
+        `  Description: ${band.description}\n` +
+        `  Tier: ${band.tier}`
+      ).join('\n\n');
+      referenceText = `\n\nREFERENCE EXAMPLES (existing bands in ${genre}):\n${examples}\n\nUse these as a reference for quality and format.`;
+    }
+
+    const standardGenres = ['thrash', 'death', 'black', 'power', 'doom', 'progressive', 'heavy', 'speed', 'groove', 'folk'];
+
+    const messages: LLMMessage[] = [
+      {
+        role: 'system',
+        content: `You are a metal music expert. Generate ${targetCount} prominent metal bands in the specified subgenre. Your response must be valid JSON ONLY, no other text or formatting.
+
+Format: {"bands": [{"name": "Band Name", "genre": ["genre1", "genre2"], "era": "1980s", "albums": ["Album1", "Album2", "Album3"], "description": "Detailed description (1-2 sentences)", "styleNotes": "Brief style evolution notes (30-150 characters)", "tier": "well-known|popular|niche"}]}
+
+TIER GUIDELINES:
+- "well-known": Globally famous, mainstream recognition (e.g., Metallica, Iron Maiden)
+- "popular": Well-known within metal community, significant following (e.g., Testament, Exodus)
+- "niche": Underground, limited recognition but influential (e.g., obscure demo bands)`
+      },
+      {
+        role: 'user',
+        content: `Generate ${targetCount} prominent metal bands in the ${genre} subgenre.${referenceText}
+
+IMPORTANT CONSTRAINTS:
+1. Do NOT include any of these existing bands: ${excludeBands.join(', ')}
+2. Generate NEW bands that are NOT in the list above
+3. Include a mix of tiers (well-known, popular, and niche) for variety
+4. Focus on bands that are truly representative of ${genre} metal
+
+GENRE STANDARDIZATION (CRITICAL):
+- You MUST use ONLY these standard genre names: ${standardGenres.join(', ')}
+- The primary genre MUST be "${genre}"
+- Additional genres (if any) must also be from the standard list above
+- DO NOT use sub-genres like "melodic death", "technical thrash", "symphonic black", etc.
+- Use the main genre categories only
+
+Return ONLY valid JSON, no explanations or additional text.`
+      }
+    ];
+
+    try {
+      const response = await this.callLLM(messages);
+      const content = this.cleanLLMResponse(response.choices[0]?.message?.content || '{}');
+
+      try {
+        const result = JSON.parse(content);
+        const bands = result.bands || [];
+
+        // Validate and normalize each band
+        return bands.map((band: any) => ({
+          name: band.name,
+          genre: Array.isArray(band.genre) ? band.genre : [genre],
+          era: band.era || 'Unknown',
+          albums: Array.isArray(band.albums) ? band.albums : [],
+          description: band.description || '',
+          tier: ['well-known', 'popular', 'niche'].includes(band.tier) ? band.tier : 'niche',
+          styleNotes: band.styleNotes || ''
+        })).filter((band: any) => band.name && !excludeBands.includes(band.name));
+      } catch (parseError) {
+        console.error('Failed to parse LLM response as JSON');
+        console.error('Response preview:', content.substring(0, 500));
+        return [];
+      }
+    } catch (error) {
+      console.error('Error generating bands for recommendation:', error);
+      return [];
     }
   }
 
@@ -447,12 +534,20 @@ Follow the guidelines shown in the examples above. Return ONLY valid JSON, no ex
     const controller = new AbortController();
     const timeoutId = setTimeout(() => controller.abort(), this.config.timeout);
 
+    // Build headers with optional authorization
+    const headers: Record<string, string> = {
+      'Content-Type': 'application/json',
+    };
+
+    // Add authorization header if apiKey is configured
+    if (this.config.apiKey) {
+      headers['Authorization'] = `Bearer ${this.config.apiKey}`;
+    }
+
     try {
       const response = await fetch(`${this.config.endpoint}/v1/chat/completions`, {
         method: 'POST',
-        headers: {
-          'Content-Type': 'application/json',
-        },
+        headers,
         body: JSON.stringify({
           model: this.config.model,
           messages: messages,
