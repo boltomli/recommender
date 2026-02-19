@@ -44,6 +44,7 @@ export interface LLMConfig {
   endpoint: string;
   model: string;
   timeout: number;
+  apiKey?: string;
 }
 
 export interface EmbeddingConfig {

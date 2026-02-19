@@ -1,6 +1,6 @@
 import { LLMClient } from './llmClient';
 import { IDatabase } from './database';
-import { Band, Session, Comparison, Recommendation, ComparisonPair } from './types';
+import { Band, BandTier, Session, Comparison, Recommendation, ComparisonPair } from './types';
 import { STATIC_BANDS } from './staticBands';
 import { getConfig } from './config';
 
@@ -276,30 +276,138 @@ export class RecommendationEngine {
   }
 
   private async populateGenreBands(genre: string): Promise<void> {
+    const config = getConfig();
+    const minBandsForGenre = config.expandGenres.minBandsForGenre || 30;
     const existingBands = await this.db.getBandsByGenre(genre);
 
-    // First, try to get static bands from local data
-    if (STATIC_BANDS[genre]) {
-      const staticBands = STATIC_BANDS[genre];
-      const staticBandNames = new Set(existingBands.map(b => b.name));
-      let bands: Band[] = [];
+    // Detect environment: deployment (PostgreSQL) vs local development (SQLite)
+    const isDeployment = !!(process.env.NETLIFY_DATABASE_URL || process.env.DATABASE_URL);
+    const currentBandCount = existingBands.length;
 
-      for (const staticBand of staticBands) {
-        if (!staticBandNames.has(staticBand.name)) {
-          bands.push(staticBand);
+    console.log(`Environment: ${isDeployment ? 'deployment (PostgreSQL)' : 'local development (SQLite)'}`);
+    console.log(`Current band count for ${genre}: ${currentBandCount} (minimum required: ${minBandsForGenre})`);
+
+    // Deployment environment: prioritize database data, only use LLM if needed
+    if (isDeployment) {
+      if (currentBandCount >= minBandsForGenre) {
+        console.log(`Deployment mode: Using existing database bands for genre ${genre}`);
+        return;
+      }
+
+      // In deployment, if database has some bands but not enough, try LLM generation
+      // Skip static data in deployment - it's meant for local development seeding
+      console.log(`Deployment mode: Database has ${currentBandCount} bands, need ${minBandsForGenre}. Will try LLM generation.`);
+    }
+    // Local development: use static data first, then LLM if needed
+    else {
+      // If we already have enough bands from previous runs, skip static data
+      if (currentBandCount >= minBandsForGenre) {
+        console.log(`Local dev mode: Sufficient bands available for genre ${genre}`);
+        return;
+      }
+
+      // Try to populate from static data for local development
+      if (STATIC_BANDS[genre] && currentBandCount < minBandsForGenre) {
+        const staticBands = STATIC_BANDS[genre];
+        const existingBandNames = new Set(existingBands.map(b => b.name));
+        let bandsToAdd: Band[] = [];
+
+        for (const staticBand of staticBands) {
+          if (!existingBandNames.has(staticBand.name)) {
+            bandsToAdd.push(staticBand);
+          }
+        }
+
+        // Add bands to database
+        for (const band of bandsToAdd) {
+          await this.db.createBand(band);
+        }
+
+        console.log(`Local dev mode: Added ${bandsToAdd.length} static bands for genre ${genre}`);
+
+        // Refresh count after adding static bands
+        const updatedBands = await this.db.getBandsByGenre(genre);
+        if (updatedBands.length >= minBandsForGenre) {
+          console.log(`Local dev mode: Sufficient bands after adding static data for genre ${genre}`);
+          return;
         }
       }
+    }
 
-      // Add bands to database
-      for (const band of bands) {
-        await this.db.createBand(band);
-      }
+    // Check if LLM is configured and enabled
+    // Priority: Environment variables > Config file
+    const envEndpoint = process.env.LLM_ENDPOINT;
+    const envModel = process.env.LLM_MODEL;
+    const envAuthToken = process.env.LLM_AUTH_TOKEN;
+    const configEndpoint = config.llm.endpoint;
 
-      console.log(`Added ${bands.length} local bands for genre ${genre} (total: ${existingBands.length + bands.length})`);
+    // Determine effective configuration
+    const effectiveEndpoint = envEndpoint || configEndpoint;
+    const effectiveModel = envModel || config.llm.model;
+    const effectiveApiKey = envAuthToken || config.llm.apiKey;
+    const configSource = envEndpoint ? 'environment variable' : 'config file';
+
+    // Check if LLM is properly configured (not empty and not default localhost)
+    const isLLMConfigured = effectiveEndpoint &&
+                           effectiveEndpoint.trim() !== '' &&
+                           !effectiveEndpoint.includes('localhost:1234');
+
+    console.log(`LLM Configuration: endpoint=${effectiveEndpoint}, model=${effectiveModel}, auth=${effectiveApiKey ? 'configured' : 'none'}, source=${configSource}`);
+
+    if (!isLLMConfigured) {
+      console.log(`LLM not properly configured (empty or using default localhost:1234). Skipping band generation for ${genre}.`);
+      console.log(`To enable LLM band generation, set LLM_ENDPOINT environment variable or update config.json`);
       return;
     }
 
-    console.log(`No local static bands found for genre ${genre}`);
+    // Calculate how many bands we need to generate
+    const bandsNeeded = minBandsForGenre - currentBandCount;
+    const targetCount = Math.min(bandsNeeded, 10); // Generate up to 10 bands at a time
+
+    console.log(`Generating ${targetCount} bands via LLM for genre ${genre}...`);
+
+    try {
+      const existingBandNames = existingBands.map(b => b.name);
+
+      // Get reference bands for quality examples
+      const referenceBands = existingBands.slice(0, 3);
+
+      // Generate new bands using LLM
+      const generatedBands = await this.llmClient.generateBandsForRecommendation(
+        genre,
+        existingBandNames,
+        referenceBands.length > 0 ? referenceBands : undefined,
+        targetCount
+      );
+
+      if (generatedBands.length === 0) {
+        console.warn(`No bands generated for genre ${genre}`);
+        return;
+      }
+
+      // Convert generated bands to Band type and insert into database
+      let generatedCount = 0;
+      for (const generatedBand of generatedBands) {
+        const band: Band = {
+          id: this.generateBandId(generatedBand.name),
+          name: generatedBand.name,
+          genre: generatedBand.genre,
+          era: generatedBand.era,
+          albums: generatedBand.albums,
+          description: generatedBand.description,
+          styleNotes: generatedBand.styleNotes,
+          tier: generatedBand.tier as BandTier
+        };
+
+        await this.db.createBand(band);
+        generatedCount++;
+      }
+
+      console.log(`Successfully added ${generatedCount} LLM-generated bands for genre ${genre}`);
+
+    } catch (error) {
+      console.error(`Error generating bands for genre ${genre}:`, error);
+    }
   }
 
   private selectRandomPair(bands: Band[], comparisonHistory: Comparison[] = []): ComparisonPair {
