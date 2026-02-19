@@ -42,7 +42,7 @@ npm start
 
 ## CLI 命令
 
-后端提供了数据管理命令，用于导出数据、导入数据和生成推荐：
+后端提供了数据管理命令：
 
 ### 导出数据
 
@@ -71,6 +71,10 @@ npm run import-data
 
 示例：
 ```bash
+# Windows PowerShell
+$env:GENRE="death"; $env:COUNT="10"; npm run import-data
+
+# Linux/Mac
 GENRE=death COUNT=10 npm run import-data
 ```
 
@@ -82,89 +86,19 @@ GENRE=death COUNT=10 npm run import-data
 npm run generate-recommendations
 ```
 
-### Tier 更新
+### 完整更新流程
 
-使用 LLM 更新所有乐队的 tier 信息（well-known/popular/niche）：
-
-```bash
-npm run update-tiers
-```
-
-选项：
-- `--genre <name>` - 仅更新指定流派
-- `--dry-run` - 模拟运行，不实际更新
-- `--force` - 强制更新，忽略缓存
-- `--batch-size <n>` - 批处理大小（默认：10）
-- `--backup` - 更新前备份数据库
-- `--help` - 显示帮助信息
-
-示例：
-```bash
-# 更新所有乐队
-npm run update-tiers
-
-# 仅更新 thrash 流派
-npm run update-tiers -- --genre thrash
-
-# 模拟运行
-npm run update-tiers -- --dry-run
-
-# 强制更新并备份
-npm run update-tiers -- --force --backup
-```
-
-### 流派扩展
-
-为乐队数量不足的流派生成更多乐队：
+执行完整的更新流程，包括 tier 更新、流派扩展、重名处理和数据同步：
 
 ```bash
-npm run expand-genres
+npm run full-update
 ```
 
-选项：
-- `--genre <name>` - 仅扩展指定流派
-- `--target-count <n>` - 目标乐队数量（覆盖配置）
-- `--dry-run` - 模拟运行
-- `--force` - 强制重新生成，忽略缓存
-- `--help` - 显示帮助信息
-
-示例：
-```bash
-# 扩展所有不足的流派
-npm run expand-genres
-
-# 仅扩展 folk 流派
-npm run expand-genres -- --genre folk
-
-# 设置目标数量为 100
-npm run expand-genres -- --target-count 100
-```
-
-### 重名处理
-
-检测并处理重名乐队，添加区分信息：
-
-```bash
-npm run handle-duplicates
-```
-
-选项：
-- `--genre <name>` - 仅处理指定流派
-- `--dry-run` - 模拟运行
-- `--auto-fix` - 自动修复，无需确认
-- `--help` - 显示帮助信息
-
-示例：
-```bash
-# 交互式处理所有重名
-npm run handle-duplicates
-
-# 自动修复所有重名
-npm run handle-duplicates -- --auto-fix
-
-# 仅处理 thrash 流派
-npm run handle-duplicates -- --genre thrash
-```
+此命令会依次执行：
+1. 更新所有乐队的 tier 信息
+2. 扩展不足的流派
+3. 自动处理重名乐队
+4. 同步数据到所有存储位置（带备份和验证）
 
 ### 数据同步
 
@@ -181,65 +115,20 @@ npm run sync-data
 - `--verify` - 同步后验证数据一致性
 - `--help` - 显示帮助信息
 
-示例：
-```bash
-# 从数据库同步到所有位置
-npm run sync-data
+### 数据填充
 
-# 同步并验证
-npm run sync-data -- --backup --verify
-
-# 模拟运行
-npm run sync-data -- --dry-run
-```
-
-### 流派清理
-
-清理乐队数量不足的流派，移除小流派标签或删除仅属于小流派的乐队：
+从 `staticBands.ts` 填充乐队数据到数据库：
 
 ```bash
-npm run cleanup-genres
+# 填充所有分类
+npm run fill-bands fill
+
+# 填充指定分类
+npm run fill-bands fill-category thrash
+
+# 显示统计信息
+npm run fill-bands stats
 ```
-
-选项：
-- `--dry-run` - 模拟运行，预览清理操作
-- `--backup` - 清理前备份所有数据文件
-- `--min-bands <n>` - 最小乐队数量阈值（默认：10）
-- `--help` - 显示帮助信息
-
-示例：
-```bash
-# 预览清理操作
-npm run cleanup-genres -- --dry-run
-
-# 执行清理并备份
-npm run cleanup-genres -- --backup
-
-# 设置最小数量为 15
-npm run cleanup-genres -- --min-bands 15
-```
-
-清理逻辑：
-1. 统计每个流派的乐队数量
-2. 识别所有少于阈值的流派（小流派）
-3. 对于每个乐队：
-   - 如果乐队有其他流派标签，则移除小流派标签，保留其他标签
-   - 如果乐队只有小流派标签，则从数据库中删除该乐队
-4. 同步清理后的数据到所有数据源（staticBands.ts、bands.json、genres.json）
-
-### 完整更新流程
-
-执行完整的更新流程，包括 tier 更新、流派扩展、重名处理和数据同步：
-
-```bash
-npm run full-update
-```
-
-此命令会依次执行：
-1. 更新所有乐队的 tier 信息
-2. 扩展不足的流派
-3. 自动处理重名乐队
-4. 同步数据到所有存储位置（带备份和验证）
 
 ## API 端点
 
@@ -274,21 +163,15 @@ npm run full-update
 
 ### 数据导出
 - `GET /api/export` - 导出所有数据
-  - 查询参数：`includeRecommendations?`
-
 - `GET /api/export/genres` - 仅导出流派
-
 - `GET /api/export/bands` - 仅导出乐队
-
 - `GET /api/export/recommendations` - 仅导出推荐
 
 ### 数据导入
 - `POST /api/import/llm` - 从 LLM 导入乐队
-  - 请求体：`{ genre?, count? }`
 
 ### 批量推荐生成
 - `POST /api/recommendations/generate` - 生成批量推荐
-  - 请求体：`{ genre? }`（可选流派，不指定则生成所有流派）
 
 ## 数据管理
 
@@ -315,37 +198,36 @@ npm run full-update
    npm run export-data
    ```
 
-4. **构建前端**（在 `frontend/` 目录）：
-   ```bash
-   npm run build
-   ```
+或使用完整构建命令（在 frontend 目录）：
+```bash
+npm run build-with-data
+```
 
 ## 项目结构
 
 ```
 backend/
 ├── src/
-│   ├── config.ts               # 配置文件
-│   ├── database.ts             # 数据库连接与操作
-│   ├── llmClient.ts            # LLM 客户端
-│   ├── recommendationEngine.ts # 推荐引擎
 │   ├── server.ts               # 服务器入口
+│   ├── cli.ts                  # CLI 命令入口
+│   ├── database.ts             # 数据库连接与操作
 │   ├── staticBands.ts          # 静态乐队数据
 │   ├── types.ts                # TypeScript 类型定义
+│   ├── config.ts               # 配置文件
+│   ├── llmClient.ts            # LLM 客户端
+│   ├── recommendationEngine.ts # 推荐引擎
 │   ├── exportData.ts           # 数据导出工具
 │   ├── importData.ts           # 数据导入工具
 │   ├── batchRecommendations.ts # 批量推荐生成器
-│   ├── cli.ts                  # CLI 命令入口
-│   ├── cacheManager.ts         # 缓存管理工具
+│   ├── fillBandsByCategory.ts  # 数据填充脚本
+│   ├── syncBandData.ts         # 数据同步脚本
 │   ├── updateBandTiers.ts      # Tier 更新脚本
 │   ├── expandGenreBands.ts     # 流派扩展脚本
 │   ├── handleDuplicateNames.ts # 重名处理脚本
-│   └── syncBandData.ts         # 数据同步脚本
+│   └── db/                     # 数据库管理器
 ├── data/                       # 数据库文件目录
 │   └── bands.db
 ├── cache/                      # 缓存目录
-│   ├── tier-updates/           # Tier 更新缓存
-│   └── genre-expansion/        # 流派扩展缓存
 └── dist/                       # 编译输出目录
 ```
 
@@ -353,54 +235,40 @@ backend/
 
 编辑 `config.json` 文件可以修改服务器配置：
 
-### 基础配置
-- `llm.endpoint` - LLM API 端点
-- `llm.model` - LLM 模型名称
-- `llm.timeout` - LLM 请求超时时间（毫秒）
-- `database.path` - 数据库文件路径
-- `app.maxRecommendations` - 最大推荐数量
-
-### Tier 更新配置
-- `tierUpdate.enabled` - 是否启用 tier 更新功能（默认：false）
-- `tierUpdate.cachePath` - Tier 更新缓存路径
-
-### 流派扩展配置
-- `expandGenres.enabled` - 是否启用流派扩展功能（默认：false）
-- `expandGenres.minBandsForGenre` - 每个流派的最少乐队数量（默认：50）
-- `expandGenres.cachePath` - 流派扩展缓存路径
-
-### 流派清理配置
-- `cleanup.enabled` - 是否启用流派清理功能（默认：true）
-- `cleanup.minBandsThreshold` - 每个流派的最小乐队数量阈值（默认：10）
-
-### 启用功能
-
-要启用 tier 更新和流派扩展功能，需要修改 `config.json`：
-
 ```json
 {
-  "tierUpdate": {
-    "enabled": true,
-    "cachePath": "./cache/tier-updates"
+  "llm": {
+    "endpoint": "http://localhost:8000/v1/chat/completions",
+    "model": "gpt-4",
+    "timeout": 60000
   },
-  "expandGenres": {
-    "enabled": true,
-    "minBandsForGenre": 30,
-    "cachePath": "./cache/genre-expansion"
+  "database": {
+    "path": "./data/bands.db"
+  },
+  "app": {
+    "maxRecommendations": 10
   }
 }
 ```
 
+### 环境变量
+
+可以通过环境变量覆盖配置：
+- `LLM_ENDPOINT` - LLM API 端点
+- `LLM_MODEL` - LLM 模型名称
+- `LLM_AUTH_TOKEN` - LLM API 认证令牌
+- `DATABASE_PATH` - 数据库文件路径
+
 ## 架构
 
-后端现在支持两种使用模式：
+后端支持两种使用模式：
 
 ### 1. API 模式（传统）
 - 前端通过 HTTP API 与后端通信
 - 实时数据更新
 - 适用于开发和测试
 
-### 2. 数据管理模式（新）
+### 2. 数据管理模式（推荐）
 - 后端作为数据管理工具
 - 导出数据为静态 JSON 文件
 - 前端使用静态数据，无需后端运行
