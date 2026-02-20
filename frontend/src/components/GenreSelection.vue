@@ -20,7 +20,7 @@
           <strong>ℹ️ Static Deployment Mode:</strong> Data and band matching are pre-cached with limited recommendation capabilities.
         </p>
         <p class="notice-text">
-          Configure your own LLM to enter <strong>Zen Mode</strong> — an endless exploration mode where the system continuously discovers more bands for you. Enter a seed band and click "Start Zen Mode" to begin. Optionally select a subgenre to filter recommendations.
+          Configure your own LLM to enter <strong>Zen Mode</strong> — an endless exploration mode where the system continuously discovers more bands for you. Select a subgenre to start immediately, or optionally enter a seed band for personalized exploration.
         </p>
         <p class="notice-text notice-small">
           🔒 Your configuration is only used for this session to enhance recommendations. It will not be permanently recorded or stored.
@@ -145,13 +145,13 @@
                 class="form-control"
               />
               <small class="form-text">
-                Start Zen Mode with a specific band. The AI will use this as the foundation for endless exploration.
+                Optional: Enter a seed band to start your journey. The AI will use this as the foundation for endless exploration. Leave empty to explore freely.
               </small>
             </div>
           </div>
 
-          <!-- Start Zen Mode Button - Only shown when LLM is enabled and seed band is entered -->
-          <div v-if="llmEnabled && seedBand.trim()" class="zen-start-section">
+          <!-- Start Zen Mode Button - Shown when LLM is enabled and (seed band entered or genre selected) -->
+          <div v-if="llmEnabled && (seedBand.trim() || selectedGenre)" class="zen-start-section">
             <button
               @click="startZenMode"
               class="btn btn-zen-start"
@@ -159,12 +159,12 @@
             >
               <span class="zen-icon">☯</span>
               {{ startingZen ? 'Starting...' : 'Start Zen Mode' }}
-              <span class="seed-hint">with {{ seedBand }}</span>
+              <span v-if="seedBand.trim()" class="seed-hint">with {{ seedBand }}</span>
             </button>
             <p class="genre-hint" v-if="selectedGenre">
               Filtered by: {{ selectedGenre.charAt(0).toUpperCase() + selectedGenre.slice(1) }}
             </p>
-            <p class="genre-hint" v-else>
+            <p class="genre-hint" v-else-if="!seedBand.trim()">
               Exploring all genres
             </p>
           </div>
@@ -280,12 +280,25 @@ const testLLMConnection = async () => {
 
 const selectGenre = (genre: string) => {
   if (llmEnabled.value) {
-    // LLM 模式下，切换流派选择状态
+    // LLM 模式下
+    const trimmedSeed = seedBand.value.trim();
+
     if (selectedGenre.value === genre) {
-      selectedGenre.value = null; // 取消选择
-    } else {
-      selectedGenre.value = genre; // 选择新流派
+      // 取消选择
+      selectedGenre.value = null;
+      return;
     }
+
+    // 选择新流派
+    selectedGenre.value = genre;
+
+    // 如果没有输入种子乐队，直接开始
+    if (!trimmedSeed) {
+      startingZen.value = true;
+      emit('genre-selected', genre, undefined);
+      startingZen.value = false;
+    }
+    // 如果有种子乐队，等待用户点击 Start Zen Mode 按钮
   } else {
     // 普通模式下，直接触发事件
     const trimmedSeed = seedBand.value.trim();
@@ -295,13 +308,12 @@ const selectGenre = (genre: string) => {
 
 const startZenMode = async () => {
   const trimmedSeed = seedBand.value.trim();
-  if (!trimmedSeed) return;
 
   startingZen.value = true;
   try {
     // 使用选中的流派，如果没有选择则使用 'zen'（表示不限制流派）
     const genreToUse = selectedGenre.value || 'zen';
-    emit('genre-selected', genreToUse, trimmedSeed);
+    emit('genre-selected', genreToUse, trimmedSeed || undefined);
   } finally {
     startingZen.value = false;
   }
