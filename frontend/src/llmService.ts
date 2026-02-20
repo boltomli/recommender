@@ -666,17 +666,23 @@ JSON 格式：
   private cleanLLMResponse(content: string): string {
     // 移除 thinking 标签及其内容
     let cleaned = content.replace(/[\s\S]*?<\/think>/gi, '');
-    
+
     // 移除其他 XML 标签
     cleaned = cleaned.replace(/<[^>]+>/g, '');
-    
+
     // 移除 markdown 代码块标记
     cleaned = cleaned.replace(/```(?:json|JSON)?\s*/g, '');
     cleaned = cleaned.replace(/```\s*$/g, '');
-    
+
     // 修剪空白
     cleaned = cleaned.trim();
-    
+
+    // 尝试提取 JSON 对象（从第一个 { 到最后一个 }）
+    const jsonMatch = cleaned.match(/\{[\s\S]*\}/);
+    if (jsonMatch) {
+      cleaned = jsonMatch[0];
+    }
+
     return cleaned;
   }
 
