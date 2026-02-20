@@ -20,7 +20,7 @@
           <strong>ℹ️ Static Deployment Mode:</strong> Data and band matching are pre-cached with limited recommendation capabilities.
         </p>
         <p class="notice-text">
-          Configure your own LLM to enter <strong>Zen Mode</strong> — an endless exploration mode where the system continuously discovers more bands for you.
+          Configure your own LLM to enter <strong>Zen Mode</strong> — an endless exploration mode where the system continuously discovers more bands for you. Enter a seed band and click "Start Zen Mode" to begin. Optionally select a subgenre to filter recommendations.
         </p>
         <p class="notice-text notice-small">
           🔒 Your configuration is only used for this session to enhance recommendations. It will not be permanently recorded or stored.
@@ -149,6 +149,25 @@
               </small>
             </div>
           </div>
+
+          <!-- Start Zen Mode Button - Only shown when LLM is enabled and seed band is entered -->
+          <div v-if="llmEnabled && seedBand.trim()" class="zen-start-section">
+            <button
+              @click="startZenMode"
+              class="btn btn-zen-start"
+              :disabled="startingZen"
+            >
+              <span class="zen-icon">☯</span>
+              {{ startingZen ? 'Starting...' : 'Start Zen Mode' }}
+              <span class="seed-hint">with {{ seedBand }}</span>
+            </button>
+            <p class="genre-hint" v-if="selectedGenre">
+              Filtered by: {{ selectedGenre.charAt(0).toUpperCase() + selectedGenre.slice(1) }}
+            </p>
+            <p class="genre-hint" v-else>
+              Exploring all genres
+            </p>
+          </div>
         </div>
       </div>
 
@@ -168,6 +187,7 @@
           :key="genre"
           @click="selectGenre(genre)"
           class="btn btn-genre"
+          :class="{ 'selected': selectedGenre === genre && llmEnabled }"
         >
           {{ genre.charAt(0).toUpperCase() + genre.slice(1) }}
         </button>
@@ -202,6 +222,8 @@ const llmConfig = ref<LLMConfig>({
 const testingConnection = ref(false);
 const testResult = ref<{ success: boolean; message: string } | null>(null);
 const seedBand = ref('');
+const selectedGenre = ref<string | null>(null);
+const startingZen = ref(false);
 
 const llmEnabled = computed(() => llmConfig.value.enabled && !!llmConfig.value.endpoint);
 
@@ -257,8 +279,32 @@ const testLLMConnection = async () => {
 };
 
 const selectGenre = (genre: string) => {
+  if (llmEnabled.value) {
+    // LLM 模式下，切换流派选择状态
+    if (selectedGenre.value === genre) {
+      selectedGenre.value = null; // 取消选择
+    } else {
+      selectedGenre.value = genre; // 选择新流派
+    }
+  } else {
+    // 普通模式下，直接触发事件
+    const trimmedSeed = seedBand.value.trim();
+    emit('genre-selected', genre, trimmedSeed || undefined);
+  }
+};
+
+const startZenMode = async () => {
   const trimmedSeed = seedBand.value.trim();
-  emit('genre-selected', genre, trimmedSeed || undefined);
+  if (!trimmedSeed) return;
+
+  startingZen.value = true;
+  try {
+    // 使用选中的流派，如果没有选择则使用 'zen'（表示不限制流派）
+    const genreToUse = selectedGenre.value || 'zen';
+    emit('genre-selected', genreToUse, trimmedSeed);
+  } finally {
+    startingZen.value = false;
+  }
 };
 </script>
 
@@ -577,5 +623,64 @@ p {
   color: #10b981;
   font-weight: 600;
   font-size: 0.95rem;
+}
+
+/* Zen Start Section */
+.zen-start-section {
+  margin-top: 1.5rem;
+  padding-top: 1rem;
+  border-top: 1px solid rgba(102, 126, 234, 0.3);
+}
+
+.btn-zen-start {
+  width: 100%;
+  padding: 1rem;
+  background: linear-gradient(135deg, #10b981 0%, #059669 100%);
+  border: none;
+  border-radius: 8px;
+  color: white;
+  font-size: 1.1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+}
+
+.btn-zen-start:hover:not(:disabled) {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(16, 185, 129, 0.4);
+}
+
+.btn-zen-start:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+.btn-zen-start .zen-icon {
+  font-size: 1.3rem;
+}
+
+.seed-hint {
+  font-size: 0.85rem;
+  opacity: 0.9;
+  font-weight: 400;
+}
+
+.genre-hint {
+  text-align: center;
+  margin-top: 0.75rem;
+  font-size: 0.85rem;
+  color: #888;
+  font-style: italic;
+}
+
+/* Genre button selected state */
+.btn-genre.selected {
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  border-color: #667eea;
+  box-shadow: 0 0 0 3px rgba(102, 126, 234, 0.3);
 }
 </style>

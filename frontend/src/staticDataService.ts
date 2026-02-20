@@ -174,7 +174,14 @@ const sessions = new Map<string, StaticSession>();
 export async function createStaticSession(genre: string, seedBand?: string): Promise<string> {
   await loadStaticData();
 
-  const bands = await getStaticBandsByGenre(genre);
+  // 处理 'zen' 特殊流派 - 使用所有可用乐队
+  let bands: Band[];
+  if (genre === 'zen') {
+    bands = [...staticBands];
+  } else {
+    bands = await getStaticBandsByGenre(genre);
+  }
+
   if (bands.length < 2) {
     throw new Error(`Not enough bands in genre: ${genre}`);
   }
