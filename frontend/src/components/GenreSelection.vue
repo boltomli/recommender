@@ -4,6 +4,16 @@
       <h1 class="text-center mb-4">Choose Your Metal Subgenre</h1>
       <p class="text-center mb-5">Select a subgenre to discover bands that match your taste</p>
 
+      <!-- Mode Indicator -->
+      <div v-if="isStaticMode" class="mode-indicator static">
+        <span class="mode-icon">📦</span>
+        <span class="mode-text">Static Mode - No backend required</span>
+      </div>
+      <div v-else class="mode-indicator api">
+        <span class="mode-icon">🔌</span>
+        <span class="mode-text">API Mode - Connected to backend</span>
+      </div>
+
       <!-- LLM Configuration Panel -->
       <div class="llm-config-section">
         <button
@@ -143,6 +153,7 @@ const genres = ref<string[]>([]);
 const loading = ref(true);
 const error = ref('');
 const isApiMode = ref(false);
+const isStaticMode = ref(false);
 
 // LLM Configuration
 const showLLMConfig = ref(false);
@@ -159,8 +170,9 @@ const testResult = ref<{ success: boolean; message: string } | null>(null);
 const llmEnabled = computed(() => llmConfig.value.enabled && !!llmConfig.value.endpoint);
 
 onMounted(async () => {
-  // Check if we're in API mode
+  // Check mode
   isApiMode.value = apiService.isApiMode();
+  isStaticMode.value = apiService.isStaticMode();
 
   // Load LLM config
   llmConfig.value = apiService.getLLMConfig();
@@ -445,5 +457,38 @@ p {
   background: rgba(248, 113, 113, 0.15);
   border: 1px solid rgba(248, 113, 113, 0.3);
   color: #f87171;
+}
+
+/* Mode Indicator Styles */
+.mode-indicator {
+  max-width: 600px;
+  margin: 0 auto 1.5rem auto;
+  padding: 0.5rem 1rem;
+  border-radius: 8px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  font-size: 0.85rem;
+}
+
+.mode-indicator.static {
+  background: rgba(74, 222, 128, 0.1);
+  border: 1px solid rgba(74, 222, 128, 0.3);
+  color: #4ade80;
+}
+
+.mode-indicator.api {
+  background: rgba(102, 126, 234, 0.1);
+  border: 1px solid rgba(102, 126, 234, 0.3);
+  color: #667eea;
+}
+
+.mode-icon {
+  font-size: 1rem;
+}
+
+.mode-text {
+  font-weight: 500;
 }
 </style>

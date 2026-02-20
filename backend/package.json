@@ -23,6 +23,7 @@
       "dev": "ts-node src/server.ts",
       "expand-genres": "ts-node src/expandGenreBands.ts",
       "export-data": "ts-node src/cli.ts export-data",
+      "export-for-netlify": "ts-node src/exportForNetlify.ts",
       "fill-bands": "ts-node src/fillBandsByCategory.ts",
       "full-update": "ts-node src/updateBandTiers.ts && ts-node src/expandGenreBands.ts && ts-node src/handleDuplicateNames.ts --auto-fix && ts-node src/syncBandData.ts --backup --verify",
       "generate-recommendations": "ts-node src/cli.ts generate-recommendations",
