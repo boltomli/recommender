@@ -9,12 +9,12 @@
   targetPort = 5173
 
 # 可选：配置函数设置
-[functions]
+# [functions]
   # 函数超时时间（秒）
-  timeout = 30
+  # timeout = 30
   
 # 可选：重定向规则
-[[redirects]]
-  from = "/api/*"
-  to = "/.netlify/functions/:splat"
-  status = 200
+# [[redirects]]
+  # from = "/api/*"
+  # to = "/.netlify/functions/:splat"
+  # status = 200
