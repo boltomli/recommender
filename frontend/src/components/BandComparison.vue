@@ -8,6 +8,9 @@
             <span v-if="zenMode" class="zen-mode-indicator" title="Zen Mode: Continuous comparison with your LLM">
               <span class="zen-icon">☯</span> Zen Mode
             </span>
+            <span v-if="seedBand" class="seed-band-indicator" title="Starting with your seed band">
+              <span class="seed-icon">🌱</span> {{ seedBand }}
+            </span>
             <button @click="handleRestart" class="restart-btn">Restart</button>
           </div>
         </div>
@@ -112,6 +115,7 @@ const props = defineProps<{
   sessionId: string;
   comparisonCount: number;
   zenMode?: boolean;
+  seedBand?: string;
 }>();
 
 const emit = defineEmits(['preference-recorded', 'recommendations-ready', 'restart']);
@@ -277,6 +281,23 @@ defineExpose({
   50% {
     box-shadow: 0 2px 16px rgba(16, 185, 129, 0.6);
   }
+}
+
+.seed-band-indicator {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  background: linear-gradient(135deg, #f59e0b 0%, #d97706 100%);
+  color: #fff;
+  padding: 0.5rem 1rem;
+  border-radius: 20px;
+  font-weight: 600;
+  font-size: 0.9rem;
+  box-shadow: 0 2px 8px rgba(245, 158, 11, 0.3);
+}
+
+.seed-icon {
+  font-size: 1rem;
 }
 
 .progress-header h2 {

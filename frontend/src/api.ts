@@ -107,24 +107,27 @@ export const apiService = {
     });
   },
 
-  async createSession(genre: string, llmConfig?: LLMConfig): Promise<string> {
+  async createSession(genre: string, llmConfig?: LLMConfig, seedBand?: string): Promise<string> {
     if (STATIC_MODE) {
       if (!staticDataLoaded) {
         await loadStaticData();
         staticDataLoaded = true;
       }
-      
+
       // 如果提供了 LLM 配置，在静态模式下初始化 LLM
       if (llmConfig?.enabled && llmConfig?.endpoint) {
         initializeStaticLLM(llmConfig);
       }
-      
-      return createStaticSession(genre);
+
+      return createStaticSession(genre, seedBand);
     }
 
-    const payload: { genre: string; llmConfig?: LLMConfig } = { genre };
+    const payload: { genre: string; llmConfig?: LLMConfig; seedBand?: string } = { genre };
     if (llmConfig?.enabled && llmConfig?.endpoint) {
       payload.llmConfig = llmConfig;
+    }
+    if (seedBand) {
+      payload.seedBand = seedBand;
     }
     const response = await api.post('/api/session', payload);
     return response.data.sessionId;
