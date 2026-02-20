@@ -130,8 +130,8 @@
             </div>
           </div>
 
-          <!-- Seed Band Input - Only shown when LLM is enabled -->
-          <div v-if="llmEnabled" class="seed-band-section">
+          <!-- Seed Band Input - Only shown when LLM is enabled and connection test passed -->
+          <div v-if="llmEnabled && testResult?.success" class="seed-band-section">
             <div class="seed-band-divider"></div>
             <div class="form-group">
               <label for="seed-band">
