@@ -327,7 +327,7 @@ fastify.post('/api/proxy/llm', async (request, reply) => {
       const content = (data.content as Array<{text?: string}>)?.[0]?.text 
         || (data.completion as string) 
         || '';
-      return {
+      const convertedResponse = {
         choices: [{
           message: {
             role: 'assistant',
@@ -337,9 +337,12 @@ fastify.post('/api/proxy/llm', async (request, reply) => {
         model: data.model,
         usage: data.usage,
       };
+      reply.send(convertedResponse);
+      return;
     }
 
-    return data;
+    reply.send(data);
+    return;
   } catch (error) {
     fastify.log.error(error);
     reply.code(500).send({

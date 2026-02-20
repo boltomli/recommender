@@ -1,0 +1,20 @@
+[build]
+  command = "npm run netlify:build"
+  publish = "dist"
+  functions = "netlify/functions"
+
+[dev]
+  command = "npm run dev"
+  port = 5173
+  targetPort = 5173
+
+# 可选：配置函数设置
+[functions]
+  # 函数超时时间（秒）
+  timeout = 30
+  
+# 可选：重定向规则
+[[redirects]]
+  from = "/api/*"
+  to = "/.netlify/functions/:splat"
+  status = 200

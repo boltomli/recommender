@@ -5,9 +5,12 @@
   "type": "module",
   "scripts": {
     "dev": "vite",
+    "dev:static": "vite --mode static",
     "build": "vue-tsc -b && vite build",
+    "build:static": "vue-tsc -b && vite build --mode static",
     "build-with-data": "cd ../backend && npm run export-data && cd ../frontend && npm run build",
-    "preview": "vite preview"
+    "preview": "vite preview",
+    "netlify:build": "cd ../backend && npm run export-for-netlify && cd ../frontend && npm run build:static"
   },
   "dependencies": {
     "axios": "^1.13.2",
