@@ -272,7 +272,7 @@ JSON 格式：
 
   /**
    * 选择对比乐队对
-   * 
+   *
    * 使用 LLM 智能选择下一对要对比的乐队
    */
   async selectComparisonPair(
@@ -324,10 +324,10 @@ JSON 格式：
       const response = await this.callLLM(messages);
       const content = this.cleanLLMResponse(response.choices[0]?.message?.content || '{}');
       const result = JSON.parse(content);
-      
+
       const band1 = result.band1;
       const band2 = result.band2;
-      
+
       // 验证返回的乐队是否有效
       if (availableBands.includes(band1) && availableBands.includes(band2) && band1 !== band2) {
         // 检查这对乐队是否已经对比过
@@ -335,17 +335,91 @@ JSON 格式：
         const previousPairsSet = new Set(
           comparisonHistory.map(c => [c.bandId1, c.bandId2].sort().join('|'))
         );
-        
+
         if (!previousPairsSet.has(pairKey)) {
           return [band1, band2];
         }
       }
-      
+
       // 如果 LLM 返回无效结果，回退到随机选择
       return this.getRandomPair(availableBands, comparisonHistory);
     } catch (error) {
       console.error('选择对比乐队对失败:', error);
       return this.getRandomPair(availableBands, comparisonHistory);
+    }
+  }
+
+  /**
+   * 选择与种子乐队对比的乐队
+   *
+   * 使用 LLM 智能选择一个与种子乐队形成有趣对比的乐队
+   */
+  async selectBandToCompare(
+    genre: string,
+    seedBand: string,
+    availableBands: string[]
+  ): Promise<string> {
+    if (!this.isEnabled()) {
+      // 如果 LLM 未启用，使用随机选择（排除种子乐队）
+      const otherBands = availableBands.filter(b => b.toLowerCase() !== seedBand.toLowerCase());
+      if (otherBands.length > 0) {
+        return otherBands[Math.floor(Math.random() * otherBands.length)]!;
+      }
+      return availableBands[0] ?? '';
+    }
+
+    const messages: LLMMessage[] = [
+      {
+        role: 'system',
+        content: `你是金属音乐推荐引擎。根据种子乐队选择一个形成有趣对比的乐队。
+
+重要规则：
+1. 选择与种子乐队不同但相关的乐队
+2. 可以是风格相似但有差异的乐队，也可以是风格对比鲜明的乐队
+3. 返回的乐队必须在可用列表中
+4. 返回有效的 JSON 格式
+
+JSON 格式：
+{
+  "band": "乐队名称",
+  "reason": "选择理由"
+}`
+      },
+      {
+        role: 'user',
+        content: `流派: ${genre}
+种子乐队: ${seedBand}
+可用乐队: ${availableBands.join(', ')}
+请选择一个与 "${seedBand}" 形成有趣对比的乐队。不要选择种子乐队本身。`
+      }
+    ];
+
+    try {
+      const response = await this.callLLM(messages);
+      const content = this.cleanLLMResponse(response.choices[0]?.message?.content || '{}');
+      const result = JSON.parse(content);
+
+      const selectedBand = result.band;
+
+      // 验证返回的乐队是否有效且不是种子乐队
+      if (availableBands.includes(selectedBand) &&
+          selectedBand.toLowerCase() !== seedBand.toLowerCase()) {
+        return selectedBand;
+      }
+
+      // 如果 LLM 返回无效结果，回退到随机选择
+      const otherBands = availableBands.filter(b => b.toLowerCase() !== seedBand.toLowerCase());
+      if (otherBands.length > 0) {
+        return otherBands[Math.floor(Math.random() * otherBands.length)]!;
+      }
+      return availableBands[0] ?? '';
+    } catch (error) {
+      console.error('选择对比乐队失败:', error);
+      const otherBands = availableBands.filter(b => b.toLowerCase() !== seedBand.toLowerCase());
+      if (otherBands.length > 0) {
+        return otherBands[Math.floor(Math.random() * otherBands.length)]!;
+      }
+      return availableBands[0] ?? '';
     }
   }
 

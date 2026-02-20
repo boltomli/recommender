@@ -151,6 +151,7 @@ export async function getStaticBandsByTier(genre: string, tier: BandTier): Promi
 interface StaticSession {
   id: string;
   genre: string;
+  seedBand?: string;
   comparisonHistory: Array<{
     bandId1: string;
     bandId2: string;
@@ -170,7 +171,7 @@ const sessions = new Map<string, StaticSession>();
 /**
  * Create a new static session
  */
-export async function createStaticSession(genre: string): Promise<string> {
+export async function createStaticSession(genre: string, seedBand?: string): Promise<string> {
   await loadStaticData();
 
   const bands = await getStaticBandsByGenre(genre);
@@ -184,6 +185,7 @@ export async function createStaticSession(genre: string): Promise<string> {
   const session: StaticSession = {
     id: generateSessionId(),
     genre,
+    seedBand,
     comparisonHistory: [],
     preferenceWeights: {},
     seenBands: [],
@@ -613,6 +615,37 @@ export async function getLLMComparisonPair(sessionId: string): Promise<Compariso
   try {
     // 获取可用乐队名称
     const availableBandNames = session.availableBands.map(b => b.name);
+
+    // 如果是第一次对比且有种子乐队，使用种子乐队作为第一个乐队
+    if (session.currentPairIndex === 0 && session.seedBand) {
+      // 查找种子乐队是否在可用列表中
+      const seedBandInList = session.availableBands.find(
+        b => b.name.toLowerCase() === session.seedBand!.toLowerCase()
+      );
+
+      if (seedBandInList) {
+        // 使用 LLM 选择第二个乐队，与种子乐队配对
+        const secondBandName = await llmService.selectBandToCompare(
+          session.genre,
+          session.seedBand,
+          availableBandNames
+        );
+
+        const band2 = session.availableBands.find(b => b.name === secondBandName);
+
+        if (band2) {
+          // 标记乐队为已看过
+          if (!session.seenBands.includes(seedBandInList.id)) session.seenBands.push(seedBandInList.id);
+          if (!session.seenBands.includes(band2.id)) session.seenBands.push(band2.id);
+
+          // 更新当前索引
+          session.currentPairIndex++;
+          session.updatedAt = new Date();
+
+          return { band1: seedBandInList, band2 };
+        }
+      }
+    }
 
     // 调用 LLM 选择对比对
     const [band1Name, band2Name] = await llmService.selectComparisonPair(

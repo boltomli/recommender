@@ -14,6 +14,19 @@
         <span class="mode-text">API Mode - Connected to backend</span>
       </div>
 
+      <!-- Static Mode Notice -->
+      <div v-if="isStaticMode" class="static-notice">
+        <p class="notice-text">
+          <strong>ℹ️ Static Deployment Mode:</strong> Data and band matching are pre-cached with limited recommendation capabilities.
+        </p>
+        <p class="notice-text">
+          Configure your own LLM to enter <strong>Zen Mode</strong> — an endless exploration mode where the system continuously discovers more bands for you.
+        </p>
+        <p class="notice-text notice-small">
+          🔒 Your configuration is only used for this session to enhance recommendations. It will not be permanently recorded or stored.
+        </p>
+      </div>
+
       <!-- LLM Configuration Panel -->
       <div class="llm-config-section">
         <button
@@ -116,6 +129,26 @@
               {{ testResult.message }}
             </div>
           </div>
+
+          <!-- Seed Band Input - Only shown when LLM is enabled and connection is successful -->
+          <div v-if="llmEnabled && testResult?.success" class="seed-band-section">
+            <div class="seed-band-divider"></div>
+            <div class="form-group">
+              <label for="seed-band">
+                <span class="zen-label">🌱 Seed Band (Optional)</span>
+              </label>
+              <input
+                id="seed-band"
+                v-model="seedBand"
+                type="text"
+                placeholder="Enter a band name to start your journey (e.g., Metallica)"
+                class="form-control"
+              />
+              <small class="form-text">
+                Start Zen Mode with a specific band. The AI will use this as the foundation for endless exploration.
+              </small>
+            </div>
+          </div>
         </div>
       </div>
 
@@ -147,7 +180,9 @@
 import { ref, onMounted, computed } from 'vue';
 import { apiService, type LLMConfig } from '../api';
 
-const emit = defineEmits(['genre-selected']);
+const emit = defineEmits<{
+  (e: 'genre-selected', genre: string, seedBand?: string): void;
+}>();
 
 const genres = ref<string[]>([]);
 const loading = ref(true);
@@ -166,6 +201,7 @@ const llmConfig = ref<LLMConfig>({
 });
 const testingConnection = ref(false);
 const testResult = ref<{ success: boolean; message: string } | null>(null);
+const seedBand = ref('');
 
 const llmEnabled = computed(() => llmConfig.value.enabled && !!llmConfig.value.endpoint);
 
@@ -199,6 +235,7 @@ const resetLLMConfig = () => {
   apiService.resetLLMConfig();
   llmConfig.value = apiService.getLLMConfig();
   testResult.value = null;
+  seedBand.value = '';
 };
 
 const testLLMConnection = async () => {
@@ -220,7 +257,8 @@ const testLLMConnection = async () => {
 };
 
 const selectGenre = (genre: string) => {
-  emit('genre-selected', genre);
+  const trimmedSeed = seedBand.value.trim();
+  emit('genre-selected', genre, trimmedSeed || undefined);
 };
 </script>
 
@@ -490,5 +528,54 @@ p {
 
 .mode-text {
   font-weight: 500;
+}
+
+/* Static Mode Notice */
+.static-notice {
+  max-width: 600px;
+  margin: 0 auto 1.5rem auto;
+  padding: 1rem 1.25rem;
+  background: rgba(251, 191, 36, 0.1);
+  border: 1px solid rgba(251, 191, 36, 0.3);
+  border-radius: 8px;
+  color: #fbbf24;
+}
+
+.notice-text {
+  font-size: 0.9rem;
+  line-height: 1.5;
+  margin-bottom: 0.5rem;
+}
+
+.notice-text:last-child {
+  margin-bottom: 0;
+}
+
+.notice-small {
+  font-size: 0.8rem;
+  color: #d4a853;
+  margin-top: 0.75rem;
+  padding-top: 0.5rem;
+  border-top: 1px solid rgba(251, 191, 36, 0.2);
+}
+
+/* Seed Band Section */
+.seed-band-section {
+  margin-top: 1rem;
+}
+
+.seed-band-divider {
+  height: 1px;
+  background: linear-gradient(90deg, transparent, rgba(102, 126, 234, 0.5), transparent);
+  margin: 1rem 0;
+}
+
+.zen-label {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  color: #10b981;
+  font-weight: 600;
+  font-size: 0.95rem;
 }
 </style>
